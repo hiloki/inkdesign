@@ -1,0 +1,4 @@
+dig inkdesign.jp +nostats +nocomments +nocmd
+# Look up DNS record for example.com
+
+inkdesign.jp.             3259    IN      A       204.232.175.78
