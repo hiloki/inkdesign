@@ -1,6 +1,7 @@
 ---
 layout: post
 title: WordPressからJekyll + Github pageへ
+description: inkdesign.jpの更新を再開。システムをWordPressからJekyll+Github Pagesへと移行した。
 ---
 長年WordPressでサイト、ブログを運用していたが、なんとなくGithub Pageでの運用に移行した。
 {: .sc .sc-4}
