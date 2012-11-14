@@ -327,6 +327,24 @@ img {
   vertical-align: top; }
 
 /* SICSS Layout */
+.cf:before, .sc-row:before,
+.cf:after,
+.sc-row:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.cf:after, .sc-row:after {
+  clear: both; }
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf, .sc-row {
+  *zoom: 1; }
+
 .sc-wrapper {
   margin: 0 auto;
   width: 960px;
@@ -334,7 +352,6 @@ img {
   line-height: 2.25rem; }
 
 .sc-row {
-  overflow: hidden;
   margin-bottom: 2.25rem; }
 
 .sc {

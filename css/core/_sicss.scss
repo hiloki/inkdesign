@@ -19,6 +19,25 @@ $height: 2.25rem;
   height: $height * $count;
 }
 
+// Clearfix
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
 // Grid
 .sc-wrapper {
   margin: 0 auto;
@@ -28,8 +47,9 @@ $height: 2.25rem;
 }
 
 .sc-row {
-  overflow: hidden;
+  // overflow: hidden;
   margin-bottom: 2.25rem;
+  @extend .cf;
 }
 .sc {
   float: left;
