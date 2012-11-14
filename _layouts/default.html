@@ -2,9 +2,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>{{ site.title }}{%if page.title %} - {{ page.title }}{% endif %}</title>
+<title>{%if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 <meta name="author" content="{{ site.author }}" />
 <!-- <link href="atom.xml" rel="alternate" title="{{ site.title }}" type="application/atom+xml" /> -->
+<meta property="og:title" content="{%if page.title %}{{ page.title }} - {% endif %}{{ site.title }}" />
+<meta property="og:description" content="{%if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+<meta property="og:url" content="{%if page.title %}{{ site.url }}{{ page.url }}{% else %}{{ site.url }}{% endif %}" />
+<meta property="og:image" content="http://inkdesign.jp/ogp_200x200.png" />
 <link rel="stylesheet" href="/css/inkdesign.css" />
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -19,8 +23,8 @@
 </script>
 </head>
 <body>
-<div class="sc-wrapper">
-	<header class="the-header sc-row">
+<header class="the-header sc-wrapper">
+	<div class="sc-row">
 		<div class="sc sc-5 sc-1-off">
 			<div class="brand left">
 				<div class="the-nav-item">
@@ -34,10 +38,19 @@
 				</ul>
 			</nav>
 		</div>
-	</header>
-	<div class="content">
-	{{ content }}
 	</div>
+</header>
+<div class="content sc-wrapper">
+{{ content }}
 </div>
+	
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=418840108138616";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>
