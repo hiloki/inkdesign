@@ -591,3 +591,6 @@ a {
   border: 1px solid #EEE;
   padding: 0.5rem 1rem;
   background-color: #FFF; }
+
+.btn-share {
+  vertical-align: middle; }
