@@ -2,7 +2,10 @@
 layout: post
 title: WordPressからJekyll + Github pageへ
 description: inkdesign.jpの更新を再開。システムをWordPressからJekyll+Github Pagesへと移行した。
+categories:
+  - notes
 ---
+
 長年WordPressでサイト、ブログを運用していたが、なんとなくGithub Pageでの運用に移行した。
 {: .sc .sc-4}
 
@@ -15,7 +18,7 @@ description: inkdesign.jpの更新を再開。システムをWordPressからJeky
 Jekyllはコンテンツを更新するための管理画面があるといった、いわゆるWordPress的なCMS、ブログシステムではなく、コンテンツページを一枚一枚つくってアップをしていくような工程で更新する。
 {: .sc .sc-4 .sc-1-off}
 
-Jekyllについては[CSS Radar](http://css.studiomohawk.com/jekyll/2011/06/11/jekyll/)の記事も参照してほしい。今回はあまり最低限の仕組みだけで構築したので、追々記事としてまとめられたらと考えている。
+Jekyllについては[CSS Radar](http://css.studiomohawk.com/jekyll/2011/06/11/jekyll/)の記事も参照してほしい。とりあえず色々な機能はつけず、最低限の仕組みだけで構築したので、追々記事としてまとめられたらと考えている。
 {: .sc .sc-4 .sc-1-off}
 
 ## WordPressから移行した理由

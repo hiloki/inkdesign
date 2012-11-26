@@ -1,52 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>{%if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
-<meta name="author" content="{{ site.author }}" />
-<!-- <link href="atom.xml" rel="alternate" title="{{ site.title }}" type="application/atom+xml" /> -->
-<meta property="og:type" content="{%if page.title %}blog{% else %}article{% endif %}" />
-<meta property="og:title" content="{%if page.title %}{{ page.title }} - {% endif %}{{ site.title }}" />
-<meta property="og:description" content="{%if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
-<meta property="og:url" content="{%if page.title %}{{ site.url }}{{ page.url }}{% else %}{{ site.url }}{% endif %}" />
-<meta property="og:image" content="http://inkdesign.jp/ogp_200x200.png" />
-<meta property="og:site_name" content="inkdesign" />
-<meta property="fb:admins" content="1252308549" />
-<link rel="stylesheet" href="/css/inkdesign.css" />
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-16307645-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-</head>
+{% include header.html %}
 <body>
-<header class="the-header sc-wrapper">
+<div class="page {% if page.categories %}page-{{page.categories}}{% endif %}">
+<div class="the-header sc-wrapper">
 	<div class="sc-row">
-		<div class="sc sc-5 sc-1-off">
+		<div class="sc sc-6 1sc-1-off">
 			<div class="brand left">
 				<div class="the-nav-item">
 					<a href="{{ site.url }}">
-						<img src="/images/logo@2x.png" alt="{{ site.title }}" class="the-logo" /></a>
+						<img src="/images/logo@2x.png" alt="{{ site.title }}" class="the-logo" />inkdesign</a>
 				</div>
 			</div>
-			<nav class="the-nav left">
+			<div class="the-nav right">
 				<ul>
-					<li class="the-nav-item"><a href="{{ site.url }}" class="the-nav-item">inkdesign</a></li>
+					<li class="the-nav-item"><a href="{{ site.url }}" class="the-nav-item">Home</a></li>
+					<!-- <li class="the-nav-item"><a href="/articles.html" class="the-nav-item">Articles</a></li> -->
+					<li class="the-nav-item"><a href="/notes.html" class="the-nav-item"> Notes</a></li>
 				</ul>
-			</nav>
+			</div>
 		</div>
 	</div>
-</header>
-<div class="content sc-wrapper">
+</div>
+<div class="the-content sc-wrapper">
 {{ content }}
 </div>
-	
+{% include footer.html %}
+</div>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

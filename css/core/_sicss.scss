@@ -12,9 +12,12 @@
 // 14.063  0.781 0.879     108.177
 // 11.250  0.625 0.703     86.538
 
-// Height
-$width: 148px;
+// Variables
+$width: 144px;
 $height: 2.25rem;
+$gutter: 12px;
+
+// Mixins
 @mixin h($count:1) {
   height: $height * $count;
 }
@@ -53,47 +56,68 @@ $height: 2.25rem;
 }
 .sc {
   float: left;
-  margin-right: 6px;
-  margin-left: 6px;
+  margin-right: $gutter;
+  margin-left: $gutter;
 }
-.sc:first-child {
-  margin-top: 0;
-}
+// .sc:first-child {
+//   margin-top: 0;
+// }
 .sc-1 {
-  width: 148px;
+  width: $width;
 }
-.sc-1-off {
-  margin-left: 166px;
+.sc-1-off,
+.sc-1-pull {
+  margin-left: $width + $gutter * 2;
+}
+.sc-1-push {
+  margin-right: $width + $gutter * 2;
 }
 .sc-2 {
-  width: 308px;
+  width: $width * 2 + $gutter;
 }
-.sc-2-off {
-  margin-left: 326px;
+.sc-2-off,
+.sc-2-pull {
+  margin-left: $width * 2 + $gutter * 2;
+}
+.sc-2-push {
+  margin-right: $width * 2 + $gutter * 2;
 }
 .sc-3 {
-  width: 468px;
+  width: $width * 3 + $gutter * 2;
 }
-.sc-3-off {
-  margin-left: 486px;
+.sc-3-off,
+.sc-3-pull {
+  margin-left: $width * 3 + $gutter * 4;
+}
+.sc-3-push {
+  margin-right: $width * 3 + $gutter * 4;
 }
 .sc-4 {
-  width: 628px;
+  width: $width * 4 + $gutter * 3;
 }
-.sc-4-off {
-  margin-left: 646px;
+.sc-4-off,
+.sc-4-pull {
+  margin-left: $width * 4 + $gutter * 5;
+}
+.sc-4-push {
+  margin-right: $width * 4 + $gutter * 5;
 }
 .sc-5 {
-  width: 788px;
+  width: $width * 5 + $gutter * 4;
 }
-.sc-5-off {
-  margin-left: 806px;
+.sc-5-off,
+.sc-5-pull {
+  margin-left: $width * 5 + $gutter * 6;
+}
+.sc-5-push {
+  margin-right: $width * 5 + $gutter * 6;
 }
 .sc-6 {
-  width: 948px;
+  width: $width * 6 + $gutter * 5;
 }
-.sc-6-off {
-  margin-left: 966px;
+.sc-6-off,
+.sc-6-pull {
+  margin-left: $width * 6 + $gutter * 7;
 }
 
 // Typography
@@ -123,4 +147,15 @@ $height: 2.25rem;
 }
 .right {
   float: right;
+}
+
+
+html {
+  // background: url(http://griddle.it/926-12-12) repeat-y center top !important;
+}
+body {
+  // background: url(http://basehold.it/i/36) !important;
+}
+.page {
+  background: none !important;
 }

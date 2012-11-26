@@ -1,0 +1,31 @@
+/*
+## Media
+*/
+.media {
+  @extend .clearfix;
+  > .img {
+    float: left;
+    margin-right: 18px;
+  }
+  > .img_rev {
+    float: right;
+    margin-left: 18px;
+  }
+}
+
+/*
+## Layout
+*/
+.l-inline {
+	> * {
+		display: inline-block;
+		*display: inline;
+		*zoom: 1;
+	}
+}
+
+.l-stack {
+	> * {
+		display: block;
+	}
+}

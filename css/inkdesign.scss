@@ -3,36 +3,42 @@
 @import "core/sicss";
 @import "core/helper";
 @import "core/mixin";
+@import "core/object";
+// @import "plugins/syntax-github";
+@import "plugins/syntax-solarized";
+// @import "plugins/syntax-solarized-dark";
 
 // Variables
 $black: #333;
 
 html {
-	background-image: url(../images/bg.png);
+	background-image: url(../images/debut_dark.png);
 }
 
 body {
 	border-top: 6px solid $black;
 	-webkit-box-shadow: inset 0 1px #FFF;
 	box-shadow: inset 0 1px #FFF;
+	background-image: url(../images/bg.png);
 	color: #666666;
 	&:before {
 		display: block;
 		content: "";
 		position: absolute;
 		top: -30px;
-		z-index: -1;
+		z-index: 10;
 		width: 100%;
 		height: 30px;
 		border-radius: 100%;
-		-webkit-box-shadow: 0 0 120px rgba(0,20,30,1);
-		box-shadow: 0 0 120px rgba(0,20,30,1);
+		-webkit-box-shadow: 0 0 120px rgba(0,20,30,0.8);
+		box-shadow: 0 0 120px rgba(0,20,30,0.8);
 	}
 	&:after {
 		display: block;
 		content: "";
 		position: absolute;
 		top: 0;
+		z-index: 100;
 		width: 100%;
 		height: 6px;
 		background-image: url(../images/debut_dark.png);
@@ -76,7 +82,7 @@ a {
 	li {
 		display: inline-block;
 		// margin-left: 2.4rem;
-		margin-left: 1.2rem;
+		margin-left: 2rem;
 	}
 	a {
 		color: $black;
@@ -87,6 +93,15 @@ a {
 	line-height: $height * 3;
 }
 
+.the-logo {
+	margin-right: 2rem;
+}
+
+.brand {
+	a {
+		color: #333;
+	}
+}
 /*
 ## Post
 */
@@ -102,11 +117,14 @@ a {
 }
 
 .entry-date {
-	text-align: right;
+	text-align: left;
 }
 
 .entry-body {
-	p {
+	> * {
+		@extend .sc;
+	}
+	h2,p {
 		margin-bottom: $height;
 	}
 }
@@ -123,13 +141,86 @@ a {
 	vertical-align: middle;
 }
 
-// .footnotes {
-// 	border: 1px solid #CCC;
+.entry-notes {
+	margin-left: auto;
+	margin-right: auto;
+	width: 628px;
+	.entry-header {
+		margin-bottom: 0;
+	}
+	.entry-title {
+		line-height: $height;
+		font-size: $height / 1.25;
+	}
+	.sc {
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+	}
+}
+
+.the-footer {
+	padding-top: 2.25rem;
+	background-image: url(../images/debut_dark.png);
+	color: #F6F6F6;
+}
+
+.author {
+	.img {
+		height: $height * 3;
+	}
+	.pic {
+		margin-top: 8px;
+		width: 96px;
+		height: 96px;
+		border-radius: 96px;
+		box-shadow: 0 0 0 3px #F6F6F6;
+	}
+}
+
+.publication {
+	img {
+		width: 96px;
+		height: 120px;
+	}
+}
+
+.elsewhere {}
+
+.ico {
+	display: inline-block;
+	@extend .ir;
+}
+
+.ico-36 {
+	width: 36px;
+	height: 36px;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+
+.ico-twitter {
+	background: url(../images/ico-twitter.png);
+}
+.ico-github {
+	background: url(../images/ico-github.png);
+}
+
+// .entry-notes {
+// 	.entry-title {
+// 		@extend .sc;
+// 		@extend .sc-4;
+// 		@extend .sc-1-off;
+// 		line-height: $height;
+// 		font-size: $height / 1.25;
+// 	}
+// 	.entry-date {
+// 		@extend .sc;
+// 		@extend .sc-4;
+// 		@extend .sc-1-off;
+// 	}
 // }
 
-// html {
-//   background: url(http://griddle.it/948-6-6) repeat-y center top;
-// }
-// body {
-//   background: url(http://basehold.it/i/36);
+// .footnotes {
+// 	border: 1px solid #CCC;
 // }
