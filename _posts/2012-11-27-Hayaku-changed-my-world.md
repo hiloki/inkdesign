@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CSSが速くかけるようになるHayakuで、世界が変わるらしい
+title: CSSが速くかけるようになるSublime Text2 パッケージ Hayakuで、世界が変わるらしい
 description: CSSを速く書くためのSublime Text2パッケージ、Hayakuを試してみた。
 categories:
   - notes
