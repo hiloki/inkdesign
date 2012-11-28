@@ -10,6 +10,7 @@
 
 // Variables
 $black: #333;
+$red: #c30;
 
 html {
 	background-image: url(../images/debut_dark.png);
@@ -53,6 +54,17 @@ a {
 	&:visited {
 		text-decoration: none;
 	}
+}
+
+kbd {
+	display: inline;
+	border: 1px solid #CCC;
+	border-radius: 6px;
+	margin-left: 0.1em;
+	margin-right: 0.1em;
+	padding: 0.2em 0.4em;
+	background-color: #EFEFEF;
+	color: $red;
 }
 
 /* 
@@ -124,7 +136,7 @@ a {
 	> * {
 		@extend .sc;
 	}
-	h2,p {
+	h2,p,pre {
 		margin-bottom: $height;
 	}
 	ul {

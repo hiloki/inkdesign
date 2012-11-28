@@ -315,7 +315,7 @@ table {
 /*
 * Add more resets.
 */
-h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre {
   margin-top: 0;
   margin-bottom: 0; }
 
@@ -823,6 +823,16 @@ a {
   a:visited {
     text-decoration: none; }
 
+kbd {
+  display: inline;
+  border: 1px solid #CCC;
+  border-radius: 6px;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  padding: 0.2em 0.4em;
+  background-color: #EFEFEF;
+  color: #cc3300; }
+
 /* 
 # Inkdesign Style Guide
 */
@@ -865,7 +875,7 @@ a {
 .entry-date {
   text-align: right; }
 
-.entry-body h2, .entry-body p {
+.entry-body h2, .entry-body p, .entry-body pre {
   margin-bottom: 2.25rem; }
 .entry-body ul {
   margin-left: 1rem;

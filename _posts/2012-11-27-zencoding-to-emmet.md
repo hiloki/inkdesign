@@ -17,18 +17,18 @@ Sublime text2のパッケージ（プラグイン）管理については、[他
 
 Emmetに差し替えるにあたり、必要なのが既存のZen Codingパッケージの無効化または削除。これをしないと衝突して挙動がおかしくなる。
 
-Sublime text2では、Preferencesまたは<kbd>⌘ + shift + P</kbd>で起動するCommand Paletteから、Browser Packages..でFinderで書くパッケージのファイルを参照することができる。
+Sublime text2では、__Preferences__または<kbd>⌘ + shift + P</kbd>で起動する__Command Palette__から、__Browser Packages..__でFinderで書くパッケージのファイルを参照することができる。
 で、そこから削除したZen Codingのフォルダをみつけて削除すればOK...ではない。
 
-ここで削除しても、次回起動時に削除したパッケージが復活してしまうので意味がない。なのでパッケージを削除するためには、Package ControlでDisable Package、またはRemove Packageしないといけない。
+ここで削除しても、次回起動時に削除したパッケージが復活してしまうので意味がない。なのでパッケージを削除するためには、__Package Control__で__Disable Package__、または__Remove Package__しないといけない。
 Disableは無効化、Removeは削除。Zen Codingパッケージを再び復活させることもないだろう、ということで、今回はRemoveとする。
 
-これらを実行するには、先程のCommand Paletteを起動し、"Remove Package"と打つのが早いとおもわれる。
+これらを実行するには、先程の__Command Palette__を起動し、__"Remove Package"__と打つのが早いとおもわれる。
 
-Command Paletteから実行すると、次にインストール済みのパッケージリストが出てくるので、その中からZen Codingを探す。ここでも"Zen"とか打てば絞り込まれるので、見つけたら選んで実行する。
+__Command Palette__から実行すると、次にインストール済みのパッケージリストが出てくるので、その中からZen Codingを探す。ここでも__"Zen"__とか打てば絞り込まれるので、見つけたら選んで実行する。
 この時には特に削除前の確認画面などは出ないので注意してほしい。
 
-ちなみにSublime Text2を使っていると、調子に乗って色々とパッケージをインストールしてしまい、何が入っているんだか分からなくなる。何がはいってるか見たいときには、Command Paletteから"List Package"と打てば、パッケージの一覧が出てくる。Command Paletteは万能で非常に便利。
+ちなみにSublime Text2を使っていると、調子に乗って色々とパッケージをインストールしてしまい、何が入っているんだか分からなくなる。何がはいってるか見たいときには、__Command Palette__から__"List Package"__と打てば、パッケージの一覧が出てくる。Command Paletteは万能で非常に便利。
 
 ## Emmetパッケージをインストールした後の設定
 
@@ -38,7 +38,7 @@ Command Paletteから実行すると、次にインストール済みのパッ�
 
 こちらに書かれていることだが、Preferenceまたは<kbd>Cmd＋,</kbd>で立ち上がる、Setting -User に下記を記述すればいい。
 
-```
+{% highlight json %}
 {
 /* for Emmet User */
 
@@ -49,9 +49,9 @@ Command Paletteから実行すると、次にインストール済みのパッ�
  // （任意）Emmetを有効にすると、HTMLで「php」の展開が「<?php ?>」にならない問題の回避
 
  "enable_emmet_keymap": true,
- // （任意）英語キーボード以外でEmmetを使う場合は「false」にするとかしないとか
+ // （任意）英語キーボード以外でEmmetを使う場合は「false」	にするとかしないとか
 }
-```
+{% endhighlight %}
 
 これでSublime Text2でEmmetが使える。
 
