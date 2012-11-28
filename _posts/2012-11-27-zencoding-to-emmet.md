@@ -64,3 +64,4 @@ __Command Palette__から実行すると、次にインストール済みのパ�
 - [Zen-Codingの次期バージョン、Emmet について｜Web Design KOJIKA17](http://kojika17.com/2012/09/zen-coding-next-emmet.html)
 - [第0回 Sublime Text 2 勉強会 で Emmet について話してきた - techlog](http://d.hatena.ne.jp/j7400157/20121111/1352603101)
 - [ちょっとよさげなSublime Text 2の設定](http://protean.cc/sublime-text-2-user-preferences)
+- [P233/Emmet-Css-Snippets-for-Sublime-Text-2](https://github.com/P233/Emmet-Css-Snippets-for-Sublime-Text-2) via [@cipher](https://twitter.com/cipher)
