@@ -17,7 +17,7 @@ Sublime text2のパッケージ（プラグイン）管理については、[他
 
 Emmetに差し替えるにあたり、必要なのが既存のZen Codingパッケージの無効化または削除。これをしないと衝突して挙動がおかしくなる。
 
-Sublime text2では、__Preferences__または<kbd>⌘ + shift + P</kbd>で起動する__Command Palette__から、__Browser Packages..__でFinderで書くパッケージのファイルを参照することができる。
+Sublime text2では、__Preferences__または<kbd>⌘ + shift + P</kbd>で起動する__Command Palette__から、__Browser Packages..__でFinderで各パッケージのファイルを参照することができる。
 で、そこから削除したZen Codingのフォルダをみつけて削除すればOK...ではない。
 
 ここで削除しても、次回起動時に削除したパッケージが復活してしまうので意味がない。なのでパッケージを削除するためには、__Package Control__で__Disable Package__、または__Remove Package__しないといけない。
