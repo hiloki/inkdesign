@@ -6,13 +6,13 @@ Nicolas Gallagher氏のNormalize.css（v2.0.1）をベースにしている。
 多くのプロジェクトで変更する可能性が高いベースのスタイルはこちらに追記している。
 
 ``` CSS
-h1,h2,h3,h4,h5,h6,p,ul,ol,dl {
+h1,h2,h3,h4,h5,h6,p {
     margin-top: 0;
     margin-bottom: 0;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
     padding-left: 0;
 }
 
@@ -22,7 +22,7 @@ img {
 ```
 ...
 */
-/* normalize.css v2.0.1 | MIT License | git.io/normalize  */
+/*! normalize.css v2.0.1 | MIT License | git.io/normalize  */
 /*
 * Corrects `block` display not defined in IE 8/9.
 */
@@ -492,7 +492,7 @@ __TODO__
 - Androidの場合、a要素への適用だとテキストが表示される場合があるため、変更を検討
 
 */
-.ir, .ico,
+.ir,
 .imagereplacement {
   font: 0/0 a;
   color: transparent;
@@ -559,10 +559,10 @@ __TODO__
 */
 .media > .img {
   float: left;
-  margin-right: 18px; }
+  margin-right: 12px; }
 .media > .img_rev {
   float: right;
-  margin-left: 18px; }
+  margin-left: 12px; }
 
 /*
 ## Layout
@@ -854,7 +854,7 @@ a {
   margin-right: 2rem; }
 
 .brand a {
-  color: #333; }
+  color: inherit; }
 
 /*
 ## Post
@@ -863,13 +863,10 @@ a {
   color: inherit; }
 
 .entry-date {
-  text-align: right; }
+  text-align: left; }
 
 .entry-body h2, .entry-body p {
   margin-bottom: 2.25rem; }
-.entry-body ul {
-  margin-left: 1rem;
-  list-style: disc; }
 
 .toc ul {
   border: 1px solid #EEE;
@@ -888,42 +885,20 @@ a {
   .entry-notes .entry-title {
     line-height: 2.25rem;
     font-size: 1.8rem; }
-  .entry-notes .entry-date {
-    text-align: left; }
   .entry-notes .sc, .entry-notes .entry-body > * {
     margin-left: auto;
     margin-right: auto;
     width: 100%; }
 
 .the-footer {
-  padding-top: 2.25rem;
   background-image: url(../images/debut_dark.png);
   color: #F6F6F6; }
 
-.author .img {
-  height: 6.75rem; }
 .author .pic {
-  margin-top: 8px;
   width: 96px;
   height: 96px;
   border-radius: 96px;
   box-shadow: 0 0 0 3px #F6F6F6; }
 
 .publication img {
-  width: 96px;
-  height: 120px; }
-
-.ico {
-  display: inline-block; }
-
-.ico-36 {
-  width: 36px;
-  height: 36px;
-  -webkit-background-size: 100% 100%;
-  background-size: 100% 100%; }
-
-.ico-twitter {
-  background: url(../images/ico-twitter.png); }
-
-.ico-github {
-  background: url(../images/ico-github.png); }
+  width: 94px; }

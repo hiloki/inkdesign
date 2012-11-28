@@ -117,7 +117,7 @@ a {
 }
 
 .entry-date {
-	text-align: left;
+	text-align: right;
 }
 
 .entry-body {
@@ -126,6 +126,10 @@ a {
 	}
 	h2,p {
 		margin-bottom: $height;
+	}
+	ul {
+		margin-left: 1rem;
+		list-style: disc;
 	}
 }
 
@@ -151,6 +155,9 @@ a {
 	.entry-title {
 		line-height: $height;
 		font-size: $height / 1.25;
+	}
+	.entry-date {
+		text-align: left;
 	}
 	.sc {
 		margin-left: auto;

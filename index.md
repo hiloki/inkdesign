@@ -5,7 +5,6 @@ layout: default
 <h1><a href="{{ first_post.url }}">{{ first_post.title }}</a></h1>
 <p class="meta">{{ first_post.date | date_to_string }}</p>
 {{ first_post.content }} -->
-
 <div class="entries">
   {% for post in site.posts %}
   <article class="sc-row entry">
