@@ -59,33 +59,12 @@ ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/s
 subl .
 {% endhighlight %}
 
-を叩いても、`subl: command not found`みたいになる場合には、PATHの設定が必要かもしれない。
-
-何をするかというと、ルート（ユーザー名のディレクトリのところ）にある、.bash_profileに対し、`export PATH=~/bin:$PATH`というの書く。
-
-.bash_profileが無い場合、またはよくわからないという人もおそらくいるとはおもうので、下記の流れをターミナル上でやってみると良い。[^bash]
-
-1. `sudo vi .bash_profile` を実行し、.bash_profileを開く。sudoでの実行のため、passwordを尋ねられるとおもうが、それにはログインアカウントのパスワードを入力すればいい。
-
-2. <kbd>i</kbd>を叩くと、__INSERT__モードになるので、そこに`export PATH=~/bin:$PATH`と書く。もし開いたときに色々中に書いてあるようであれば、それらの後に記述する。INSERTモードではマウスでキャレットを移動することはできないので、キーボードの矢印キーで移動する。このあたりの操作はviエディタの操作になるので、もっとうまく扱いたい場合は、[コマンドリファレンス](http://hp.vector.co.jp/authors/VA016670/unix/vi_reference.html)を参照するといい。
-
-3. 記述したら、<kbd>esc</kbd>キーでINSERTモードを抜けて、<kbd>:wq</kbd>と打って実行する。
-
-4. 最後に記述した内容を反映させるため、`source .bash_profile`を実行する
-
-これでおそらく`subl`コマンドが有効になるはず。
+を叩いても、`subl: command not found`みたいになる場合には、ターミナルを再起動すれば大丈夫かも。
 
 ## さぁこれではじめよう
 
-{% highlight python %}
-subl .
-{% endhighlight %}
-
-※たまーに、上手く開かないこともあるので、そのときはコマンドを叩いてみてね。
-{: .small}
+たまーに、上手く開かないこともあるので、そのときはコマンドを再度叩いてみてね。
 
 [^Git]: ターミナルからじゃなくとも、Sublime Text2のGitのパッケージを使えば、Sublime Text2上でGitを扱うこともできる。[kemayo/sublime-text-2-git](https://github.com/kemayo/sublime-text-2-git)
 
 [^Terminal]: 実際にはMac OS Xにもともとあるターミナルではなく、iTerm2っていうのを使ってます。画面分割とかもできて便利。[iTerm2 - Mac OS Terminal Replacement](http://www.iterm2.com/#/section/home)
-
-[^bash]: .bash_profileというファイルに対して書込をおこなうが、環境によっては、このファイルに色々記述があるかもしれないので、不安な人はバックアップをとっておこう。
