@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sass,LESS,StylusのColor functionsをコンパイル結果を比べてみた
+title: Sass,LESS,StylusのColor functionsのコンパイル結果を比べてみた
 description: 色系ファンクションのdarken()の結果に差がある気がしたので、調べてみた。
 categories:
   - notes
