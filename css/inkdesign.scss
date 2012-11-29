@@ -53,6 +53,7 @@ a {
 	text-decoration: none;
 	&:visited {
 		text-decoration: none;
+		
 	}
 }
 
@@ -136,7 +137,7 @@ kbd {
 	> * {
 		@extend .sc;
 	}
-	h2,p,pre {
+	h2,h3,ul,p,pre {
 		margin-bottom: $height;
 	}
 	ul {

@@ -22,7 +22,7 @@ img {
 ```
 ...
 */
-/* normalize.css v2.0.1 | MIT License | git.io/normalize  */
+/*! normalize.css v2.0.1 | MIT License | git.io/normalize  */
 /*
 * Corrects `block` display not defined in IE 8/9.
 */
@@ -875,7 +875,7 @@ kbd {
 .entry-date {
   text-align: right; }
 
-.entry-body h2, .entry-body p, .entry-body pre {
+.entry-body h2, .entry-body h3, .entry-body ul, .entry-body p, .entry-body pre {
   margin-bottom: 2.25rem; }
 .entry-body ul {
   margin-left: 1rem;
