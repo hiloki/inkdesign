@@ -69,7 +69,7 @@ subl .
 
 2. <kbd>i</kbd>を叩くと、__INSERT__モードになるので、そこに`export PATH=~/bin:$PATH`と書く。もし開いたときに色々中に書いてあるようであれば、それらの後に記述する。INSERTモードではマウスでキャレットを移動することはできないので、キーボードの矢印キーで移動する。このあたりの操作はviエディタの操作になるので、もっとうまく扱いたい場合は、[コマンドリファレンス](http://hp.vector.co.jp/authors/VA016670/unix/vi_reference.html)を参照するといい。
 
-3. 記述したら、<kbd>esc</kbd>キーでINSERTモードを抜けて、<kbd>:wq</kbd>と打って実行する。これは__W__riteして、__Q__uit、という意味。
+3. 記述したら、<kbd>esc</kbd>キーでINSERTモードを抜けて、<kbd>:wq</kbd>と打って実行する。これは___W__riteして、__Q__uit、という意味。
 
 4. 最後に記述した内容を反映させるため、`source .bash_profile`を実行する
 
