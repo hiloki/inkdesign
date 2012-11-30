@@ -11,12 +11,7 @@ categories:
 
 またZen Codingにせよ、Emmetにせよ、短縮形のルールが決まっているし、それらを覚えないといけないので少し大変だ。
 
-<ins datetime="2012-11-30">
-### 追記（2012-11-30）
-
-Emmetでも若干ファジーには書ける様子。
-[Fuzzy Search](http://docs.emmet.io/css-abbreviations/fuzzy-search/)
-
+<ins datetime="2012-11-30">__追記（2012-11-30）:__ Emmetでも若干[ファジーに書ける](http://docs.emmet.io/css-abbreviations/fuzzy-search/)様子。
 </ins>
 
 ## そこでHayaku、らしい
