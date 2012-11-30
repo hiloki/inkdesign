@@ -11,6 +11,14 @@ categories:
 
 またZen Codingにせよ、Emmetにせよ、短縮形のルールが決まっているし、それらを覚えないといけないので少し大変だ。
 
+<ins datetime="2012-11-30">
+### 追記（2012-11-30）
+
+Emmetでも若干ファジーには書ける様子。
+[Fuzzy Search](http://docs.emmet.io/css-abbreviations/fuzzy-search/)
+
+</ins>
+
 ## そこでHayaku、らしい
 
 二度見しそうな名前だが、これは[Hayaku](http://hayakubundle.com/)というSublime Text2のパッケージ。Emmetと違い、対象になるのはCSS（とCSSプリプロセッサ）であり、前述の通りCSSの記述に関してはこれといったツールを使っていない自分でも感動した。
@@ -155,3 +163,4 @@ div {
 ## とりあえず入れてて損はない
 
 設定を変えないとEmmetなどとぶつかるというのはあるとして、基本的には邪魔をするものでもないし、ミスタイプをしたときも勢いでカバーできるっていうイメージで導入してみるとどうでしょうか。
+
