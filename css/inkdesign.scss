@@ -5,8 +5,8 @@
 @import "core/mixin";
 @import "core/object";
 // @import "plugins/syntax-github";
-@import "plugins/syntax-solarized";
-// @import "plugins/syntax-solarized-dark";
+// @import "plugins/syntax-solarized";
+@import "plugins/syntax-solarized-dark";
 
 // Variables
 $black: #333;
@@ -137,13 +137,20 @@ kbd {
 	> * {
 		@extend .sc;
 	}
-	h2,h3,ul,p,pre {
+	h2,h3,ul,p {
 		margin-bottom: $height;
 	}
 	ul {
 		margin-left: 1rem;
 		list-style: disc;
 	}
+}
+
+.highlight {
+	margin-left: -24px;
+	margin-right: -24px;
+	margin-bottom: $height;
+	padding: $height;
 }
 
 .toc {
@@ -173,8 +180,8 @@ kbd {
 		text-align: left;
 	}
 	.sc {
-		margin-left: auto;
-		margin-right: auto;
+		// margin-left: auto;
+		// margin-right: auto;
 		width: 100%;
 	}
 }
@@ -241,6 +248,6 @@ kbd {
 // 	}
 // }
 
-// .footnotes {
-// 	border: 1px solid #CCC;
-// }
+.footnotes {
+	@extend .small;
+}
