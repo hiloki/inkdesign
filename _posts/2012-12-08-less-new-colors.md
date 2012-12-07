@@ -10,7 +10,7 @@ categories:
 
 CSSプリプロセッサ（CSSメタ言語）は、[Sass](http://sass-lang.com/)が人気かつ、アップデートも頻繁、新機能増えてる！みたいな空気を感じたりするんですが、[LESS](http://lesscss.org/)もがんばってます。
 
-## LESSの停滞
+## 開発の停滞
 
 5ヶ月ほど前に[Crunch](http://crunchapp.net/)というLESS対応エディタを開発しているMatthew Dean氏が、
 
@@ -65,15 +65,17 @@ SassがLESSに大きく差をつけた機能のひとつではあるのですが
 
 ### multiply
 
+Photoshopでいうところの__乗算__。
+
 {% highlight css %}
 div {
   background-color: multiply(@colorA,@colorB);
 }
 {% endhighlight %}
 
-Photoshopでいうところの__乗算__。
-
 ### screen
+
+Photoshopでいうところの__スクリーン__。
 
 {% highlight css %}
 div {
@@ -81,9 +83,10 @@ div {
 }
 {% endhighlight %}
 
-Photoshopでいうところの__スクリーン__。
 
 ### overlay
+
+Photoshopでいうところの__オーバーレイ__。
 
 {% highlight css %}
 div {
@@ -91,9 +94,9 @@ div {
 }
 {% endhighlight %}
 
-Photoshopでいうところの__オーバーレイ__。
-
 ### hardlight
+
+Photoshopでいうところの__ハードライト__。
 
 {% highlight css %}
 div {
@@ -101,9 +104,9 @@ div {
 }
 {% endhighlight %}
 
-Photoshopでいうところの__ハードライト__。
-
 ### difference
+
+Photoshopでいうところの__差の絶対値__。
 
 {% highlight css %}
 div {
@@ -111,17 +114,15 @@ div {
 }
 {% endhighlight %}
 
-Photoshopでいうところの__差の絶対値__。
-
 ### average
+
+Photoshopでは存在しないかもしれないが、Fireworksでいうところの__平均__。
 
 {% highlight css %}
 div {
   background-color: average(@colorA,@colorB);
 }
 {% endhighlight %}
-
-Photoshopでは無いかもしれないが、Fireworksでいうところの__平均__。
 
 ### 一応サンプル
 
