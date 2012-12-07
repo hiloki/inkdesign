@@ -137,12 +137,21 @@ kbd {
 	> * {
 		@extend .sc;
 	}
-	h2,h3,ul,p {
+	h2,h3,ul,p,blockquote {
 		margin-bottom: $height;
 	}
 	ul {
 		margin-left: 1rem;
 		list-style: disc;
+	}
+	blockquote {
+		border-left: 6px solid $black;
+		margin-left: 2.25rem;
+		padding-left: 1.125rem;
+		font-style: italic;
+		:last-child {
+			margin-bottom: 0;
+		}
 	}
 }
 
