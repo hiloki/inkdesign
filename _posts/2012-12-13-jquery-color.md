@@ -26,7 +26,8 @@ jQuery Colorというと、デフォルトのanimateメソッドでは対応し�
 
 これが結局どういうことをやっているかというと、簡潔にいえば、animateメソッドで変化させる値は__数値__でなければいけないので、`#FF0000`みたいなHEX値を、`rgb(255,0,0)`のようなRGB値にすることでアニメーションできるようにしている様子。
 
-その他色々メソッドがある。例えばHSLAの値返したりとか。[^ginpei]
+その他色々メソッドがある。例えばHSLAの値返したりとか。
+（CSSのHSLのことは、[CSSでの色指定について。半透明とかキーワードとか、ご存知でした？ | Ginpen.com](http://ginpen.com/2012/12/01/colors/)など参照。）
 
 {% highlight html %}
 var hsla = $.Color($("#block"),"backgroundColor").hsla();
@@ -62,6 +63,4 @@ $(function() {
 ## アドベントカレンダーは続く
 
 次は[toshimaru](http://www.adventar.org/users/546)さんですね、よろしくおねがいします。
-
-[^ginpei]: CSSのHSLのことは、[CSSでの色指定について。半透明とかキーワードとか、ご存知でした？ | Ginpen.com](http://ginpen.com/2012/12/01/colors/)など参照。
 
