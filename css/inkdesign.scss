@@ -137,7 +137,7 @@ kbd {
 	> * {
 		@extend .sc;
 	}
-	h2,h3,ul,p,blockquote {
+	h2,h3,ul,ol,p,blockquote {
 		margin-bottom: $height;
 	}
 	ul {

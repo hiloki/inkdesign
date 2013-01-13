@@ -1,0 +1,109 @@
+/* 
+# 元の色
+
+- `@colorA`
+- `@colorB`
+
+それぞれに値を入れておく。
+```
+<div class="palette colorA">#FF0000</div>
+<div class="palette colorB">#0000FF</div>
+```
+*/
+@colorA: #FF0000;
+@colorB: #0000FF;
+
+.colorA {
+	background-color: @colorA;
+}
+.colorB {
+	background-color: @colorB;
+}
+.palette {
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+	color: #AAA;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 700;
+	font-family: Helvetica,Arial;
+}
+
+/* 
+# multiply
+
+乗算
+
+```
+<div class="palette multiply">Multiply</div>
+```
+*/
+.multiply {
+	background-color: multiply(@colorA,@colorB);
+}
+
+/* 
+# screen
+
+スクリーン
+
+```
+<div class="palette screen">Screen</div>
+```
+*/
+.screen {
+	background-color: screen(@colorA,@colorB);
+}
+
+/* 
+# overlay
+
+オーバーレイ
+
+```
+<div class="palette overlay">Overlay</div>
+```
+*/
+.overlay {
+	background-color: overlay(@colorA,@colorB);
+}
+
+/* 
+# hardlight
+
+ハードライト
+
+```
+<div class="palette hardlight">Hardlight</div>
+```
+*/
+.hardlight {
+	background-color: hardlight(@colorA,@colorB);
+}
+
+/* 
+# difference
+
+差の絶対値
+
+```
+<div class="palette difference">Difference</div>
+```
+*/
+.difference {
+	background-color: difference(@colorA,@colorB);
+}
+
+/* 
+# average
+
+平均
+
+```
+<div class="palette average">Average</div>
+```
+*/
+.average {
+	background-color: average(@colorA,@colorB);
+}

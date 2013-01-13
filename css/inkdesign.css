@@ -194,7 +194,7 @@ figure {
 * Define consistent border, margin, and padding.
 */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
@@ -802,8 +802,8 @@ html {
 
 body {
   border-top: 6px solid #333333;
-  -webkit-box-shadow: inset 0 1px #FFF;
-  box-shadow: inset 0 1px #FFF;
+  -webkit-box-shadow: inset 0 1px white;
+  box-shadow: inset 0 1px white;
   background-image: url(../images/bg.png);
   color: #666666; }
   body:before {
@@ -826,8 +826,8 @@ body {
     width: 100%;
     height: 6px;
     background-image: url(../images/debut_dark.png);
-    -webkit-box-shadow: 0 1px #FFF;
-    box-shadow: 0 1px #FFF; }
+    -webkit-box-shadow: 0 1px white;
+    box-shadow: 0 1px white; }
 
 a {
   color: #CC3300;
@@ -837,7 +837,7 @@ a {
 
 kbd {
   display: inline;
-  border: 1px solid #CCC;
+  border: 1px solid #cccccc;
   border-radius: 6px;
   margin-left: 0.1em;
   margin-right: 0.1em;
@@ -887,7 +887,7 @@ kbd {
 .entry-date {
   text-align: right; }
 
-.entry-body h2, .entry-body h3, .entry-body ul, .entry-body p, .entry-body blockquote {
+.entry-body h2, .entry-body h3, .entry-body ul, .entry-body ol, .entry-body p, .entry-body blockquote {
   margin-bottom: 2.25rem; }
 .entry-body ul {
   margin-left: 1rem;
@@ -907,7 +907,7 @@ kbd {
   padding: 2.25rem; }
 
 .toc ul {
-  border: 1px solid #EEE;
+  border: 1px solid #eeeeee;
   padding: 0.5rem 1rem;
   background-color: #FFF; }
 
@@ -940,7 +940,7 @@ kbd {
   width: 96px;
   height: 96px;
   border-radius: 96px;
-  box-shadow: 0 0 0 3px #F6F6F6; }
+  box-shadow: 0 0 0 3px #f6f6f6; }
 
 .publication img {
   width: 96px;
