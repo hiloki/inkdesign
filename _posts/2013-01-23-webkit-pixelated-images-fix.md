@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mobile Safariでビットマップ画像をrotateするとが荒れるのを回避する
+title: Mobile Safariでビットマップ画像をrotateすると荒れるのを回避する
 description: ビットマップ画像をtransformでrotateするとジャギーが出てしまう問題を回避するテクニックの紹介。
 categories:
   - notes
