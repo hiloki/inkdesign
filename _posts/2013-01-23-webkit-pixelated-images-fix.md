@@ -48,7 +48,7 @@ WebkitもといMobile Safariで、ビットマップ画像を`transform: rotate(
 
 ![img.rotate](/images/posts/webkit-pixelated-images-fix/03.png)
 
-このケースでは`img`本体に対して`rotate(deg)`をかけた。これももちろんジャギーが出てしまうのだが、残念なことにこの場合にはその`ig`に`backface-visibility:hidden`をあてても**ジャギーは消えない**ようだ。
+このケースでは`img`本体に対して`rotate(deg)`をかけた。これももちろんジャギーが出てしまうのだが、残念なことにこの場合にはその`img`にbackface-visibility:hidden`をあてても**ジャギーは消えない**ようだ。
 
 ### CSSで作ったボックスをrotateする場合
 
