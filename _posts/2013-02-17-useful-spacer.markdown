@@ -2,6 +2,7 @@
 layout: post
 category: notes
 title: spacer.gifとそのDataURI化したやつのリポジトリを作った
+description: spacer.gif画像とDataURI化したテキストデータを格納するリポジトリをGithubにつくった。
 date: 2013-02-17 21:57:09
 ---
 1px × 1pxの透明な**spacer.gif**といえば、大昔はレイアウトにおいて支え棒のような役割で使っていたのを思い出す。今やそうしたレイアウト、その余白はCSSでやればいいわけだが、spacer.gifはそういう用途でないところで地味に使う。
