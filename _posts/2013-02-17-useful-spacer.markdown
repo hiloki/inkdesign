@@ -23,7 +23,7 @@ date: 2013-02-17 21:57:09
 
 ## 画像ファイルでなく、埋め込めるように
 
-1px四方のたった43kbの画像とはいえ、ひとつのリクエスト。ということでbase64でエンコードして埋め込むのが良い好ましいとおもわれる。なのでこれもGithubの方に用意している。
+1px四方のたった43バイトの画像とはいえ、ひとつのリクエスト。ということでbase64でエンコードして埋め込むのが良い好ましいとおもわれる。なのでこれもGithubの方に用意している。
 
 [https://raw.github.com/hiloki/spacer/master/spacer.gif.txt](https://raw.github.com/hiloki/spacer/master/spacer.gif.txt)
 
@@ -35,9 +35,9 @@ date: 2013-02-17 21:57:09
 
 ## 世界一小さい画像
 
-これは余談だが、この1px四方・43kbの透過gifが一番小さい画像かとおもいきや、実はもっと小さなサイズの画像がある。
+これは余談だが、この1px四方・43バイトの透過gifが一番小さい画像かとおもいきや、実はもっと小さなサイズの画像がある。
 
-[The Tiniest GIF Ever](http://probablyprogramming.com/2009/03/15/the-tiniest-gif-ever)という記事で細かく解説されているので興味があれば読んでほしい。なぜspacer.gifが43kbなのかという解説もある。
+[The Tiniest GIF Ever](http://probablyprogramming.com/2009/03/15/the-tiniest-gif-ever)という記事で細かく解説されているので興味があれば読んでほしい。なぜspacer.gifが43バイトなのかという解説もある。
 
 そしてその世界で一番小さな画像が下記だ。これはあくまで小さな画像という話なので、透過ではなく**黒色**の画像だ。
 
