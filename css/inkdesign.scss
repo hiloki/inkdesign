@@ -20,8 +20,8 @@ body {
 	border-top: 6px solid $black;
 	-webkit-box-shadow: inset 0 1px #FFF;
 	box-shadow: inset 0 1px #FFF;
-	// background-image: url(../images/bg.png);
-	color: #996666;
+	background-image: url(../images/bg.png);
+	color: #666666;
 	&:before {
 		display: block;
 		content: "";
