@@ -1,6 +1,11 @@
 ---
 layout: default
 ---
+<script>
+  (function(){
+    location.href='http://p.inkdesign.jp';
+  })();
+</script>
 <!-- {% assign first_post = site.posts.first %}
 <h1><a href="{{ first_post.url }}">{{ first_post.title }}</a></h1>
 <p class="meta">{{ first_post.date | date_to_string }}</p>
