@@ -1,11 +1,6 @@
 ---
 layout: default
 ---
-<script>
-  (function(){
-    location.href='http://p.inkdesign.jp';
-  })();
-</script>
 <div class="entries">
   {% for post in site.posts %}
   <article class="sc-row entry">
