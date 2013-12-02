@@ -33,8 +33,8 @@
     "npm": "1.1.x"
   },
   "dependencies": {
-    "docpad": "6.x",
-    "docpad-plugin-coffeescript": "2.x",
+    "docpad": "~6.56.0",
+    "docpad-plugin-coffeescript": "~2.2.3",
     "docpad-plugin-eco": "2.x",
     "docpad-plugin-marked": "2.x",
     "docpad-plugin-partials": "2.x",
@@ -44,7 +44,8 @@
     "grunt-css": "~0.3.2",
     "bal-util": "~1.15.3",
     "underscore": "~1.4.3",
-    "docpad-plugin-ghpages": "~2.4.0"
+    "docpad-plugin-ghpages": "~2.4.0",
+    "docpad-plugin-highlightjs": "~2.1.8"
   },
   "devDependencies": {
     "docpad-plugin-livereload": "2.x"

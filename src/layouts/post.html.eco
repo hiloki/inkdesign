@@ -1,0 +1,17 @@
+---
+layout: 'default'
+---
+<header>
+<h1 class="brand">
+  <img src="/images/logo.png" width="40">
+  inkdesign
+</h1>
+</header>
+
+<div><%- @content %></div>
+
+<footer>
+  <div class="contact">
+    <p>by <a href="http://twitter.com/hiloki">Hiroki Tani</a></p>
+  </div>
+</footer>
