@@ -45,7 +45,9 @@
     "bal-util": "~1.15.3",
     "underscore": "~1.4.3",
     "docpad-plugin-ghpages": "~2.4.0",
-    "docpad-plugin-highlightjs": "~2.1.8"
+    "docpad-plugin-highlightjs": "~2.1.8",
+    "docpad-plugin-cleanurls": "~2.6.0",
+    "docpad-plugin-moment": "~2.0.2"
   },
   "devDependencies": {
     "docpad-plugin-livereload": "2.x"

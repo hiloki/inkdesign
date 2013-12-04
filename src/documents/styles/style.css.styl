@@ -1,29 +1,79 @@
+// Import
+@import "highlight.css.styl"
+
 // variable
 $baseColor = #1F2A33
 $linkColor = #E74C3C
 
 // Foundation
-html
-  text-align center
-  color $baseColor
+body
+  margin: 0 auto
+  padding-left: 1em
+  padding-right: 1em
+  max-width: 640px
+
+code
+  padding-left: 0.2em
+  background: #f3f3f3
 
 a
-  color $linkColor
-  text-decoration none
-  &:hover
-    text-decoration underline 
+  text-decoration: none
+  color: $linkColor
 
-// Base
-.brand
-  font-family: 'Karla', sans-serif
-  > img
-    display block 
-    margin 0 auto 0.3em
-  
-.contact
-  position fixed
-  left 0
-  bottom 0
-  right 0
-  padding 1em 0 
-  font-family 'Karla', sans-serif
+ul
+  list-style: none;
+  li
+    &:before
+      content: "-"
+      display: inline-block
+      margin-left: -1.2em
+      width: 1.2em
+      text-align: center
+      color: lighten($baseColor,75%)
+
+// Layout
+[role="banner"]
+  margin-top: 32px
+  margin-bottom: 32px
+  text-align center
+  h1
+    font-size: 1.2rem
+    font-family: Karla, serif;
+  img
+    display: block
+    margin: 0 auto
+    width: 30px
+  a
+    color: inherit
+
+[role="contentinfo"]
+  margin-top: 32px
+  text-align center
+  h1
+    font-size: 1.2rem
+    font-family: Karla, serif;
+  img
+    display: block
+    margin: 0 auto
+    width: 30px
+  a
+    color: inherit
+
+// Module
+.entry-header
+  text-align: center
+.entry-date
+  font-size: 85%
+  color: rgba($baseColor,75%)
+.entry-title.small
+  font-size: 96%
+
+@media screen and (max-width: 480px) 
+  .slideshare
+    display: none !important
+
+// Utility
+.u-center
+  display: block;
+  margin-left: auto;
+  margin-right: auto;

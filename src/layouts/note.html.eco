@@ -1,0 +1,23 @@
+---
+layout: 'default'
+---
+<header role="banner">
+<h1>
+  <a href="/">
+    <img src="/images/logo.png">
+    inkdesign
+  </a>
+</h1>
+</header>
+
+<div class="entry">
+  <div class="entry-header">
+    <p class="entry-date"><%= @document.computerDate %></p>
+    <h2 class="entry-title"><%= @document.title %></h2>
+  </div>
+  <div class="entry-body"><%- @content %></div>
+</div>
+
+<footer role="contentinfo">
+  <p class="author">Made by <a href="http://twitter.com/hiloki">Hiroki Tani</a></p>
+</footer>
