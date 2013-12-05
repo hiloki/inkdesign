@@ -15,9 +15,11 @@ DOMとスタイルをカプセル化する**Shadow DOM**、任意の要素また
 
 ちなみにWeb Componentsについて調べていると、Decoratorsという仕様にふれていることもありますが、これのことは忘れていいいようです。
 
-Web Componentsの仕様・仕組みについては、先日おこなわれたHTML5 Conferenceで、Shadow DOMのSpec Editorである夷藤さんのお話が実にわかりやすいとはおもうので、そちらを観るのをおすすめします。
+Web Componentsの仕様・仕組みについては、先日おこなわれたHTML5 Conferenceで、Shadow DOMのSpec Editorである[夷藤さんのお話](http://www.youtube.com/watch?v=wvggCAG5ttw&feature=share)が実にわかりやすいとはおもうので、そちらを観るのをおすすめします。
 
+<div class="entry-media">
 <iframe width="560" height="315" src="//www.youtube.com/embed/wvggCAG5ttw" frameborder="0" allowfullscreen class="u-center embed"></iframe>
+</div>
 
 [夷藤さんのスライド](http://hayatoito.github.io/webcomponents-slides/#1)はこちら。
 
@@ -25,7 +27,9 @@ Web Componentsの仕様・仕組みについては、先日おこなわれたHTM
 
 実際にこれらを使って作ったものは、以前おこなわれた[Frontrend x Chrome	 Tech Talk Night Extended](http://frontrend.github.io/blog/frontrend-x-chrome-tech-talk-night-extended/)でのLTのときに色々と[つくってみました](http://hiloki.github.io/demo/frontrend_chrome/app/)。
 
+<div class="entry-media">
 <iframe src="http://www.slideshare.net/slideshow/embed_code/27734708?rel=0" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen class="u-center embed"> </iframe>
+</div>
 
 この時にも触ってみたかっただけなので、いざつくってみると設計が難しく、今おもえばデタラメな設計なので、そのものをあまり参考はしない方がいいです。これらは特に難しいことをしてつくったわけではなく、当日イベントにもきてたAddy Osmani氏の記事で紹介されている[YeomanのPolymerジェネレータのタスク](http://www.html5rocks.com/en/tutorials/webcomponents/yeoman/?redirect_from_locale=ja)を使えば非常に簡単です。
 
@@ -56,7 +60,9 @@ Web Componentsに触れて良いとおもうのはまさにこういうところ
 
 これは次のようなマークアップでつくることができます。
 
+<div class="entry-media">
 ![](/images/try-web-components-and-polymer/01.png)
+</div>
 
 ```
 <x-switch></x-switch>
@@ -106,7 +112,9 @@ input[type="checkbox"]:checked:after {
 
 ですが、サンプルを確認してもらうとわかる通り、このiOS7ライクなチェックボックスの前後にはブラウザデフォルトの見た目のままのチェックボックスが確認できるはずです。
 
-![](/images/try-web-components-and-polymer/02.png)
+<div class="entry-media">
+  ![](/images/try-web-components-and-polymer/02.png)
+</div>
 
 つまりコンポーネント内で定義したスタイルは外に汚染することはありません。素晴らしいですね。
 
