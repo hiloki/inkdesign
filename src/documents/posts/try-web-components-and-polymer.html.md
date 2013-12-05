@@ -17,17 +17,34 @@ DOMとスタイルをカプセル化する**Shadow DOM**、任意の要素また
 
 Web Componentsの仕様・仕組みについては、先日おこなわれたHTML5 Conferenceで、Shadow DOMのSpec Editorである夷藤さんのお話が実にわかりやすいとはおもうので、そちらを観るのをおすすめします。
 
-[夷藤さんのスライド](http://hayatoito.github.io/webcomponents-slides/#1)と[講演動画](http://www.youtube.com/watch?v=wvggCAG5ttw&feature=share)
+<iframe width="560" height="315" src="//www.youtube.com/embed/wvggCAG5ttw" frameborder="0" allowfullscreen class="u-center embed"></iframe>
+
+[夷藤さんのスライド](http://hayatoito.github.io/webcomponents-slides/#1)はこちら。
 
 と、もうひとつ紹介するのが[Polymer](http://www.polymer-project.org/)です。こちらも先ほどの資料後半でも解説されているのですが、Web Components、周辺仕様のポリフィル（ブラウザが未対応な仕様の補完）をしてくれるライブラリともいえますし、コンポーネント集だったりします。
 
 実際にこれらを使って作ったものは、以前おこなわれた[Frontrend x Chrome	 Tech Talk Night Extended](http://frontrend.github.io/blog/frontrend-x-chrome-tech-talk-night-extended/)でのLTのときに色々と[つくってみました](http://hiloki.github.io/demo/frontrend_chrome/app/)。
 
-<iframe src="http://www.slideshare.net/slideshow/embed_code/27734708?rel=0" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen class="u-center slideshare"> </iframe>
+<iframe src="http://www.slideshare.net/slideshow/embed_code/27734708?rel=0" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen class="u-center embed"> </iframe>
 
-ちなみにGoogle Chromeを使っている場合は、最近のバージョンだと**Settings > General > Elements > Show Shadow DOM**でInspectしたときに隠れているDOMをみることができます。
+この時にも触ってみたかっただけなので、いざつくってみると設計が難しく、今おもえばデタラメな設計なので、そのものをあまり参考はしない方がいいです。これらは特に難しいことをしてつくったわけではなく、当日イベントにもきてたAddy Osmani氏の記事で紹介されている[YeomanのPolymerジェネレータのタスク](http://www.html5rocks.com/en/tutorials/webcomponents/yeoman/?redirect_from_locale=ja)を使えば非常に簡単です。
 
-もし見たことがなければ、上記を有効にした上でvideo要素などをInspectしてみてください。そこに隠れているDOMをみることができるはずです。
+```
+$ npm install -g yo
+$ npm install generator-polymer -g
+$ mkdir my-new-project && cd $_
+$ yo polymer
+```
+
+こういうのを叩いていくイメージです。（スライドにも書いてます）
+
+ちなみにGoogle Chromeを使っている場合は、最近のバージョンだと
+
+**Settings > General > Elements > Show Shadow DOM**
+
+を有効にすると、Inspectしたときに隠れているDOMをみることができます。先ほどの僕のつくったサンプルも、普通にHTMLのソースをみたときと、DevToolでInspectしたときと見比べるといいかもしれません。
+
+ブラウザのネイティブで実装されているvideo要素などをInspectしてみてください。それらにも隠れているDOMをみることができるはずです。
 
 Web Componentsに触れて良いとおもうのはまさにこういうところで、コントローラーUI付きでビデオを埋め込みたいときに、UIを頑張って作る、または深く構造を知る必要なく、`<video>`と`<source>`を組み合わせれば良いわけです。
 
@@ -38,6 +55,8 @@ Web Componentsに触れて良いとおもうのはまさにこういうところ
 もうひとつのサンプル、[iOS7のスイッチUI](http://hiloki.github.io/demo/frontrend_chrome/app/switch.html)を模したものです。
 
 これは次のようなマークアップでつくることができます。
+
+![](/images/try-web-components-and-polymer/01.png)
 
 ```
 <x-switch></x-switch>
@@ -78,16 +97,6 @@ input[type="checkbox"]:checked:after {
 </style>
 <input type="checkbox" />
 </template>
-<script>
-Polymer('x-switch', {
-  //applyAuthorStyles: true,
-  //resetStyleInheritance: true,
-  created: function() { },
-  enteredView: function() { },
-  leftView: function() { },
-  attributeChanged: function(attrName, oldVal, newVal) { }
-});
-</script>
 </polymer-element>
 ```
 
@@ -96,6 +105,8 @@ Polymer('x-switch', {
 このコンポーネントでは`input[type=checkbox]`といったセレクタで、通常であればブラウザデフォルトのチェックボックスすべてに影響してしまいます。
 
 ですが、サンプルを確認してもらうとわかる通り、このiOS7ライクなチェックボックスの前後にはブラウザデフォルトの見た目のままのチェックボックスが確認できるはずです。
+
+![](/images/try-web-components-and-polymer/02.png)
 
 つまりコンポーネント内で定義したスタイルは外に汚染することはありません。素晴らしいですね。
 
@@ -109,5 +120,5 @@ Polymer('x-switch', {
 
 ## というわけで
 
-本記事は[Frontrend Advent Calendar 2013](http://www.adventar.org/calendars/62)5日目の記事でした。  
+本記事は[Frontrend Advent Calendar 2013](http://www.adventar.org/calendars/62)の5日目の記事でした。  
 次は[Ginpeiさん](http://ginpen.com/)です。
