@@ -12,30 +12,36 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://website.com"
+			url: "http://inkdesign.jp"
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
-				'www.website.com',
-				'website.herokuapp.com'
+				'www.inkdesign.jp'
 			]
 
 			# The default title of our website
-			title: "Your Website"
+			title: "inkdesign"
 
 			# The website description (for SEO)
 			description: """
-				When your website appears in search results in say Google, the text here will be shown underneath your website's title.
+				Hiroki Tani is Front-end engineer, Writer & Speaker
 				"""
 
 			# The website keywords (for SEO) separated by commas
 			keywords: """
-				place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website
+				 web, design, development, writing, speaking
 				"""
 
 
 		# -----------------------------
 		# Helper Functions
+		getPreparedUrl: ->
+			# if we have a document url, then we should use that and suffix the site's url onto it
+			if @document.url
+				"#{@document.url} | #{@site.url}"
+			# if our document does not have it's own url, then we should just use the site's url
+			else
+				@site.url
 
 		# Get the prepared site/document title
 		# Often we would like to specify particular formatting to our page's title
@@ -80,6 +86,26 @@ docpadConfig = {
 			_.map scripts, (value) ->
 				return value.replace 'out', ''
 
+		# getIdForDocument: (document) ->
+		# 	hostname = url.parse(@site.url).hostname
+		# 	date = document.date.toISOString().split('T')[0]
+		# 	path = document.url
+		# 	"tag:#{hostname},#{date},#{path}"
+
+		# fixLinks: (content) ->
+		# 		baseUrl = @site.url
+		# 		regex = /^(http|https|ftp|mailto):/
+
+		# 		$ = cheerio.load(content)
+		# 		$('img').each ->
+		# 			$img = $(@)
+		# 			src = $img.attr('src')
+		# 			$img.attr('src', baseUrl + src) unless regex.test(src)
+		# 		$('a').each ->
+		# 			$a = $(@)
+		# 			href = $a.attr('href')
+		# 			$a.attr('href', baseUrl + href) unless regex.test(href)
+		# 		$.html()
 
 	# =================================
 	# DocPad Events
@@ -134,6 +160,15 @@ docpadConfig = {
 
 			# Chain
 			@
+	# =================================
+	# Plugins
+	
+	plugins:
+	  moment:
+	    formats: [
+	      {raw: 'date', format: 'MMM D, YYYY', formatted: 'humanDate'}
+	      {raw: 'date', format: 'YYYY-MM-DD', formatted: 'computerDate'}
+	    ]
 }
 
 # Export our DocPad Configuration

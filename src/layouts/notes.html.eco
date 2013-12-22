@@ -1,0 +1,13 @@
+---
+layout: 'default'
+---
+
+<article class="entry l-container">
+	<header class="entry__header">
+		<h1 class="entry__title"><%= @document.title %></h1>
+		<p class="entry__date brand-type"><i class="icon icon--drop"></i> <span class="quiet">Published on</span> <%= @document.humanDate %></h1>
+	</header>
+	<div class="entry__body">
+		<p><%- @content %></p>
+	</div>
+</article>
