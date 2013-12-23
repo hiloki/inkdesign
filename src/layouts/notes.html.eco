@@ -1,7 +1,6 @@
 ---
 layout: 'default'
 ---
-
 <article class="entry l-container">
 	<header class="entry__header">
 		<h1 class="entry__title"><%= @document.title %></h1>
@@ -9,5 +8,8 @@ layout: 'default'
 	</header>
 	<div class="entry__body">
 		<p><%- @content %></p>
+	</div>
+	<div class="entry__share">
+		Share on <a href="https://www.facebook.com/sharer/sharer.php?u=<%= @site.url + @document.url %>" target="_blank">Facebook</a>, <a href="https://twitter.com/intent/tweet?url=<%= @site.url + @document.url %>&via=hiloki&text=<%= @document.title %>" target="_blank">Twitter</a>
 	</div>
 </article>

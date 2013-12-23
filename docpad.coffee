@@ -1,5 +1,9 @@
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
+
+cheerio = require('cheerio')
+url = require('url')
+
 docpadConfig = {
 
 	# =================================
@@ -32,6 +36,26 @@ docpadConfig = {
 				 web, design, development, writing, speaking
 				"""
 
+		getIdForDocument: (document) ->
+		    hostname = url.parse(@site.url).hostname
+		    date = document.date.toISOString().split('T')[0]
+		    path = document.url
+		    "tag:#{hostname},#{date},#{path}"
+
+		fixLinks: (content) ->
+		    baseUrl = @site.url
+		    regex = /^(http|https|ftp|mailto):/
+
+		    $ = cheerio.load(content)
+		    $('img').each ->
+		        $img = $(@)
+		        src = $img.attr('src')
+		        $img.attr('src', baseUrl + src) unless regex.test(src)
+		    $('a').each ->
+		        $a = $(@)
+		        href = $a.attr('href')
+		        $a.attr('href', baseUrl + href) unless regex.test(href)
+		    $.html()
 
 		# -----------------------------
 		# Helper Functions

@@ -18,6 +18,7 @@
 <meta property="og:description" content="<%= @getPreparedDescription() %>">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:site_name" content="inkdesign.jp">
+<meta prefix="fb: http://ogp.me/ns/fb#" property="fb:admins" content="363191260415210">
 <meta name="msapplication-TileColor" content="#0f1f24" />
 <meta name="msapplication-TileImage" content="/apple-touch-icon-precomposed.png" />
 </head>
@@ -42,9 +43,10 @@
 			<li><a href="http://github.com/hiloki" title="Github"><i class="icon icon--github-circled"></i></a></li>
 		</ul>
 	</address>
-<!-- 	<div class="footlinks">
-		<p>RSS Feed</p>
-	</div> -->
+	<ul class="footlinks">
+		<li><a rel="alternate" type="application/rss+xml" href="/feed.xml">RSS</a></li>
+		<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+	</div>
 </footer>
 
 	<!-- DocPad Scripts + Our Own -->
