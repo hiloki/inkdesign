@@ -37,7 +37,7 @@ docpadConfig = {
 		# Helper Functions
 		getPreparedType: ->
 			if @document.url
-				"blog"
+				"article"
 			else
 				"website"
 
