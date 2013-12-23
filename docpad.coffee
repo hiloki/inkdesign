@@ -35,10 +35,16 @@ docpadConfig = {
 
 		# -----------------------------
 		# Helper Functions
+		getPreparedType: ->
+			if @document.url
+				"blog"
+			else
+				"website"
+
 		getPreparedUrl: ->
 			# if we have a document url, then we should use that and suffix the site's url onto it
 			if @document.url
-				"#{@document.url} | #{@site.url}"
+				"#{@site.url + @document.url}"
 			# if our document does not have it's own url, then we should just use the site's url
 			else
 				@site.url

@@ -12,7 +12,7 @@
 <link rel="shortcut icon" href="/icons/favicon.ico" />
 <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-precomposed.png" />
 <meta property="og:title" content="<%= @getPreparedTitle() %>">
-<meta property="og:type" content="website">
+<meta property="og:type" content="<%= @getPreparedType() %>">
 <meta property="og:url" content="<%= @getPreparedUrl() %>">
 <meta property="og:image" content="http://inkdesign.jp/images/ogp.png">
 <meta property="og:description" content="<%= @getPreparedDescription() %>">

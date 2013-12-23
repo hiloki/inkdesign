@@ -88,6 +88,18 @@ $tablet: 40em;
 
 先に紹介した記事ではあまり触れられていなかったスコープについて検証してみる。Sassなどではネストの中で変数に違う値が入れば、そちらが優先される。
 
+### HTML
+
+```html
+<h1>Default</h1>
+<div class="first">
+  <h1>First</h1>
+  <p>blah,blah,blah</p>
+</div>
+```
+
+### Sass
+
 ```scss
 $color: blue;
 
@@ -105,6 +117,8 @@ h1 {
 
 次のようになる。
 
+### CSS
+
 ```css
 h1 {
   color: blue;
@@ -115,7 +129,9 @@ h1 {
 }
 ```
 
-ではカスタムプロパティでの変数のスコープはどうなっているのか。同じようなコードを用意する。
+ではカスタムプロパティでの変数のスコープはどうなっているのか。同じようなコードを用意する。今度はSassではなくCSSだ。
+
+### CSS
 
 ```
 :root {
@@ -131,7 +147,7 @@ h1 {
 }
 ```
 
-この結果は[次のようになる](http://codepen.io/hiloki/pen/JgvIr)。
+この結果は次のようになる。
 
 <div class="entry__media">
 ![](/images/css-custom-property/02.png)
@@ -143,7 +159,7 @@ h1 {
 
 このアプローチは面白いなぁと思っていたところ、[@cssradar](https://twitter.com/cssradar)から、CompassのChrisが[インチキだとお怒り](https://gist.github.com/chriseppstein/8016527)であることを聞いた。
 
-その具体的な例として、先ほどのスコープのくだりで説明したコードをそのままMythに通してみる。そうすると次のようなコードになる。
+その具体的な例として、先ほどのスコープのくだりで説明したコードをそのままMythに通してみる。そうすると次のようなCSSになる。
 
 ```css
 body {
@@ -158,6 +174,10 @@ h1 {
   var-color: green;
 }
 ```
+  
+<div class="entry__media">
+![](/images/css-custom-property/03.png)
+</div>
 
 これは本来のカスタムプロパティの仕様として期待されるものではない。つまりはMythは一見はCSSの仕様通りに振るまいそうな打ち出し方であったものの実際には異なるということだ。
 そもそもMythの内部は、Sass、LESSに次いて使われているであろう[Stylus](http://learnboost.github.io/stylus/)の開発者である[TJがつくったRework](http://tjholowaychuk.com/post/44267035203/modular-css-preprocessing-with-rework)の機能を元にしている。その中の[変数](https://github.com/visionmedia/rework-vars)の機能での説明では下記のように補足されている。
