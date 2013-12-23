@@ -45,7 +45,7 @@
 		</ul>
 	</address>
 	<ul class="footlinks">
-		<li><a rel="alternate" type="application/rss+xml" href="/feed.xml">RSS</a></li>
+		<li><a rel="alternate" type="application/rss+xml" href="/feed.xml">Subscribe</a></li>
 		<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
 	</div>
 </footer>

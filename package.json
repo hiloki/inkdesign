@@ -46,7 +46,9 @@
     "underscore": "~1.4.3",
     "docpad-plugin-cleanurls": "~2.6.0",
     "docpad-plugin-moment": "~2.0.2",
-    "docpad-plugin-highlightjs": "~2.1.9"
+    "docpad-plugin-highlightjs": "~2.1.9",
+    "docpad-plugin-redirector": "~2.0.0",
+    "docpad-plugin-tagging": "~2.0.2"
   },
   "devDependencies": {
     "docpad-plugin-livereload": "2.x"

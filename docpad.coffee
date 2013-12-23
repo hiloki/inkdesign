@@ -23,6 +23,8 @@ docpadConfig = {
 				'www.inkdesign.jp'
 			]
 
+			author: "Hiroki Tani"
+
 			# The default title of our website
 			title: "inkdesign"
 
@@ -199,6 +201,25 @@ docpadConfig = {
 	      {raw: 'date', format: 'MMM D, YYYY', formatted: 'humanDate'}
 	      {raw: 'date', format: 'YYYY-MM-DD', formatted: 'computerDate'}
 	    ]
+	  redirector:
+	      redirects: 
+	          # source: destination
+	          "posts/2012-topentry/": "posts/notes/2012-topentry"
+	          "posts/bashmarks/": "posts/notes/bashmarks"
+	          "posts/css-custom-property/": "posts/notes/css-custom-property"
+	          "posts/css-preprocessor-shootout/": "posts/notes/css-preprocessor-shootout"
+	          "posts/css-preprocessor-styleguide/": "posts/notes/css-preprocessor-styleguide"
+	          "posts/gitignore/": "posts/notes/gitignore"
+	          "posts/gradient-imports-from-image/": "posts/notes/gradient-imports-from-image"
+	          "posts/Hayaku-changed-my-world/": "posts/notes/Hayaku-changed-my-world"
+	          "posts/inkdesign-on-ghpages/": "posts/notes/inkdesign-on-ghpages"
+	          "posts/jquery-applies-tel-number/": "posts/notes/jquery-applies-tel-number"
+	          "posts/jquery-color/": "posts/notes/jquery-color"
+	          "posts/less-new-colors/": "posts/notes/less-new-colors"
+	          "posts/open-file-by-subl/": "posts/notes/open-file-by-subl"
+	          "posts/Preprocessor-color-functions/": "posts/notes/Preprocessor-color-functions"
+	          "posts/pseudo-animation/": "posts/notes/pseudo-animation"
+	          "posts/try-web-components-and-polymer/": "posts/notes/try-web-components-and-polymer"
 }
 
 # Export our DocPad Configuration
