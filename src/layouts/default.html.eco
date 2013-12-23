@@ -8,6 +8,7 @@
 <meta name="keywords" content="<%= @getPreparedKeywords() %>" />
 <%- @getBlock('meta').toHTML() %>
 <%- @getBlock('styles').add(@getGruntedStyles()).toHTML() %>
+<link rel="alternate" type="application/rss+xml" href="/feed.xml">
 <link href="http://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
 <link rel="shortcut icon" href="/icons/favicon.ico" />
 <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-precomposed.png" />
