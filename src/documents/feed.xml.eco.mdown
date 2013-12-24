@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title><%= @site.title %></title>
-    <link href="<%= @site.url %>/feed.xml" rel="self"/>
-    <link href="<%= @site.url %>"/>
-    <updated><%= @site.date.toISOString() %></updated>
-    <author>
-        <name>Hiroki Tani</name>
-    </author>
-
-    <% for document in @getFilesAtPath('posts',[date: -1]).toJSON()[0..9]: %>
-    <entry>
-        <title><%= document.title %></title>
-        <link href="<%= @site.url %><%= document.url %>"/>
-        <updated><%= document.date.toISOString() %></updated>
-        <content type="html"><![CDATA[<%- @fixLinks(document.contentRenderedWithoutLayouts) %>]]></content>
-    </entry>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+    <title><%= @site.title %></title>
+    <link><%= @site.url %></link>
+    <atom:link href="<%= @site.url %>/feed.xml" rel="self" type="application/rss+xml" />
+    <description><%= @site.description %></description>
+    <language>ja</language>
+    <lastBuildDate>last modified Date(GMT)</lastBuildDate>
+    <% for document in @getFilesAtPath('posts',[date: -1]).toJSON()[0..9]: %>
+    <item>
+        <title><%= document.title %></title>
+        <link><%= @site.url %><%= document.url %></link>
+        <description><%= document.description %></description>
+        <pubDate><%= document.date.toISOString() %></pubDate>
+        <guid isPermaLink="true"><%= @site.url %><%= document.url %></guid>
+    </item>
     <% end %>
-</feed>
+    </channel>
+</rss>
