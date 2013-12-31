@@ -200,6 +200,7 @@ docpadConfig = {
 	    formats: [
 	      {raw: 'date', format: 'MMM D, YYYY', formatted: 'humanDate'}
 	      {raw: 'date', format: 'YYYY-MM-DD', formatted: 'computerDate'}
+	      {raw: 'date', format: 'ddd, DD MMM YYYY HH:mm:ss ZZ', formatted: 'feedDate'}
 	    ]
 	  redirector:
 	      redirects: 

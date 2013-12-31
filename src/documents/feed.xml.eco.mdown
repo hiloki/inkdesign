@@ -6,13 +6,12 @@
     <atom:link href="<%= @site.url %>/feed.xml" rel="self" type="application/rss+xml" />
     <description><%= @site.description %></description>
     <language>ja</language>
-    <lastBuildDate>last modified Date(GMT)</lastBuildDate>
     <% for document in @getFilesAtPath('posts',[date: -1]).toJSON()[0..9]: %>
     <item>
         <title><%= document.title %></title>
         <link><%= @site.url %><%= document.url %></link>
         <description><%= document.description %></description>
-        <pubDate><%= document.date.toISOString() %></pubDate>
+        <pubDate><%= document.feedDate %></pubDate>
         <guid isPermaLink="true"><%= @site.url %><%= document.url %></guid>
     </item>
     <% end %>
