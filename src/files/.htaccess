@@ -18,13 +18,13 @@
 #  github.com/rails/rails/commit/123eb25#commitcomment-118920
 # Use ChromeFrame if it's installed for a better experience for the poor IE folk
 
-<IfModule mod_headers.c>
-  Header set X-UA-Compatible "IE=Edge,chrome=1"
-  # mod_headers can't match by content-type, but we don't want to send this header on *everything*...
-  <FilesMatch "\.(js|css|gif|png|jpe?g|pdf|xml|oga|ogg|m4a|ogv|mp4|m4v|webm|svg|svgz|eot|ttf|otf|woff|ico|webp|appcache|manifest|htc|crx|oex|xpi|safariextz|vcf)$" >
-    Header unset X-UA-Compatible
-  </FilesMatch>
-</IfModule>
+# <IfModule mod_headers.c>
+#   Header set X-UA-Compatible "IE=Edge,chrome=1"
+#   # mod_headers can't match by content-type, but we don't want to send this header on *everything*...
+#   <FilesMatch "\.(js|css|gif|png|jpe?g|pdf|xml|oga|ogg|m4a|ogv|mp4|m4v|webm|svg|svgz|eot|ttf|otf|woff|ico|webp|appcache|manifest|htc|crx|oex|xpi|safariextz|vcf)$" >
+#     Header unset X-UA-Compatible
+#   </FilesMatch>
+# </IfModule>
 
 
 # ----------------------------------------------------------------------
@@ -50,15 +50,15 @@
 # hacks.mozilla.org/2011/11/using-cors-to-load-webgl-textures-from-cross-domain-images/
 # wiki.mozilla.org/Security/Reviews/crossoriginAttribute
 
-<IfModule mod_setenvif.c>
-  <IfModule mod_headers.c>
-    # mod_headers, y u no match by Content-Type?!
-    <FilesMatch "\.(gif|png|jpe?g|svg|svgz|ico|webp)$">
-      SetEnvIf Origin ":" IS_CORS
-      Header set Access-Control-Allow-Origin "*" env=IS_CORS
-    </FilesMatch>
-  </IfModule>
-</IfModule>
+# <IfModule mod_setenvif.c>
+#   <IfModule mod_headers.c>
+#     # mod_headers, y u no match by Content-Type?!
+#     <FilesMatch "\.(gif|png|jpe?g|svg|svgz|ico|webp)$">
+#       SetEnvIf Origin ":" IS_CORS
+#       Header set Access-Control-Allow-Origin "*" env=IS_CORS
+#     </FilesMatch>
+#   </IfModule>
+# </IfModule>
 
 
 # ----------------------------------------------------------------------
