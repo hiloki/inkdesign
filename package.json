@@ -51,7 +51,8 @@
     "cheerio": "~0.12.4"
   },
   "devDependencies": {
-    "docpad-plugin-livereload": "2.x"
+    "docpad-plugin-livereload": "2.x",
+    "docpad-plugin-ghpages": "~2.4.1"
   },
   "main": "node_modules/docpad/bin/docpad-server"
 }
