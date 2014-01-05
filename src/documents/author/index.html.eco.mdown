@@ -62,3 +62,7 @@ isPage: true
 	</section>
 -->
 </article>
+
+<nav class="pagination">
+	<p class="pagination__prev"><a href="/">Home</a></p>
+</nav>

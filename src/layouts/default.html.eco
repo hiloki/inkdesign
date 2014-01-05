@@ -9,7 +9,7 @@
 <%- @getBlock('meta').toHTML() %>
 <%- @getBlock('styles').add(@getGruntedStyles()).toHTML() %>
 <link rel="alternate" type="application/rss+xml" href="/feed.xml">
-<link href="http://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <link rel="shortcut icon" href="/icons/favicon.ico" />
 <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-precomposed.png" />
 <meta property="og:title" content="<%= @getPreparedTitle() %>">
@@ -38,7 +38,7 @@
 	<address class="author">
 		<a href="/author/"><img src="/images/hirokitani.jpg" class="author__image"></a>
 		<p class="author__name brand-type">Hiroki Tani</p>
-		<p class="author__description brand-type">Front-end Engineer, Writer & Speaker</p>
+		<p class="author__description brand-type brand-type--italic">Front-end Engineer, Writer & Speaker</p>
 		<ul class="elsewhere">
 			<li><a href="http://twitter.com/hiloki" title="Twitter"><i class="icon icon--twitter-circled"></i></a></li>
 			<li><a href="http://github.com/hiloki" title="Github"><i class="icon icon--github-circled"></i></a></li>

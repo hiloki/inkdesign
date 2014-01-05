@@ -5,8 +5,7 @@ $keyColor = #0f1f24;
 $accentColor = #C1371F;
 $subColor = mix($keyColor,#FFFFFF,75%);
 $quietColor = mix($keyColor,#FFFFFF,50%);
-$brandType = 'Dancing Script', cursive
-
+$brandType = 'Alegreya Sans', cursive
 /*
 # Foundation
 */
@@ -31,6 +30,9 @@ a {
     &:hover {
         color: mix($accentColor,#000000,75%);
     }
+}
+address {
+    font-style: normal;
 }
 
 /*
@@ -59,6 +61,9 @@ a {
 */
 .brand-type {
     font-family: $brandType;
+}
+.brand-type--italic {
+    font-style: italic;
 }
 
 /*
@@ -244,6 +249,14 @@ a {
             content: "・";
         }
     }
+}
+
+.pagination {
+    margin: 1em 0;
+    text-align: center;
+}
+.pagination__prev {
+    display: inline-block;
 }
 
 /*
