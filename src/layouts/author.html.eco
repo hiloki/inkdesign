@@ -26,24 +26,26 @@
 <body>
 <header id="the-header" role="banner">
 	<h1 class="logo site-title">
-		<a href="/"><img src="/images/symbol.svg" class="logo__symbol"></a>
-		<span class="logo__type brand-type">inkdesign</span>
+		<img src="/images/hirokitani.jpg" class="author__image">
+		<span class="logo__type brand-type">Hiroki Tani</span>
 	</h1>
 </header>
-<div id="the-content">
-	<%- @content %>
-</div>
-<div class="hr hr--blank l-container"></div>
-<footer id="the-footer" role="contentinfo">
-	<address class="author">
-		<a href="/author/"><img src="/images/hirokitani.jpg" class="author__image"></a>
+
+<!-- 	<address class="author">
+		<img src="/images/hirokitani.jpg" class="author__image">
 		<p class="author__name brand-type">Hiroki Tani</p>
 		<p class="author__description brand-type">Front-end Engineer, Writer & Speaker</p>
 		<ul class="elsewhere">
 			<li><a href="http://twitter.com/hiloki" title="Twitter"><i class="icon icon--twitter-circled"></i></a></li>
 			<li><a href="http://github.com/hiloki" title="Github"><i class="icon icon--github-circled"></i></a></li>
 		</ul>
-	</address>
+	</address> -->
+
+<div id="the-content">
+	<%- @content %>
+</div>
+<div class="hr hr--blank l-container"></div>
+<footer id="the-footer" role="contentinfo">
 	<ul class="footlinks">
 		<li><a rel="alternate" type="application/rss+xml" href="/feed.xml">Subscribe</a></li>
 		<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>

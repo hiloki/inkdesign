@@ -246,6 +246,48 @@ a {
     }
 }
 
+/*
+# Profile page
+*/
+.profile {}
+.profile__title {
+    margin-bottom: 0.2rem;
+    text-align: center;
+    font-size: 2.25rem;
+}
+
+.biography {}
+.biography__elsewhere {
+    font-size: 1rem;
+    .icon {
+        margin-right: 5px;
+    }
+    a {
+        color: inherit;
+        &:hover {
+            color: mix($accentColor,#000000,75%);
+        }
+    }
+}
+
+.speaking {}
+.speaking__title {
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: 1.5rem;
+    a {
+        color: inherit;
+        &:hover {
+            color: mix($accentColor,#000000,75%);
+        }
+    }
+}
+.speaking__event {
+    margin-top: 0.2em;
+    margin-left: 0; 
+    font-size: 0.8rem;
+}
+
 @import "icons.css.styl";
 @import "highlight.css.styl";
 
