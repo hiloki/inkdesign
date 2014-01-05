@@ -70,7 +70,7 @@ docpadConfig = {
 		getPreparedUrl: ->
 			# if we have a document url, then we should use that and suffix the site's url onto it
 			if @document.url
-				"#{@site.url + @document.url}/"
+				"#{@site.url + @document.url}"
 			# if our document does not have it's own url, then we should just use the site's url
 			else
 				@site.url
