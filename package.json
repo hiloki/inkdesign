@@ -47,7 +47,6 @@
     "docpad-plugin-cleanurls": "~2.6.0",
     "docpad-plugin-moment": "~2.0.2",
     "docpad-plugin-highlightjs": "~2.1.9",
-    "docpad-plugin-redirector": "~2.0.0",
     "cheerio": "~0.12.4"
   },
   "devDependencies": {

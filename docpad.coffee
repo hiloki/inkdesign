@@ -62,15 +62,15 @@ docpadConfig = {
 		# -----------------------------
 		# Helper Functions
 		getPreparedType: ->
-			if @document.url
+			if @document.title
 				"article"
 			else
-				"website"
+				"blog"
 
 		getPreparedUrl: ->
 			# if we have a document url, then we should use that and suffix the site's url onto it
-			if @document.url
-				"#{@site.url + @document.url}"
+			if @document.title
+				"#{@site.url + @document.url}/"
 			# if our document does not have it's own url, then we should just use the site's url
 			else
 				@site.url
@@ -202,25 +202,25 @@ docpadConfig = {
 	      {raw: 'date', format: 'YYYY-MM-DD', formatted: 'computerDate'}
 	      {raw: 'date', format: 'ddd, DD MMM YYYY HH:mm:ss ZZ', formatted: 'feedDate'}
 	    ]
-	  redirector:
-	      redirects: 
-	          # source: destination
-	          "posts/2012-topentry/": "posts/notes/2012-topentry"
-	          "posts/bashmarks/": "posts/notes/bashmarks"
-	          "posts/css-custom-property/": "posts/notes/css-custom-property"
-	          "posts/css-preprocessor-shootout/": "posts/notes/css-preprocessor-shootout"
-	          "posts/css-preprocessor-styleguide/": "posts/notes/css-preprocessor-styleguide"
-	          "posts/gitignore/": "posts/notes/gitignore"
-	          "posts/gradient-imports-from-image/": "posts/notes/gradient-imports-from-image"
-	          "posts/Hayaku-changed-my-world/": "posts/notes/Hayaku-changed-my-world"
-	          "posts/inkdesign-on-ghpages/": "posts/notes/inkdesign-on-ghpages"
-	          "posts/jquery-applies-tel-number/": "posts/notes/jquery-applies-tel-number"
-	          "posts/jquery-color/": "posts/notes/jquery-color"
-	          "posts/less-new-colors/": "posts/notes/less-new-colors"
-	          "posts/open-file-by-subl/": "posts/notes/open-file-by-subl"
-	          "posts/Preprocessor-color-functions/": "posts/notes/Preprocessor-color-functions"
-	          "posts/pseudo-animation/": "posts/notes/pseudo-animation"
-	          "posts/try-web-components-and-polymer/": "posts/notes/try-web-components-and-polymer"
+	  # redirector:
+	  #     redirects: 
+	  #         # source: destination
+	  #         "posts/2012-topentry/": "posts/notes/2012-topentry"
+	  #         "posts/bashmarks/": "posts/notes/bashmarks"
+	  #         "posts/css-custom-property/": "posts/notes/css-custom-property"
+	  #         "posts/css-preprocessor-shootout/": "posts/notes/css-preprocessor-shootout"
+	  #         "posts/css-preprocessor-styleguide/": "posts/notes/css-preprocessor-styleguide"
+	  #         "posts/gitignore/": "posts/notes/gitignore"
+	  #         "posts/gradient-imports-from-image/": "posts/notes/gradient-imports-from-image"
+	  #         "posts/Hayaku-changed-my-world/": "posts/notes/Hayaku-changed-my-world"
+	  #         "posts/inkdesign-on-ghpages/": "posts/notes/inkdesign-on-ghpages"
+	  #         "posts/jquery-applies-tel-number/": "posts/notes/jquery-applies-tel-number"
+	  #         "posts/jquery-color/": "posts/notes/jquery-color"
+	  #         "posts/less-new-colors/": "posts/notes/less-new-colors"
+	  #         "posts/open-file-by-subl/": "posts/notes/open-file-by-subl"
+	  #         "posts/Preprocessor-color-functions/": "posts/notes/Preprocessor-color-functions"
+	  #         "posts/pseudo-animation/": "posts/notes/pseudo-animation"
+	  #         "posts/try-web-components-and-polymer/": "posts/notes/try-web-components-and-polymer"
 }
 
 # Export our DocPad Configuration
