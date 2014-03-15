@@ -8,7 +8,7 @@ layout: 'default'
 		<h1 class="entry__title"><a href="<%= post.url %>"><%= post.title %></a></h1>
 		<p class="entry__date brand-type"><i class="icon icon--drop"></i> <span class="quiet">Published on</span> <%= post.humanDate %></h1>
 	</header>
-	<div class="entry__body">
+	<div class="entry__body entry__body--excerpt">
 		<p><%= post.description %></p>
 	</div>
 </article>
