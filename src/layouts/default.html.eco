@@ -16,7 +16,7 @@
 <meta property="og:title" content="<%= @getPreparedTitle() %>" />
 <meta property="og:type" content="<%= @getPreparedType() %>" />
 <meta property="og:url" content="<%= @getPreparedUrl() %>" />
-<meta property="og:image" content="http://inkdesign.jp/ogimage.png" />
+<meta property="og:image" content="http://inkdesign.jp/ogtomoe.png" />
 <meta property="og:site_name" content="inkdesign">
 <meta property="og:locale" content="ja_JP">
 <meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
