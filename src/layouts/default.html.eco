@@ -26,8 +26,8 @@
 <body>
 <header id="the-header" role="banner">
 	<h1 class="logo site-title">
-		<a href="/"><img src="/images/symbol.svg" class="logo__symbol"></a>
-		<span class="logo__type brand-type">inkdesign</span>
+		<a href="http://dr.inkdesign.jp"><img src="/images/tomoe.png" class="logo__symbol"></a>
+		<a href="http://dr.inkdesign.jp" class="logo__type brand-type" style="color:inherit">inkdesign?</a>
 	</h1>
 </header>
 <div id="the-content">
