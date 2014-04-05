@@ -8,10 +8,11 @@ isPage: true
 	<section class="profile__section">
 		<h2 class="profile__title brand-type">Biography</h2>
 		<div class="biography profile__body">
+			<p><img src="/images/author/tani.jpg" width="300" height="300"></p>
 			<p>谷 拓樹（たに ひろき）1982年生まれ。</p>
 			<p>株式会社サイバーエージェント<br/>
 フロントエンドエンジニア</p>
-			<p>中小企業向けのアプリケーション開発、スタートアップでのスマートフォンサイト制作などを経て、現在はスマートフォンアプリの開発、テクニカルディレクションを担当している。</p>
+			<p>中小企業向けのアプリケーション開発、スタートアップでのスマートフォンサイト制作などを経て、現在はスマートフォンアプリの開発、テクニカルディレクションを担当している。Frontrend、JS Girls、html5jなどのコミュニティ活動や講演活動、その他技術書の執筆もおこなう。著書に「<a href="http://www.amazon.co.jp/HTML5%EF%BC%8BCSS3%E3%81%A7%E4%BD%9C%E3%82%8B-%E9%AD%85%E3%81%9B%E3%82%8BiPhone%E3%82%B5%E3%82%A4%E3%83%88-iPhone-iPad-touch%E5%AF%BE%E5%BF%9C/dp/4899772750">HTML5＋CSS3で作る 魅せるiPhoneサイト</a>」など。</p>
 			<ul class="biography__elsewhere">
 				<li><a href="http://twitter.com/hiloki" title="Twitter"><i class="icon icon--twitter-circled"></i>twitter.com/hiloki</a></li>
 				<li><a href="http://github.com/hiloki" title="Github"><i class="icon icon--github-circled"></i>github.com/hiloki</a></li>
