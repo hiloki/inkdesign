@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on inkdesign</title>
+    <link>http://localhost:1313/tags/javascript/</link>
+    <description>Recent content in Javascript on inkdesign</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp-ja</language>
+    <lastBuildDate>Thu, 13 Dec 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>jQuery Color Pluginを触ってみる</title>
+      <link>http://localhost:1313/notes/jquery-color.html/</link>
+      <pubDate>Thu, 13 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/jquery-color.html/</guid>
+      <description>
+
+&lt;p&gt;※この記事は、&lt;a href=&#34;http://www.adventar.org/calendars/29&#34;&gt;軽めのjQuery Advent Calendar 2012&lt;/a&gt;の13日目の記事です。&lt;/p&gt;
+
+&lt;p&gt;jQuery Color というjQueryプラグインが、公式ブログで&lt;a href=&#34;http://blog.jquery.com/2012/11/23/jquery-color-2-1-1-released/&#34;&gt;先月末にアップデートがアナウンス&lt;/a&gt;されていた。&lt;/p&gt;
+
+&lt;p&gt;jQuery Colorというと、デフォルトのanimateメソッドでは対応していない、&lt;code&gt;color&lt;/code&gt;や&lt;code&gt;backgroundColor&lt;/code&gt;などのプロパティおよびその値もアニメーションさせるプラグイン。&lt;/p&gt;
+
+&lt;p&gt;今となってはCSS3のTransitions/Animationsで色を扱ったアニメーションなんかはできちゃうわけですが、地味にアップデート、バグフィックスされているということでニーズはきっとあるのでしょう。&lt;/p&gt;
+
+&lt;h2 id=&#34;触ってみる:d815c6d4a6b2d95678e15e7dde16b8c1&#34;&gt;触ってみる&lt;/h2&gt;
+
+&lt;p&gt;手っ取り早く、CDNからjQuery本体と、プラグインファイルを取ってきましょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;script src=&amp;quot;http://code.jquery.com/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;http://code.jquery.com/color/jquery.color-2.1.1.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そしてそのまま&lt;a href=&#34;https://github.com/jquery/jquery-color/blob/master/README.md&#34;&gt;README&lt;/a&gt;にあるサンプルを見ながらの軽い解説。&lt;a href=&#34;http://codepen.io/hiloki/full/CEJeo&#34;&gt;サンプルをCodepenにアップ&lt;/a&gt;したので、こちらで確認できます。&lt;/p&gt;
+
+&lt;p&gt;これが結局どういうことをやっているかというと、簡潔にいえば、animateメソッドで変化させる値は&lt;strong&gt;数値&lt;/strong&gt;でなければいけないので、&lt;code&gt;#FF0000&lt;/code&gt;みたいなHEX値を、&lt;code&gt;rgb(255,0,0)&lt;/code&gt;のようなRGB値にすることでアニメーションできるようにしている様子。&lt;/p&gt;
+
+&lt;p&gt;その他色々メソッドがある。例えばHSLAの値返したりとか。
+（CSSのHSLのことは、&lt;a href=&#34;http://ginpen.com/2012/12/01/colors/&#34;&gt;CSSでの色指定について。半透明とかキーワードとか、ご存知でした？ | Ginpen.com&lt;/a&gt;など参照。）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;var hsla = $.Color($(&amp;quot;#block&amp;quot;),&amp;quot;backgroundColor&amp;quot;).hsla();
+console.log(hsla);
+// [74, 0.6425120772946858, 0.5941176470588235, 1] 
+var hue = $.Color($(&amp;quot;#block&amp;quot;),&amp;quot;backgroundColor&amp;quot;).hue();
+console.log(hue);
+// 74 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;もうちょっと面白そうなサンプル:d815c6d4a6b2d95678e15e7dde16b8c1&#34;&gt;もうちょっと面白そうなサンプル&lt;/h2&gt;
+
+&lt;p&gt;こちらもサンプルが拝借します。。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://buildinternet.com/2009/09/its-a-rainbow-color-changing-text-and-backgrounds/&#34;&gt;Sam Dunn氏の記事&lt;/a&gt;より、Spectrumな表現をするサンプルです。こちらも&lt;a href=&#34;http://codepen.io/hiloki/full/Aqfuc&#34;&gt;サンプルはCodepen&lt;/a&gt;で。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;$(function() {  
+  
+  spectrum();  
+
+  function spectrum(){  
+    var hue = &#39;rgb(&#39; + (Math.floor(Math.random() * 256)) + &#39;,&#39; + (Math.floor(Math.random() * 256)) + &#39;,&#39; + (Math.floor(Math.random() * 256)) + &#39;)&#39;;  
+    $(&#39;#spectrum&#39;).animate( { backgroundColor: hue }, 1000);  
+    spectrum();  
+  }  
+  
+});  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;単純にランダムでRGB値を回しているというだけですが、こういうもできるよ、ってことで。&lt;/p&gt;
+
+&lt;h2 id=&#34;アドベントカレンダーは続く:d815c6d4a6b2d95678e15e7dde16b8c1&#34;&gt;アドベントカレンダーは続く&lt;/h2&gt;
+
+&lt;p&gt;次は&lt;a href=&#34;http://www.adventar.org/users/546&#34;&gt;toshimaru&lt;/a&gt;さんですね、よろしくおねがいします。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

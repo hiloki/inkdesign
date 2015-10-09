@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Misc on inkdesign</title>
+    <link>http://localhost:1313/tags/misc/</link>
+    <description>Recent content in Misc on inkdesign</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp-ja</language>
+    <lastBuildDate>Wed, 29 Oct 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/misc/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CSS設計の教科書出版イベントやります</title>
+      <link>http://localhost:1313/notes/uncle-css.html/</link>
+      <pubDate>Wed, 29 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/uncle-css.html/</guid>
+      <description>
+
+&lt;h2 id=&#34;メンテナブルであり続けるためのcss設計:51f50bde74801d63849108b9b270f8dd&#34;&gt;メンテナブルであり続けるためのCSS設計&lt;/h2&gt;
+
+&lt;div class=&#34;entry__media&#34;&gt;
+![](/images/posts/uncle-css/01.png)
+&lt;/div&gt;
+
+&lt;p&gt;7月に発売した&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4844336355/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=4844336355&amp;amp;linkCode=as2&amp;amp;tag=ink-22&#34;&gt;Web制作者のためのCSS設計の教科書&lt;/a&gt;の出版記念イベントとしては、ずいぶんと時間が経ってしまいましたが、大阪の&lt;a href=&#34;https://twitter.com/konitter&#34;&gt;CSSオジサン&lt;/a&gt;の主催で、11月8日（土）にイベントをおこなうことになりました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://inkdesign.jp/event/css-architecture/&#34;&gt;『Web制作者のためのCSS設計の教科書』出版記念イベント CSSオジサン #0&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://frontrend.github.io/blog/frontrend-in-osaka/&#34;&gt;Frontrend in Osaka&lt;/a&gt;でCSS設計についての講演をしたことがあり、今回は2度目で同じくCSS設計の話になります。&lt;/p&gt;
+
+&lt;div class=&#34;entry__media&#34;&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/26193237&#34; width=&#34;425&#34; height=&#34;355&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;この講演のときにもみっちりとCSS設計のテーマで話し、また書籍ではより深く、詳しく解説しています。&lt;/p&gt;
+
+&lt;p&gt;という中での今回のタイトル、&lt;strong&gt;『メンテナブルであり続けるためのCSS設計』&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;CSS設計としての基本的な考え方や、すでに多くの人に実践されているOOCSS、SMACSS、BEMなどの話に触れつつも、
+今回はいつもより多くの実践例などを紹介したいと考えています。&lt;/p&gt;
+
+&lt;p&gt;この数年関わってきたプロジェクトの中で実践したこと、失敗したこと、考えていることなど交えつつ、
+CSSにおける設計を考えるというのはどういうことか、というのを話そうと思います。&lt;/p&gt;
+
+&lt;p&gt;セミナーセッションは普段よりもやや短めですが、今回は他の濃いCSSオジサン達も交えながらのパネルディスカッション、そしてその後にはビアバッシュ形式の懇親会もあるので、参加される皆さんの気になるところに答えたいですね。&lt;/p&gt;
+
+&lt;p&gt;開催まであと少しですが、残席はまだあるので、都合のつく方は是非。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>本を2冊ほど書きました</title>
+      <link>http://localhost:1313/notes/bookbookbook.html/</link>
+      <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/bookbookbook.html/</guid>
+      <description>
+
+&lt;p&gt;2014年7月2日に&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4774165786/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4774165786&amp;linkCode=as2&amp;tag=ink-22&#34;&gt;フロントエンドエンジニア養成読本&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=ink-22&amp;l=as2&amp;o=9&amp;a=4774165786&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;、2014年7月24日に、&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4844336355/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4844336355&amp;linkCode=as2&amp;tag=ink-22&#34;&gt;Web制作者のためのCSS設計の教科書 モダンWeb開発に欠かせない「修正しやすいCSS」の設計手法&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=ink-22&amp;l=as2&amp;o=9&amp;a=4844336355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;という書籍を出しました。&lt;/p&gt;
+
+&lt;h2 id=&#34;フロントエンドエンジニア養成読本:ff48621de2474518069e60d2b2367b6f&#34;&gt;フロントエンドエンジニア養成読本&lt;/h2&gt;
+
+&lt;div class=&#34;entry__media&#34;&gt;
+&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4774165786/ref=as_li_ss_il?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4774165786&amp;linkCode=as2&amp;tag=ink-22&#34;&gt;&lt;img border=&#34;0&#34; src=&#34;http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4774165786&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=ink-22&#34; &gt;&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=ink-22&amp;l=as2&amp;o=9&amp;a=4774165786&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;前者は勤め先のフロントエンドエンジニア達で執筆、僕の担当章はCSS設計とWeb Componentsの入門部分です。全体を通して、そのタイトルの通りフロントエンド技術の入門的なところから、最後はWebRTCで締められるというなかなか面白く、これから勉強する、または新しい技術などをキャッチアップしたいというような方におすすめです。新人の教育のための書籍としても良いのではないでしょうか。実際自分にもし新人がつくようなことがあれば、この書籍を必ず読んでもらうことでしょう。&lt;/p&gt;
+
+&lt;h2 id=&#34;web制作者のためのcss設計の教科書:ff48621de2474518069e60d2b2367b6f&#34;&gt;Web制作者のためのCSS設計の教科書&lt;/h2&gt;
+
+&lt;div class=&#34;entry__media&#34;&gt;
+&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4844336355/ref=as_li_ss_il?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4844336355&amp;linkCode=as2&amp;tag=ink-22&#34;&gt;&lt;img border=&#34;0&#34; src=&#34;http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4844336355&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=ink-22&#34; &gt;&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=ink-22&amp;l=as2&amp;o=9&amp;a=4844336355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;あまり見かけない類の内容ですが、CSSの設計に関するこの数年のトピック、手法、それと僕がCSSを書くときに考えていることをこの1冊にまとめています。&lt;/p&gt;
+
+&lt;p&gt;この書籍を書くにあたってのことは、本のまえがきにも書いており、また後日に改めて記事を起こそうとおもっています。（初版ではいくつか誤字その他凡ミスなどがあるので、そのフォローも兼ねて&amp;hellip;）&lt;/p&gt;
+
+&lt;p&gt;自分でいうのもなんですが、CSSを書いている人であれば、読んでもらって損はしない1冊になったとおもっています。もちろんCSS設計のスペシャリストの方々にとっては、役立つ内容はあまり無いかもしれないんですが、それでもあるひとりのCSSデベロッパの考え方、ひとつのパターンとして読んでもらえるのでは、という意味でも損はしないのでは、という意味を含めています。&lt;/p&gt;
+
+&lt;h2 id=&#34;大変な4-5ヶ月でした:ff48621de2474518069e60d2b2367b6f&#34;&gt;大変な4,5ヶ月でした&lt;/h2&gt;
+
+&lt;p&gt;発売日を見れば察することもできそうですが、この2冊は並行して進めていました。&lt;/p&gt;
+
+&lt;p&gt;今思えば、我ながら無茶をし、そしてどうにか出版できたことは嬉しくおもいます。スケジュール以外で大変だったことは、どちらも書く領域は一緒なので、まったく同じことを書くわけにもいかず、とはいえ思想の話としてまったく違うことも書けず、というところで変な悩み方をしたところでしょうか。&lt;/p&gt;
+
+&lt;p&gt;今後、両書で書ききれなかったCSS設計とかの話とかは、ここで書いていければとおもっています。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>QCon Tokyo 2014 に登壇します。</title>
+      <link>http://localhost:1313/notes/qcon-tokyo.html/</link>
+      <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/qcon-tokyo.html/</guid>
+      <description>&lt;p&gt;2014年4月30日、&lt;a href=&#34;http://www.qcontokyo.com/&#34;&gt;QCon Tokyo 2014&lt;/a&gt;に登壇が決まりまして。&lt;/p&gt;
+
+&lt;p&gt;テーマは&lt;a href=&#34;http://events.html5j.org/conference/2013/11/sessions&#34;&gt;HTML5 Conference 2013&lt;/a&gt;のときと同じではありますが、内容はアップデートする予定。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.qcontokyo.com/program.html&#34;&gt;他のセッション&lt;/a&gt;がなんかすごすぎてアレなんですが、
+個人的な楽しみは同じトラックの&lt;a href=&#34;http://labs.ft.com/&#34;&gt;FT Labs&lt;/a&gt;の&lt;a href=&#34;https://twitter.com/triblondon&#34;&gt;Andrew Betts氏&lt;/a&gt;の講演ですね。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.qcontokyo.com/registration.html&#34;&gt;3/30まで早期割引&lt;/a&gt;だそうです。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sassのメガネに込められた秘密</title>
+      <link>http://localhost:1313/notes/the-secret-of-sass-glasses.html/</link>
+      <pubDate>Fri, 21 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/the-secret-of-sass-glasses.html/</guid>
+      <description>
+
+&lt;p&gt;セミナーのためにSassのことを色々調べていて気づいた。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://sass-lang.com/&#34;&gt;Sass&lt;/a&gt;のトップにある大きなメガネをよく見てほしい。&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+  
+    &lt;img src=&#34;http://localhost:1313/images/posts/the-secret-of-sass-glasses/01.png&#34; alt=&#34;Sassのメガネ&#34; /&gt;
+  
+  
+&lt;/figure&gt;
+
+&lt;/p&gt;
+
+&lt;p&gt;メガネの両端の光っているところをよくみると、&lt;/p&gt;
+
+&lt;div class=&#34;entry__media&#34;&gt;
+
+![](/images/posts/the-secret-of-sass-glasses/02.png)
+
+&lt;/div&gt;
+
+&lt;p&gt;コロン(:)とセミコロン(;)になってる！&lt;/p&gt;
+
+&lt;h2 id=&#34;ところでなぜメガネ:198cd2dfac974d41f6029f88a4cd08be&#34;&gt;ところでなぜメガネ？&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/File:Sass_Logo.gif&#34;&gt;もともとはお姉さん&lt;/a&gt;が印象的だったSassがなぜメガネなのかは謎。&lt;/p&gt;
+
+&lt;p&gt;想像する限りだと、少し釣り上がったメガネがSassy（生意気/偉そう）な感じがあるからとか、&lt;/p&gt;
+
+&lt;p&gt;あとはSassエヴァンジェリストであり、現在のSassのデザイン、ブランディングを手がける&lt;a href=&#34;http://vimeo.com/45897176&#34;&gt;Jina Bolton&lt;/a&gt;自身がメガネが印象的な女性であるからかもしれない。&lt;/p&gt;
+
+&lt;p&gt;軽く調べる限りではこのあたりの真実はわからなかったので、気になる人は調べると良いです。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2012年のinkdesign人気エントリー</title>
+      <link>http://localhost:1313/notes/2012-topentry.html/</link>
+      <pubDate>Sat, 29 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/2012-topentry.html/</guid>
+      <description>
+
+&lt;p&gt;2012年11月末から再開したので、全然記事も少ないけどそれらしいまとめエントリーを2012年の最後に。10本。&lt;/p&gt;
+
+&lt;h3 id=&#34;cssが速くかけるようになるsublime-text2-パッケージ-hayakuで-世界が変わるらしい-http-inkdesign-jp-notes-2012-11-27-hayaku-changed-my-world-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/27/Hayaku-changed-my-world.html&#34;&gt;CSSが速くかけるようになるSublime Text2 パッケージ Hayakuで、世界が変わるらしい&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;タイトルがやや釣り的なこともあってか、CSSerな方々が気になった様子。この記事を書くために触り始めたが、やっぱり面白く早い。&lt;/p&gt;
+
+&lt;h3 id=&#34;cssプリプロセッサでスタイルガイド-http-inkdesign-jp-notes-2012-12-07-css-preprocessor-styleguide-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/07/css-preprocessor-styleguide.html&#34;&gt;CSSプリプロセッサでスタイルガイド&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;来年はこのスタイルガイドのようなテーマの記事を書く予定。このStyleDocco自体の使い方ももうちょっと詳細に。&lt;/p&gt;
+
+&lt;h3 id=&#34;sublime-text2のプラグイン-zen-codingをemmetに変える-http-inkdesign-jp-notes-2012-11-27-zencoding-to-emmet-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/27/zencoding-to-emmet.html&#34;&gt;Sublime Text2のプラグイン、Zen codingをEmmetに変える&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Hayakuに近いエントリー。Zen Codingの現バージョンのEmmetの紹介。Hayakuとも併用できる。&lt;/p&gt;
+
+&lt;h3 id=&#34;スマートフォン端末向けにtel-を仕込む小技-http-inkdesign-jp-notes-2012-12-05-jquery-applies-tel-number-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/05/jquery-applies-tel-number.html&#34;&gt;スマートフォン端末向けにtel:を仕込む小技&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.adventar.org/calendars/29&#34;&gt;軽めのjQuery Advent Calendar 2012&lt;/a&gt;の５日目の記事。内容はそんなに役にはたたないけれど。&lt;/p&gt;
+
+&lt;h3 id=&#34;mac-os-xのターミナルからsublime-text2を立ち上げられるようにすると地味に便利-http-inkdesign-jp-notes-2012-11-29-open-file-by-subl-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/29/open-file-by-subl.html&#34;&gt;Mac OS XのターミナルからSublime Text2を立ち上げられるようにすると地味に便利&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;地味に便利がゆえに、地味な記事。でもやっておくと必ず使う、これ。&lt;/p&gt;
+
+&lt;h3 id=&#34;wordpressからjekyll-github-pageへ-http-inkdesign-jp-notes-2012-11-14-inkdesign-on-ghpage-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/14/inkdesign-on-ghpage.html&#34;&gt;WordPressからJekyll + Github pageへ&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;今のところ乗り換えてからの不満などもまったくなし。安定。&lt;/p&gt;
+
+&lt;h3 id=&#34;sass-less-stylusのcolor-functionsのコンパイル結果を比べてみた-http-inkdesign-jp-notes-2012-11-28-preprocessor-color-functions-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/28/Preprocessor-color-functions.html&#34;&gt;Sass,LESS,StylusのColor functionsのコンパイル結果を比べてみた&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;これはちゃんと元のコードの解説をしなさいと各所で怒られたので、2013年に書ければ。&lt;/p&gt;
+
+&lt;h3 id=&#34;擬似要素のcssアニメーションはinheritを使えば有効になる-http-inkdesign-jp-notes-2012-12-01-pseudo-animation-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/01/pseudo-animation.html&#34;&gt;擬似要素のCSSアニメーションはinheritを使えば有効になる&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;たまにハマりそうなネタ。アニメーション系の検証・記事を書きたい。&lt;/p&gt;
+
+&lt;h3 id=&#34;最近のlessの小話と新機能紹介-一部-http-inkdesign-jp-notes-2012-12-08-less-new-colors-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/08/less-new-colors.html&#34;&gt;最近のLESSの小話と新機能紹介（一部）&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;個人的に観て欲しい記事ではあったものの、そんなに飛ばず。地味だからね。&lt;/p&gt;
+
+&lt;h3 id=&#34;jquery-color-pluginを触ってみる-http-inkdesign-jp-notes-2012-12-13-jquery-color-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/13/jquery-color.html&#34;&gt;jQuery Color Pluginを触ってみる&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;アドベントカレンダーでノリで書いた2本目。これも用途はそんなにない。&lt;/p&gt;
+
+&lt;h2 id=&#34;2012年の振り返りと-2013年のこと:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;2012年の振り返りと、2013年のこと&lt;/h2&gt;
+
+&lt;p&gt;前半は&lt;a href=&#34;http://goodpatch.co&#34;&gt;Goodpatch&lt;/a&gt;として受託制作やいろんなウェブサービスのお手伝いをさせてもらい、
+今年の5月に転職し、デベロッパーとして心機一転、より現場的なところに力を注いだ2012年。&lt;/p&gt;
+
+&lt;p&gt;2013年も引き続きデベロッパーとして技術力を見につけていくことと、また講演活動などもできればとおもう。あとはOSSへの参加とか、翻訳とかもやっていきたい。&lt;/p&gt;
+
+&lt;p&gt;それではみなさん2013年もよろしくおねがいします。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

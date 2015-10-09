@@ -1,0 +1,318 @@
+    <!DOCTYPE html>
+<html lang="jp-ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="">
+		<meta name="description" content="I think design everywhere.">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>CSSの汎用クラスのつかいどころ &middot; inkdesign</title>
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://localhost:1313/about'>About</a>
+	
+
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>CSSの汎用クラスのつかいどころ</h1>
+                    <h2 class="headline">January 13, 2014</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>OOCSSをはじめとするCSS設計におけるモジュール指向のアプローチの話になると、下記のような単一プロパティで定義されたルールを組み合わせたものを指す、というような説明がされる場合がある。</p>
+
+<pre><code class="language-css">.size1of4 {
+  width: 25%;
+}
+
+.mrs {
+  margin-right: 10px;
+}
+
+.font-small {
+  font-size: 10px;
+}
+
+.text-left {
+  text-align: left;
+}
+</code></pre>
+
+<p>これらはUtilityとか、Helperとか、汎用クラスというように呼ばれ、あれば何かと便利なルールだ。</p>
+
+<p>どういうときに便利かというのは、唐突なデザイン変更要求などに、都度そのためのルールを定義するよりも、これらの汎用クラスの組み合わせで対応できるということが挙げられるだろう。</p>
+
+<pre><code>&lt;div class=&quot;mts text-center&quot;&gt;
+  &lt;img src=&quot;banner.png&quot; alt=&quot;キャンペーンバナー&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>これが本当に一時的に使われるものであれば許容範囲ではあると思うが、すべてのモジュールがこのように構築されていくと、混沌としたコードになることがある。</p>
+
+<pre><code class="language-css">.mr10 {
+  margin-right: 10px;
+}
+
+.mr11 {
+  margin-right: 11px;
+}
+
+.mr13 {
+  margin-right: 13px;
+}
+
+.mr15 {
+  margin-right: 15px;
+}
+
+/* etc,etc... */
+</code></pre>
+
+<p>対象のサイト、アプリケーションが数百、数千もの&rsquo;margin-right: 10px;&lsquo;を宣言しているような規模であれば、これをひとつのモジュールとしてしまうような方法はありかもしれない。が、多くのサイトはそんなことはない。いずれにせよ、1px刻みでルールが増えるような状態は健全ではないので、それはデザイナーと<del class="strike">殴りあう</del><ins>話しあう</ins>方が良いとは思う。</p>
+
+<p>で、ここからが本題。</p>
+
+<p>次のような<a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/">Mediaオブジェクト</a>がある。これをひとつのモジュールとして定義したい。</p>
+
+<div class="entry__media">
+  ![](/images/how-to-use-utility-classes/01.png)
+</div>
+
+<pre><code class="language-html">&lt;div class=&quot;media&quot;&gt;
+  &lt;img src=&quot;http://placesheen.com/88/88&quot; class=&quot;media__image&quot; /&gt;
+  &lt;div class=&quot;media__body&quot;&gt;Charlie Sheen&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-css">.media__image {
+  display: block;
+  float: left;
+  margin-right: 20px;
+}
+</code></pre>
+
+<p>注目してほしいところは、写真と本文の間のマージンである<code>margin-right: 20px;</code>の部分。<br />
+この部分を先ほどの汎用クラスとして置き換えるならこうなる。</p>
+
+<pre><code class="language-html">&lt;div class=&quot;media&quot;&gt;
+  &lt;img src=&quot;http://placesheen.com/88/88&quot; class=&quot;media__image mrm&quot; /&gt;
+  &lt;div class=&quot;media__body&quot;&gt;Charlie Sheen&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-css">.media__image {
+  display: block;
+  float: left;
+}
+.mrm { // Margin Right Medium
+  margin-right: 20px;
+}
+</code></pre>
+
+<p>このようにすれば、マージンが状況に応じて狭くしたいときも、<code>.mrs</code>などに置き換えれば<code>margin-right: 10px;</code>のようにすることができるだろう。</p>
+
+<p>これはこれで、そのように<strong>意図的に</strong>設計されているのであれば良いが、個人的には<strong>好ましいとは思わない</strong>。<br />
+なぜならオブジェクト/モジュールとしてそのルールを含めておくべきだと考えているからだ。</p>
+
+<p>では上記のように値を変える必要があるならばどのようにするか。</p>
+
+<pre><code class="language-html">&lt;div class=&quot;media&quot;&gt;
+  &lt;img src=&quot;http://placesheen.com/88/88&quot; class=&quot;media__image media__image--small&quot; /&gt;
+  &lt;div class=&quot;media__body&quot;&gt;Charlie Sheen&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-css">.media__image {
+  display: block;
+  float: left;
+  margin-right: 20px;
+}
+.media__image--small { // Modifier
+  margin-right: 10px;
+}
+</code></pre>
+
+<p><code>.media__image</code>のモディファイア（修飾パターン）として、<code>.media__image--small</code>で定義する、というアプローチだ。</p>
+
+<p>またはオブジェクト全体として小さめのサイズのものをつくるというならば、次のようなパターンもある。</p>
+
+<pre><code class="language-html">&lt;div class=&quot;media media--small&quot;&gt;
+  &lt;img src=&quot;http://placesheen.com/88/88&quot; class=&quot;media__image&quot; /&gt;
+  &lt;div class=&quot;media__body&quot;&gt;Charlie Sheen&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-css">.media--small media__image {
+  margin-right: 10px;
+}
+</code></pre>
+
+<p>この場合は<code>.media</code>のモディファイアとして、<code>.media--small</code>を定義し、その子である<code>.media__image</code>をスタイルを調整している。</p>
+
+<p>これがもちろん<strong>すべてのケースに置いて正しいとはいえない</strong>のだが、モジュール設計においては、単純にルールを再利用したいという理由だけで汎用クラスをその中に組み込むべきではない、と考えている。</p>
+
+<p>一方で<strong>汎用クラスが使える</strong>ケースもある。それは異なるモジュール間でのレイアウトのために使われるような時だ。</p>
+
+<pre><code class="language-html">&lt;div class=&quot;photo mbs&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;media mbm&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;comment&quot;&gt;...&lt;/div&gt;
+</code></pre>
+
+<p>これも設計や実装によりけりだが、モジュール間のレイアウト関係に関するルールは、そのモジュール自体には持たせない方が良いこともある。つまりは次のように、<code>.media</code>モジュールに対し、<code>margin-bottom: 10px</code>といった値を持たせるべきではない、ということだ。</p>
+
+<pre><code class="language-css">.media {
+  /* Some rules */
+  margin-bottom: 10px;
+}
+</code></pre>
+
+<p>このようにすべき、という兆しは、次のようなルールがいたるところで見えてきたときだ。</p>
+
+<pre><code class="language-html">&lt;div class=&quot;media mb0&quot;&gt;...&lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-css">.media {
+  /* Some rules */
+  margin-bottom: 10px;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+</code></pre>
+
+<p>これは<code>.media</code>に<code>margin-bottom</code>を持たせるべきではなかった、というのが明らかになっている。</p>
+
+<h2 id="まとめ:5e40d70f414d28d3e6a832b15d16e2b4">まとめ</h2>
+
+<p>こういう話をするたびに付け加えるのは、<strong>これがすべてのケースにおいて正しい</strong>わけではないということ。こういうことを一応書いておかないと、どこかのBEMのように変なひとり歩きをすることがあるので。</p>
+
+<p>あと加えて汎用クラスを使った<a href="http://t32k.me/mol/log/the-perfect-css-i-thought/">きゅうきょくのしーえしゅえしゅ</a>もあるが、これはこれで非常に面白い。  このフレームワークが誕生した経緯と、その成果を目にしているものとしては素晴らしいアプローチと評価する反面、下手にこのアプローチを採用することは、本記事でも書いたとおり、混沌しか生み出さないこともあるので気をつけよう。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/hiloki">
+                        <img class="avatar" src="http://localhost:1313/images/avatar.png">
+                        <div>
+                            <span class="dark"></span>
+                            <span></span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fnotes%2fhow-to-use-utility-classes.html%2f - CSS%e3%81%ae%e6%b1%8e%e7%94%a8%e3%82%af%e3%83%a9%e3%82%b9%e3%81%ae%e3%81%a4%e3%81%8b%e3%81%84%e3%81%a9%e3%81%93%e3%82%8d by @hiloki"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/uncle-css.html/">CSS設計の教科書出版イベントやります<aside class="dates">Oct 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bookbookbook.html/">本を2冊ほど書きました<aside class="dates">Sep 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/qcon-tokyo.html/">QCon Tokyo 2014 に登壇します。<aside class="dates">Mar 15</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/the-secret-of-sass-glasses.html/">Sassのメガネに込められた秘密<aside class="dates">Feb 21</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/sass-at-root.html/">Sass3.3の@at-rootで親のルールを指定する<aside class="dates">Feb 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bem__name-convention--is-smart.html/">BEMの命名規則は賢い<aside class="dates">Jan 23</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-a-css-diamond-is-made.html/">CSSアニメーションでひし形表現を説明してみた<aside class="dates">Jan 7</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/diamond-thumbnail.html/">ひし型のサムネイルをCSSでつくる<aside class="dates">Jan 5</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2015 
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

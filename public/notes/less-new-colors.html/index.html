@@ -1,0 +1,288 @@
+    <!DOCTYPE html>
+<html lang="jp-ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="">
+		<meta name="description" content="I think design everywhere.">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>最近のLESSの小話と新機能紹介（一部） &middot; inkdesign</title>
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://localhost:1313/about'>About</a>
+	
+
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>最近のLESSの小話と新機能紹介（一部）</h1>
+                    <h2 class="headline">December 8, 2012</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>※この記事は、<a href="http://www.adventar.org/calendars/1">CSS Preprocessor Advent Calendar 2012</a>の7日目の記事の<strong>おまけ</strong>です。</p>
+
+<p>CSSプリプロセッサ（CSSメタ言語）は、<a href="http://sass-lang.com/">Sass</a>が人気かつ、アップデートも頻繁、新機能増えてる！みたいな空気を感じたりするんですが、<a href="http://lesscss.org/">LESS</a>もがんばってます。</p>
+
+<h2 id="開発の停滞:81353c15bcf702332af50716dbf1c4b9">開発の停滞</h2>
+
+<p>5ヶ月ほど前に<a href="http://crunchapp.net/">Crunch</a>というLESS対応エディタを開発しているMatthew Dean氏が、</p>
+
+<blockquote>
+<p>LESSの開発止まってますやん。それに比べてSassはめっちゃ更新してんで。</p>
+
+<p><a href="https://github.com/cloudhead/less.js/issues/867">Is LESS in need of support?</a></p>
+</blockquote>
+
+<p>というissueをあげた。</p>
+
+<p>それに対し、開発者のAlexis Sellier氏（<a href="http://cloudhead.io/）が同issueにて、[このように](https://github.com/cloudhead/less.js/issues/867">cloudhead</a>コメントをあげた。</p>
+
+<blockquote>
+<p>他にやることあるから、今LESSに割く時間ありませんわー（略）</p>
+
+<p><a href="https://github.com/cloudhead/less.js/issues/867#issuecomment-7036574">https://github.com/cloudhead/less.js/issues/867#issuecomment-7036574</a></p>
+</blockquote>
+
+<p>なんていうこともあったものの、<a href="https://github.com/agatronic">agatronic</a>氏を中心に、LESSを愛する有志たちによって、現在ぼちぼちとメンテされている様子。</p>
+
+<h2 id="最近のless:81353c15bcf702332af50716dbf1c4b9">最近のLESS</h2>
+
+<p>最近のLESSの話題の目玉としては、<a href="http://webtech-walker.com/archive/2012/12/less_extend.html">アドベントカレンダー初日に@hokacchaが書いてくれた</a>、LESSにおける@extendの機能でしょうか。</p>
+
+<p>SassがLESSに大きく差をつけた機能のひとつではあるのですが、これをなんと我らが@hokacchaが書いてくれたわけです。そこにシビれる、あこがれる。</p>
+
+<p>その進捗などは先の記事を見ていただくとして、他にアップデートされているものを少し紹介していく。</p>
+
+<p><a href="https://github.com/cloudhead/less.js/blob/master/CHANGELOG.md">CHANGELOG</a>の1.3.1（2012-10-18 アップデート）から色々と追加された色関係のfunctionをピックアップ。
+（強化するのはそこの機能じゃないんじゃ、という気もしないでもないですが）</p>
+
+<h2 id="色関係の関数が盛りだくさん:81353c15bcf702332af50716dbf1c4b9">色関係の関数が盛りだくさん。</h2>
+
+<p>追加されたのは下記。</p>
+
+<ul>
+<li>red</li>
+<li>green</li>
+<li>blue</li>
+<li>tint</li>
+<li>shade</li>
+<li>multiply</li>
+<li>screen</li>
+<li>overlay</li>
+<li>softlight</li>
+<li>hardlight</li>
+<li>difference</li>
+<li>exclusion</li>
+<li>average</li>
+<li>negation</li>
+<li>contrast</li>
+</ul>
+
+<p>この中から後半部分の<strong>Blending modes</strong>と呼ばれるFunctionをいくつかピックアップする。Blending modesは、Photoshopでいうところの<strong>レイヤーの描画モード</strong>みたいなものだ。おそらくPhotoshopのUIの言語設定を変えれば、これらの単語が表示されるはず。今回紹介するものがそれらツールとまったく同じアルゴリズムかはわからないが、おそらくはこれらを元にしてつくられたFunctionではないかとおもう。</p>
+
+<p>これらのFunctionは、第一引数と第二引数の色を掛け合わせるなどしてブレンドする。</p>
+
+<h3 id="multiply:81353c15bcf702332af50716dbf1c4b9">multiply</h3>
+
+<p>Photoshopでいうところの<strong>乗算</strong>。</p>
+
+<pre><code class="language-css">div {
+  background-color: multiply(@colorA,@colorB);
+}
+</code></pre>
+
+<h3 id="screen:81353c15bcf702332af50716dbf1c4b9">screen</h3>
+
+<p>Photoshopでいうところの<strong>スクリーン</strong>。</p>
+
+<pre><code class="language-css">div {
+  background-color: screen(@colorA,@colorB);
+}
+</code></pre>
+
+<h3 id="overlay:81353c15bcf702332af50716dbf1c4b9">overlay</h3>
+
+<p>Photoshopでいうところの<strong>オーバーレイ</strong>。</p>
+
+<pre><code class="language-css">div {
+  background-color: overlay(@colorA,@colorB);
+}
+</code></pre>
+
+<h3 id="hardlight:81353c15bcf702332af50716dbf1c4b9">hardlight</h3>
+
+<p>Photoshopでいうところの<strong>ハードライト</strong>。</p>
+
+<pre><code class="language-css">div {
+  background-color: hardlight(@colorA,@colorB);
+}
+</code></pre>
+
+<h3 id="difference:81353c15bcf702332af50716dbf1c4b9">difference</h3>
+
+<p>Photoshopでいうところの<strong>差の絶対値</strong>。</p>
+
+<pre><code class="language-css">div {
+  background-color: difference(@colorA,@colorB);
+}
+</code></pre>
+
+<h3 id="average:81353c15bcf702332af50716dbf1c4b9">average</h3>
+
+<p>Photoshopでは存在しないかもしれないが、Fireworksでいうところの<strong>平均</strong>。</p>
+
+<pre><code class="language-css">div {
+  background-color: average(@colorA,@colorB);
+}
+</code></pre>
+
+<h3 id="一応サンプル:81353c15bcf702332af50716dbf1c4b9">一応サンプル</h3>
+
+<p>StyleDoccoでつくった<a href="http://localhost:1313/demo/less-new-colors/less.html">サンプルページ</a>も用意しておく。<a href="http://localhost:1313/notes/2012/12/07/css-preprocessor-styleguide.html">StyleDoccoについてはこちら</a>を参照してほしい。<sup class="footnote-ref" id="fnref:81353c15bcf702332af50716dbf1c4b9:styledocco-less"><a rel="footnote" href="#fn:81353c15bcf702332af50716dbf1c4b9:styledocco-less">1</a></sup></p>
+
+<h2 id="続きはcss-nite-lp26で-たぶん:81353c15bcf702332af50716dbf1c4b9">続きはCSS Nite LP26で！（たぶん）</h2>
+
+<p>2013年1月12日（土）に開催される、<a href="http://lp26.cssnite.jp/">CSS Nite LP, Disk 26「CSS Preprocessor Shootout」</a>では<strong>LESS</strong>についての話をする予定なので、本記事で紹介しなかった関数も紹介するかもしれません。しないかもしれません。</p>
+
+<p>残席残りわずかなようですが、興味がある方はぜひ。</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:81353c15bcf702332af50716dbf1c4b9:styledocco-less">このように、LESSもそのままStyleDoccoに放り込める。
+ <a class="footnote-return" href="#fnref:81353c15bcf702332af50716dbf1c4b9:styledocco-less"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/hiloki">
+                        <img class="avatar" src="http://localhost:1313/images/avatar.png">
+                        <div>
+                            <span class="dark"></span>
+                            <span></span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fnotes%2fless-new-colors.html%2f - %e6%9c%80%e8%bf%91%e3%81%aeLESS%e3%81%ae%e5%b0%8f%e8%a9%b1%e3%81%a8%e6%96%b0%e6%a9%9f%e8%83%bd%e7%b4%b9%e4%bb%8b%ef%bc%88%e4%b8%80%e9%83%a8%ef%bc%89 by @hiloki"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/uncle-css.html/">CSS設計の教科書出版イベントやります<aside class="dates">Oct 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bookbookbook.html/">本を2冊ほど書きました<aside class="dates">Sep 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/qcon-tokyo.html/">QCon Tokyo 2014 に登壇します。<aside class="dates">Mar 15</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/the-secret-of-sass-glasses.html/">Sassのメガネに込められた秘密<aside class="dates">Feb 21</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/sass-at-root.html/">Sass3.3の@at-rootで親のルールを指定する<aside class="dates">Feb 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bem__name-convention--is-smart.html/">BEMの命名規則は賢い<aside class="dates">Jan 23</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-to-use-utility-classes.html/">CSSの汎用クラスのつかいどころ<aside class="dates">Jan 13</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-a-css-diamond-is-made.html/">CSSアニメーションでひし形表現を説明してみた<aside class="dates">Jan 7</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/diamond-thumbnail.html/">ひし型のサムネイルをCSSでつくる<aside class="dates">Jan 5</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2015 
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

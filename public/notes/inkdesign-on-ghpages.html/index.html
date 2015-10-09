@@ -1,0 +1,187 @@
+    <!DOCTYPE html>
+<html lang="jp-ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="">
+		<meta name="description" content="I think design everywhere.">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>WordPressからJekyll &#43; Github pageへ &middot; inkdesign</title>
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://localhost:1313/about'>About</a>
+	
+
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>WordPressからJekyll &#43; Github pageへ</h1>
+                    <h2 class="headline">November 14, 2012</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>長年WordPressでサイト、ブログを運用していたが、なんとなくGithub Pageでの運用に移行した。</p>
+
+<p><a href="http://jekyllrb.com/">Jekyll</a>というRubyの静的なHTMLのジェネレータでページをつくり、GitでGithub上のページ機能に反映させる、という流れ。ちらほらこの形式に変えている知人のブログもいくつかある。</p>
+
+<p><ins datetime="2013-12-22">
+※現在はJekyllと同じような、Node.js製ジェネレータの<a href="http://docpad.org/">DocPad</a>に移行しています。
+</ins></p>
+
+<h2 id="jekyllの概要:73ea1a28b0ed5fce4390aa20ab5f93bf">Jekyllの概要</h2>
+
+<p>Jekyllはコンテンツを更新するための管理画面があるといった、いわゆるWordPress的なCMS、ブログシステムではなく、コンテンツページを一枚一枚つくってアップをしていくような工程で更新する。</p>
+
+<p>Jekyllについては<a href="http://css.studiomohawk.com/jekyll/2011/06/11/jekyll/">CSS Radar</a>の記事も参照してほしい。とりあえず色々な機能はつけず、最低限の仕組みだけで構築したので、追々記事としてまとめられたらと考えている。</p>
+
+<h2 id="wordpressから移行した理由:73ea1a28b0ed5fce4390aa20ab5f93bf">WordPressから移行した理由</h2>
+
+<p>WordPressでも別に問題という問題もないが、単純なブログに使うには機能が多すぎる。
+多すぎるといっても、それらを必ず使う必要があるわけでもないし、今ではインストール、セットアップも対した手間ではない。もっと楽をしたければ<a href="http://wordpress.com/">WordPress.com</a>を使ってもよかった。</p>
+
+<p>ということでこれについてはひとつの理由ではあるものの、大きな動機になっているわけではない。
+ではなぜかというと、単純に<strong>今までと違うことをしてみよう</strong>、ということくらい。</p>
+
+<p>これは勉強のため、ともいえるが直接役に立つというわけでもない。実際業務でRubyを使うことは基本的になく、<a href="http://sass-lang.com/">Sass</a>を扱うなり、gemで何かをインストールとかそういう程度。
+ただこういうシステムがあるということを知っているか、知っていないかというのは大事で、知っていて損はない。浅く広く、色々と知っていることは悪くない。もちろんWordPressを個人で使って、業務や案件でできないことを深掘りするのも全然悪くないが、浅く広く、それが自分にとって良いと考えている。</p>
+
+<h2 id="せっかくなのでホスティングサービスも変更:73ea1a28b0ed5fce4390aa20ab5f93bf">せっかくなのでホスティングサービスも変更</h2>
+
+<p>今回はホスティングサービスを<a href="http://pages.github.com/">Github Pages</a>にした。これについても、Jekyllで生成した静的なHTMLファイルをアップロードすれば、一般的なレンタルサーバーなどでも問題なく使えるが、やはりこれまでと違うことをしよう、ということで変更した。ちなみにサーバーも<a href="http://vps.sakura.ad.jp/">さくらVPS</a>で自分で構築してみるとか、<a href="http://aws.amazon.com/jp/s3/">Amazon S3</a>を使ってみるとか、そういうことも考えていたが今回はGithubにした。Github Pagesに関してもまた今後別の記事にしようとおもう。</p>
+
+<h2 id="とにかく新しいことを:73ea1a28b0ed5fce4390aa20ab5f93bf">とにかく新しいことを</h2>
+
+<p>使うか（使えるか）、使わないか（使えないか）はともかくとして、知っているか知っていないかであれば、知っている方が得なことがある。あとは新しいことをやるというのは面白い。</p>
+
+<p>数ヶ月にブログを復帰し、ちゃんと継続するかどうかは不安であるけれどもこの形で継続できればとおもう。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/hiloki">
+                        <img class="avatar" src="http://localhost:1313/images/avatar.png">
+                        <div>
+                            <span class="dark"></span>
+                            <span></span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fnotes%2finkdesign-on-ghpages.html%2f - WordPress%e3%81%8b%e3%82%89Jekyll%20%2b%20Github%20page%e3%81%b8 by @hiloki"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/uncle-css.html/">CSS設計の教科書出版イベントやります<aside class="dates">Oct 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bookbookbook.html/">本を2冊ほど書きました<aside class="dates">Sep 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/qcon-tokyo.html/">QCon Tokyo 2014 に登壇します。<aside class="dates">Mar 15</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/the-secret-of-sass-glasses.html/">Sassのメガネに込められた秘密<aside class="dates">Feb 21</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/sass-at-root.html/">Sass3.3の@at-rootで親のルールを指定する<aside class="dates">Feb 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bem__name-convention--is-smart.html/">BEMの命名規則は賢い<aside class="dates">Jan 23</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-to-use-utility-classes.html/">CSSの汎用クラスのつかいどころ<aside class="dates">Jan 13</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-a-css-diamond-is-made.html/">CSSアニメーションでひし形表現を説明してみた<aside class="dates">Jan 7</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/diamond-thumbnail.html/">ひし型のサムネイルをCSSでつくる<aside class="dates">Jan 5</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2015 
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

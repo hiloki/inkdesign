@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on inkdesign</title>
+    <link>http://localhost:1313/tags/software/</link>
+    <description>Recent content in Software on inkdesign</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp-ja</language>
+    <lastBuildDate>Thu, 29 Nov 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mac OS XのターミナルからSublime Text2を立ち上げられるようにすると地味に便利</title>
+      <link>http://localhost:1313/notes/open-file-by-subl.html/</link>
+      <pubDate>Thu, 29 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/open-file-by-subl.html/</guid>
+      <description>
+
+&lt;h2 id=&#34;ターミナルからsublime-text2を起動する:3d499e8cabe5cb611ad7efdc0e9dc65a&#34;&gt;ターミナルからSublime Text2を起動する&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.sublimetext.com/docs/2/osx_command_line.html&#34;&gt;OS X Command Line - Sublime Text 2 Documentation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ここ見れば分かるって話なんですが、なんのこっちゃ、っていう人もいるでしょうから、日本語で解説していくことにする。&lt;/p&gt;
+
+&lt;p&gt;CSSプリプロセッサをコマンドラインツールで実行してたり、&lt;a href=&#34;http://gruntjs.com/&#34;&gt;Grunt&lt;/a&gt;を使い始めたー、GitもGUIは使ってませんー、という人で、なおかつSublime Text2を使っている人、という狭いんだか広いんだかわからない層向けになるのはご容赦ください。&lt;/p&gt;
+
+&lt;h2 id=&#34;sublime-text2でプロジェクトディレクトリをどう展開してますか:3d499e8cabe5cb611ad7efdc0e9dc65a&#34;&gt;Sublime Text2でプロジェクトディレクトリをどう展開してますか？&lt;/h2&gt;
+
+&lt;p&gt;多くの場合、さぁ作業するぞ、となると該当のプロジェクトの作業ディレクトリの中にあるファイルをいじくるわけですが、Sublime Text２ユーザーの人はどのようにはじめてますか？&lt;/p&gt;
+
+&lt;h3 id=&#34;ディレクトリをサイドバーにガっと放り込む:3d499e8cabe5cb611ad7efdc0e9dc65a&#34;&gt;ディレクトリをサイドバーにガっと放り込む&lt;/h3&gt;
+
+&lt;p&gt;新規に開いたウィンドウに、Finderからドラッグ&amp;amp;ドロップでガっと放り込めば、そのディレクトリがサイドバーに登録され、中のファイルをツリー上に展開することができる。全然それも良しでしょう。&lt;/p&gt;
+
+&lt;h3 id=&#34;sublime-text2のprojectとして管理する:3d499e8cabe5cb611ad7efdc0e9dc65a&#34;&gt;Sublime Text2のProjectとして管理する&lt;/h3&gt;
+
+&lt;p&gt;ウィンドウにプロジェクトの作業ファイルが展開している状態で、Sublime Text2のメニューにある&lt;strong&gt;Project&lt;/strong&gt;から、&lt;strong&gt;Save Project As&amp;hellip;&lt;/strong&gt;することで、その状態をプロジェクトという単位でSublime Text2が記録してくれるようになる。&lt;/p&gt;
+
+&lt;p&gt;プロジェクトファイルは、&lt;code&gt;.sublime-project&lt;/code&gt;、&lt;code&gt;.sublime-workspace&lt;/code&gt;という名前で保存する。これらはそのプロジェクトのルートとかに保存してもいいし、全然別のところに保存してもいい。例えば全然違うところに&lt;strong&gt;SublimeProjects&lt;/strong&gt;みたいな名前のフォルダを作り、そこに保存しても構わない。&lt;/p&gt;
+
+&lt;p&gt;どこにそのファイルがあろうが、&lt;strong&gt;Project&lt;/strong&gt;から&lt;strong&gt;Switch Project in Window&lt;/strong&gt;、または&lt;kbd&gt;Command + Control + P&lt;/kbd&gt;などをすれば、プロジェクトの切り替えダイアログが出る。そこから選べば、現在開いているウィンドウが、別のプロジェクトのディレクトリへと切り替わる。これもかなり便利。&lt;/p&gt;
+
+&lt;h2 id=&#34;さて本題のターミナルからsublime-text2を起動する話:3d499e8cabe5cb611ad7efdc0e9dc65a&#34;&gt;さて本題のターミナルからSublime Text2を起動する話&lt;/h2&gt;
+
+&lt;p&gt;最近はGit&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3d499e8cabe5cb611ad7efdc0e9dc65a:Git&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3d499e8cabe5cb611ad7efdc0e9dc65a:Git&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;なり、Gruntなりを使うことが多いので、作業をはじめるときにはまずターミナル&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3d499e8cabe5cb611ad7efdc0e9dc65a:Terminal&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3d499e8cabe5cb611ad7efdc0e9dc65a:Terminal&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;を立ち上げる。すると、次のアクションはエディタを開くことだが、いちいちアプリケーションから開くなり、別のランチャーソフトで起動するというのも面倒なので、そのままターミナルからやってしまいたい。例えばこんな風に。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;subl .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで現在いるディレクトリをそのままプロジェクトとしてSublime Text2で開くことができるようになる。&lt;/p&gt;
+
+&lt;p&gt;地味に便利と思うんですが、どうでしょうか。
+興味を持ったら次へ。&lt;/p&gt;
+
+&lt;h2 id=&#34;sublへのシンボリックリンクを作る:3d499e8cabe5cb611ad7efdc0e9dc65a&#34;&gt;sublへのシンボリックリンクを作る&lt;/h2&gt;
+
+&lt;p&gt;Sublime Text２に含まれているコマンドラインツール、&lt;strong&gt;subl&lt;/strong&gt;のシンボリックリンクを作るために下記をターミナル上で実行する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ln -s &amp;quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&amp;quot; ~/bin/subl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これだけ！&lt;/p&gt;
+
+&lt;p&gt;と言いたいところだけど、これを実行したあとに、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;subl .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;を叩いても、&lt;code&gt;subl: command not found&lt;/code&gt;みたいになる場合には、ターミナルを再起動すれば大丈夫かも。&lt;/p&gt;
+
+&lt;h2 id=&#34;さぁこれではじめよう:3d499e8cabe5cb611ad7efdc0e9dc65a&#34;&gt;さぁこれではじめよう&lt;/h2&gt;
+
+&lt;p&gt;たまーに、上手く開かないこともあるので、そのときはコマンドを再度叩いてみてね。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:3d499e8cabe5cb611ad7efdc0e9dc65a:Git&#34;&gt;ターミナルからじゃなくとも、Sublime Text2のGitのパッケージを使えば、Sublime Text2上でGitを扱うこともできる。&lt;a href=&#34;https://github.com/kemayo/sublime-text-2-git&#34;&gt;kemayo/sublime-text-2-git&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3d499e8cabe5cb611ad7efdc0e9dc65a:Git&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3d499e8cabe5cb611ad7efdc0e9dc65a:Terminal&#34;&gt;実際にはMac OS Xにもともとあるターミナルではなく、iTerm2っていうのを使ってます。画面分割とかもできて便利。&lt;a href=&#34;http://www.iterm2.com/#/section/home&#34;&gt;iTerm2 - Mac OS Terminal Replacement&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3d499e8cabe5cb611ad7efdc0e9dc65a:Terminal&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

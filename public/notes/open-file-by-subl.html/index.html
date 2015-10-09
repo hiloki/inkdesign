@@ -1,0 +1,219 @@
+    <!DOCTYPE html>
+<html lang="jp-ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="">
+		<meta name="description" content="I think design everywhere.">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>Mac OS XのターミナルからSublime Text2を立ち上げられるようにすると地味に便利 &middot; inkdesign</title>
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://localhost:1313/about'>About</a>
+	
+
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>Mac OS XのターミナルからSublime Text2を立ち上げられるようにすると地味に便利</h1>
+                    <h2 class="headline">November 29, 2012</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<h2 id="ターミナルからsublime-text2を起動する:3d499e8cabe5cb611ad7efdc0e9dc65a">ターミナルからSublime Text2を起動する</h2>
+
+<p><a href="http://www.sublimetext.com/docs/2/osx_command_line.html">OS X Command Line - Sublime Text 2 Documentation</a></p>
+
+<p>ここ見れば分かるって話なんですが、なんのこっちゃ、っていう人もいるでしょうから、日本語で解説していくことにする。</p>
+
+<p>CSSプリプロセッサをコマンドラインツールで実行してたり、<a href="http://gruntjs.com/">Grunt</a>を使い始めたー、GitもGUIは使ってませんー、という人で、なおかつSublime Text2を使っている人、という狭いんだか広いんだかわからない層向けになるのはご容赦ください。</p>
+
+<h2 id="sublime-text2でプロジェクトディレクトリをどう展開してますか:3d499e8cabe5cb611ad7efdc0e9dc65a">Sublime Text2でプロジェクトディレクトリをどう展開してますか？</h2>
+
+<p>多くの場合、さぁ作業するぞ、となると該当のプロジェクトの作業ディレクトリの中にあるファイルをいじくるわけですが、Sublime Text２ユーザーの人はどのようにはじめてますか？</p>
+
+<h3 id="ディレクトリをサイドバーにガっと放り込む:3d499e8cabe5cb611ad7efdc0e9dc65a">ディレクトリをサイドバーにガっと放り込む</h3>
+
+<p>新規に開いたウィンドウに、Finderからドラッグ&amp;ドロップでガっと放り込めば、そのディレクトリがサイドバーに登録され、中のファイルをツリー上に展開することができる。全然それも良しでしょう。</p>
+
+<h3 id="sublime-text2のprojectとして管理する:3d499e8cabe5cb611ad7efdc0e9dc65a">Sublime Text2のProjectとして管理する</h3>
+
+<p>ウィンドウにプロジェクトの作業ファイルが展開している状態で、Sublime Text2のメニューにある<strong>Project</strong>から、<strong>Save Project As&hellip;</strong>することで、その状態をプロジェクトという単位でSublime Text2が記録してくれるようになる。</p>
+
+<p>プロジェクトファイルは、<code>.sublime-project</code>、<code>.sublime-workspace</code>という名前で保存する。これらはそのプロジェクトのルートとかに保存してもいいし、全然別のところに保存してもいい。例えば全然違うところに<strong>SublimeProjects</strong>みたいな名前のフォルダを作り、そこに保存しても構わない。</p>
+
+<p>どこにそのファイルがあろうが、<strong>Project</strong>から<strong>Switch Project in Window</strong>、または<kbd>Command + Control + P</kbd>などをすれば、プロジェクトの切り替えダイアログが出る。そこから選べば、現在開いているウィンドウが、別のプロジェクトのディレクトリへと切り替わる。これもかなり便利。</p>
+
+<h2 id="さて本題のターミナルからsublime-text2を起動する話:3d499e8cabe5cb611ad7efdc0e9dc65a">さて本題のターミナルからSublime Text2を起動する話</h2>
+
+<p>最近はGit<sup class="footnote-ref" id="fnref:3d499e8cabe5cb611ad7efdc0e9dc65a:Git"><a rel="footnote" href="#fn:3d499e8cabe5cb611ad7efdc0e9dc65a:Git">1</a></sup>なり、Gruntなりを使うことが多いので、作業をはじめるときにはまずターミナル<sup class="footnote-ref" id="fnref:3d499e8cabe5cb611ad7efdc0e9dc65a:Terminal"><a rel="footnote" href="#fn:3d499e8cabe5cb611ad7efdc0e9dc65a:Terminal">2</a></sup>を立ち上げる。すると、次のアクションはエディタを開くことだが、いちいちアプリケーションから開くなり、別のランチャーソフトで起動するというのも面倒なので、そのままターミナルからやってしまいたい。例えばこんな風に。</p>
+
+<pre><code class="language-bash">subl .
+</code></pre>
+
+<p>これで現在いるディレクトリをそのままプロジェクトとしてSublime Text2で開くことができるようになる。</p>
+
+<p>地味に便利と思うんですが、どうでしょうか。
+興味を持ったら次へ。</p>
+
+<h2 id="sublへのシンボリックリンクを作る:3d499e8cabe5cb611ad7efdc0e9dc65a">sublへのシンボリックリンクを作る</h2>
+
+<p>Sublime Text２に含まれているコマンドラインツール、<strong>subl</strong>のシンボリックリンクを作るために下記をターミナル上で実行する。</p>
+
+<pre><code class="language-bash">ln -s &quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&quot; ~/bin/subl
+</code></pre>
+
+<p>これだけ！</p>
+
+<p>と言いたいところだけど、これを実行したあとに、</p>
+
+<pre><code class="language-bash">subl .
+</code></pre>
+
+<p>を叩いても、<code>subl: command not found</code>みたいになる場合には、ターミナルを再起動すれば大丈夫かも。</p>
+
+<h2 id="さぁこれではじめよう:3d499e8cabe5cb611ad7efdc0e9dc65a">さぁこれではじめよう</h2>
+
+<p>たまーに、上手く開かないこともあるので、そのときはコマンドを再度叩いてみてね。</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:3d499e8cabe5cb611ad7efdc0e9dc65a:Git">ターミナルからじゃなくとも、Sublime Text2のGitのパッケージを使えば、Sublime Text2上でGitを扱うこともできる。<a href="https://github.com/kemayo/sublime-text-2-git">kemayo/sublime-text-2-git</a>
+ <a class="footnote-return" href="#fnref:3d499e8cabe5cb611ad7efdc0e9dc65a:Git"><sup>[return]</sup></a></li>
+<li id="fn:3d499e8cabe5cb611ad7efdc0e9dc65a:Terminal">実際にはMac OS Xにもともとあるターミナルではなく、iTerm2っていうのを使ってます。画面分割とかもできて便利。<a href="http://www.iterm2.com/#/section/home">iTerm2 - Mac OS Terminal Replacement</a>
+ <a class="footnote-return" href="#fnref:3d499e8cabe5cb611ad7efdc0e9dc65a:Terminal"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/hiloki">
+                        <img class="avatar" src="http://localhost:1313/images/avatar.png">
+                        <div>
+                            <span class="dark"></span>
+                            <span></span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fnotes%2fopen-file-by-subl.html%2f - Mac%20OS%20X%e3%81%ae%e3%82%bf%e3%83%bc%e3%83%9f%e3%83%8a%e3%83%ab%e3%81%8b%e3%82%89Sublime%20Text2%e3%82%92%e7%ab%8b%e3%81%a1%e4%b8%8a%e3%81%92%e3%82%89%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b%e3%81%a8%e5%9c%b0%e5%91%b3%e3%81%ab%e4%be%bf%e5%88%a9 by @hiloki"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/uncle-css.html/">CSS設計の教科書出版イベントやります<aside class="dates">Oct 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bookbookbook.html/">本を2冊ほど書きました<aside class="dates">Sep 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/qcon-tokyo.html/">QCon Tokyo 2014 に登壇します。<aside class="dates">Mar 15</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/the-secret-of-sass-glasses.html/">Sassのメガネに込められた秘密<aside class="dates">Feb 21</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/sass-at-root.html/">Sass3.3の@at-rootで親のルールを指定する<aside class="dates">Feb 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bem__name-convention--is-smart.html/">BEMの命名規則は賢い<aside class="dates">Jan 23</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-to-use-utility-classes.html/">CSSの汎用クラスのつかいどころ<aside class="dates">Jan 13</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-a-css-diamond-is-made.html/">CSSアニメーションでひし形表現を説明してみた<aside class="dates">Jan 7</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/diamond-thumbnail.html/">ひし型のサムネイルをCSSでつくる<aside class="dates">Jan 5</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2015 
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

@@ -1,0 +1,303 @@
+    <!DOCTYPE html>
+<html lang="jp-ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="">
+		<meta name="description" content="I think design everywhere.">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>画像からCSS Gradientのスタイルを抽出する &middot; inkdesign</title>
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://localhost:1313/about'>About</a>
+	
+
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>画像からCSS Gradientのスタイルを抽出する</h1>
+                    <h2 class="headline">November 30, 2012</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>デザインカンプとして作られた画像のグラデーションをCSS化するために、PhotoshopやらFireworksで色を抽出してつくるは面倒くさい。単純にfromからtoまでの色を指定するだけであればそうでもないかもしれないが、すこし複雑な形状をしたグラデーションだと、正確に再現するのはむずかしい。</p>
+
+<p>ただPhotoshopであれば、<a href="http://www.skyward-design.net/blog/archives/000102.html">.psdファイル上でスタイルを取得するスクリプト</a>があったり、Fireworks CS6でも<a href="http://stocker.jp/diary/fireworks-cs6/">オブジェクトのCSSを取得できる</a>らしい。</p>
+
+<p>しかしこれらのような元のデザインデータが無いとか、基本的なフィルタのみで作られていないオブジェクトであればうまく抽出することができないこともあるので、画像（画像ファイル）そのものから抽出するツールを紹介する。</p>
+
+<h2 id="画像ファイルをアップロードして抽出する:b97fbeb2ce0154e0053fa1dafd0b9516">画像ファイルをアップロードして抽出する</h2>
+
+<p><a href="http://www.colorzilla.com/gradient-editor/">Ultimate CSS Gradient Generator - ColorZilla.com</a></p>
+
+<p>もしかしたら使ったことがある人も多いかもしれないが、このウェブサービスは、PhotoshopなどのツールライクなUIでグラデーションを指定し、スタイルを生成するサービスだ。</p>
+
+<p>Presetsから用意されているパターンを選び、そこから色を変えることもできるし、ツマミを調整すれば独自のグラデーションをつくることができる。</p>
+
+<p>変更はそのまますぐに右側にあるCSSに反映されるので、それをコピーすればいい。</p>
+
+<p>今回はこのツールの使い方の説明は省き、表題の画像をアップロードして抽出する方法を紹介する。そもそも難しいツールでもないので、触れば今回紹介する機能含め、簡単に使えるので試してほしい。</p>
+
+<h2 id="import-from-image-からアップロードするだけ:b97fbeb2ce0154e0053fa1dafd0b9516">import from image からアップロードするだけ</h2>
+
+<p><img src="http://localhost:1313/images/posts/gradient-imports-from-image-import.png" alt="import from imageのキャプチャ" /></p>
+
+<p>実は使い方として解説するということもなく、<strong>import from image</strong>をクリックして画像をアップするだけだ。</p>
+
+<p>実際にアップロードしてみたものをいくつか挙げる。</p>
+
+<h3 id="単純なグラデーション:b97fbeb2ce0154e0053fa1dafd0b9516">単純なグラデーション</h3>
+
+<p><img src="http://localhost:1313/images/posts/gradient-imports-from-image-gradient.png" alt="単純なグラデーションのサンプル" /></p>
+
+<pre><code class="language-css">div {
+	background: #669900;
+	background: -moz-linear-gradient(top,  #669900 0%, #1d6176 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#669900), color-stop(100%,#1d6176));
+	background: -webkit-linear-gradient(top,  #669900 0%,#1d6176 100%);
+	background: -o-linear-gradient(top,  #669900 0%,#1d6176 100%);
+	background: -ms-linear-gradient(top,  #669900 0%,#1d6176 100%);
+	background: linear-gradient(to bottom,  #669900 0%,#1d6176 100%);
+}
+</code></pre>
+
+<p>下記はこのスタイルを適用したもの。</p>
+
+<div id="gradient-imports-from-image-gradient">
+<style scoped="scoped">
+#gradient-imports-from-image-gradient div {
+    display: block;
+    width: 180px;
+    height: 96px;
+    background: #669900;
+    background: -moz-linear-gradient(top,  #669900 0%, #1d6176 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#669900), color-stop(100%,#1d6176));
+    background: -webkit-linear-gradient(top,  #669900 0%,#1d6176 100%);
+    background: -o-linear-gradient(top,  #669900 0%,#1d6176 100%);
+    background: -ms-linear-gradient(top,  #669900 0%,#1d6176 100%);
+    background: linear-gradient(to bottom,  #669900 0%,#1d6176 100%);
+}
+</style>
+    <div>&nbsp;</div>
+</div>
+
+<p>どうでしょうか、だいたい一緒に見えますかね。</p>
+
+<h3 id="少し複雑なグラデーション:b97fbeb2ce0154e0053fa1dafd0b9516">少し複雑なグラデーション</h3>
+
+<p><img src="http://localhost:1313/images/posts/gradient-imports-from-image-complex.png" alt="少し複雑なグラデーションのサンプル" /></p>
+
+<p>ボタンのようなグラデーション。少し中央がずれてしまったけれど、とりあえず。</p>
+
+<pre><code class="language-css">div {
+	background: #ff9966;
+	background: -moz-linear-gradient(top,  #ff9966 0%, #ff7b57 52%, #ff4f41 54%, #ff3333 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff9966), color-stop(52%,#ff7b57), color-stop(54%,#ff4f41), color-stop(100%,#ff3333));
+	background: -webkit-linear-gradient(top,  #ff9966 0%,#ff7b57 52%,#ff4f41 54%,#ff3333 100%);
+	background: -o-linear-gradient(top,  #ff9966 0%,#ff7b57 52%,#ff4f41 54%,#ff3333 100%);
+	background: -ms-linear-gradient(top,  #ff9966 0%,#ff7b57 52%,#ff4f41 54%,#ff3333 100%);
+	background: linear-gradient(to bottom,  #ff9966 0%,#ff7b57 52%,#ff4f41 54%,#ff3333 100%);
+}
+</code></pre>
+
+<p>CSSを適用したのは下記。</p>
+
+<div id="gradient-imports-from-image-complex">
+<style scoped="scoped">
+#gradient-imports-from-image-complex div {
+    display: block;
+    width: 180px;
+    height: 96px;
+    background: #ff9966;
+    background: -moz-linear-gradient(top,  #ff9966 0%, #ff7b57 52%, #ff4f41 54%, #ff3333 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff9966), color-stop(52%,#ff7b57), color-stop(54%,#ff4f41), color-stop(100%,#ff3333));
+    background: -webkit-linear-gradient(top,  #ff9966 0%,#ff7b57 52%,#ff4f41 54%,#ff3333 100%);
+    background: -o-linear-gradient(top,  #ff9966 0%,#ff7b57 52%,#ff4f41 54%,#ff3333 100%);
+    background: -ms-linear-gradient(top,  #ff9966 0%,#ff7b57 52%,#ff4f41 54%,#ff3333 100%);
+    background: linear-gradient(to bottom,  #ff9966 0%,#ff7b57 52%,#ff4f41 54%,#ff3333 100%);
+}
+</style>
+    <div>&nbsp;</div>
+</div>
+
+<p>ちょっとずれた位置まで丁寧に再現されているものの、画像の方の中央のボケが無くなっている。</p>
+
+<h3 id="円形グラデーション:b97fbeb2ce0154e0053fa1dafd0b9516">円形グラデーション</h3>
+
+<p><a href="http://www.colorzilla.com/gradient-editor/#whats-new">円形グラデーションもサポートしている</a>ようだが、画像アップロードの方はどうだろうか。</p>
+
+<p><img src="http://localhost:1313/images/posts/gradient-imports-from-image-circle.png" alt="円形グラデーションのサンプル" /></p>
+
+<pre><code class="language-css">div {
+	background: #ffcc00;
+	background: -moz-radial-gradient(center, ellipse cover,  #ffcc00 0%, #ffcc00 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffcc00), color-stop(100%,#ffcc00));
+	background: -webkit-radial-gradient(center, ellipse cover,  #ffcc00 0%,#ffcc00 100%);
+	background: -o-radial-gradient(center, ellipse cover,  #ffcc00 0%,#ffcc00 100%);
+	background: -ms-radial-gradient(center, ellipse cover,  #ffcc00 0%,#ffcc00 100%);
+	background: radial-gradient(ellipse at center,  #ffcc00 0%,#ffcc00 100%);
+}
+</code></pre>
+
+<p>抽出したコードを見ても分かるとおもうが、色は1色しか抜けていない。</p>
+
+<div id="gradient-imports-from-image-circle">
+<style scoped="scoped">
+#gradient-imports-from-image-circle div {
+    display: block;
+    width: 180px;
+    height: 180px;
+    background: #ffcc00;
+    background: -moz-radial-gradient(center, ellipse cover,  #ffcc00 0%, #ffcc00 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffcc00), color-stop(100%,#ffcc00));
+    background: -webkit-radial-gradient(center, ellipse cover,  #ffcc00 0%,#ffcc00 100%);
+    background: -o-radial-gradient(center, ellipse cover,  #ffcc00 0%,#ffcc00 100%);
+    background: -ms-radial-gradient(center, ellipse cover,  #ffcc00 0%,#ffcc00 100%);
+    background: radial-gradient(ellipse at center,  #ffcc00 0%,#ffcc00 100%);
+}
+</style>
+    <div>&nbsp;</div>
+</div>
+
+<p>つまりこうなる。</p>
+
+<p>個人的には、線形のグラデーションと比べると、実用的にもあまり円形のCSSグラデーションを使う機会は少ないので、再現できなくてもとりあえずは気にしないでおく。</p>
+
+<h2 id="100-の再現とはいえない:b97fbeb2ce0154e0053fa1dafd0b9516">100%の再現とはいえない</h2>
+
+<p>円形はともかく、複雑なグラデーションのサンプルのように、完全に再現するためのコードは線形のものでも100%なものは生成されない。見た目の再現を重要視するなら、そのまま画像を使う方が良いかもしれない。それでもかなり簡単なものなのでおすすめする。</p>
+
+<h2 id="探せば他にもあるかも:b97fbeb2ce0154e0053fa1dafd0b9516">探せば他にもあるかも</h2>
+
+<p><a href="http://www.stubbornella.org/content/2011/04/25/css-3-gradients/">Nicole Sullivan</a>氏の記事で紹介されたもの中には<a href="https://github.com/bluesmoon/pngtocss">コマンドラインツール</a>もある様子。おそらく同じようにコマンドラインで実行するのはあると思われるので、また見つけて試せたら記事にしたい。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/hiloki">
+                        <img class="avatar" src="http://localhost:1313/images/avatar.png">
+                        <div>
+                            <span class="dark"></span>
+                            <span></span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fnotes%2fgradient-imports-from-image.html%2f - %e7%94%bb%e5%83%8f%e3%81%8b%e3%82%89CSS%20Gradient%e3%81%ae%e3%82%b9%e3%82%bf%e3%82%a4%e3%83%ab%e3%82%92%e6%8a%bd%e5%87%ba%e3%81%99%e3%82%8b by @hiloki"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/uncle-css.html/">CSS設計の教科書出版イベントやります<aside class="dates">Oct 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bookbookbook.html/">本を2冊ほど書きました<aside class="dates">Sep 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/qcon-tokyo.html/">QCon Tokyo 2014 に登壇します。<aside class="dates">Mar 15</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/the-secret-of-sass-glasses.html/">Sassのメガネに込められた秘密<aside class="dates">Feb 21</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/sass-at-root.html/">Sass3.3の@at-rootで親のルールを指定する<aside class="dates">Feb 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bem__name-convention--is-smart.html/">BEMの命名規則は賢い<aside class="dates">Jan 23</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-to-use-utility-classes.html/">CSSの汎用クラスのつかいどころ<aside class="dates">Jan 13</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-a-css-diamond-is-made.html/">CSSアニメーションでひし形表現を説明してみた<aside class="dates">Jan 7</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/diamond-thumbnail.html/">ひし型のサムネイルをCSSでつくる<aside class="dates">Jan 5</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2015 
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

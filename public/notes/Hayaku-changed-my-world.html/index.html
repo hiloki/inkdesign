@@ -1,0 +1,297 @@
+    <!DOCTYPE html>
+<html lang="jp-ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="">
+		<meta name="description" content="I think design everywhere.">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>CSSが速くかけるようになるSublime Text2 パッケージ Hayakuで、世界が変わるらしい &middot; inkdesign</title>
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://localhost:1313/about'>About</a>
+	
+
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>CSSが速くかけるようになるSublime Text2 パッケージ Hayakuで、世界が変わるらしい</h1>
+                    <h2 class="headline">November 27, 2012</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p><a href="http://localhost:1313/notes/2012/11/27/zencoding-to-emmet.html">Zen CodingもといEmmet</a>を使いこなすとまでいかなくとも、それなりに使ってはいるが、実はCSSではあんまり活用していなかった。</p>
+
+<p>というもCSSに関しては、多少Emmetや他のコード補完プラグイン（パッケージ）の支援はあるものの、HTMLよりも手グセというか、自然とプロパティなり値なりをさっさと書いてしまうし、それほどありがたい、と思えるほどでもない。</p>
+
+<p>またZen Codingにせよ、Emmetにせよ、短縮形のルールが決まっているし、それらを覚えないといけないので少し大変だ。</p>
+
+<p><ins datetime="2012-11-30"><strong>追記（2012-11-30）:</strong> Emmetでも若干<a href="http://docs.emmet.io/css-abbreviations/fuzzy-search/">ファジーに書ける</a>様子。
+</ins></p>
+
+<h2 id="そこでhayaku-らしい:b3b9b7229dc24e1af3309af19d449a2c">そこでHayaku、らしい</h2>
+
+<p>二度見しそうな名前だが、これは<a href="http://hayakubundle.com/">Hayaku</a>というSublime Text2のパッケージ。Emmetと違い、対象になるのはCSS（とCSSプリプロセッサ）であり、前述の通りCSSの記述に関してはこれといったツールを使っていない自分でも感動した。</p>
+
+<p>ちなみにHayakuについてはもうすでに<a href="https://gist.github.com/4135513">Sublime Text2を布教しているエライ人</a>によって簡潔にまとめられているが、とりあえずひと通りやってみた、ってことで書いていく。</p>
+
+<h2 id="とりあえずhayakuで何ができるのか:b3b9b7229dc24e1af3309af19d449a2c">とりあえずHayakuで何ができるのか</h2>
+
+<p>CSSで<code>overflow:hidden</code>と書きたいとき、どうタイプするか？</p>
+
+<p>もちろんCSSとして書くならもちろんそのまま書くでしょうが、
+これをEmmetで書く場合はこう。</p>
+
+<pre><code class="language-css">div {
+	/* ov:h とタイプして、Tabキーとか */
+	overflow: hidden;
+}
+</code></pre>
+
+<p><code>ov:h</code>とタイプするのはEmmetパッケージにある、<strong>snippet.json</strong>というファイルで定義されていて、この書き方じゃないと展開しない（はず）。</p>
+
+<p>で、Hayakuです。</p>
+
+<pre><code class="language-css">div {
+	/* oh とタイプして、Tabキーとか */
+	overflow: hidden;
+}
+</code></pre>
+
+<p>これはHayai。</p>
+
+<p>Hayakuがすごいのは実はこれじゃない。</p>
+
+<pre><code class="language-css">div {
+	/* oh とタイプして、Tabキーとか */
+	/* o:h とタイプして、Tabキーとか */
+	/* o:h とタイプして、Tabキーとか */
+	/* ov:h とタイプして、Tabキーとか */
+	/* overfl:hidn とタイプして、Tabキーとか */
+	overflow: hidden;
+}
+</code></pre>
+
+<p>これはHidoi。いやSugoi。</p>
+
+<p>なんかもうノリでタイプすれば、それが出る。
+これでもうHayakuが気になった人は、次へ進んでください。</p>
+
+<h2 id="hayakuのインストール:b3b9b7229dc24e1af3309af19d449a2c">Hayakuのインストール</h2>
+
+<p>多くは語るまい。Sublime Text2な人なおなじみの、<strong>Install Package</strong>から<strong>&ldquo;Hayaku&rdquo;</strong>と叩けばOK。</p>
+
+<h2 id="emmetとの共用:b3b9b7229dc24e1af3309af19d449a2c">Emmetとの共用</h2>
+
+<p>この手のパッケージはキーバインドがぶつかりやすいので気をつけること。<kbd>Tab</kbd>キーでの展開がHayakuでもEmmetでもデフォルトとなっているので、あらかじめそれを回避しておく。これはEmmetの方のパッケージ設定でおこなう。</p>
+
+<p><strong>Preference</strong> &gt; <strong>Package Settings</strong> &gt; <strong>Emmet</strong> &gt; <strong>Setting - User</strong></p>
+
+<p>何も手を入れてなければ、おそらくこの中は空っぽであるはずなので、ここに下記のような設定をいれておく。</p>
+
+<pre><code class="language-JavaScript">{
+	// TABキーによる展開を対象の言語（ファイル）のときに無効化する
+	&quot;disable_tab_abbreviations_for_scopes&quot;: &quot;css,less,sass,scss,stylus&quot;
+}
+</code></pre>
+
+<p>ちなみにこれを見て、もしかして、思ったかもしれないが、CSSを書くときだけでなく、SassやLESSなどのCSSプリプロセッサで書く場合にもHayakuは使える。</p>
+
+<p>ここで少しSublime Text2の設定についての補足をしておくと、前述の設定までのパスを追っていくと、<strong>Users</strong>ではなく、<strong>Default</strong>というのも参照できるが、設定を変える場合には<strong>Default</strong>を書き換えるのではなく、<strong>Users</strong>の方に書くようにする。そうすることで<strong>Default</strong>の設定を上書きすることができる。</p>
+
+<h2 id="hayakuの機能をいくつか紹介:b3b9b7229dc24e1af3309af19d449a2c">Hayakuの機能をいくつか紹介</h2>
+
+<p>ではHayakuでの書き方をいくつか紹介する。</p>
+
+<pre><code class="language-css">div {
+	/* wd */
+	wd → width: 100%;
+}
+</code></pre>
+
+<p>それっぽい二文字くらいで大体展開。</p>
+
+<pre><code class="language-css">div {
+	/* wd */
+	wd → width: 100%;
+	/* m10 */
+	margin: 10px;
+	/* pt-10 */
+	padding-top: -10px;
+	/* fs1.5 小数点をつけるとem */
+	font-size: 1.5em;
+	/* cF */
+	color: #FFF;
+	/* bx0.5 */
+	-webkit-box-shadow: rgba(0,0,0,.5);
+	        box-shadow: rgba(0,0,0,.5);
+	/* di! */
+	display: inline !important;
+}
+</code></pre>
+
+<pre><code class="language-css">div {
+	/* m10 */
+	margin: 10px;
+	/* pt-10 */
+	padding-top: -10px;
+	/* fs1.5 小数点をつけるとem */
+	font-size: 1.5em;
+}
+</code></pre>
+
+<p>数字をいれるとこんな感じ。Emmetに近いけど、少しだけ違う。Emmetだとショートハンドで書きたいときに、<code>w10-8</code>みたいな書き方で展開できる。Hayakuでは今のところそれができないのでちょっと不便。</p>
+
+<pre><code class="language-css">div {
+	/* cF */
+	color: #FFF;
+	/* bx0.5 */
+	-webkit-box-shadow: rgba(0,0,0,.5);
+	        box-shadow: rgba(0,0,0,.5);
+}
+</code></pre>
+
+<p>色の指定を加えるならこんな感じ。<code>rgba</code>の書き方はちょっと感動。</p>
+
+<pre><code class="language-css">div {
+	/* di! */
+	display: inline !important;
+}
+</code></pre>
+
+<p><code>!</code>をつければ、<code>!important</code>を追加。たまーに使う。</p>
+
+<h2 id="とりあえず入れてて損はない:b3b9b7229dc24e1af3309af19d449a2c">とりあえず入れてて損はない</h2>
+
+<p>設定を変えないとEmmetなどとぶつかるというのはあるとして、基本的には邪魔をするものでもないし、ミスタイプをしたときも勢いでカバーできるっていうイメージで導入してみるとどうでしょうか。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/hiloki">
+                        <img class="avatar" src="http://localhost:1313/images/avatar.png">
+                        <div>
+                            <span class="dark"></span>
+                            <span></span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fnotes%2fHayaku-changed-my-world.html%2f - CSS%e3%81%8c%e9%80%9f%e3%81%8f%e3%81%8b%e3%81%91%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%aa%e3%82%8bSublime%20Text2%20%e3%83%91%e3%83%83%e3%82%b1%e3%83%bc%e3%82%b8%20Hayaku%e3%81%a7%e3%80%81%e4%b8%96%e7%95%8c%e3%81%8c%e5%a4%89%e3%82%8f%e3%82%8b%e3%82%89%e3%81%97%e3%81%84 by @hiloki"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/uncle-css.html/">CSS設計の教科書出版イベントやります<aside class="dates">Oct 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bookbookbook.html/">本を2冊ほど書きました<aside class="dates">Sep 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/qcon-tokyo.html/">QCon Tokyo 2014 に登壇します。<aside class="dates">Mar 15</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/the-secret-of-sass-glasses.html/">Sassのメガネに込められた秘密<aside class="dates">Feb 21</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/sass-at-root.html/">Sass3.3の@at-rootで親のルールを指定する<aside class="dates">Feb 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bem__name-convention--is-smart.html/">BEMの命名規則は賢い<aside class="dates">Jan 23</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-to-use-utility-classes.html/">CSSの汎用クラスのつかいどころ<aside class="dates">Jan 13</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-a-css-diamond-is-made.html/">CSSアニメーションでひし形表現を説明してみた<aside class="dates">Jan 7</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/diamond-thumbnail.html/">ひし型のサムネイルをCSSでつくる<aside class="dates">Jan 5</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2015 
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

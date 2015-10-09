@@ -1,0 +1,256 @@
+    <!DOCTYPE html>
+<html lang="jp-ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="">
+		<meta name="description" content="I think design everywhere.">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>Sass3.3の@at-rootで親のルールを指定する &middot; inkdesign</title>
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://localhost:1313/about'>About</a>
+	
+
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>Sass3.3の@at-rootで親のルールを指定する</h1>
+                    <h2 class="headline">February 16, 2014</h2>
+                </header>
+                <section id="post-body">
+                    <p>先日登壇した<a href="http://cssnite.jp/lp/lp32/">CSS Nite LP, Disk 32</a>のセッションで紹介されていた<a href="https://github.com/geckotang/cssnite-lp32/blob/master/scss/_trbl.scss">SassのMixin</a>をSass3.3の@at-rootで少し手を加えてみる、という話。</p>
+
+<p>紹介されていたのは、<a href="http://codepen.io/shshaw/full/gEiDt">天地左右中央に絶対配置するテクニック</a>のMixin。</p>
+
+<pre><code class="language-css">@mixin trbl($width: null, $height: null) {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: $width;
+	height: $height;
+	margin: auto;
+}
+
+.tbrl {
+  @include trbl(100px,50px);
+}
+</code></pre>
+
+<pre><code class="language-css">.tbrl {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100px;
+  height: 50px;
+  margin: auto;
+}
+</code></pre>
+
+<p>この仕組については先の記事をみてもらうとして、このMixinの内容は、これらのコードを提供し、任意で<code>width</code>、<code>height</code>の値を渡せるようになっている。</p>
+
+<p>このテクニックを使う条件として必要になるのは、<code>position:absolute</code>の基点、つまり<code>position:relative</code>が必要となる。<br />
+（無論、<code>body</code>を基点とするならその限りではないが）</p>
+
+<p>それを解決というか、それなりに利便性を考えるとすれば次のような方法が浮かぶ。</p>
+
+<pre><code class="language-css">.ref {
+  position: relative
+}
+
+.tbrl {
+  ...
+}
+</code></pre>
+
+<pre><code class="language-html">&lt;div class=&quot;ref&quot;&gt;
+  &lt;div class=&quot;tbrl&quot;&gt;foo&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>例えば<code>.ref</code>のような<code>position:relative</code>の汎用クラスを容易し、この<code>.tbrl</code>を使うときに基点を指定する場合には、<code>.ref</code>を使いましょう、とするような方法。</p>
+
+<p>次に本題であるSass3.3の<code>@at-root</code>を使う方法。</p>
+
+<pre><code class="language-css">// ----
+// Sass (v3.3.0.rc.3)
+// Compass (v1.0.0.alpha.18)
+// ----
+ 
+@mixin trbl($width: null, $height: null, $parent: null) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: $width;
+  height: $height;
+  margin: auto;
+  @at-root #{$parent} {
+    position: relative;
+  }
+}
+ 
+.tbrl {
+  @include trbl(100px, 50px, &quot;.tbrl-wrapper&quot;);
+}
+</code></pre>
+
+<pre><code class="language-css">.tbrl {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100px;
+  height: 50px;
+  margin: auto;
+}
+.tbrl-wrapper {
+  position: relative;
+}
+</code></pre>
+
+<pre><code>&lt;div class=&quot;tbrl-wrapper&quot;&gt;
+  &lt;div class=&quot;tbrl&quot;&gt;foo&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><code>@mixin trbl()</code>に加えたのは<code>@at-root</code>の記述と、基点となる親のセレクタをつくるための引数。<code>@at-root</code>ディレクティブは記述上ネストされているが、コンパイルされたときにそれはネストされずに出力される。それを利用して、このような書き方ができる。</p>
+
+<p>この例だと結局<code>position:relative</code>を持たせているだけなので、先に紹介した<code>.ref</code>みたいな汎用クラスを使うのと対して変わらないといえば変わらないが、tbrlというコンポーネントとしてルールをまとめるという設計で考えると、後者のような形の方が良いのではと考えた。<br />
+（実際便利なのかどうか置いといて）</p>
+
+<p><code>@at-root</code>はよく<a href="http://blog.ruedap.com/2013/10/29/block-element-modifier">BEMなルールを書くときに役立ちそう</a>だと紹介されているのをよく見るが、こんな使い方もできるな、という話でした。</p>
+
+<p>あと気軽にSass3.3を試すなら<a href="http://sassmeister.com/">SassMeister</a>が便利。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/hiloki">
+                        <img class="avatar" src="http://localhost:1313/images/avatar.png">
+                        <div>
+                            <span class="dark"></span>
+                            <span></span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fnotes%2fsass-at-root.html%2f - Sass3.3%e3%81%ae%40at-root%e3%81%a7%e8%a6%aa%e3%81%ae%e3%83%ab%e3%83%bc%e3%83%ab%e3%82%92%e6%8c%87%e5%ae%9a%e3%81%99%e3%82%8b by @hiloki"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/uncle-css.html/">CSS設計の教科書出版イベントやります<aside class="dates">Oct 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bookbookbook.html/">本を2冊ほど書きました<aside class="dates">Sep 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/qcon-tokyo.html/">QCon Tokyo 2014 に登壇します。<aside class="dates">Mar 15</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/the-secret-of-sass-glasses.html/">Sassのメガネに込められた秘密<aside class="dates">Feb 21</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bem__name-convention--is-smart.html/">BEMの命名規則は賢い<aside class="dates">Jan 23</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-to-use-utility-classes.html/">CSSの汎用クラスのつかいどころ<aside class="dates">Jan 13</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-a-css-diamond-is-made.html/">CSSアニメーションでひし形表現を説明してみた<aside class="dates">Jan 7</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/diamond-thumbnail.html/">ひし型のサムネイルをCSSでつくる<aside class="dates">Jan 5</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2015 
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

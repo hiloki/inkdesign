@@ -1,0 +1,19 @@
+baseurl: "http://inkdesign.jp/"
+languageCode: "jp-ja"
+title: "inkdesign"
+contentdir: "content"
+publishdir: "public"
+builddrafts: false
+canonifyurls: true
+author: "hiloki"
+metaDataFormat: "yaml"
+
+indexes:
+  category: "categories"
+  tag: "tags"
+params:
+  AuthorName: "Hiroki Tani"
+  github: "hiloki/inkdesign"
+  twitter: "hiloki"
+  email: "contact@inkdesign"
+  description: "I think design everywhere."

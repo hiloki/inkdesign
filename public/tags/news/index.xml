@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News on inkdesign</title>
+    <link>http://localhost:1313/tags/news/</link>
+    <description>Recent content in News on inkdesign</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp-ja</language>
+    <lastBuildDate>Wed, 14 Nov 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/news/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>WordPressからJekyll &#43; Github pageへ</title>
+      <link>http://localhost:1313/notes/inkdesign-on-ghpages.html/</link>
+      <pubDate>Wed, 14 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/inkdesign-on-ghpages.html/</guid>
+      <description>
+
+&lt;p&gt;長年WordPressでサイト、ブログを運用していたが、なんとなくGithub Pageでの運用に移行した。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;というRubyの静的なHTMLのジェネレータでページをつくり、GitでGithub上のページ機能に反映させる、という流れ。ちらほらこの形式に変えている知人のブログもいくつかある。&lt;/p&gt;
+
+&lt;p&gt;&lt;ins datetime=&#34;2013-12-22&#34;&gt;
+※現在はJekyllと同じような、Node.js製ジェネレータの&lt;a href=&#34;http://docpad.org/&#34;&gt;DocPad&lt;/a&gt;に移行しています。
+&lt;/ins&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;jekyllの概要:73ea1a28b0ed5fce4390aa20ab5f93bf&#34;&gt;Jekyllの概要&lt;/h2&gt;
+
+&lt;p&gt;Jekyllはコンテンツを更新するための管理画面があるといった、いわゆるWordPress的なCMS、ブログシステムではなく、コンテンツページを一枚一枚つくってアップをしていくような工程で更新する。&lt;/p&gt;
+
+&lt;p&gt;Jekyllについては&lt;a href=&#34;http://css.studiomohawk.com/jekyll/2011/06/11/jekyll/&#34;&gt;CSS Radar&lt;/a&gt;の記事も参照してほしい。とりあえず色々な機能はつけず、最低限の仕組みだけで構築したので、追々記事としてまとめられたらと考えている。&lt;/p&gt;
+
+&lt;h2 id=&#34;wordpressから移行した理由:73ea1a28b0ed5fce4390aa20ab5f93bf&#34;&gt;WordPressから移行した理由&lt;/h2&gt;
+
+&lt;p&gt;WordPressでも別に問題という問題もないが、単純なブログに使うには機能が多すぎる。
+多すぎるといっても、それらを必ず使う必要があるわけでもないし、今ではインストール、セットアップも対した手間ではない。もっと楽をしたければ&lt;a href=&#34;http://wordpress.com/&#34;&gt;WordPress.com&lt;/a&gt;を使ってもよかった。&lt;/p&gt;
+
+&lt;p&gt;ということでこれについてはひとつの理由ではあるものの、大きな動機になっているわけではない。
+ではなぜかというと、単純に&lt;strong&gt;今までと違うことをしてみよう&lt;/strong&gt;、ということくらい。&lt;/p&gt;
+
+&lt;p&gt;これは勉強のため、ともいえるが直接役に立つというわけでもない。実際業務でRubyを使うことは基本的になく、&lt;a href=&#34;http://sass-lang.com/&#34;&gt;Sass&lt;/a&gt;を扱うなり、gemで何かをインストールとかそういう程度。
+ただこういうシステムがあるということを知っているか、知っていないかというのは大事で、知っていて損はない。浅く広く、色々と知っていることは悪くない。もちろんWordPressを個人で使って、業務や案件でできないことを深掘りするのも全然悪くないが、浅く広く、それが自分にとって良いと考えている。&lt;/p&gt;
+
+&lt;h2 id=&#34;せっかくなのでホスティングサービスも変更:73ea1a28b0ed5fce4390aa20ab5f93bf&#34;&gt;せっかくなのでホスティングサービスも変更&lt;/h2&gt;
+
+&lt;p&gt;今回はホスティングサービスを&lt;a href=&#34;http://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt;にした。これについても、Jekyllで生成した静的なHTMLファイルをアップロードすれば、一般的なレンタルサーバーなどでも問題なく使えるが、やはりこれまでと違うことをしよう、ということで変更した。ちなみにサーバーも&lt;a href=&#34;http://vps.sakura.ad.jp/&#34;&gt;さくらVPS&lt;/a&gt;で自分で構築してみるとか、&lt;a href=&#34;http://aws.amazon.com/jp/s3/&#34;&gt;Amazon S3&lt;/a&gt;を使ってみるとか、そういうことも考えていたが今回はGithubにした。Github Pagesに関してもまた今後別の記事にしようとおもう。&lt;/p&gt;
+
+&lt;h2 id=&#34;とにかく新しいことを:73ea1a28b0ed5fce4390aa20ab5f93bf&#34;&gt;とにかく新しいことを&lt;/h2&gt;
+
+&lt;p&gt;使うか（使えるか）、使わないか（使えないか）はともかくとして、知っているか知っていないかであれば、知っている方が得なことがある。あとは新しいことをやるというのは面白い。&lt;/p&gt;
+
+&lt;p&gt;数ヶ月にブログを復帰し、ちゃんと継続するかどうかは不安であるけれどもこの形で継続できればとおもう。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

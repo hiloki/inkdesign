@@ -1,0 +1,226 @@
+    <!DOCTYPE html>
+<html lang="jp-ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="">
+		<meta name="description" content="I think design everywhere.">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>bashmarksでディレクトリをブックマークする &middot; inkdesign</title>
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://localhost:1313/about'>About</a>
+	
+
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>bashmarksでディレクトリをブックマークする</h1>
+                    <h2 class="headline">November 29, 2012</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p><a href="http://www.huyng.com/projects/bashmarks/">bashmarks</a></p>
+
+<p>このツール名から想像できる通り、</p>
+
+<blockquote>
+<p>directory bookmarks for the shell</p>
+</blockquote>
+
+<p>ということで、コマンドライン上でちょこちょこと移動することになるディレクトリの場所を、ウェブページのブックマークのようにブックマークすることができるツール。</p>
+
+<p><a href="http://inkdesign.jp/notes/2012/11/29/open-file-by-subl.html">最近はコマンドラインを使う機会</a>も多く、ターミナルを開いて、<code>cd hoge</code>とかしながらディレクトリをプロジェクトのディレクトリに移動する。</p>
+
+<p><code>cd</code>と打って、移動先のパスはFinderからディレクトリをドラッグ&amp;ドロップすることでもダイレクトに移動できるが、それをいちいちやるのは面倒くさい。</p>
+
+<h2 id="bashmarksの使い方:0f95fc60470db38cfab85b3509774bb4">bashmarksの使い方</h2>
+
+<p>bashmarksを使えば、次のようにディレクトリを移動することができる。</p>
+
+<pre><code class="language-bash"> $ pwd
+ /Users/YOURNAME/
+ $ g public
+ $ pwd
+ /Users/YOURNAME/Dropbox/Public
+</code></pre>
+
+<p>bashmarksのコマンドとして売っているのは <code>g</code> のところ。あらかじめbashmarksで場所を保存（ブックマーク）し、それを呼び出しているだけ。この例では、DropboxのPublicディレクトリの場所を、あらかじめ<strong>public</strong>という名前で保存している。それは次のようにおこなう。</p>
+
+<pre><code class="language-bash"> $ pwd
+ /Users/YOURNAME/Dropbox/Public
+ $ s public
+</code></pre>
+
+<p>先ほどの <code>g</code>は<strong>GO</strong>であったのに対し、<code>s</code>、<strong>Save</strong>をする。順序が逆になったが、<code>s &lt;bookmark_name&gt;</code>でブックマークしたものを、<code>g &lt;bookmark_name&gt;</code>で呼び出すというシンプルなものだ。</p>
+
+<p>ちなみにブックマークしたものは、<code>l</code>、<strong>List</strong>で呼び出せる。</p>
+
+<pre><code class="language-bash"> $ l
+ public   /Users/YOURNAME/Dropbox/Public
+</code></pre>
+
+<p>ちなみに削除したい場合には、<code>d &lt;bookmark_name&gt;</code>で削除できる。つまり<strong>Delete</strong>ですな。</p>
+
+<p>またブックマーク名は保存した名前をきっちりタイプする必要はなく、途中までタイプして<kbd>Tab</kbd>キーを叩けば補完される。便利ですな。</p>
+
+<h2 id="bashmarksのインストール:0f95fc60470db38cfab85b3509774bb4">bashmarksのインストール</h2>
+
+<p>インストールも特別難しいことはない。下記はそのままbashmarksのサイトから引用したもの。</p>
+
+<blockquote>
+<ol>
+<li>git clone git://github.com/huyng/bashmarks.git</li>
+<li>cd bashmarks &amp;&amp; make install</li>
+<li>add source ~/.local/bin/bashmarks.sh from within your ~.bash_profile or ~/.bashrc file</li>
+</ol>
+</blockquote>
+
+<h2 id="z-shなんてのもある:0f95fc60470db38cfab85b3509774bb4">z.shなんてのもある</h2>
+
+<p>bashmarksは自分でブックマークしていくものだが、<a href="https://github.com/rupa/z">z</a>であればブックマークではなく、履歴残して、それらにアクセスすることができる。
+今回はbashmarksについてのお話ということで、z.shについては <a href="http://d.hatena.ne.jp/bose999/20120806/1344185966">cd移動 を easyに z.sh de GO！ - bose999の試験管の中の話</a> などを参加すると良い。<sup class="footnote-ref" id="fnref:0f95fc60470db38cfab85b3509774bb4:zsh"><a rel="footnote" href="#fn:0f95fc60470db38cfab85b3509774bb4:zsh">1</a></sup>こちらもインストールは難しくない。</p>
+
+<h2 id="セットアップして損はなし:0f95fc60470db38cfab85b3509774bb4">セットアップして損はなし</h2>
+
+<p>コマンドラインで色々はじめたばかりの人はぜひ。</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:0f95fc60470db38cfab85b3509774bb4:zsh">この記事ではzshを前提にしているが、bashでもzは使える。
+ <a class="footnote-return" href="#fnref:0f95fc60470db38cfab85b3509774bb4:zsh"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/hiloki">
+                        <img class="avatar" src="http://localhost:1313/images/avatar.png">
+                        <div>
+                            <span class="dark"></span>
+                            <span></span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fnotes%2fbashmarks.html%2f - bashmarks%e3%81%a7%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e3%82%92%e3%83%96%e3%83%83%e3%82%af%e3%83%9e%e3%83%bc%e3%82%af%e3%81%99%e3%82%8b by @hiloki"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/uncle-css.html/">CSS設計の教科書出版イベントやります<aside class="dates">Oct 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bookbookbook.html/">本を2冊ほど書きました<aside class="dates">Sep 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/qcon-tokyo.html/">QCon Tokyo 2014 に登壇します。<aside class="dates">Mar 15</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/the-secret-of-sass-glasses.html/">Sassのメガネに込められた秘密<aside class="dates">Feb 21</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/sass-at-root.html/">Sass3.3の@at-rootで親のルールを指定する<aside class="dates">Feb 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/bem__name-convention--is-smart.html/">BEMの命名規則は賢い<aside class="dates">Jan 23</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-to-use-utility-classes.html/">CSSの汎用クラスのつかいどころ<aside class="dates">Jan 13</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/how-a-css-diamond-is-made.html/">CSSアニメーションでひし形表現を説明してみた<aside class="dates">Jan 7</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/notes/diamond-thumbnail.html/">ひし型のサムネイルをCSSでつくる<aside class="dates">Jan 5</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2015 
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

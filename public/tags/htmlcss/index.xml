@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Htmlcss on inkdesign</title>
+    <link>http://localhost:1313/tags/htmlcss/</link>
+    <description>Recent content in Htmlcss on inkdesign</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp-ja</language>
+    <lastBuildDate>Thu, 05 Dec 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/htmlcss/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Web ComponentsとPolymerを軽く触ってみる</title>
+      <link>http://localhost:1313/notes/try-web-components-and-polymer.html/</link>
+      <pubDate>Thu, 05 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/try-web-components-and-polymer.html/</guid>
+      <description>
+
+&lt;p&gt;Web ComponentsはWebのUIのコンポーネント化を実現するための各種仕様の総称だ。&lt;/p&gt;
+
+&lt;p&gt;DOMとスタイルをカプセル化する&lt;strong&gt;Shadow DOM&lt;/strong&gt;、任意の要素または既存の要素を拡張する&lt;strong&gt;Custom Elements&lt;/strong&gt;、それらをパッケージ化し再利用できるようにするための&lt;strong&gt;HTML Imports&lt;/strong&gt;を含む。&lt;/p&gt;
+
+&lt;p&gt;マークアップをテンプレート化する&lt;strong&gt;HTML Templates&lt;/strong&gt;も含まれていたが、つい最近HTML仕様に組み込まれたようだ。&lt;/p&gt;
+
+&lt;p&gt;ちなみにWeb Componentsについて調べていると、Decoratorsという仕様にふれていることもあるが、これのことは忘れて良いらしい。&lt;/p&gt;
+
+&lt;p&gt;Web Componentsの仕様・仕組みについては、先日おこなわれたHTML5 Conferenceで、Shadow DOMのSpec Editorである&lt;a href=&#34;http://www.youtube.com/watch?v=wvggCAG5ttw&amp;amp;feature=share&#34;&gt;夷藤さんのお話&lt;/a&gt;が実にわかりやすいとはおもうので、そちらを観るのをおすすめする。&lt;/p&gt;
+
+&lt;div class=&#34;entry__media&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;//www.youtube.com/embed/wvggCAG5ttw&#34; frameborder=&#34;0&#34; allowfullscreen class=&#34;u-center embed&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://hayatoito.github.io/webcomponents-slides/#1&#34;&gt;夷藤さんのスライド&lt;/a&gt;はこちら。&lt;/p&gt;
+
+&lt;p&gt;と、もうひとつ紹介するのが&lt;a href=&#34;http://www.polymer-project.org/&#34;&gt;Polymer&lt;/a&gt;だ。こちらも先ほどの資料後半でも解説されているのだが、Web Components、周辺仕様のポリフィル（ブラウザが未対応な仕様の補完）をしてくれるライブラリともいえるし、コンポーネント集でもある。&lt;/p&gt;
+
+&lt;p&gt;実際にこれらを使って作ったものは、以前おこなわれた&lt;a href=&#34;http://frontrend.github.io/blog/frontrend-x-chrome-tech-talk-night-extended/&#34;&gt;Frontrend x Chrome     Tech Talk Night Extended&lt;/a&gt;でのLTのときに色々と&lt;a href=&#34;http://hiloki.github.io/demo/frontrend_chrome/app/&#34;&gt;つくってみた&lt;/a&gt;。&lt;/p&gt;
+
+&lt;div class=&#34;entry__media&#34;&gt;
+&lt;iframe src=&#34;http://www.slideshare.net/slideshow/embed_code/27734708?rel=0&#34; width=&#34;427&#34; height=&#34;356&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px&#34; allowfullscreen class=&#34;u-center embed&#34;&gt; &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;この時にも触ってみたかっただけなので、いざつくってみると設計が難しく、今おもえばデタラメな設計なので、そのものをあまり参考はしない方がいいとおもう。これらは特に難しいことをしてつくったわけではなく、当日イベントにもきてたAddy Osmani氏の記事で紹介されている&lt;a href=&#34;http://www.html5rocks.com/en/tutorials/webcomponents/yeoman/?redirect_from_locale=ja&#34;&gt;YeomanのPolymerジェネレータのタスク&lt;/a&gt;を使えば非常に簡単。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ npm install -g yo
+$ npm install generator-polymer -g
+$ mkdir my-new-project &amp;amp;&amp;amp; cd $_
+$ yo polymer
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こういうのを叩いていくイメージ。（スライドにも書いてる。）&lt;/p&gt;
+
+&lt;p&gt;ちなみにGoogle Chromeを使っている場合は、最近のバージョンだと&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Settings &amp;gt; General &amp;gt; Elements &amp;gt; Show Shadow DOM&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;を有効にすると、Inspectしたときに隠れているDOMをみることができる。先ほどの僕のつくったサンプルも、普通にHTMLのソースをみたときと、DevToolでInspectしたときと見比べるといいかもしれない。&lt;/p&gt;
+
+&lt;p&gt;ブラウザのネイティブで実装されているvideo要素などをInspectしてみてほしい。それらにも隠れているDOMをみることができるはず。&lt;/p&gt;
+
+&lt;p&gt;Web Componentsに触れて良いとおもうのはまさにこういうところで、コントローラーUI付きでビデオを埋め込みたいときに、UIを頑張って作る、または深く構造を知る必要なく、&lt;code&gt;&amp;lt;video&amp;gt;&lt;/code&gt;と&lt;code&gt;&amp;lt;source&amp;gt;&lt;/code&gt;を組み合わせれば良いわけだ。&lt;/p&gt;
+
+&lt;p&gt;そしてShadow DOMによるカプセル化で、本当に独立したコンポーネントをつくられることが楽しい。&lt;/p&gt;
+
+&lt;h2 id=&#34;カプセル化:c82d707dcde5f5bbb9ec9cdd2618231f&#34;&gt;カプセル化&lt;/h2&gt;
+
+&lt;p&gt;もうひとつのサンプル、&lt;a href=&#34;http://hiloki.github.io/demo/frontrend_chrome/app/switch.html&#34;&gt;iOS7のスイッチUI&lt;/a&gt;を模したもの。&lt;/p&gt;
+
+&lt;p&gt;これは次のようなマークアップでつくることができる。&lt;/p&gt;
+
+&lt;div class=&#34;entry__media&#34;&gt;
+![](/images/try-web-components-and-polymer/01.png)
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;x-switch&amp;gt;&amp;lt;/x-switch&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;かなり手抜きでオン/オフの管理などは省いている。そもそもこの見た目をつくるだけなら、わざわざコンポーネント化することなく、ただ&lt;code&gt;class&lt;/code&gt;をあてれば良いだけのものなのだが、注目してほしいのはそこではない。&lt;/p&gt;
+
+&lt;p&gt;このコンポーネントの中身を除くと下記のようになっている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;polymer-element name=&amp;quot;x-switch&amp;quot; attributes=&amp;quot;&amp;quot;&amp;gt;
+&amp;lt;template&amp;gt;
+&amp;lt;style&amp;gt;
+@host { 
+  :scope {
+    display: inline-block;
+  }
+}
+input[type=checkbox] {
+  -webkit-appearance: none;
+  box-shadow: inset 0px 0px 0px 1px #e6e6e6;
+  border-radius: 15px;
+  ...
+}
+input[type=checkbox]:checked {
+  box-shadow: inset 0px 0px 0px 20px #53d76a;
+}
+input[type=checkbox]:after {
+  content: &#39;&#39;;
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  ...
+}
+input[type=&amp;quot;checkbox&amp;quot;]:checked:after {
+  left: 22px;
+}
+&amp;lt;/style&amp;gt;
+&amp;lt;input type=&amp;quot;checkbox&amp;quot; /&amp;gt;
+&amp;lt;/template&amp;gt;
+&amp;lt;/polymer-element&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これはPolymerを通してつくった&lt;code&gt;x-switch&lt;/code&gt;コンポーネント。注目してほしいのは、&lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;に記述されたルールだ。&lt;/p&gt;
+
+&lt;p&gt;このコンポーネントでは&lt;code&gt;input[type=checkbox]&lt;/code&gt;といったセレクタで、通常であればブラウザデフォルトのチェックボックスすべてに影響してしまう。&lt;/p&gt;
+
+&lt;p&gt;だが、サンプルを確認してもらうとわかる通り、このiOS7ライクなチェックボックスの前後にはブラウザデフォルトの見た目のままのチェックボックスが確認できるはず。&lt;/p&gt;
+
+&lt;div class=&#34;entry__media&#34;&gt;
+  ![](/images/try-web-components-and-polymer/02.png)
+&lt;/div&gt;
+
+&lt;p&gt;つまりコンポーネント内で定義したスタイルは外に汚染することはない。素晴らしい。&lt;/p&gt;
+
+&lt;p&gt;今のCSSではこうした汚染というのは容易に起こる。ゆえに強固なセレクタを用いたり、または命名を工夫して衝突・汚染することがないようにするなど、100%安全とはいえない方法で回避せざるをえない。&lt;br /&gt;
+(それがCSSの良さともいえるかもしれないけど)&lt;/p&gt;
+
+&lt;p&gt;実際にWeb Componentsを実際の中・大規模な仕事の中で扱う、運用する経験はまだ無いので、見えていない問題は色々あるかもしれない。メンテナンス性であるとか、無秩序にチームの開発者がコンポーネントを作成・編集すれば混沌としてしまうだろう。&lt;br /&gt;
+下手をすると、現状のHTML/CSSにおける同等の問題以上に問題となるかもしれない。&lt;/p&gt;
+
+&lt;p&gt;と、ネガティブに考える以上に、Web Componentsには面白みがあるとおもっている。今回紹介したリソースを参照して、是非試してみてほしい。&lt;/p&gt;
+
+&lt;h2 id=&#34;というわけで:c82d707dcde5f5bbb9ec9cdd2618231f&#34;&gt;というわけで&lt;/h2&gt;
+
+&lt;p&gt;本記事は&lt;a href=&#34;http://www.adventar.org/calendars/62&#34;&gt;Frontrend Advent Calendar 2013&lt;/a&gt;の5日目の記事として書いた。&lt;br /&gt;
+次は&lt;a href=&#34;http://ginpen.com/&#34;&gt;Ginpeiさん&lt;/a&gt;です。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,13 +3,143 @@
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2015-10-09T16:25:19+09:00</lastmod>
+    <lastmod>2014-10-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>http://localhost:1313/notes/uncle-css.html/</loc>
+    <lastmod>2014-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/bookbookbook.html/</loc>
+    <lastmod>2014-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/qcon-tokyo.html/</loc>
+    <lastmod>2014-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/the-secret-of-sass-glasses.html/</loc>
+    <lastmod>2014-02-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/sass-at-root.html/</loc>
+    <lastmod>2014-02-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/bem__name-convention--is-smart.html/</loc>
+    <lastmod>2014-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/how-to-use-utility-classes.html/</loc>
+    <lastmod>2014-01-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/how-a-css-diamond-is-made.html/</loc>
+    <lastmod>2014-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/about/</loc>
-    <lastmod>2015-10-09T16:25:19+09:00</lastmod>
+    <lastmod>2014-01-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/diamond-thumbnail.html/</loc>
+    <lastmod>2014-01-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/rewind-2013.html/</loc>
+    <lastmod>2013-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/css-custom-property.html/</loc>
+    <lastmod>2013-12-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/try-web-components-and-polymer.html/</loc>
+    <lastmod>2013-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/css-preprocessor-shootout.html/</loc>
+    <lastmod>2013-01-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/2012-topentry.html/</loc>
+    <lastmod>2012-12-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/gitignore.html/</loc>
+    <lastmod>2012-12-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/jquery-color.html/</loc>
+    <lastmod>2012-12-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/less-new-colors.html/</loc>
+    <lastmod>2012-12-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/css-preprocessor-styleguide.html/</loc>
+    <lastmod>2012-12-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/jquery-applies-tel-number.html/</loc>
+    <lastmod>2012-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/pseudo-animation.html/</loc>
+    <lastmod>2012-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/gradient-imports-from-image.html/</loc>
+    <lastmod>2012-11-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/bashmarks.html/</loc>
+    <lastmod>2012-11-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/open-file-by-subl.html/</loc>
+    <lastmod>2012-11-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/Preprocessor-color-functions.html/</loc>
+    <lastmod>2012-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/Hayaku-changed-my-world.html/</loc>
+    <lastmod>2012-11-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/notes/inkdesign-on-ghpages.html/</loc>
+    <lastmod>2012-11-14T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

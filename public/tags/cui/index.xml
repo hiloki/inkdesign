@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cui on inkdesign</title>
+    <link>http://localhost:1313/tags/cui/</link>
+    <description>Recent content in Cui on inkdesign</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp-ja</language>
+    <lastBuildDate>Thu, 29 Nov 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cui/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>bashmarksでディレクトリをブックマークする</title>
+      <link>http://localhost:1313/notes/bashmarks.html/</link>
+      <pubDate>Thu, 29 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/bashmarks.html/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://www.huyng.com/projects/bashmarks/&#34;&gt;bashmarks&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;このツール名から想像できる通り、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;directory bookmarks for the shell&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ということで、コマンドライン上でちょこちょこと移動することになるディレクトリの場所を、ウェブページのブックマークのようにブックマークすることができるツール。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/29/open-file-by-subl.html&#34;&gt;最近はコマンドラインを使う機会&lt;/a&gt;も多く、ターミナルを開いて、&lt;code&gt;cd hoge&lt;/code&gt;とかしながらディレクトリをプロジェクトのディレクトリに移動する。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;cd&lt;/code&gt;と打って、移動先のパスはFinderからディレクトリをドラッグ&amp;amp;ドロップすることでもダイレクトに移動できるが、それをいちいちやるのは面倒くさい。&lt;/p&gt;
+
+&lt;h2 id=&#34;bashmarksの使い方:0f95fc60470db38cfab85b3509774bb4&#34;&gt;bashmarksの使い方&lt;/h2&gt;
+
+&lt;p&gt;bashmarksを使えば、次のようにディレクトリを移動することができる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt; $ pwd
+ /Users/YOURNAME/
+ $ g public
+ $ pwd
+ /Users/YOURNAME/Dropbox/Public
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;bashmarksのコマンドとして売っているのは &lt;code&gt;g&lt;/code&gt; のところ。あらかじめbashmarksで場所を保存（ブックマーク）し、それを呼び出しているだけ。この例では、DropboxのPublicディレクトリの場所を、あらかじめ&lt;strong&gt;public&lt;/strong&gt;という名前で保存している。それは次のようにおこなう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt; $ pwd
+ /Users/YOURNAME/Dropbox/Public
+ $ s public
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;先ほどの &lt;code&gt;g&lt;/code&gt;は&lt;strong&gt;GO&lt;/strong&gt;であったのに対し、&lt;code&gt;s&lt;/code&gt;、&lt;strong&gt;Save&lt;/strong&gt;をする。順序が逆になったが、&lt;code&gt;s &amp;lt;bookmark_name&amp;gt;&lt;/code&gt;でブックマークしたものを、&lt;code&gt;g &amp;lt;bookmark_name&amp;gt;&lt;/code&gt;で呼び出すというシンプルなものだ。&lt;/p&gt;
+
+&lt;p&gt;ちなみにブックマークしたものは、&lt;code&gt;l&lt;/code&gt;、&lt;strong&gt;List&lt;/strong&gt;で呼び出せる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt; $ l
+ public   /Users/YOURNAME/Dropbox/Public
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ちなみに削除したい場合には、&lt;code&gt;d &amp;lt;bookmark_name&amp;gt;&lt;/code&gt;で削除できる。つまり&lt;strong&gt;Delete&lt;/strong&gt;ですな。&lt;/p&gt;
+
+&lt;p&gt;またブックマーク名は保存した名前をきっちりタイプする必要はなく、途中までタイプして&lt;kbd&gt;Tab&lt;/kbd&gt;キーを叩けば補完される。便利ですな。&lt;/p&gt;
+
+&lt;h2 id=&#34;bashmarksのインストール:0f95fc60470db38cfab85b3509774bb4&#34;&gt;bashmarksのインストール&lt;/h2&gt;
+
+&lt;p&gt;インストールも特別難しいことはない。下記はそのままbashmarksのサイトから引用したもの。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;git clone git://github.com/huyng/bashmarks.git&lt;/li&gt;
+&lt;li&gt;cd bashmarks &amp;amp;&amp;amp; make install&lt;/li&gt;
+&lt;li&gt;add source ~/.local/bin/bashmarks.sh from within your ~.bash_profile or ~/.bashrc file&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;z-shなんてのもある:0f95fc60470db38cfab85b3509774bb4&#34;&gt;z.shなんてのもある&lt;/h2&gt;
+
+&lt;p&gt;bashmarksは自分でブックマークしていくものだが、&lt;a href=&#34;https://github.com/rupa/z&#34;&gt;z&lt;/a&gt;であればブックマークではなく、履歴残して、それらにアクセスすることができる。
+今回はbashmarksについてのお話ということで、z.shについては &lt;a href=&#34;http://d.hatena.ne.jp/bose999/20120806/1344185966&#34;&gt;cd移動 を easyに z.sh de GO！ - bose999の試験管の中の話&lt;/a&gt; などを参加すると良い。&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:0f95fc60470db38cfab85b3509774bb4:zsh&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:0f95fc60470db38cfab85b3509774bb4:zsh&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;こちらもインストールは難しくない。&lt;/p&gt;
+
+&lt;h2 id=&#34;セットアップして損はなし:0f95fc60470db38cfab85b3509774bb4&#34;&gt;セットアップして損はなし&lt;/h2&gt;
+
+&lt;p&gt;コマンドラインで色々はじめたばかりの人はぜひ。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:0f95fc60470db38cfab85b3509774bb4:zsh&#34;&gt;この記事ではzshを前提にしているが、bashでもzは使える。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:0f95fc60470db38cfab85b3509774bb4:zsh&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
