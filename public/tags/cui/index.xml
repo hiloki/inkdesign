@@ -31,7 +31,7 @@
 
 &lt;p&gt;&lt;code&gt;cd&lt;/code&gt;と打って、移動先のパスはFinderからディレクトリをドラッグ&amp;amp;ドロップすることでもダイレクトに移動できるが、それをいちいちやるのは面倒くさい。&lt;/p&gt;
 
-&lt;h2 id=&#34;bashmarksの使い方:0f95fc60470db38cfab85b3509774bb4&#34;&gt;bashmarksの使い方&lt;/h2&gt;
+&lt;h2 id=&#34;bashmarksの使い方について:0f95fc60470db38cfab85b3509774bb4&#34;&gt;bashmarksの使い方について&lt;/h2&gt;
 
 &lt;p&gt;bashmarksを使えば、次のようにディレクトリを移動することができる。&lt;/p&gt;
 

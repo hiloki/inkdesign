@@ -1,11 +1,11 @@
 baseurl: "http://inkdesign.jp/"
 languageCode: "jp-ja"
 title: "inkdesign"
+name: "Hiroki Tani"
 contentdir: "content"
 publishdir: "public"
 builddrafts: false
 canonifyurls: true
-author: "hiloki"
 metaDataFormat: "yaml"
 
 indexes:

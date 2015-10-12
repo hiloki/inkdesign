@@ -1,38 +1,39 @@
-    {{ partial "head.html" . }}
-    <body>
-       {{ partial "nav.html" . }}
+{{ partial "head.html" . }}
+<body>
 
-        <section id="wrapper">
-            <article class="post">
-                <header>
-                    <h1>{{ .Title }}</h1>
-                    <h2 class="headline">{{ .Date.Format "January 2, 2006" }}</h2>
-                </header>
-                <section id="post-body">
-                    {{ .Content }}
-                </section>
-            </article>
-            <footer id="post-meta" class="clearfix">
-                {{ with .Site.Params.twitter }}<a href="https://twitter.com/{{ . }}">{{ end }}
-                        <img class="avatar" src="{{ .Site.BaseURL }}images/avatar.png">
-                        <div>
-                            <span class="dark">{{ .Site.Params.name }}</span>
-                            <span>{{ .Site.Params.aboutAuthor }}</span>
-                        </div>
-                    {{ with .Site.Params.twitter }}</a>{{ end }}
-                <section id="sharing">
-                    {{ partial "share.html" . }}
-                </section>
-            </footer>
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
 
-            {{ if isset .Site.Params "disqusShortname" }}
-                {{ partial "disqus.html" . }}
-            {{ end }}
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">{{ .Title }}</h1>
+<p class="entry-pubdate">{{ .Date.Format "Jan 1, 2006" }}</p>
+</header>
+<div class="entry-body">
+{{ .Content }}
+</div>
+</article>
+</main>
 
-            {{ partial "latest-posts.html" . }}
-            {{ partial "footer.html" . }}
-        </section>
+<div id="author" class="author">
+<img src="/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
 
-        {{ partial "js.html" . }}
-    </body>
+<p class="tempnote">
+  本ブログの過去記事は、近日整理して再公開します。
+</p>
+
+<footer id="footer">
+<ul class="footlinks">
+  <!-- <li><a rel="alternate" type="application/rss+xml" href="/feed.xml">Subscribe</a></li> -->
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+</body>
 </html>

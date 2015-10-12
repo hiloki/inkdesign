@@ -1,0 +1,170 @@
+@import url(http://fonts.googleapis.com/css?family=Unica+One);
+
+:root {
+  -webkit-text-size-adjust: 100%;
+}
+
+html,body,
+blockquote,p,ul,ol,dl,
+li,dt,dd,figure,
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #F9F8F7;
+  font-family: Helvetica Neue,sans-serif;
+  color: #345;
+}
+
+header,footer,main,aside {
+  display: block;
+}
+
+nav ol,
+nav ul {
+  list-style: none;
+}
+
+audio,video,canvas,iframe,
+img,svg {
+  vertical-align: middle;
+}
+
+a {
+  color: #D64E20;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 3.998rem;
+  /*margin: 3.6rem auto;*/
+}
+
+[id="header"] {
+  margin-bottom: 2.827rem;
+  padding: 1.414rem 0;
+  /*position: relative;*/
+  font-weight: normal;
+  font-family: 'Unica One', cursive;
+}
+[id="header"] a {
+  color: #D64E20;
+  text-decoration: none;
+}
+
+.slogan {
+  position: relative;
+  display: inline-block;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 1.414rem;
+}
+
+.breath {
+  font-size: 0;
+}
+
+[id="main"] {
+  margin-bottom: 2.827rem;
+}
+
+.entry {
+  max-width: 42rem;
+  padding: 0 1em;
+}
+.entry-header {
+  margin-bottom: 1.999em;
+  text-align: center;
+}
+.entry-title {
+  margin-bottom: 0.5em;
+  line-height: 1.414;
+  font-weight: normal;
+  font-size: 1.999rem
+}
+
+.entry-title a {
+  color: inherit;
+  text-decoration: none;
+}
+.entry-pubdate {
+  text-transform: uppercase;
+  font-family: 'Unica One', cursive;
+}
+.entry-body {
+  line-height: 1.999;
+  font-size: 1rem;
+}
+.entry-body > * {
+  margin-bottom: 1.414em;
+}
+
+.entry-body blockquote {
+  margin-left: -3em;
+  margin-right: -3em;
+  text-align: center;
+  font-size: x-large;
+  font-style: italic;
+}
+@media (max-width: 48em) {
+  .entry-body blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: large;
+  }
+}
+
+.entry-body figure img {
+  max-width: 100%;
+}
+@media (max-width: 48em) {
+  .entry-body figure {
+  }
+}
+
+.entry-body h2 {
+  margin: 1.999rem 0;
+}
+
+.author {
+  margin-bottom: 1.414rem;
+  text-align: center;
+}
+.author .avatar {
+  margin-bottom: 0.707rem;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+}
+.author .name {
+  margin-bottom: 0.707rem;
+  font-family: 'Unica One', cursive;
+  text-transform: uppercase;
+}
+.author .title {
+  font-family: 'Unica One', cursive;
+  text-transform: uppercase;
+}
+
+[id="footer"] {
+  padding: 1.414rem 0;
+}
+
+.footlinks {
+  list-style: none;
+  font-family: 'Unica One', cursive;
+  text-transform: uppercase;
+}
+
+.tempnote {
+  margin-bottom: 1.414rem;
+  padding: 0.5rem;
+  background-color: #E9E8E7;
+  font-size: 0.707em;
+}

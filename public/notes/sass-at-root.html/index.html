@@ -1,40 +1,49 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="jp-ja">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="">
-		<meta name="description" content="I think design everywhere.">
-		<meta name="generator" content="Hugo 0.14" />
-		<title>Sass3.3の@at-rootで親のルールを指定する &middot; inkdesign</title>
-		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
-		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
-		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
-		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign" />
-	</head>
-    <body>
-       <nav class="main-nav">
-	
-	
-		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
-	
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sass3.3の@at-rootを使ってちょっとしたことを試した。">
+<meta property="og:title" content="Sass3.3の@at-rootで親のルールを指定する" />
+<meta property="og:type" content="blog" />
+<meta property="og:url" content="http://localhost:1313/notes/sass-at-root.html/" />
 
-	
-		<a href='http://localhost:1313/about'>About</a>
-	
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.14" />
+<title>Sass3.3の@at-rootで親のルールを指定する - inkdesign</title>
 
-	
-</nav>
+<link rel="stylesheet" href="http://localhost:1313/styles/style.css">
 
-        <section id="wrapper">
-            <article class="post">
-                <header>
-                    <h1>Sass3.3の@at-rootで親のルールを指定する</h1>
-                    <h2 class="headline">February 16, 2014</h2>
-                </header>
-                <section id="post-body">
-                    <p>先日登壇した<a href="http://cssnite.jp/lp/lp32/">CSS Nite LP, Disk 32</a>のセッションで紹介されていた<a href="https://github.com/geckotang/cssnite-lp32/blob/master/scss/_trbl.scss">SassのMixin</a>をSass3.3の@at-rootで少し手を加えてみる、という話。</p>
+<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">Sass3.3の@at-rootで親のルールを指定する</h1>
+<p class="entry-pubdate">Feb 2, 2014</p>
+</header>
+<div class="entry-body">
+<p>先日登壇した<a href="http://cssnite.jp/lp/lp32/">CSS Nite LP, Disk 32</a>のセッションで紹介されていた<a href="https://github.com/geckotang/cssnite-lp32/blob/master/scss/_trbl.scss">SassのMixin</a>をSass3.3の@at-rootで少し手を加えてみる、という話。</p>
 
 <p>紹介されていたのは、<a href="http://codepen.io/shshaw/full/gEiDt">天地左右中央に絶対配置するテクニック</a>のMixin。</p>
 
@@ -144,112 +153,27 @@
 
 <p>あと気軽にSass3.3を試すなら<a href="http://sassmeister.com/">SassMeister</a>が便利。</p>
 
-                </section>
-            </article>
-            <footer id="post-meta" class="clearfix">
-                <a href="https://twitter.com/hiloki">
-                        <img class="avatar" src="http://localhost:1313/images/avatar.png">
-                        <div>
-                            <span class="dark"></span>
-                            <span></span>
-                        </div>
-                    </a>
-                <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fnotes%2fsass-at-root.html%2f - Sass3.3%e3%81%ae%40at-root%e3%81%a7%e8%a6%aa%e3%81%ae%e3%83%ab%e3%83%bc%e3%83%ab%e3%82%92%e6%8c%87%e5%ae%9a%e3%81%99%e3%82%8b by @hiloki"><span class="icon-twitter"> Tweet</span></a>
+</div>
+</article>
+</main>
 
-<a class="facebook" href="#" onclick="
-    window.open(
-      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-      'facebook-share-dialog',
-      'width=626,height=436');
-    return false;"><span class="icon-facebook-rect"> Share</span>
-</a>
+<div id="author" class="author">
+<img src="http://localhost:1313/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
 
-                </section>
-            </footer>
+<p class="tempnote">
+  本ブログの過去記事は、近日整理して再公開します。
+</p>
 
-            
-
-            <ul id="post-list" class="archive readmore">
-    <h3>Read more</h3>
-    
-    
-        
-        <li>
-            <a href="http://localhost:1313/notes/uncle-css.html/">CSS設計の教科書出版イベントやります<aside class="dates">Oct 29</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://localhost:1313/notes/bookbookbook.html/">本を2冊ほど書きました<aside class="dates">Sep 1</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://localhost:1313/notes/qcon-tokyo.html/">QCon Tokyo 2014 に登壇します。<aside class="dates">Mar 15</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://localhost:1313/notes/the-secret-of-sass-glasses.html/">Sassのメガネに込められた秘密<aside class="dates">Feb 21</aside></a>
-        </li>
-        
-   
-    
-        
-   
-    
-        
-        <li>
-            <a href="http://localhost:1313/notes/bem__name-convention--is-smart.html/">BEMの命名規則は賢い<aside class="dates">Jan 23</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://localhost:1313/notes/how-to-use-utility-classes.html/">CSSの汎用クラスのつかいどころ<aside class="dates">Jan 13</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://localhost:1313/notes/how-a-css-diamond-is-made.html/">CSSアニメーションでひし形表現を説明してみた<aside class="dates">Jan 7</aside></a>
-        </li>
-        
-   
-    
-        
-   
-    
-        
-        <li>
-            <a href="http://localhost:1313/notes/diamond-thumbnail.html/">ひし型のサムネイルをCSSでつくる<aside class="dates">Jan 5</aside></a>
-        </li>
-        
-   
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
 </ul>
-            <footer id="footer">
-    <p class="small">
-        © Copyright 2015 
-    </p>
 </footer>
-        </section>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="http://localhost:1313/js/main.js"></script>
-<script src="http://localhost:1313/js/highlight.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-    <script data-no-instant>document.write('<script src="http://'
+<script data-no-instant>document.write('<script src="http://'
         + (location.host || 'localhost').split(':')[0]
 		+ ':1313/livereload.js?mindelay=10"></'
         + 'script>')</script></body>

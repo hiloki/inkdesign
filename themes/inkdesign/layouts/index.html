@@ -1,15 +1,68 @@
-	{{ partial "head.html" . }}
-	<body>
-    {{ partial "nav.html" . }}
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ .Params.Description }}">
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:type" content="blog" />
+<meta property="og:url" content="{{ .Permalink }}" />
+{{ with .Params.ogimage }}<meta property="og:image" content="{{ . }}">{{ end }}
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+{{ .Hugo.Generator }}
+<title>{{ .Title }}</title>
+<!-- <link rel="shortcut icon" href="{{ .Site.BaseURL }}images/favicon.ico"> -->
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/style.css">
+<!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/highlight.css"> -->
+<link href="{{ .Site.BaseURL }}index.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    {{ partial "profile.html" . }}
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
 
-    <section id="wrapper" class="home">
-        {{ partial "post-list.html"  . }}
-        {{ partial "pagination.html" . }}
-        {{ partial "footer.html"     . }}
-    </section>
+<body>
 
-    {{ partial "js.html" . }}
-    </body>
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+{{ range first 1 .Paginator.Pages }}
+{{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title"><a href='{{ .Permalink }}'>{{ .Title }}</a></h1>
+<p class="entry-pubdate">{{ .Date.Format "Jan 1, 2006" }}</p>
+</header>
+</article>
+{{ end }}
+</main>
+
+<p class="tempnote">
+  本ブログの過去記事は、近日整理して再公開します。
+</p>
+
+<div id="author" class="author">
+<img src="/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<footer id="footer">
+<ul class="footlinks">
+  <!-- <li><a rel="alternate" type="application/rss+xml" href="/feed.xml">Subscribe</a></li> -->
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+</body>
 </html>
