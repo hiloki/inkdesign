@@ -6,7 +6,7 @@ build:
         theme: inkdesign
     - script:
         name: Copy RSSfeed to feed.xml
-        code: cp _public/index.xml _public/feed.xml
+        code: cp public/index.xml public/feed.xml
 deploy:
   steps:
     - lukevivier/gh-pages@0.2.1:
