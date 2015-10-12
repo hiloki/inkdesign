@@ -1,7 +1,7 @@
 ---
 date: 2015-10-13T03:11:17+09:00
 title: 株式会社ツクルバに転職します
-description: 2015年9月17日に3年数ヶ月ほど働いたサイバーエージェントを退職し、10月後半から株式会社ツクルバに転職します
+description: 転職。
 ogimage: 'images/notes/tsukuruba/01.jpg'
 ---
 
