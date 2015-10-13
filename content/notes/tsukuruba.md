@@ -2,7 +2,7 @@
 date: 2015-10-13T03:11:17+09:00
 title: 株式会社ツクルバに転職します
 description: 転職。
-ogimage: 'images/notes/tsukuruba/01.jpg'
+ogimage: 'images/notes/tsukuruba/ogimage.jpg'
 ---
 
 本題の前に、退職の経緯など。
