@@ -50,6 +50,11 @@ ogimage: 'images/notes/tsukuruba/ogimage.jpg'
 クラフトビール好きで、ツクルバちょっと覗いてみたいな、っていうエンジニアな方はぜひ。  
 [Craft Beer Meetup#1（Wantedly）](https://www.wantedly.com/projects/30401)
 
+## そうだ！
+
+すごくいい感じのリノベーション物件に興味があるひとはcowcamoの覗くとわくわくしますよ  
+https://cowcamo.jp/
+
 ## そして定番
 
 一応僕の欲しいもの、おいておきます、一応。  
