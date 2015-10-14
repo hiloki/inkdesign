@@ -5,6 +5,7 @@ description: Gitの.gitignoreの除外パターンで、/**/*.jsが使えなか�
 date: 2012-12-14
 tags: git
 ---
+
 Gitでバージョン管理したくないファイルを指定する場合には、[.gitignore](http://git-scm.com/book/ch2-2.html#Ignoring-Files)ファイルを作成し、その中に除外パターンを書く。
 
 ```bash
