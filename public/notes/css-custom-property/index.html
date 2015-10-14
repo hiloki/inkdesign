@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="カスケード変数のためのCSSカスタムプロパティを試してみた。本記事は CSS Property Advent Calendar 2013 の記事。">
+<meta property="og:title" content="CSSカスタムプロパティとMythの話">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/notes/css-custom-property/">
+<meta property="og:image" content="http://localhost:1313/">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.14" />
+<title>CSSカスタムプロパティとMythの話 - inkdesign</title>
+
+<link rel="stylesheet" href="http://localhost:1313/styles/style.css">
+
+<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">CSSカスタムプロパティとMythの話</h1>
+<p class="entry-pubdate">2013-12-23</p>
+</header>
+<div class="entry-body">
+
+
+<p><a href="http://dev.w3.org/csswg/css-variables/">CSS Custom Properties for Cascading Variables Module</a>はCSSで変数を使うために、その変数を定義するためのプロパティについての仕様だ。</p>
+
+<p>これが先日<a href="http://nightly.mozilla.org/">Firefox Nightly 29</a>で実装されたらしく、ちょっとお触りしてみた。これについては同じようにお触りされた記事、<a href="http://thatemil.com/blog/2013/12/15/playing-around-with-css-variables-custom-properties/">Playing around with CSS variables - &ldquo;custom properties&rdquo;</a>が良かったのでこっちも参照するのをおすすめする。</p>
+
+<h2 id="基本的な使い方:06c79ab8e5382aeb1c59f67c41152186">基本的な使い方</h2>
+
+<p>CSSで変数というと、<a href="http://sass-lang.com/">Sass</a>や<a href="http://lesscss.org/">LESS</a>などのプリプロセッサとして使うことができ、そのあたりで使ったことがあるのであれば、CSSerの人でもなんとなく馴染みやすい仕様かもしれない。とはいえ定義とその参照方法はSassやLESSのそれとは全然異なる。</p>
+
+<pre><code class="language-css">/*
+変数を定義する。
+`var-`の後が参照する時のキーになる。
+ */
+:root {
+  var-box-padding: 20px;
+  var-background-color: green;
+  var-text-color: white;
+}
+
+/*
+`var()`で参照する。
+*/
+
+.box {
+  padding: var(box-padding);
+  background-color: var(background-color);
+  color: var(text-color);
+}
+</code></pre>
+
+<p>上記のように書けば、次のようなCSSを書いたときと同等になる。</p>
+
+<div class="entry__media">
+![](/images/css-custom-property/01.png)
+</div>
+
+<pre><code class="language-css">.box {
+  padding: 20px;
+  background-color: green;
+  color: white;
+}
+</code></pre>
+
+<h2 id="変数をどう使うか:06c79ab8e5382aeb1c59f67c41152186">変数をどう使うか</h2>
+
+<p>Sassの時でもあんまり自分は変数をそれほど有用性のある使い方をしているとは思わない。が、その中でも使えると思うのは、そのプロジェクトのキーカラーの定義を<code>$keyColor: red</code>とするような使い方がまず一つ。カスタムプロパティでは<code>var-key-color: red</code>というように。</p>
+
+<p>他にはメディアクエリで特定のスクリーンサイズ向けの定義を各所でおこないたい場合には、その条件を変数として定義することがある。</p>
+
+<pre><code class="language-css">$tablet: 40em;
+
+@media only screen and (max-width: $tablet) {
+  body {
+    color: blue;
+  }
+}
+</code></pre>
+
+<p>しかしこのノリでカスタムプロパティで実現しようとしても上手くいかなかった。</p>
+
+<pre><code>:root {
+  var-query-tablet: 40em;
+}
+
+@media only screen and (max-width: var(query-tablet)) {
+  body {
+    color: blue;
+  }
+}
+</code></pre>
+
+<p>これを実現する方法は今のところ浮かんでない。閃けばまたの機会に。</p>
+
+<p>あとおまけで、次のページにアクセスすると、<a href="http://cdpn.io/Dfbng">対象ブラウザがカスタムプロパティに対応しているかどうか分かる</a>ようにしてみた。すごく馬鹿げたような方法でやってみたので、FirefoxのNightly 29をもしインストールしたならば覗いてみてほしい。</p>
+
+<h2 id="スコープとポストプロセッサーmyth:06c79ab8e5382aeb1c59f67c41152186">スコープとポストプロセッサーMyth</h2>
+
+<p>先に紹介した記事ではあまり触れられていなかったスコープについて検証してみる。Sassなどではネストの中で変数に違う値が入れば、そちらが優先される。</p>
+
+<h3 id="html:06c79ab8e5382aeb1c59f67c41152186">HTML</h3>
+
+<pre><code class="language-html">&lt;h1&gt;Default&lt;/h1&gt;
+&lt;div class=&quot;first&quot;&gt;
+  &lt;h1&gt;First&lt;/h1&gt;
+  &lt;p&gt;blah,blah,blah&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="sass:06c79ab8e5382aeb1c59f67c41152186">Sass</h3>
+
+<pre><code class="language-scss">$color: blue;
+
+h1 {
+  color: $color; // blue
+}
+
+.first {
+  $color: green;
+  h1 {
+    color: $color; // green
+  }
+}
+</code></pre>
+
+<p>次のようになる。</p>
+
+<h3 id="css:06c79ab8e5382aeb1c59f67c41152186">CSS</h3>
+
+<pre><code class="language-css">h1 {
+  color: blue;
+}
+
+.first h1 {
+  color: green;
+}
+</code></pre>
+
+<p>ではカスタムプロパティでの変数のスコープはどうなっているのか。同じようなコードを用意する。今度はSassではなくCSSだ。</p>
+
+<h3 id="css-1:06c79ab8e5382aeb1c59f67c41152186">CSS</h3>
+
+<pre><code>:root {
+  var-color: blue;
+}
+
+h1 {
+  color: var(color); /* blue */
+}
+
+.first {
+  var-color: green;
+}
+</code></pre>
+
+<p>この結果は次のようになる。</p>
+
+<div class="entry__media">
+![](/images/css-custom-property/02.png)
+</div>
+
+<p>ここで注目したいところは、Sassの例のように<code>.first h1 {...}</code>というように再度<code>h1</code>ルールを定義しなおしていない点だ。これによってはSassにおける変数と、カスタムプロパティにおける変数の扱いに違いがあるのがわかる。</p>
+
+<p>さてここで先日登場した<a href="http://www.myth.io/">Myth</a>というプリプロセッサの話を絡める。Mythは従来のプリプロセッサとは異なり、CSS Polyfillといったアプローチでつくられている。構文も独自のものではなく、進行中の仕様と同様の構文で書くことができる。その中には本記事のテーマであるカスタムプロパティも含まれており、Mythを介して非対応ブラウザでも使えるように<strong>みえる</strong>。</p>
+
+<p>このアプローチは面白いなぁと思っていたところ、<a href="https://twitter.com/cssradar">@cssradar</a>から、CompassのChrisが<a href="https://gist.github.com/chriseppstein/8016527">インチキだとお怒り</a>であることを聞いた。</p>
+
+<p>その具体的な例として、先ほどのスコープのくだりで説明したコードをそのままMythに通してみる。そうすると次のようなCSSになる。</p>
+
+<pre><code class="language-css">body {
+  text-align: center;
+}
+
+h1 {
+  color: blue;
+}
+
+.first {
+  var-color: green;
+}
+</code></pre>
+
+<div class="entry__media">
+![](/images/css-custom-property/03.png)
+</div>
+
+<p>これは本来のカスタムプロパティの仕様として期待されるものではない。つまりはMythは一見はCSSの仕様通りに振るまいそうな打ち出し方であったものの実際には異なるということだ。
+そもそもMythの内部は、Sass、LESSに次いて使われているであろう<a href="http://learnboost.github.io/stylus/">Stylus</a>の開発者である<a href="http://tjholowaychuk.com/post/44267035203/modular-css-preprocessing-with-rework">TJがつくったRework</a>の機能を元にしている。その中の<a href="https://github.com/visionmedia/rework-vars">変数</a>の機能での説明では下記のように補足されている。</p>
+
+<blockquote>
+<p>N.B. This is not a polyfill. This plugin aims to provide a future-proof way of using a limited subset of the features provided by native CSS variables.</p>
+</blockquote>
+
+<p>あくまでこの機能で提供されるのはグローバルの変数のみだということだ。（少なくとも現状は。）
+とはいえ、Mythには期待をしてるので、引き続き様子をみて触ってみたい。</p>
+
+<h2 id="なかなか奥が深いカスタムプロパティ:06c79ab8e5382aeb1c59f67c41152186">なかなか奥が深いカスタムプロパティ</h2>
+
+<p>色々と試してみたものの、まだあまり上手く使える気はしないものの、これが他のブラウザでも実装されるようになれば色々とアイデアを考えてみたいものだ。</p>
+
+<h2 id="というわけで:06c79ab8e5382aeb1c59f67c41152186">というわけで</h2>
+
+<p>本記事は<a href="http://www.adventar.org/calendars/57">CSS Property Advent Calendar 2013</a>の23日目の記事として書いた。<br />
+次は<a href="http://www.adventar.org/users/2499">noha_koさん</a>です。</p>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://localhost:1313/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<p class="tempnote">
+  本ブログの過去記事は、近日整理して再公開します。
+</p>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Web Componentsで簡単なコンポーネントをつくってみる。本記事は Frontrend Advent Calendar 2013 の記事。">
+<meta property="og:title" content="Web ComponentsとPolymerを軽く触ってみる">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/notes/try-web-components-and-polymer/">
+<meta property="og:image" content="http://localhost:1313/">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.14" />
+<title>Web ComponentsとPolymerを軽く触ってみる - inkdesign</title>
+
+<link rel="stylesheet" href="http://localhost:1313/styles/style.css">
+
+<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">Web ComponentsとPolymerを軽く触ってみる</h1>
+<p class="entry-pubdate">2013-12-05</p>
+</header>
+<div class="entry-body">
+
+
+<p>Web ComponentsはWebのUIのコンポーネント化を実現するための各種仕様の総称だ。</p>
+
+<p>DOMとスタイルをカプセル化する<strong>Shadow DOM</strong>、任意の要素または既存の要素を拡張する<strong>Custom Elements</strong>、それらをパッケージ化し再利用できるようにするための<strong>HTML Imports</strong>を含む。</p>
+
+<p>マークアップをテンプレート化する<strong>HTML Templates</strong>も含まれていたが、つい最近HTML仕様に組み込まれたようだ。</p>
+
+<p>ちなみにWeb Componentsについて調べていると、Decoratorsという仕様にふれていることもあるが、これのことは忘れて良いらしい。</p>
+
+<p>Web Componentsの仕様・仕組みについては、先日おこなわれたHTML5 Conferenceで、Shadow DOMのSpec Editorである<a href="http://www.youtube.com/watch?v=wvggCAG5ttw&amp;feature=share">夷藤さんのお話</a>が実にわかりやすいとはおもうので、そちらを観るのをおすすめする。</p>
+
+<div class="entry__media">
+<iframe width="560" height="315" src="//www.youtube.com/embed/wvggCAG5ttw" frameborder="0" allowfullscreen class="u-center embed"></iframe>
+</div>
+
+<p><a href="http://hayatoito.github.io/webcomponents-slides/#1">夷藤さんのスライド</a>はこちら。</p>
+
+<p>と、もうひとつ紹介するのが<a href="http://www.polymer-project.org/">Polymer</a>だ。こちらも先ほどの資料後半でも解説されているのだが、Web Components、周辺仕様のポリフィル（ブラウザが未対応な仕様の補完）をしてくれるライブラリともいえるし、コンポーネント集でもある。</p>
+
+<p>実際にこれらを使って作ったものは、以前おこなわれた<a href="http://frontrend.github.io/blog/frontrend-x-chrome-tech-talk-night-extended/">Frontrend x Chrome     Tech Talk Night Extended</a>でのLTのときに色々と<a href="http://hiloki.github.io/demo/frontrend_chrome/app/">つくってみた</a>。</p>
+
+<div class="entry__media">
+<iframe src="http://www.slideshare.net/slideshow/embed_code/27734708?rel=0" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen class="u-center embed"> </iframe>
+</div>
+
+<p>この時にも触ってみたかっただけなので、いざつくってみると設計が難しく、今おもえばデタラメな設計なので、そのものをあまり参考はしない方がいいとおもう。これらは特に難しいことをしてつくったわけではなく、当日イベントにもきてたAddy Osmani氏の記事で紹介されている<a href="http://www.html5rocks.com/en/tutorials/webcomponents/yeoman/?redirect_from_locale=ja">YeomanのPolymerジェネレータのタスク</a>を使えば非常に簡単。</p>
+
+<pre><code>$ npm install -g yo
+$ npm install generator-polymer -g
+$ mkdir my-new-project &amp;&amp; cd $_
+$ yo polymer
+</code></pre>
+
+<p>こういうのを叩いていくイメージ。（スライドにも書いてる。）</p>
+
+<p>ちなみにGoogle Chromeを使っている場合は、最近のバージョンだと</p>
+
+<p><strong>Settings &gt; General &gt; Elements &gt; Show Shadow DOM</strong></p>
+
+<p>を有効にすると、Inspectしたときに隠れているDOMをみることができる。先ほどの僕のつくったサンプルも、普通にHTMLのソースをみたときと、DevToolでInspectしたときと見比べるといいかもしれない。</p>
+
+<p>ブラウザのネイティブで実装されているvideo要素などをInspectしてみてほしい。それらにも隠れているDOMをみることができるはず。</p>
+
+<p>Web Componentsに触れて良いとおもうのはまさにこういうところで、コントローラーUI付きでビデオを埋め込みたいときに、UIを頑張って作る、または深く構造を知る必要なく、<code>&lt;video&gt;</code>と<code>&lt;source&gt;</code>を組み合わせれば良いわけだ。</p>
+
+<p>そしてShadow DOMによるカプセル化で、本当に独立したコンポーネントをつくられることが楽しい。</p>
+
+<h2 id="カプセル化:fe1d80cca7ad5100b644bbb56172f1de">カプセル化</h2>
+
+<p>もうひとつのサンプル、<a href="http://hiloki.github.io/demo/frontrend_chrome/app/switch.html">iOS7のスイッチUI</a>を模したもの。</p>
+
+<p>これは次のようなマークアップでつくることができる。</p>
+
+<div class="entry__media">
+![](/images/try-web-components-and-polymer/01.png)
+</div>
+
+<pre><code>&lt;x-switch&gt;&lt;/x-switch&gt;
+</code></pre>
+
+<p>かなり手抜きでオン/オフの管理などは省いている。そもそもこの見た目をつくるだけなら、わざわざコンポーネント化することなく、ただ<code>class</code>をあてれば良いだけのものなのだが、注目してほしいのはそこではない。</p>
+
+<p>このコンポーネントの中身を除くと下記のようになっている。</p>
+
+<pre><code>&lt;polymer-element name=&quot;x-switch&quot; attributes=&quot;&quot;&gt;
+&lt;template&gt;
+&lt;style&gt;
+@host { 
+  :scope {
+    display: inline-block;
+  }
+}
+input[type=checkbox] {
+  -webkit-appearance: none;
+  box-shadow: inset 0px 0px 0px 1px #e6e6e6;
+  border-radius: 15px;
+  ...
+}
+input[type=checkbox]:checked {
+  box-shadow: inset 0px 0px 0px 20px #53d76a;
+}
+input[type=checkbox]:after {
+  content: '';
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  ...
+}
+input[type=&quot;checkbox&quot;]:checked:after {
+  left: 22px;
+}
+&lt;/style&gt;
+&lt;input type=&quot;checkbox&quot; /&gt;
+&lt;/template&gt;
+&lt;/polymer-element&gt;
+</code></pre>
+
+<p>これはPolymerを通してつくった<code>x-switch</code>コンポーネント。注目してほしいのは、<code>&lt;style&gt;</code>に記述されたルールだ。</p>
+
+<p>このコンポーネントでは<code>input[type=checkbox]</code>といったセレクタで、通常であればブラウザデフォルトのチェックボックスすべてに影響してしまう。</p>
+
+<p>だが、サンプルを確認してもらうとわかる通り、このiOS7ライクなチェックボックスの前後にはブラウザデフォルトの見た目のままのチェックボックスが確認できるはず。</p>
+
+<div class="entry__media">
+  ![](/images/try-web-components-and-polymer/02.png)
+</div>
+
+<p>つまりコンポーネント内で定義したスタイルは外に汚染することはない。素晴らしい。</p>
+
+<p>今のCSSではこうした汚染というのは容易に起こる。ゆえに強固なセレクタを用いたり、または命名を工夫して衝突・汚染することがないようにするなど、100%安全とはいえない方法で回避せざるをえない。<br />
+(それがCSSの良さともいえるかもしれないけど)</p>
+
+<p>実際にWeb Componentsを実際の中・大規模な仕事の中で扱う、運用する経験はまだ無いので、見えていない問題は色々あるかもしれない。メンテナンス性であるとか、無秩序にチームの開発者がコンポーネントを作成・編集すれば混沌としてしまうだろう。<br />
+下手をすると、現状のHTML/CSSにおける同等の問題以上に問題となるかもしれない。</p>
+
+<p>と、ネガティブに考える以上に、Web Componentsには面白みがあるとおもっている。今回紹介したリソースを参照して、是非試してみてほしい。</p>
+
+<h2 id="というわけで:fe1d80cca7ad5100b644bbb56172f1de">というわけで</h2>
+
+<p>本記事は<a href="http://www.adventar.org/calendars/62">Frontrend Advent Calendar 2013</a>の5日目の記事として書いた。<br />
+次は<a href="http://ginpen.com/">Ginpeiさん</a>です。</p>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://localhost:1313/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<p class="tempnote">
+  本ブログの過去記事は、近日整理して再公開します。
+</p>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

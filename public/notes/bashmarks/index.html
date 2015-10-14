@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="コマンドラインを使いはじめると、ディレクトリの移動が億劫。そのときにブックマークから引っ張ってこれると便利。">
+<meta property="og:title" content="bashmarksでディレクトリをブックマークする">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/notes/bashmarks/">
+<meta property="og:image" content="http://localhost:1313/">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.14" />
+<title>bashmarksでディレクトリをブックマークする - inkdesign</title>
+
+<link rel="stylesheet" href="http://localhost:1313/styles/style.css">
+
+<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">bashmarksでディレクトリをブックマークする</h1>
+<p class="entry-pubdate">2012-11-29</p>
+</header>
+<div class="entry-body">
+
+
+<p><a href="http://www.huyng.com/projects/bashmarks/">bashmarks</a></p>
+
+<p>このツール名から想像できる通り、</p>
+
+<blockquote>
+<p>directory bookmarks for the shell</p>
+</blockquote>
+
+<p>ということで、コマンドライン上でちょこちょこと移動することになるディレクトリの場所を、ウェブページのブックマークのようにブックマークすることができるツール。</p>
+
+<p><a href="http://inkdesign.jp/notes/2012/11/29/open-file-by-subl.html">最近はコマンドラインを使う機会</a>も多く、ターミナルを開いて、<code>cd hoge</code>とかしながらディレクトリをプロジェクトのディレクトリに移動する。</p>
+
+<p><code>cd</code>と打って、移動先のパスはFinderからディレクトリをドラッグ&amp;ドロップすることでもダイレクトに移動できるが、それをいちいちやるのは面倒くさい。</p>
+
+<h2 id="bashmarksの使い方について:e5b4cbf04ef0e9fd61905871bf0de895">bashmarksの使い方について</h2>
+
+<p>bashmarksを使えば、次のようにディレクトリを移動することができる。</p>
+
+<pre><code class="language-bash"> $ pwd
+ /Users/YOURNAME/
+ $ g public
+ $ pwd
+ /Users/YOURNAME/Dropbox/Public
+</code></pre>
+
+<p>bashmarksのコマンドとして売っているのは <code>g</code> のところ。あらかじめbashmarksで場所を保存（ブックマーク）し、それを呼び出しているだけ。この例では、DropboxのPublicディレクトリの場所を、あらかじめ<strong>public</strong>という名前で保存している。それは次のようにおこなう。</p>
+
+<pre><code class="language-bash"> $ pwd
+ /Users/YOURNAME/Dropbox/Public
+ $ s public
+</code></pre>
+
+<p>先ほどの <code>g</code>は<strong>GO</strong>であったのに対し、<code>s</code>、<strong>Save</strong>をする。順序が逆になったが、<code>s &lt;bookmark_name&gt;</code>でブックマークしたものを、<code>g &lt;bookmark_name&gt;</code>で呼び出すというシンプルなものだ。</p>
+
+<p>ちなみにブックマークしたものは、<code>l</code>、<strong>List</strong>で呼び出せる。</p>
+
+<pre><code class="language-bash"> $ l
+ public   /Users/YOURNAME/Dropbox/Public
+</code></pre>
+
+<p>ちなみに削除したい場合には、<code>d &lt;bookmark_name&gt;</code>で削除できる。つまり<strong>Delete</strong>ですな。</p>
+
+<p>またブックマーク名は保存した名前をきっちりタイプする必要はなく、途中までタイプして<kbd>Tab</kbd>キーを叩けば補完される。便利ですな。</p>
+
+<h2 id="bashmarksのインストール:e5b4cbf04ef0e9fd61905871bf0de895">bashmarksのインストール</h2>
+
+<p>インストールも特別難しいことはない。下記はそのままbashmarksのサイトから引用したもの。</p>
+
+<blockquote>
+<ol>
+<li>git clone git://github.com/huyng/bashmarks.git</li>
+<li>cd bashmarks &amp;&amp; make install</li>
+<li>add source ~/.local/bin/bashmarks.sh from within your ~.bash_profile or ~/.bashrc file</li>
+</ol>
+</blockquote>
+
+<h2 id="z-shなんてのもある:e5b4cbf04ef0e9fd61905871bf0de895">z.shなんてのもある</h2>
+
+<p>bashmarksは自分でブックマークしていくものだが、<a href="https://github.com/rupa/z">z</a>であればブックマークではなく、履歴残して、それらにアクセスすることができる。
+今回はbashmarksについてのお話ということで、z.shについては <a href="http://d.hatena.ne.jp/bose999/20120806/1344185966">cd移動 を easyに z.sh de GO！ - bose999の試験管の中の話</a> などを参加すると良い。<sup class="footnote-ref" id="fnref:e5b4cbf04ef0e9fd61905871bf0de895:zsh"><a rel="footnote" href="#fn:e5b4cbf04ef0e9fd61905871bf0de895:zsh">1</a></sup>こちらもインストールは難しくない。</p>
+
+<h2 id="セットアップして損はなし:e5b4cbf04ef0e9fd61905871bf0de895">セットアップして損はなし</h2>
+
+<p>コマンドラインで色々はじめたばかりの人はぜひ。</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:e5b4cbf04ef0e9fd61905871bf0de895:zsh">この記事ではzshを前提にしているが、bashでもzは使える。
+ <a class="footnote-return" href="#fnref:e5b4cbf04ef0e9fd61905871bf0de895:zsh"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://localhost:1313/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<p class="tempnote">
+  本ブログの過去記事は、近日整理して再公開します。
+</p>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

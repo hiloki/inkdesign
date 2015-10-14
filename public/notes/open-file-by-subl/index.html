@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="黒い画面もといターミナルなどのコマンドラインツールを使う機会が増えてきたので、地味なTipsで少し便利にしてみよう。">
+<meta property="og:title" content="Mac OS XのターミナルからSublime Text2を立ち上げられるようにすると地味に便利">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/notes/open-file-by-subl/">
+<meta property="og:image" content="http://localhost:1313/">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.14" />
+<title>Mac OS XのターミナルからSublime Text2を立ち上げられるようにすると地味に便利 - inkdesign</title>
+
+<link rel="stylesheet" href="http://localhost:1313/styles/style.css">
+
+<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">Mac OS XのターミナルからSublime Text2を立ち上げられるようにすると地味に便利</h1>
+<p class="entry-pubdate">2012-11-29</p>
+</header>
+<div class="entry-body">
+
+
+<h2 id="ターミナルからsublime-text2を起動する:8eef8bee4062bff850315dadc6ba4dda">ターミナルからSublime Text2を起動する</h2>
+
+<p><a href="http://www.sublimetext.com/docs/2/osx_command_line.html">OS X Command Line - Sublime Text 2 Documentation</a></p>
+
+<p>ここ見れば分かるって話なんですが、なんのこっちゃ、っていう人もいるでしょうから、日本語で解説していくことにする。</p>
+
+<p>CSSプリプロセッサをコマンドラインツールで実行してたり、<a href="http://gruntjs.com/">Grunt</a>を使い始めたー、GitもGUIは使ってませんー、という人で、なおかつSublime Text2を使っている人、という狭いんだか広いんだかわからない層向けになるのはご容赦ください。</p>
+
+<h2 id="sublime-text2でプロジェクトディレクトリをどう展開してますか:8eef8bee4062bff850315dadc6ba4dda">Sublime Text2でプロジェクトディレクトリをどう展開してますか？</h2>
+
+<p>多くの場合、さぁ作業するぞ、となると該当のプロジェクトの作業ディレクトリの中にあるファイルをいじくるわけですが、Sublime Text２ユーザーの人はどのようにはじめてますか？</p>
+
+<h3 id="ディレクトリをサイドバーにガっと放り込む:8eef8bee4062bff850315dadc6ba4dda">ディレクトリをサイドバーにガっと放り込む</h3>
+
+<p>新規に開いたウィンドウに、Finderからドラッグ&amp;ドロップでガっと放り込めば、そのディレクトリがサイドバーに登録され、中のファイルをツリー上に展開することができる。全然それも良しでしょう。</p>
+
+<h3 id="sublime-text2のprojectとして管理する:8eef8bee4062bff850315dadc6ba4dda">Sublime Text2のProjectとして管理する</h3>
+
+<p>ウィンドウにプロジェクトの作業ファイルが展開している状態で、Sublime Text2のメニューにある<strong>Project</strong>から、<strong>Save Project As&hellip;</strong>することで、その状態をプロジェクトという単位でSublime Text2が記録してくれるようになる。</p>
+
+<p>プロジェクトファイルは、<code>.sublime-project</code>、<code>.sublime-workspace</code>という名前で保存する。これらはそのプロジェクトのルートとかに保存してもいいし、全然別のところに保存してもいい。例えば全然違うところに<strong>SublimeProjects</strong>みたいな名前のフォルダを作り、そこに保存しても構わない。</p>
+
+<p>どこにそのファイルがあろうが、<strong>Project</strong>から<strong>Switch Project in Window</strong>、または<kbd>Command + Control + P</kbd>などをすれば、プロジェクトの切り替えダイアログが出る。そこから選べば、現在開いているウィンドウが、別のプロジェクトのディレクトリへと切り替わる。これもかなり便利。</p>
+
+<h2 id="さて本題のターミナルからsublime-text2を起動する話:8eef8bee4062bff850315dadc6ba4dda">さて本題のターミナルからSublime Text2を起動する話</h2>
+
+<p>最近はGit<sup class="footnote-ref" id="fnref:8eef8bee4062bff850315dadc6ba4dda:Git"><a rel="footnote" href="#fn:8eef8bee4062bff850315dadc6ba4dda:Git">1</a></sup>なり、Gruntなりを使うことが多いので、作業をはじめるときにはまずターミナル<sup class="footnote-ref" id="fnref:8eef8bee4062bff850315dadc6ba4dda:Terminal"><a rel="footnote" href="#fn:8eef8bee4062bff850315dadc6ba4dda:Terminal">2</a></sup>を立ち上げる。すると、次のアクションはエディタを開くことだが、いちいちアプリケーションから開くなり、別のランチャーソフトで起動するというのも面倒なので、そのままターミナルからやってしまいたい。例えばこんな風に。</p>
+
+<pre><code class="language-bash">subl .
+</code></pre>
+
+<p>これで現在いるディレクトリをそのままプロジェクトとしてSublime Text2で開くことができるようになる。</p>
+
+<p>地味に便利と思うんですが、どうでしょうか。
+興味を持ったら次へ。</p>
+
+<h2 id="sublへのシンボリックリンクを作る:8eef8bee4062bff850315dadc6ba4dda">sublへのシンボリックリンクを作る</h2>
+
+<p>Sublime Text２に含まれているコマンドラインツール、<strong>subl</strong>のシンボリックリンクを作るために下記をターミナル上で実行する。</p>
+
+<pre><code class="language-bash">ln -s &quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&quot; ~/bin/subl
+</code></pre>
+
+<p>これだけ！</p>
+
+<p>と言いたいところだけど、これを実行したあとに、</p>
+
+<pre><code class="language-bash">subl .
+</code></pre>
+
+<p>を叩いても、<code>subl: command not found</code>みたいになる場合には、ターミナルを再起動すれば大丈夫かも。</p>
+
+<h2 id="さぁこれではじめよう:8eef8bee4062bff850315dadc6ba4dda">さぁこれではじめよう</h2>
+
+<p>たまーに、上手く開かないこともあるので、そのときはコマンドを再度叩いてみてね。</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:8eef8bee4062bff850315dadc6ba4dda:Git">ターミナルからじゃなくとも、Sublime Text2のGitのパッケージを使えば、Sublime Text2上でGitを扱うこともできる。<a href="https://github.com/kemayo/sublime-text-2-git">kemayo/sublime-text-2-git</a>
+ <a class="footnote-return" href="#fnref:8eef8bee4062bff850315dadc6ba4dda:Git"><sup>[return]</sup></a></li>
+<li id="fn:8eef8bee4062bff850315dadc6ba4dda:Terminal">実際にはMac OS Xにもともとあるターミナルではなく、iTerm2っていうのを使ってます。画面分割とかもできて便利。<a href="http://www.iterm2.com/#/section/home">iTerm2 - Mac OS Terminal Replacement</a>
+ <a class="footnote-return" href="#fnref:8eef8bee4062bff850315dadc6ba4dda:Terminal"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://localhost:1313/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<p class="tempnote">
+  本ブログの過去記事は、近日整理して再公開します。
+</p>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

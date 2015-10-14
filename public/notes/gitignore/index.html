@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Gitの.gitignoreの除外パターンで、/**/*.jsが使えなかった話">
+<meta property="og:title" content="Gitの.gitignoreでサブディレクトリのファイルを除外するところでハマった">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/notes/gitignore/">
+<meta property="og:image" content="http://localhost:1313/">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.14" />
+<title>Gitの.gitignoreでサブディレクトリのファイルを除外するところでハマった - inkdesign</title>
+
+<link rel="stylesheet" href="http://localhost:1313/styles/style.css">
+
+<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">Gitの.gitignoreでサブディレクトリのファイルを除外するところでハマった</h1>
+<p class="entry-pubdate">2012-12-14</p>
+</header>
+<div class="entry-body">
+
+
+<p>Gitでバージョン管理したくないファイルを指定する場合には、<a href="http://git-scm.com/book/ch2-2.html#Ignoring-Files">.gitignore</a>ファイルを作成し、その中に除外パターンを書く。</p>
+
+<pre><code class="language-bash">*.swp
+._*
+.DS_Store
+node_modules
+release
+.sass-cache
+</code></pre>
+
+<p>こういう感じ。その<strong>.gitignore</strong>ファイルからみた除外したいパターンのパスを書く。Gitのドキュメントから引用すると、下記のようなパターンで除外ファイルを指定できる。<a href="http://git-scm.com/book/ja/Git-の基本-変更内容のリポジトリへの記録#ファイルの無視">こちらから</a>日本語訳として引用。</p>
+
+<pre><code class="language-bash"># コメント。これは無視されます
+*.a       # .a ファイルは無視
+!lib.a    # しかし、lib.a ファイルだけは .a であっても追跡対象とします
+/TODO     # ルートディレクトリの TODO ファイルだけを無視し、サブディレクトリの TODO は無視しません
+build/    # build/ ディレクトリのすべてのファイルを無視します
+doc/*.txt # doc/notes.txt は無視しますが、doc/server/arch.txt は無視しません
+</code></pre>
+
+<h2 id="で-ハマったところ:bfb8846b5554036b9efab49a7686de70">で、ハマったところ</h2>
+
+<p>今回はプロジェクトにおいて除外したい特定ファイルがある。対処のディレクトリは下記のような構成になっており、</p>
+
+<pre><code class="language-bash">projects/templates/
+projects/templates/pages/foo.html
+projects/templates/pages/foo.js
+projects/templates/pages/mypage/bar.js
+projects/.gitignore
+</code></pre>
+
+<p><strong>templates/</strong>以下の.jsを無視したい、というのをやりたかった。このとおり、templates/以下に展開するサブディレクトリのパターンは様々。そしてルートには、そのプロジェクトディレクトリとしての.gitignoreがあり、その中には<strong>.DS_Store</strong>などの定番の除外パターンを書いてある。</p>
+
+<p>で、このルートにある.gitignoreに対し、下記のようなパターンを書いた。</p>
+
+<pre><code class="language-bash">templates/**/*.js
+</code></pre>
+
+<p>これによって、<strong>各階層が異なるサブディレクトリも対象とて、その中のjsファイルを除外する</strong>というができると思ったが、だめだった。これによって除外されるのは、</p>
+
+<pre><code class="language-bash">templates/pages/foo.js
+</code></pre>
+
+<p>だけ、となる。</p>
+
+<p>じゃあ、階層ごとに、</p>
+
+<pre><code class="language-bash">templates/*.js
+templates/**/*.js
+templates/**/**/*.js
+</code></pre>
+
+<p>みたいに書く、というのは全然よろしくない。</p>
+
+<p>と思ったところで、<a href="http://havelog.ayumusato.com/food/e330-tori_hamu.html">鶏ハムの人</a>に助言をもらい、<strong>templates/に.gitignoreを追加</strong>した。</p>
+
+<pre><code class="language-bash">## projects/templates/.gitignore に下記を記述
+*.js
+</code></pre>
+
+<p>するとどうでしょう、理想通り、<strong>templates/以下のjsファイルが除外</strong>されましたとさ。</p>
+
+<p>ちなみに、この書き方だとtemplates/直下にあるjsしか除外されない気がしたのだけど、よく考えればそれは、</p>
+
+<pre><code class="language-bash">## projects/templates/.gitignore に下記を記述
+/*.js
+</code></pre>
+
+<p>ということになりますかね。</p>
+
+<p>めでたしめでたし。</p>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://localhost:1313/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<p class="tempnote">
+  本ブログの過去記事は、近日整理して再公開します。
+</p>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta property="og:title" content="CSS Preprocessor Shootout（個人的な）">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/notes/css-preprocessor-shootout/">
+<meta property="og:image" content="http://localhost:1313/">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.14" />
+<title>CSS Preprocessor Shootout（個人的な） - inkdesign</title>
+
+<link rel="stylesheet" href="http://localhost:1313/styles/style.css">
+
+<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">CSS Preprocessor Shootout（個人的な）</h1>
+<p class="entry-pubdate">2013-01-13</p>
+</header>
+<div class="entry-body">
+
+
+<p><a href="http://lp26.cssnite.jp/">CSS Nite LP, Disk 26「CSS Preprocessor Shootout」</a>でLESSについてのお話をしてきた。</p>
+
+<p>当日の雰囲気や実況については<a href="https://twitter.com/search?q=%23cssnite_lp26">ハッシュタグを追っていただく</a>として、ちょっとだけプリプロセッサ選びについてのフォローアップをば。</p>
+
+<h2 id="cssプリプロセッサはどれがいいの:4a83ac6057e4f9b46e04e7b6f2740a9d">CSSプリプロセッサはどれがいいの？</h2>
+
+<p>イベントのサブタイトルにもなっている<strong>CSS Preprocessor Shootout</strong>の元ネタは、イベントページの冒頭でも紹介されている通り、<a href="http://net.tutsplus.com/tutorials/html-css-techniques/sass-vs-less-vs-stylus-a-preprocessor-shootout/">Sass vs. LESS vs. Stylus: Preprocessor Shootout</a>という記事です。（英語ではありますが、この記事で基本的な文法は総ナメできます。）</p>
+
+<p>CSSプリプロセッサの基本的な機能はどれも一緒で、それに+αの違いがある。それゆえに「どれがいいの？」というのを知りたい、というのがある反面、しゃべる側も、どれがベストという結論を強く押し出すのは難しかった。講演ではそれぞれの特長のお話なり、実際つかったときの経験談なり、注意点なり、またより深いところなど&hellip;という内容になった。</p>
+
+<p>時間が限られていたことも含め、講演ではカバーしきれなかったツールの特長のようなところに触れつつ、<strong>Shootout(撃ち合い)</strong>ということもあり、僕個人としてひとつの結論を出してしまいましょう。</p>
+
+<h3 id="less-http-lesscss-org:4a83ac6057e4f9b46e04e7b6f2740a9d"><a href="http://lesscss.org/">LESS</a></h3>
+
+<p>これからプリプロセッサはじめる人に勧めるなら<strong>LESS</strong>。</p>
+
+<p>なぜなら一番簡単だから。
+そう宣言しつつも、以下必読。</p>
+
+<p>まずは僕が講演で取り上げたわけだが、実もフタもないことをいってしまえば、<strong>Stylus</strong>の登場によって、LESSがSassと差をつけていたところがほぼ無くなっている、現状。
+それはJavaScriptによる実装という点や、よりCSSに近い構文の簡潔さ、といったもの。</p>
+
+<p>ただ唯一の特徴としてはクライアントサイドで実行できること。これは本当に手軽。しかし本番環境で使うのは基本的にはNG。ただちょいと補足すると、講演でもLESSファイルのコンパイルのコストがかかるため、と話はしたものの、実際には最初のコンパイル以後は<strong>CSSをlocalStorageに保存してキャッシュ</strong>する。</p>
+
+<p>とはいえど、初期の読み込みに時間もかかるわけですし、この機能が安定しているかどうかというのはわからない。（経験上、本番で基本的に使うことはないので）</p>
+
+<p>なのでこのようにLESSについては深く語れば語るほど、機能として秀でた特長というのはなく、ただただ<strong>シンプルである</strong>ということが特長となる。</p>
+
+<p>今後はSassやStylusと大きな差をつけているExtendが実装されることで、世間的にはようやく横並びになるかもしれないが、それによってシンプルさというのも少し削られてしまうかもしれない。</p>
+
+<p>なのでLESSが凌いで、LESSが圧倒的に支持をうけることは無いでしょう。これはLESSを徹底してマスターしていくべきかどうかの理由として、重要なことです。（のちほどのSassにおけるメリットとして詳細は書く）</p>
+
+<p>こういった思いがあるゆえ、僕の講演でも、選択肢のひとつとしての可能性で締めさせていただいた。
+しかし一方では、<strong>とりあえずCSSプリプロセッサを試したい</strong>という人には強くおすすめできる。それから他のツールにはいっていくのでも全然構わない。</p>
+
+<h3 id="stylus-http-learnboost-github-com-stylus:4a83ac6057e4f9b46e04e7b6f2740a9d"><a href="http://learnboost.github.com/stylus/">Stylus</a></h3>
+
+<p>僕個人として使うならば<strong>Stylus</strong>。</p>
+
+<p>なぜならSassとLESSのいいとこ取りをしているから。</p>
+
+<p>CSS（.styl）はLESSのように書けるし、SassのようなExtendもできる。透過的なMixinsも好み。</p>
+
+<p>ただStylusを強くおすすめするかというと、難しい。その理由はStylusを使っている事例が、少なくとも日本（日本語）では少ないから。いくつかStylusを解説している記事もあるが、Sassと比べれば全然少ない。</p>
+
+<p>それゆえに何かStylusのエラーなどにハマってしまった場合に、その解決策が見つかりにくい。なのでLESS/Sassをひと通り経験し、なおかつできればNode.jsに関連したツールを使っている経験があるような人の方が、問題なく使えそうなイメージはある。</p>
+
+<p>またStylusセッションの終盤にあった通り、現在<a href="https://github.com/visionmedia/rework">rework</a>というプロジェクトも走っているので、今後Stylusの立ち位置がどうなるかはわからない。
+※それでいうと、SassやLESSだってどうなるかはわからない。</p>
+
+<p>Stylusはこのようにやや玄人好みであるといっても、他のプリプロセッサ同様のレベルで使う分には、Stylusからはじめても構わない。それが Ruby+gemではじめるのか、Node.js+npmではじめるのかの違いくらい。無論GUIのツールを使ったって構わない。が、Stylusに対応しているものはやや少ないので、GUIの選択肢は少し減るだろう。</p>
+
+<h3 id="sass-http-sass-lang-com:4a83ac6057e4f9b46e04e7b6f2740a9d"><a href="http://sass-lang.com">Sass</a></h3>
+
+<p>総合的にみて、人に勧めるならば、<strong>Sass</strong>。</p>
+
+<p>なぜなら、Sassについては機能的な言及はおいといて、単純に<strong>事例が多い</strong>から。</p>
+
+<p>今回のイベントでもGREEさんやCookpadさんなどの大規模な事例もあれば、個人や中小レベルでの事例もある。そしてそれらのレベルではブログでもオープンに紹介されていることも多いし、<a href="https://gihyo.jp/dp/ebook/2012/978-4-7741-5123-6">日本語で解説された電子書籍</a>だってある。</p>
+
+<p>検索すればトラブルシューティングもできるし、Sassに関連する便利なツールなども多くある。その代表するのが先に紹介したCompass。サポートするGUIツールも多いから、とりあえず使いたいっていう人はそれらを使えばいい。</p>
+
+<p>あくまでも勧めるならば、であり僕個人としては3つの中で一番<strong>好みではない</strong>。それはもう本当に好みのレベルの話で、メジャーじゃないものに手を出したい感もあるし、コンパイルが遅いと思っているからだ。
+コンパイルの遅さの体感は人によって違うし、それぞれを比べるのは、iPhoneのキャリアを変えたときのSoftbank vs auの回線速度みたいなレベルだとも思う。</p>
+
+<p>とはいえ仕事では基本的にSassを使う。なぜなら使える（使ったことがある）人が今の身の回りには多くて、引き継ぎや共通のライブラリをつくれるからだ。</p>
+
+<h2 id="まとめ:4a83ac6057e4f9b46e04e7b6f2740a9d">まとめ</h2>
+
+<p><strong>僕個人</strong>（というのは強調しておきたい）としては、</p>
+
+<h3 id="人に勧めるなら:4a83ac6057e4f9b46e04e7b6f2740a9d">人に勧めるなら</h3>
+
+<ol>
+<li>Sass</li>
+<li>Stylus</li>
+<li>LESS</li>
+</ol>
+
+<h3 id="これからプリプロセッサはじめる人に勧めるなら:4a83ac6057e4f9b46e04e7b6f2740a9d">これからプリプロセッサはじめる人に勧めるなら</h3>
+
+<ol>
+<li>LESS</li>
+<li>Sass</li>
+<li>Stylus</li>
+</ol>
+
+<h3 id="僕が使うなら:4a83ac6057e4f9b46e04e7b6f2740a9d">僕が使うなら</h3>
+
+<ol>
+<li>Stylus</li>
+<li>LESS</li>
+<li>Sass</li>
+</ol>
+
+<p>LESSの今後次第では、StylusじゃなくLESSになるかもしれないし、仕事でもLESSを推し進めていくかもしれない。（でもたぶんreworkに手を出す気もする）</p>
+
+<h2 id="でも結局cssはcss:4a83ac6057e4f9b46e04e7b6f2740a9d">でも結局CSSはCSS</h2>
+
+<p>イベントで数度繰り返していたが、CSSとしてちゃんと書けることがすべての前提。</p>
+
+<p>料理だって、基本的な調理方法や下ごしらえ、またそのコツなどがそれなりに見についていれば美味しい料理ができる。</p>
+
+<p>そこにすごく高機能な鍋なり、電子レンジなりの道具があれば、より美味しくつくれるかもしれないし、調理時間を短縮できてなおかつ美味しいものができるかもしれない。</p>
+
+<p>逆に基礎がなくて便利な調理道具だけがあっても、それを使っても料理は上手くならないし、調理道具で事故を起こす可能性だってある。</p>
+
+<p>（一方では、温めるだけで美味しい料理ができる、なんてものもあるが）</p>
+
+<p>結局イベントと同じような結論で恐縮だが、</p>
+
+<p><strong>ちゃんとCSSを書け</strong></p>
+
+<p>それに尽きる。</p>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://localhost:1313/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<p class="tempnote">
+  本ブログの過去記事は、近日整理して再公開します。
+</p>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

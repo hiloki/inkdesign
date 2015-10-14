@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="inkdesign.jpの更新を再開。システムをWordPressからJekyll&#43;Github Pagesへと移行した。">
+<meta property="og:title" content="WordPressからJekyll &#43; Github pageへ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/notes/inkdesign-on-ghpages/">
+<meta property="og:image" content="http://localhost:1313/">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.14" />
+<title>WordPressからJekyll &#43; Github pageへ - inkdesign</title>
+
+<link rel="stylesheet" href="http://localhost:1313/styles/style.css">
+
+<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">WordPressからJekyll &#43; Github pageへ</h1>
+<p class="entry-pubdate">2012-11-14</p>
+</header>
+<div class="entry-body">
+
+
+<p>長年WordPressでサイト、ブログを運用していたが、なんとなくGithub Pageでの運用に移行した。</p>
+
+<p><a href="http://jekyllrb.com/">Jekyll</a>というRubyの静的なHTMLのジェネレータでページをつくり、GitでGithub上のページ機能に反映させる、という流れ。ちらほらこの形式に変えている知人のブログもいくつかある。</p>
+
+<p><ins datetime="2013-12-22">
+※現在はJekyllと同じような、Node.js製ジェネレータの<a href="http://docpad.org/">DocPad</a>に移行しています。
+</ins></p>
+
+<h2 id="jekyllの概要:1d3fcca494d545624d0a806771ce227b">Jekyllの概要</h2>
+
+<p>Jekyllはコンテンツを更新するための管理画面があるといった、いわゆるWordPress的なCMS、ブログシステムではなく、コンテンツページを一枚一枚つくってアップをしていくような工程で更新する。</p>
+
+<p>Jekyllについては<a href="http://css.studiomohawk.com/jekyll/2011/06/11/jekyll/">CSS Radar</a>の記事も参照してほしい。とりあえず色々な機能はつけず、最低限の仕組みだけで構築したので、追々記事としてまとめられたらと考えている。</p>
+
+<h2 id="wordpressから移行した理由:1d3fcca494d545624d0a806771ce227b">WordPressから移行した理由</h2>
+
+<p>WordPressでも別に問題という問題もないが、単純なブログに使うには機能が多すぎる。
+多すぎるといっても、それらを必ず使う必要があるわけでもないし、今ではインストール、セットアップも対した手間ではない。もっと楽をしたければ<a href="http://wordpress.com/">WordPress.com</a>を使ってもよかった。</p>
+
+<p>ということでこれについてはひとつの理由ではあるものの、大きな動機になっているわけではない。
+ではなぜかというと、単純に<strong>今までと違うことをしてみよう</strong>、ということくらい。</p>
+
+<p>これは勉強のため、ともいえるが直接役に立つというわけでもない。実際業務でRubyを使うことは基本的になく、<a href="http://sass-lang.com/">Sass</a>を扱うなり、gemで何かをインストールとかそういう程度。
+ただこういうシステムがあるということを知っているか、知っていないかというのは大事で、知っていて損はない。浅く広く、色々と知っていることは悪くない。もちろんWordPressを個人で使って、業務や案件でできないことを深掘りするのも全然悪くないが、浅く広く、それが自分にとって良いと考えている。</p>
+
+<h2 id="せっかくなのでホスティングサービスも変更:1d3fcca494d545624d0a806771ce227b">せっかくなのでホスティングサービスも変更</h2>
+
+<p>今回はホスティングサービスを<a href="http://pages.github.com/">Github Pages</a>にした。これについても、Jekyllで生成した静的なHTMLファイルをアップロードすれば、一般的なレンタルサーバーなどでも問題なく使えるが、やはりこれまでと違うことをしよう、ということで変更した。ちなみにサーバーも<a href="http://vps.sakura.ad.jp/">さくらVPS</a>で自分で構築してみるとか、<a href="http://aws.amazon.com/jp/s3/">Amazon S3</a>を使ってみるとか、そういうことも考えていたが今回はGithubにした。Github Pagesに関してもまた今後別の記事にしようとおもう。</p>
+
+<h2 id="とにかく新しいことを:1d3fcca494d545624d0a806771ce227b">とにかく新しいことを</h2>
+
+<p>使うか（使えるか）、使わないか（使えないか）はともかくとして、知っているか知っていないかであれば、知っている方が得なことがある。あとは新しいことをやるというのは面白い。</p>
+
+<p>数ヶ月にブログを復帰し、ちゃんと継続するかどうかは不安であるけれどもこの形で継続できればとおもう。</p>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://localhost:1313/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<p class="tempnote">
+  本ブログの過去記事は、近日整理して再公開します。
+</p>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>
