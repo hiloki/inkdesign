@@ -84,13 +84,13 @@
     
     <item>
       <title>CSS設計の教科書出版イベントやります</title>
-      <link>http://localhost:1313/notes/uncle-css.html/</link>
+      <link>http://localhost:1313/notes/uncle-css/</link>
       <pubDate>Wed, 29 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/uncle-css.html/</guid>
+      <guid>http://localhost:1313/notes/uncle-css/</guid>
       <description>
 
-&lt;h2 id=&#34;メンテナブルであり続けるためのcss設計:51f50bde74801d63849108b9b270f8dd&#34;&gt;メンテナブルであり続けるためのCSS設計&lt;/h2&gt;
+&lt;h2 id=&#34;メンテナブルであり続けるためのcss設計:31055c0810e9af80f377a268bdbc80e4&#34;&gt;メンテナブルであり続けるためのCSS設計&lt;/h2&gt;
 
 &lt;div class=&#34;entry__media&#34;&gt;
 ![](/images/posts/uncle-css/01.png)
@@ -124,15 +124,15 @@ CSSにおける設計を考えるというのはどういうことか、とい�
     
     <item>
       <title>本を2冊ほど書きました</title>
-      <link>http://localhost:1313/notes/bookbookbook.html/</link>
+      <link>http://localhost:1313/notes/bookbookbook/</link>
       <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/bookbookbook.html/</guid>
+      <guid>http://localhost:1313/notes/bookbookbook/</guid>
       <description>
 
 &lt;p&gt;2014年7月2日に&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4774165786/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4774165786&amp;linkCode=as2&amp;tag=ink-22&#34;&gt;フロントエンドエンジニア養成読本&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=ink-22&amp;l=as2&amp;o=9&amp;a=4774165786&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;、2014年7月24日に、&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4844336355/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4844336355&amp;linkCode=as2&amp;tag=ink-22&#34;&gt;Web制作者のためのCSS設計の教科書 モダンWeb開発に欠かせない「修正しやすいCSS」の設計手法&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=ink-22&amp;l=as2&amp;o=9&amp;a=4844336355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;という書籍を出しました。&lt;/p&gt;
 
-&lt;h2 id=&#34;フロントエンドエンジニア養成読本:ff48621de2474518069e60d2b2367b6f&#34;&gt;フロントエンドエンジニア養成読本&lt;/h2&gt;
+&lt;h2 id=&#34;フロントエンドエンジニア養成読本:e3bf22fc18e43e25b0504d96eb618dbf&#34;&gt;フロントエンドエンジニア養成読本&lt;/h2&gt;
 
 &lt;div class=&#34;entry__media&#34;&gt;
 &lt;a href=&#34;http://www.amazon.co.jp/gp/product/4774165786/ref=as_li_ss_il?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4774165786&amp;linkCode=as2&amp;tag=ink-22&#34;&gt;&lt;img border=&#34;0&#34; src=&#34;http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4774165786&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=ink-22&#34; &gt;&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=ink-22&amp;l=as2&amp;o=9&amp;a=4774165786&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
@@ -140,7 +140,7 @@ CSSにおける設計を考えるというのはどういうことか、とい�
 
 &lt;p&gt;前者は勤め先のフロントエンドエンジニア達で執筆、僕の担当章はCSS設計とWeb Componentsの入門部分です。全体を通して、そのタイトルの通りフロントエンド技術の入門的なところから、最後はWebRTCで締められるというなかなか面白く、これから勉強する、または新しい技術などをキャッチアップしたいというような方におすすめです。新人の教育のための書籍としても良いのではないでしょうか。実際自分にもし新人がつくようなことがあれば、この書籍を必ず読んでもらうことでしょう。&lt;/p&gt;
 
-&lt;h2 id=&#34;web制作者のためのcss設計の教科書:ff48621de2474518069e60d2b2367b6f&#34;&gt;Web制作者のためのCSS設計の教科書&lt;/h2&gt;
+&lt;h2 id=&#34;web制作者のためのcss設計の教科書:e3bf22fc18e43e25b0504d96eb618dbf&#34;&gt;Web制作者のためのCSS設計の教科書&lt;/h2&gt;
 
 &lt;div class=&#34;entry__media&#34;&gt;
 &lt;a href=&#34;http://www.amazon.co.jp/gp/product/4844336355/ref=as_li_ss_il?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4844336355&amp;linkCode=as2&amp;tag=ink-22&#34;&gt;&lt;img border=&#34;0&#34; src=&#34;http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4844336355&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=ink-22&#34; &gt;&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=ink-22&amp;l=as2&amp;o=9&amp;a=4844336355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
@@ -152,7 +152,7 @@ CSSにおける設計を考えるというのはどういうことか、とい�
 
 &lt;p&gt;自分でいうのもなんですが、CSSを書いている人であれば、読んでもらって損はしない1冊になったとおもっています。もちろんCSS設計のスペシャリストの方々にとっては、役立つ内容はあまり無いかもしれないんですが、それでもあるひとりのCSSデベロッパの考え方、ひとつのパターンとして読んでもらえるのでは、という意味でも損はしないのでは、という意味を含めています。&lt;/p&gt;
 
-&lt;h2 id=&#34;大変な4-5ヶ月でした:ff48621de2474518069e60d2b2367b6f&#34;&gt;大変な4,5ヶ月でした&lt;/h2&gt;
+&lt;h2 id=&#34;大変な4-5ヶ月でした:e3bf22fc18e43e25b0504d96eb618dbf&#34;&gt;大変な4,5ヶ月でした&lt;/h2&gt;
 
 &lt;p&gt;発売日を見れば察することもできそうですが、この2冊は並行して進めていました。&lt;/p&gt;
 
@@ -164,10 +164,10 @@ CSSにおける設計を考えるというのはどういうことか、とい�
     
     <item>
       <title>QCon Tokyo 2014 に登壇します。</title>
-      <link>http://localhost:1313/notes/qcon-tokyo.html/</link>
+      <link>http://localhost:1313/notes/qcon-tokyo/</link>
       <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/qcon-tokyo.html/</guid>
+      <guid>http://localhost:1313/notes/qcon-tokyo/</guid>
       <description>&lt;p&gt;2014年4月30日、&lt;a href=&#34;http://www.qcontokyo.com/&#34;&gt;QCon Tokyo 2014&lt;/a&gt;に登壇が決まりまして。&lt;/p&gt;
 
 &lt;p&gt;テーマは&lt;a href=&#34;http://events.html5j.org/conference/2013/11/sessions&#34;&gt;HTML5 Conference 2013&lt;/a&gt;のときと同じではありますが、内容はアップデートする予定。&lt;/p&gt;
@@ -181,10 +181,10 @@ CSSにおける設計を考えるというのはどういうことか、とい�
     
     <item>
       <title>Sassのメガネに込められた秘密</title>
-      <link>http://localhost:1313/notes/the-secret-of-sass-glasses.html/</link>
+      <link>http://localhost:1313/notes/the-secret-of-sass-glasses/</link>
       <pubDate>Fri, 21 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/the-secret-of-sass-glasses.html/</guid>
+      <guid>http://localhost:1313/notes/the-secret-of-sass-glasses/</guid>
       <description>
 
 &lt;p&gt;セミナーのためにSassのことを色々調べていて気づいた。&lt;/p&gt;
@@ -211,7 +211,7 @@ CSSにおける設計を考えるというのはどういうことか、とい�
 
 &lt;p&gt;コロン(:)とセミコロン(;)になってる！&lt;/p&gt;
 
-&lt;h2 id=&#34;ところでなぜメガネ:198cd2dfac974d41f6029f88a4cd08be&#34;&gt;ところでなぜメガネ？&lt;/h2&gt;
+&lt;h2 id=&#34;ところでなぜメガネ:9d080439260e511fb238798c69d251cf&#34;&gt;ところでなぜメガネ？&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/File:Sass_Logo.gif&#34;&gt;もともとはお姉さん&lt;/a&gt;が印象的だったSassがなぜメガネなのかは謎。&lt;/p&gt;
 
@@ -225,10 +225,10 @@ CSSにおける設計を考えるというのはどういうことか、とい�
     
     <item>
       <title>Sass3.3の@at-rootで親のルールを指定する</title>
-      <link>http://localhost:1313/notes/sass-at-root.html/</link>
+      <link>http://localhost:1313/notes/sass-at-root/</link>
       <pubDate>Sun, 16 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/sass-at-root.html/</guid>
+      <guid>http://localhost:1313/notes/sass-at-root/</guid>
       <description>&lt;p&gt;先日登壇した&lt;a href=&#34;http://cssnite.jp/lp/lp32/&#34;&gt;CSS Nite LP, Disk 32&lt;/a&gt;のセッションで紹介されていた&lt;a href=&#34;https://github.com/geckotang/cssnite-lp32/blob/master/scss/_trbl.scss&#34;&gt;SassのMixin&lt;/a&gt;をSass3.3の@at-rootで少し手を加えてみる、という話。&lt;/p&gt;
 
 &lt;p&gt;紹介されていたのは、&lt;a href=&#34;http://codepen.io/shshaw/full/gEiDt&#34;&gt;天地左右中央に絶対配置するテクニック&lt;/a&gt;のMixin。&lt;/p&gt;
@@ -343,10 +343,10 @@ CSSにおける設計を考えるというのはどういうことか、とい�
     
     <item>
       <title>BEMの命名規則は賢い</title>
-      <link>http://localhost:1313/notes/bem__name-convention--is-smart.html/</link>
+      <link>http://localhost:1313/notes/bem__name-convention--is-smart/</link>
       <pubDate>Thu, 23 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/bem__name-convention--is-smart.html/</guid>
+      <guid>http://localhost:1313/notes/bem__name-convention--is-smart/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://bem.info/&#34;&gt;BEM&lt;/a&gt;およびその命名派生としての&lt;a href=&#34;http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/&#34;&gt;MindBEMding&lt;/a&gt;で使われる&lt;code&gt;foo__bar&lt;/code&gt;や&lt;code&gt;foo--bar&lt;/code&gt;というようなハイフン、アンダースコアを重ねた命名はキモいし冗長だと嫌われがちだ。僕自身も初見ではそのように思っていた。しかしこれは本当に良いアイデアだと思うし、実務でも僕は採用している。&lt;/p&gt;
 
 &lt;p&gt;CSSの設計、その命名のときに考えるのは、それがいかに明白であるかということと、汚染されるリスクを抑えられるか、ということだ。ワードを明確に区切ることによって、その機能・カテゴリを区別するという点においては、別に単一記号であろうが、キャメルケース、スネークケースであろうがなんでもいいかもしれない。しかしスタイルが汚染されるリスク、という点でこの珍妙な命名は優秀だ。&lt;/p&gt;
@@ -400,10 +400,10 @@ CSSにおける設計を考えるというのはどういうことか、とい�
     
     <item>
       <title>CSSの汎用クラスのつかいどころ</title>
-      <link>http://localhost:1313/notes/how-to-use-utility-classes.html/</link>
+      <link>http://localhost:1313/notes/how-to-use-utility-classes/</link>
       <pubDate>Mon, 13 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/how-to-use-utility-classes.html/</guid>
+      <guid>http://localhost:1313/notes/how-to-use-utility-classes/</guid>
       <description>
 
 &lt;p&gt;OOCSSをはじめとするCSS設計におけるモジュール指向のアプローチの話になると、下記のような単一プロパティで定義されたルールを組み合わせたものを指す、というような説明がされる場合がある。&lt;/p&gt;
@@ -570,7 +570,7 @@ CSSにおける設計を考えるというのはどういうことか、とい�
 
 &lt;p&gt;これは&lt;code&gt;.media&lt;/code&gt;に&lt;code&gt;margin-bottom&lt;/code&gt;を持たせるべきではなかった、というのが明らかになっている。&lt;/p&gt;
 
-&lt;h2 id=&#34;まとめ:5e40d70f414d28d3e6a832b15d16e2b4&#34;&gt;まとめ&lt;/h2&gt;
+&lt;h2 id=&#34;まとめ:349c3a99bb5b589a6738d5fe31b524ae&#34;&gt;まとめ&lt;/h2&gt;
 
 &lt;p&gt;こういう話をするたびに付け加えるのは、&lt;strong&gt;これがすべてのケースにおいて正しい&lt;/strong&gt;わけではないということ。こういうことを一応書いておかないと、どこかのBEMのように変なひとり歩きをすることがあるので。&lt;/p&gt;
 
@@ -580,10 +580,10 @@ CSSにおける設計を考えるというのはどういうことか、とい�
     
     <item>
       <title>CSSアニメーションでひし形表現を説明してみた</title>
-      <link>http://localhost:1313/notes/how-a-css-diamond-is-made.html/</link>
+      <link>http://localhost:1313/notes/how-a-css-diamond-is-made/</link>
       <pubDate>Tue, 07 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/how-a-css-diamond-is-made.html/</guid>
+      <guid>http://localhost:1313/notes/how-a-css-diamond-is-made/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/notes/diamond-thumbnail&#34;&gt;前回の記事&lt;/a&gt;ので解説した、ひし形のサムネイルをつくる方法をCSSアニメーションをつかって紙芝居のように説明をしたデモをつくった。&lt;/p&gt;
 
 &lt;p&gt;これは&lt;a href=&#34;http://css-tricks.com/&#34;&gt;CSS Tricks&lt;/a&gt;のChris Coyier氏が以前にCodpenで公開した、&lt;a href=&#34;http://codepen.io/chriscoyier/pen/lotjh&#34;&gt;Animation to Explain CSS Triangles&lt;/a&gt; という素敵なデモをフォークしてつくった。&lt;/p&gt;
@@ -600,10 +600,10 @@ CSSにおける設計を考えるというのはどういうことか、とい�
     
     <item>
       <title>ひし型のサムネイルをCSSでつくる</title>
-      <link>http://localhost:1313/notes/diamond-thumbnail.html/</link>
+      <link>http://localhost:1313/notes/diamond-thumbnail/</link>
       <pubDate>Sun, 05 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/diamond-thumbnail.html/</guid>
+      <guid>http://localhost:1313/notes/diamond-thumbnail/</guid>
       <description>&lt;p&gt;毎年12月に著名なWeb（+α）界隈の方々で綴られるアドベントカレンダーメディア、&lt;a href=&#34;http://24ways.org/&#34;&gt;24 ways&lt;/a&gt;が2013年版でデザインが変わっていた。&lt;/p&gt;
 
 &lt;p&gt;その&lt;a href=&#34;http://24ways.org/authors/andyclarke/&#34;&gt;記事ページ&lt;/a&gt;になどに使われている著者のサムネイルがひし形になっているが、それはひし形に加工されている画像を使っているわけではないようだ。&lt;/p&gt;
@@ -650,17 +650,17 @@ CSSにおける設計を考えるというのはどういうことか、とい�
     
     <item>
       <title>2013年を振り返る</title>
-      <link>http://localhost:1313/notes/rewind-2013.html/</link>
+      <link>http://localhost:1313/notes/rewind-2013/</link>
       <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/rewind-2013.html/</guid>
+      <guid>http://localhost:1313/notes/rewind-2013/</guid>
       <description>
 
 &lt;p&gt;振り返るにあたり、我ながら驚くほどブログを更新しておらず、昨年のようにトップエントリをまとめるとかはできない。ブログに残していくのは大事。&lt;/p&gt;
 
 &lt;p&gt;今年は年初では想定していないほどに、社内外でセミナーなどをやった1年だった。&lt;a href=&#34;http://www.slideshare.net/hiloki/&#34;&gt;Slideshare&lt;/a&gt;にアップロードしたスライドを紹介しながらそれを振り返ってみる。&lt;/p&gt;
 
-&lt;h2 id=&#34;talknote-vol-8-静岡:9e73038242be32afbf9776f244ff03b8&#34;&gt;Talknote Vol.8@静岡&lt;/h2&gt;
+&lt;h2 id=&#34;talknote-vol-8-静岡:d44b2d410d435ed529925deb8bbc6291&#34;&gt;Talknote Vol.8@静岡&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://twitter.com/t32kが総監督をしている[Frontrend](http://frontrend.github.io/&#34;&gt;t32k&lt;/a&gt;の地方出張2回目は静岡の勉強会&lt;a href=&#34;http://talknote.me/&#34;&gt;TalkNote&lt;/a&gt;との共催でおこなった。&lt;/p&gt;
 
@@ -672,7 +672,7 @@ CSSにおける設計を考えるというのはどういうことか、とい�
 
 &lt;p&gt;ここからはしばらくCSS設計についての講演をこの1年やっていくことになる。&lt;/p&gt;
 
-&lt;h2 id=&#34;frontrend-in-osaka:9e73038242be32afbf9776f244ff03b8&#34;&gt;Frontrend in Osaka&lt;/h2&gt;
+&lt;h2 id=&#34;frontrend-in-osaka:d44b2d410d435ed529925deb8bbc6291&#34;&gt;Frontrend in Osaka&lt;/h2&gt;
 
 &lt;p&gt;大阪で働いていたときに立ちあげ、その後も継続して大阪で勉強会・セミナーを開催している&lt;a href=&#34;http://www.re-creators.jp/&#34;&gt;リクリ&lt;/a&gt;の協力のもとおこなったのがFrontrend in Osaka。&lt;/p&gt;
 
@@ -686,7 +686,7 @@ CSSにおける設計を考えるというのはどういうことか、とい�
 
 &lt;p&gt;&lt;a href=&#34;http://www.android-group.jp/conference/abc2013a/&#34;&gt;Androidのイベント&lt;/a&gt;でもこの内容で講演をした。&lt;/p&gt;
 
-&lt;h2 id=&#34;社内のデザイナー向けセミナー:9e73038242be32afbf9776f244ff03b8&#34;&gt;社内のデザイナー向けセミナー&lt;/h2&gt;
+&lt;h2 id=&#34;社内のデザイナー向けセミナー:d44b2d410d435ed529925deb8bbc6291&#34;&gt;社内のデザイナー向けセミナー&lt;/h2&gt;
 
 &lt;p&gt;Frontrendとは別で、社内でデザイナー向けにパフォーマンス施策の入門的な内容をやりたいと思い、この内容で講演をした。&lt;/p&gt;
 
@@ -698,7 +698,7 @@ CSSにおける設計を考えるというのはどういうことか、とい�
 
 &lt;p&gt;スライドの作成そのものについては、Webフォントアイコンのおかげでそれらしく完成した。いまやアイコンを使わずにスライドをつくれない。&lt;/p&gt;
 
-&lt;h2 id=&#34;frontrend-x-chrome-tech-talk-night-extended:9e73038242be32afbf9776f244ff03b8&#34;&gt;Frontrend x Chrome Tech Talk Night Extended&lt;/h2&gt;
+&lt;h2 id=&#34;frontrend-x-chrome-tech-talk-night-extended:d44b2d410d435ed529925deb8bbc6291&#34;&gt;Frontrend x Chrome Tech Talk Night Extended&lt;/h2&gt;
 
 &lt;p&gt;今の会社に入っていなければというか、Frontrendがなければありえなかったであろう、&lt;a href=&#34;http://frontrend.github.io/events/chrome/&#34;&gt;Googleとのイベント&lt;/a&gt;でもライトニングトークで喋った。イベント自体最高であったが、LTは制限時間内に収まらず、すべって残念な感じではあった。&lt;/p&gt;
 
@@ -708,7 +708,7 @@ CSSにおける設計を考えるというのはどういうことか、とい�
 
 &lt;p&gt;この時からWebコンポーネントについて調べはじめたが、非常にこれが面白く、来年はちょっとここらへんを掘り下げたい。あとスライドの内容も割と悪くないとおもっている。&lt;/p&gt;
 
-&lt;h2 id=&#34;html5-conference:9e73038242be32afbf9776f244ff03b8&#34;&gt;HTML5 Conference&lt;/h2&gt;
+&lt;h2 id=&#34;html5-conference:d44b2d410d435ed529925deb8bbc6291&#34;&gt;HTML5 Conference&lt;/h2&gt;
 
 &lt;p&gt;2013年一番大きな舞台、&lt;a href=&#34;http://events.html5j.org/conference/2013/11/&#34;&gt;HTML5 Conference&lt;/a&gt;ではこれまでの講演の集大成となる内容でまとめた。&lt;/p&gt;
 
@@ -719,7 +719,7 @@ CSSにおける設計を考えるというのはどういうことか、とい�
 &lt;p&gt;おかげさまで当日も多くの方が出席してくれて、感想のほうもありがたい言葉をいただけたので良い内容となったではないかとおもう。&lt;br /&gt;
 来年はこうした内容をベースにもちつつも、違う方向性でアウトプットできるようにしたい。&lt;/p&gt;
 
-&lt;h2 id=&#34;frontrend-in-sapporo-番外編:9e73038242be32afbf9776f244ff03b8&#34;&gt;Frontrend in Sapporo（番外編）&lt;/h2&gt;
+&lt;h2 id=&#34;frontrend-in-sapporo-番外編:d44b2d410d435ed529925deb8bbc6291&#34;&gt;Frontrend in Sapporo（番外編）&lt;/h2&gt;
 
 &lt;p&gt;Frontrendの大きなイベントとして2013年最後におこなわれた&lt;a href=&#34;http://sacss.net/special04/&#34;&gt;Frontrend in Sapporo&lt;/a&gt;では登壇はしてないものの、ある種2013年一番の出来事があった。それが現在札幌に在住している&lt;a href=&#34;https://twitter.com/simurai&#34;&gt;Simurai&lt;/a&gt;との出会い。&lt;/p&gt;
 
@@ -739,7 +739,7 @@ CSSにおける設計を考えるというのはどういうことか、とい�
 ![](/images/rewind-2013/simurai.jpg)
 &lt;/div&gt;
 
-&lt;h2 id=&#34;2014年:9e73038242be32afbf9776f244ff03b8&#34;&gt;2014年&lt;/h2&gt;
+&lt;h2 id=&#34;2014年:d44b2d410d435ed529925deb8bbc6291&#34;&gt;2014年&lt;/h2&gt;
 
 &lt;p&gt;2013年は振り返ると、すごく動いた年というよりは地を固めた年だったようにおもう。2014年はもう少し攻めていきたい。&lt;br /&gt;
 あとはちゃんとブログなどを更新したり、というのは来年こそはちゃんとやりたい。&lt;br /&gt;
@@ -751,17 +751,17 @@ CSSにおける設計を考えるというのはどういうことか、とい�
     
     <item>
       <title>CSSカスタムプロパティとMythの話</title>
-      <link>http://localhost:1313/notes/css-custom-property.html/</link>
+      <link>http://localhost:1313/notes/css-custom-property/</link>
       <pubDate>Mon, 23 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/css-custom-property.html/</guid>
+      <guid>http://localhost:1313/notes/css-custom-property/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://dev.w3.org/csswg/css-variables/&#34;&gt;CSS Custom Properties for Cascading Variables Module&lt;/a&gt;はCSSで変数を使うために、その変数を定義するためのプロパティについての仕様だ。&lt;/p&gt;
 
 &lt;p&gt;これが先日&lt;a href=&#34;http://nightly.mozilla.org/&#34;&gt;Firefox Nightly 29&lt;/a&gt;で実装されたらしく、ちょっとお触りしてみた。これについては同じようにお触りされた記事、&lt;a href=&#34;http://thatemil.com/blog/2013/12/15/playing-around-with-css-variables-custom-properties/&#34;&gt;Playing around with CSS variables - &amp;ldquo;custom properties&amp;rdquo;&lt;/a&gt;が良かったのでこっちも参照するのをおすすめする。&lt;/p&gt;
 
-&lt;h2 id=&#34;基本的な使い方:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;基本的な使い方&lt;/h2&gt;
+&lt;h2 id=&#34;基本的な使い方:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;基本的な使い方&lt;/h2&gt;
 
 &lt;p&gt;CSSで変数というと、&lt;a href=&#34;http://sass-lang.com/&#34;&gt;Sass&lt;/a&gt;や&lt;a href=&#34;http://lesscss.org/&#34;&gt;LESS&lt;/a&gt;などのプリプロセッサとして使うことができ、そのあたりで使ったことがあるのであれば、CSSerの人でもなんとなく馴染みやすい仕様かもしれない。とはいえ定義とその参照方法はSassやLESSのそれとは全然異なる。&lt;/p&gt;
 
@@ -799,7 +799,7 @@ CSSにおける設計を考えるというのはどういうことか、とい�
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;変数をどう使うか:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;変数をどう使うか&lt;/h2&gt;
+&lt;h2 id=&#34;変数をどう使うか:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;変数をどう使うか&lt;/h2&gt;
 
 &lt;p&gt;Sassの時でもあんまり自分は変数をそれほど有用性のある使い方をしているとは思わない。が、その中でも使えると思うのは、そのプロジェクトのキーカラーの定義を&lt;code&gt;$keyColor: red&lt;/code&gt;とするような使い方がまず一つ。カスタムプロパティでは&lt;code&gt;var-key-color: red&lt;/code&gt;というように。&lt;/p&gt;
 
@@ -831,11 +831,11 @@ CSSにおける設計を考えるというのはどういうことか、とい�
 
 &lt;p&gt;あとおまけで、次のページにアクセスすると、&lt;a href=&#34;http://cdpn.io/Dfbng&#34;&gt;対象ブラウザがカスタムプロパティに対応しているかどうか分かる&lt;/a&gt;ようにしてみた。すごく馬鹿げたような方法でやってみたので、FirefoxのNightly 29をもしインストールしたならば覗いてみてほしい。&lt;/p&gt;
 
-&lt;h2 id=&#34;スコープとポストプロセッサーmyth:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;スコープとポストプロセッサーMyth&lt;/h2&gt;
+&lt;h2 id=&#34;スコープとポストプロセッサーmyth:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;スコープとポストプロセッサーMyth&lt;/h2&gt;
 
 &lt;p&gt;先に紹介した記事ではあまり触れられていなかったスコープについて検証してみる。Sassなどではネストの中で変数に違う値が入れば、そちらが優先される。&lt;/p&gt;
 
-&lt;h3 id=&#34;html:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;HTML&lt;/h3&gt;
+&lt;h3 id=&#34;html:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;HTML&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;h1&amp;gt;Default&amp;lt;/h1&amp;gt;
 &amp;lt;div class=&amp;quot;first&amp;quot;&amp;gt;
@@ -844,7 +844,7 @@ CSSにおける設計を考えるというのはどういうことか、とい�
 &amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;sass:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;Sass&lt;/h3&gt;
+&lt;h3 id=&#34;sass:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;Sass&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-scss&#34;&gt;$color: blue;
 
@@ -862,7 +862,7 @@ h1 {
 
 &lt;p&gt;次のようになる。&lt;/p&gt;
 
-&lt;h3 id=&#34;css:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;CSS&lt;/h3&gt;
+&lt;h3 id=&#34;css:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;CSS&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;h1 {
   color: blue;
@@ -875,7 +875,7 @@ h1 {
 
 &lt;p&gt;ではカスタムプロパティでの変数のスコープはどうなっているのか。同じようなコードを用意する。今度はSassではなくCSSだ。&lt;/p&gt;
 
-&lt;h3 id=&#34;css-1:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;CSS&lt;/h3&gt;
+&lt;h3 id=&#34;css-1:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;CSS&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;:root {
   var-color: blue;
@@ -931,11 +931,11 @@ h1 {
 &lt;p&gt;あくまでこの機能で提供されるのはグローバルの変数のみだということだ。（少なくとも現状は。）
 とはいえ、Mythには期待をしてるので、引き続き様子をみて触ってみたい。&lt;/p&gt;
 
-&lt;h2 id=&#34;なかなか奥が深いカスタムプロパティ:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;なかなか奥が深いカスタムプロパティ&lt;/h2&gt;
+&lt;h2 id=&#34;なかなか奥が深いカスタムプロパティ:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;なかなか奥が深いカスタムプロパティ&lt;/h2&gt;
 
 &lt;p&gt;色々と試してみたものの、まだあまり上手く使える気はしないものの、これが他のブラウザでも実装されるようになれば色々とアイデアを考えてみたいものだ。&lt;/p&gt;
 
-&lt;h2 id=&#34;というわけで:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;というわけで&lt;/h2&gt;
+&lt;h2 id=&#34;というわけで:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;というわけで&lt;/h2&gt;
 
 &lt;p&gt;本記事は&lt;a href=&#34;http://www.adventar.org/calendars/57&#34;&gt;CSS Property Advent Calendar 2013&lt;/a&gt;の23日目の記事として書いた。&lt;br /&gt;
 次は&lt;a href=&#34;http://www.adventar.org/users/2499&#34;&gt;noha_koさん&lt;/a&gt;です。&lt;/p&gt;
@@ -944,10 +944,10 @@ h1 {
     
     <item>
       <title>Web ComponentsとPolymerを軽く触ってみる</title>
-      <link>http://localhost:1313/notes/try-web-components-and-polymer.html/</link>
+      <link>http://localhost:1313/notes/try-web-components-and-polymer/</link>
       <pubDate>Thu, 05 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/try-web-components-and-polymer.html/</guid>
+      <guid>http://localhost:1313/notes/try-web-components-and-polymer/</guid>
       <description>
 
 &lt;p&gt;Web ComponentsはWebのUIのコンポーネント化を実現するための各種仕様の総称だ。&lt;/p&gt;
@@ -996,7 +996,7 @@ $ yo polymer
 
 &lt;p&gt;そしてShadow DOMによるカプセル化で、本当に独立したコンポーネントをつくられることが楽しい。&lt;/p&gt;
 
-&lt;h2 id=&#34;カプセル化:c82d707dcde5f5bbb9ec9cdd2618231f&#34;&gt;カプセル化&lt;/h2&gt;
+&lt;h2 id=&#34;カプセル化:fe1d80cca7ad5100b644bbb56172f1de&#34;&gt;カプセル化&lt;/h2&gt;
 
 &lt;p&gt;もうひとつのサンプル、&lt;a href=&#34;http://hiloki.github.io/demo/frontrend_chrome/app/switch.html&#34;&gt;iOS7のスイッチUI&lt;/a&gt;を模したもの。&lt;/p&gt;
 
@@ -1066,7 +1066,7 @@ input[type=&amp;quot;checkbox&amp;quot;]:checked:after {
 
 &lt;p&gt;と、ネガティブに考える以上に、Web Componentsには面白みがあるとおもっている。今回紹介したリソースを参照して、是非試してみてほしい。&lt;/p&gt;
 
-&lt;h2 id=&#34;というわけで:c82d707dcde5f5bbb9ec9cdd2618231f&#34;&gt;というわけで&lt;/h2&gt;
+&lt;h2 id=&#34;というわけで:fe1d80cca7ad5100b644bbb56172f1de&#34;&gt;というわけで&lt;/h2&gt;
 
 &lt;p&gt;本記事は&lt;a href=&#34;http://www.adventar.org/calendars/62&#34;&gt;Frontrend Advent Calendar 2013&lt;/a&gt;の5日目の記事として書いた。&lt;br /&gt;
 次は&lt;a href=&#34;http://ginpen.com/&#34;&gt;Ginpeiさん&lt;/a&gt;です。&lt;/p&gt;
@@ -1075,17 +1075,17 @@ input[type=&amp;quot;checkbox&amp;quot;]:checked:after {
     
     <item>
       <title>CSS Preprocessor Shootout（個人的な）</title>
-      <link>http://localhost:1313/notes/css-preprocessor-shootout.html/</link>
+      <link>http://localhost:1313/notes/css-preprocessor-shootout/</link>
       <pubDate>Sun, 13 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/css-preprocessor-shootout.html/</guid>
+      <guid>http://localhost:1313/notes/css-preprocessor-shootout/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://lp26.cssnite.jp/&#34;&gt;CSS Nite LP, Disk 26「CSS Preprocessor Shootout」&lt;/a&gt;でLESSについてのお話をしてきた。&lt;/p&gt;
 
 &lt;p&gt;当日の雰囲気や実況については&lt;a href=&#34;https://twitter.com/search?q=%23cssnite_lp26&#34;&gt;ハッシュタグを追っていただく&lt;/a&gt;として、ちょっとだけプリプロセッサ選びについてのフォローアップをば。&lt;/p&gt;
 
-&lt;h2 id=&#34;cssプリプロセッサはどれがいいの:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;CSSプリプロセッサはどれがいいの？&lt;/h2&gt;
+&lt;h2 id=&#34;cssプリプロセッサはどれがいいの:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;CSSプリプロセッサはどれがいいの？&lt;/h2&gt;
 
 &lt;p&gt;イベントのサブタイトルにもなっている&lt;strong&gt;CSS Preprocessor Shootout&lt;/strong&gt;の元ネタは、イベントページの冒頭でも紹介されている通り、&lt;a href=&#34;http://net.tutsplus.com/tutorials/html-css-techniques/sass-vs-less-vs-stylus-a-preprocessor-shootout/&#34;&gt;Sass vs. LESS vs. Stylus: Preprocessor Shootout&lt;/a&gt;という記事です。（英語ではありますが、この記事で基本的な文法は総ナメできます。）&lt;/p&gt;
 
@@ -1093,7 +1093,7 @@ input[type=&amp;quot;checkbox&amp;quot;]:checked:after {
 
 &lt;p&gt;時間が限られていたことも含め、講演ではカバーしきれなかったツールの特長のようなところに触れつつ、&lt;strong&gt;Shootout(撃ち合い)&lt;/strong&gt;ということもあり、僕個人としてひとつの結論を出してしまいましょう。&lt;/p&gt;
 
-&lt;h3 id=&#34;less-http-lesscss-org:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;&lt;a href=&#34;http://lesscss.org/&#34;&gt;LESS&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;less-http-lesscss-org:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;&lt;a href=&#34;http://lesscss.org/&#34;&gt;LESS&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;これからプリプロセッサはじめる人に勧めるなら&lt;strong&gt;LESS&lt;/strong&gt;。&lt;/p&gt;
 
@@ -1116,7 +1116,7 @@ input[type=&amp;quot;checkbox&amp;quot;]:checked:after {
 &lt;p&gt;こういった思いがあるゆえ、僕の講演でも、選択肢のひとつとしての可能性で締めさせていただいた。
 しかし一方では、&lt;strong&gt;とりあえずCSSプリプロセッサを試したい&lt;/strong&gt;という人には強くおすすめできる。それから他のツールにはいっていくのでも全然構わない。&lt;/p&gt;
 
-&lt;h3 id=&#34;stylus-http-learnboost-github-com-stylus:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;&lt;a href=&#34;http://learnboost.github.com/stylus/&#34;&gt;Stylus&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;stylus-http-learnboost-github-com-stylus:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;&lt;a href=&#34;http://learnboost.github.com/stylus/&#34;&gt;Stylus&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;僕個人として使うならば&lt;strong&gt;Stylus&lt;/strong&gt;。&lt;/p&gt;
 
@@ -1133,7 +1133,7 @@ input[type=&amp;quot;checkbox&amp;quot;]:checked:after {
 
 &lt;p&gt;Stylusはこのようにやや玄人好みであるといっても、他のプリプロセッサ同様のレベルで使う分には、Stylusからはじめても構わない。それが Ruby+gemではじめるのか、Node.js+npmではじめるのかの違いくらい。無論GUIのツールを使ったって構わない。が、Stylusに対応しているものはやや少ないので、GUIの選択肢は少し減るだろう。&lt;/p&gt;
 
-&lt;h3 id=&#34;sass-http-sass-lang-com:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;&lt;a href=&#34;http://sass-lang.com&#34;&gt;Sass&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;sass-http-sass-lang-com:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;&lt;a href=&#34;http://sass-lang.com&#34;&gt;Sass&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;総合的にみて、人に勧めるならば、&lt;strong&gt;Sass&lt;/strong&gt;。&lt;/p&gt;
 
@@ -1148,11 +1148,11 @@ input[type=&amp;quot;checkbox&amp;quot;]:checked:after {
 
 &lt;p&gt;とはいえ仕事では基本的にSassを使う。なぜなら使える（使ったことがある）人が今の身の回りには多くて、引き継ぎや共通のライブラリをつくれるからだ。&lt;/p&gt;
 
-&lt;h2 id=&#34;まとめ:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;まとめ&lt;/h2&gt;
+&lt;h2 id=&#34;まとめ:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;まとめ&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;僕個人&lt;/strong&gt;（というのは強調しておきたい）としては、&lt;/p&gt;
 
-&lt;h3 id=&#34;人に勧めるなら:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;人に勧めるなら&lt;/h3&gt;
+&lt;h3 id=&#34;人に勧めるなら:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;人に勧めるなら&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Sass&lt;/li&gt;
@@ -1160,7 +1160,7 @@ input[type=&amp;quot;checkbox&amp;quot;]:checked:after {
 &lt;li&gt;LESS&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;これからプリプロセッサはじめる人に勧めるなら:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;これからプリプロセッサはじめる人に勧めるなら&lt;/h3&gt;
+&lt;h3 id=&#34;これからプリプロセッサはじめる人に勧めるなら:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;これからプリプロセッサはじめる人に勧めるなら&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;LESS&lt;/li&gt;
@@ -1168,7 +1168,7 @@ input[type=&amp;quot;checkbox&amp;quot;]:checked:after {
 &lt;li&gt;Stylus&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;僕が使うなら:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;僕が使うなら&lt;/h3&gt;
+&lt;h3 id=&#34;僕が使うなら:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;僕が使うなら&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Stylus&lt;/li&gt;
@@ -1178,7 +1178,7 @@ input[type=&amp;quot;checkbox&amp;quot;]:checked:after {
 
 &lt;p&gt;LESSの今後次第では、StylusじゃなくLESSになるかもしれないし、仕事でもLESSを推し進めていくかもしれない。（でもたぶんreworkに手を出す気もする）&lt;/p&gt;
 
-&lt;h2 id=&#34;でも結局cssはcss:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;でも結局CSSはCSS&lt;/h2&gt;
+&lt;h2 id=&#34;でも結局cssはcss:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;でも結局CSSはCSS&lt;/h2&gt;
 
 &lt;p&gt;イベントで数度繰り返していたが、CSSとしてちゃんと書けることがすべての前提。&lt;/p&gt;
 
@@ -1200,55 +1200,55 @@ input[type=&amp;quot;checkbox&amp;quot;]:checked:after {
     
     <item>
       <title>2012年のinkdesign人気エントリー</title>
-      <link>http://localhost:1313/notes/2012-topentry.html/</link>
+      <link>http://localhost:1313/notes/2012-topentry/</link>
       <pubDate>Sat, 29 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/2012-topentry.html/</guid>
+      <guid>http://localhost:1313/notes/2012-topentry/</guid>
       <description>
 
 &lt;p&gt;2012年11月末から再開したので、全然記事も少ないけどそれらしいまとめエントリーを2012年の最後に。10本。&lt;/p&gt;
 
-&lt;h3 id=&#34;cssが速くかけるようになるsublime-text2-パッケージ-hayakuで-世界が変わるらしい-http-inkdesign-jp-notes-2012-11-27-hayaku-changed-my-world-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/27/Hayaku-changed-my-world.html&#34;&gt;CSSが速くかけるようになるSublime Text2 パッケージ Hayakuで、世界が変わるらしい&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;cssが速くかけるようになるsublime-text2-パッケージ-hayakuで-世界が変わるらしい-http-inkdesign-jp-notes-2012-11-27-hayaku-changed-my-world-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/27/Hayaku-changed-my-world.html&#34;&gt;CSSが速くかけるようになるSublime Text2 パッケージ Hayakuで、世界が変わるらしい&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;タイトルがやや釣り的なこともあってか、CSSerな方々が気になった様子。この記事を書くために触り始めたが、やっぱり面白く早い。&lt;/p&gt;
 
-&lt;h3 id=&#34;cssプリプロセッサでスタイルガイド-http-inkdesign-jp-notes-2012-12-07-css-preprocessor-styleguide-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/07/css-preprocessor-styleguide.html&#34;&gt;CSSプリプロセッサでスタイルガイド&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;cssプリプロセッサでスタイルガイド-http-inkdesign-jp-notes-2012-12-07-css-preprocessor-styleguide-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/07/css-preprocessor-styleguide.html&#34;&gt;CSSプリプロセッサでスタイルガイド&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;来年はこのスタイルガイドのようなテーマの記事を書く予定。このStyleDocco自体の使い方ももうちょっと詳細に。&lt;/p&gt;
 
-&lt;h3 id=&#34;sublime-text2のプラグイン-zen-codingをemmetに変える-http-inkdesign-jp-notes-2012-11-27-zencoding-to-emmet-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/27/zencoding-to-emmet.html&#34;&gt;Sublime Text2のプラグイン、Zen codingをEmmetに変える&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;sublime-text2のプラグイン-zen-codingをemmetに変える-http-inkdesign-jp-notes-2012-11-27-zencoding-to-emmet-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/27/zencoding-to-emmet.html&#34;&gt;Sublime Text2のプラグイン、Zen codingをEmmetに変える&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;Hayakuに近いエントリー。Zen Codingの現バージョンのEmmetの紹介。Hayakuとも併用できる。&lt;/p&gt;
 
-&lt;h3 id=&#34;スマートフォン端末向けにtel-を仕込む小技-http-inkdesign-jp-notes-2012-12-05-jquery-applies-tel-number-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/05/jquery-applies-tel-number.html&#34;&gt;スマートフォン端末向けにtel:を仕込む小技&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;スマートフォン端末向けにtel-を仕込む小技-http-inkdesign-jp-notes-2012-12-05-jquery-applies-tel-number-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/05/jquery-applies-tel-number.html&#34;&gt;スマートフォン端末向けにtel:を仕込む小技&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.adventar.org/calendars/29&#34;&gt;軽めのjQuery Advent Calendar 2012&lt;/a&gt;の５日目の記事。内容はそんなに役にはたたないけれど。&lt;/p&gt;
 
-&lt;h3 id=&#34;mac-os-xのターミナルからsublime-text2を立ち上げられるようにすると地味に便利-http-inkdesign-jp-notes-2012-11-29-open-file-by-subl-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/29/open-file-by-subl.html&#34;&gt;Mac OS XのターミナルからSublime Text2を立ち上げられるようにすると地味に便利&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;mac-os-xのターミナルからsublime-text2を立ち上げられるようにすると地味に便利-http-inkdesign-jp-notes-2012-11-29-open-file-by-subl-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/29/open-file-by-subl.html&#34;&gt;Mac OS XのターミナルからSublime Text2を立ち上げられるようにすると地味に便利&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;地味に便利がゆえに、地味な記事。でもやっておくと必ず使う、これ。&lt;/p&gt;
 
-&lt;h3 id=&#34;wordpressからjekyll-github-pageへ-http-inkdesign-jp-notes-2012-11-14-inkdesign-on-ghpage-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/14/inkdesign-on-ghpage.html&#34;&gt;WordPressからJekyll + Github pageへ&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;wordpressからjekyll-github-pageへ-http-inkdesign-jp-notes-2012-11-14-inkdesign-on-ghpage-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/14/inkdesign-on-ghpage.html&#34;&gt;WordPressからJekyll + Github pageへ&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;今のところ乗り換えてからの不満などもまったくなし。安定。&lt;/p&gt;
 
-&lt;h3 id=&#34;sass-less-stylusのcolor-functionsのコンパイル結果を比べてみた-http-inkdesign-jp-notes-2012-11-28-preprocessor-color-functions-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/28/Preprocessor-color-functions.html&#34;&gt;Sass,LESS,StylusのColor functionsのコンパイル結果を比べてみた&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;sass-less-stylusのcolor-functionsのコンパイル結果を比べてみた-http-inkdesign-jp-notes-2012-11-28-preprocessor-color-functions-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/28/Preprocessor-color-functions.html&#34;&gt;Sass,LESS,StylusのColor functionsのコンパイル結果を比べてみた&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;これはちゃんと元のコードの解説をしなさいと各所で怒られたので、2013年に書ければ。&lt;/p&gt;
 
-&lt;h3 id=&#34;擬似要素のcssアニメーションはinheritを使えば有効になる-http-inkdesign-jp-notes-2012-12-01-pseudo-animation-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/01/pseudo-animation.html&#34;&gt;擬似要素のCSSアニメーションはinheritを使えば有効になる&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;擬似要素のcssアニメーションはinheritを使えば有効になる-http-inkdesign-jp-notes-2012-12-01-pseudo-animation-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/01/pseudo-animation.html&#34;&gt;擬似要素のCSSアニメーションはinheritを使えば有効になる&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;たまにハマりそうなネタ。アニメーション系の検証・記事を書きたい。&lt;/p&gt;
 
-&lt;h3 id=&#34;最近のlessの小話と新機能紹介-一部-http-inkdesign-jp-notes-2012-12-08-less-new-colors-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/08/less-new-colors.html&#34;&gt;最近のLESSの小話と新機能紹介（一部）&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;最近のlessの小話と新機能紹介-一部-http-inkdesign-jp-notes-2012-12-08-less-new-colors-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/08/less-new-colors.html&#34;&gt;最近のLESSの小話と新機能紹介（一部）&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;個人的に観て欲しい記事ではあったものの、そんなに飛ばず。地味だからね。&lt;/p&gt;
 
-&lt;h3 id=&#34;jquery-color-pluginを触ってみる-http-inkdesign-jp-notes-2012-12-13-jquery-color-html:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/13/jquery-color.html&#34;&gt;jQuery Color Pluginを触ってみる&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;jquery-color-pluginを触ってみる-http-inkdesign-jp-notes-2012-12-13-jquery-color-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/13/jquery-color.html&#34;&gt;jQuery Color Pluginを触ってみる&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;アドベントカレンダーでノリで書いた2本目。これも用途はそんなにない。&lt;/p&gt;
 
-&lt;h2 id=&#34;2012年の振り返りと-2013年のこと:e6e14d5435bfb5be49d41b26cb32799e&#34;&gt;2012年の振り返りと、2013年のこと&lt;/h2&gt;
+&lt;h2 id=&#34;2012年の振り返りと-2013年のこと:b4907684127d492256d441300c23a94a&#34;&gt;2012年の振り返りと、2013年のこと&lt;/h2&gt;
 
 &lt;p&gt;前半は&lt;a href=&#34;http://goodpatch.co&#34;&gt;Goodpatch&lt;/a&gt;として受託制作やいろんなウェブサービスのお手伝いをさせてもらい、
 今年の5月に転職し、デベロッパーとして心機一転、より現場的なところに力を注いだ2012年。&lt;/p&gt;

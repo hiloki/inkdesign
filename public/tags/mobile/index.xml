@@ -11,10 +11,10 @@
     
     <item>
       <title>スマートフォン端末向けにtel:を仕込む小技</title>
-      <link>http://localhost:1313/notes/jquery-applies-tel-number.html/</link>
+      <link>http://localhost:1313/notes/jquery-applies-tel-number/</link>
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/jquery-applies-tel-number.html/</guid>
+      <guid>http://localhost:1313/notes/jquery-applies-tel-number/</guid>
       <description>
 
 &lt;p&gt;※この記事は、&lt;a href=&#34;http://www.adventar.org/calendars/29&#34;&gt;軽めのjQuery Advent Calendar 2012&lt;/a&gt;の５日目の記事です。&lt;/p&gt;
@@ -27,7 +27,7 @@
 
 &lt;p&gt;※問題とはいってもデスクトップユーザーが電話番号を見て、クリックして電話をかける、というアクションをするかどうかというのは置いといて。&lt;/p&gt;
 
-&lt;h2 id=&#34;カスタムデータ属性を使ったアプローチ:28c15dfd9cdc0441d9b64e8000d75cf2&#34;&gt;カスタムデータ属性を使ったアプローチ&lt;/h2&gt;
+&lt;h2 id=&#34;カスタムデータ属性を使ったアプローチ:5bd5d958c898e5fc422c2ded0e0588fa&#34;&gt;カスタムデータ属性を使ったアプローチ&lt;/h2&gt;
 
 &lt;p&gt;前提として下記のようなマークアップをおこなう。&lt;/p&gt;
 
@@ -57,7 +57,7 @@ if(ua.indexOf(&#39;iPhone&#39;) &amp;gt; -1) {
 
 &lt;p&gt;こんな感じ。&lt;/p&gt;
 
-&lt;h2 id=&#34;data-メソッドは:28c15dfd9cdc0441d9b64e8000d75cf2&#34;&gt;data()メソッドは？&lt;/h2&gt;
+&lt;h2 id=&#34;data-メソッドは:5bd5d958c898e5fc422c2ded0e0588fa&#34;&gt;data()メソッドは？&lt;/h2&gt;
 
 &lt;p&gt;せっかくカスタムデータ属性をつかっているので、よりjQueryっぽくという意味では&lt;code&gt;data()&lt;/code&gt;メソッドを使う方法もある。&lt;/p&gt;
 
@@ -87,7 +87,7 @@ if(ua.indexOf(&#39;iPhone&#39;) &amp;gt; -1) {
 
 &lt;p&gt;その他、&lt;a href=&#34;http://1000ch.net/2012/12/02/ImportantPointForJavaScriptDevelopment/&#34;&gt;カスタムデータ属性の参照の仕方&lt;/a&gt;などについては、こちらも参照するといいかも。&lt;/p&gt;
 
-&lt;h2 id=&#34;もうちょい考えてみると:28c15dfd9cdc0441d9b64e8000d75cf2&#34;&gt;もうちょい考えてみると&lt;/h2&gt;
+&lt;h2 id=&#34;もうちょい考えてみると:5bd5d958c898e5fc422c2ded0e0588fa&#34;&gt;もうちょい考えてみると&lt;/h2&gt;
 
 &lt;p&gt;Detectionが正直微妙で、本来ならば&lt;strong&gt;tel:が有効な端末で&lt;/strong&gt;っていうのが正しいので、単純にUAとかでみるのは微妙。例として挙げておいてなんだが、これだとたぶん&lt;strong&gt;iPod touch&lt;/strong&gt;も含まれる。&lt;/p&gt;
 
@@ -117,7 +117,7 @@ if(ua.indexOf(&#39;iPhone&#39;) &amp;gt; -1) {
 
 &lt;p&gt;タグは差し替えず、&lt;code&gt;event.preventDefault&lt;/code&gt;でリンクを無効化しても良いかもしれないが、この場合にはCSSもマウスポインタがリンク時のポインタにならないようにしておきたい。&lt;/p&gt;
 
-&lt;h2 id=&#34;アドベントカレンダーは続く:28c15dfd9cdc0441d9b64e8000d75cf2&#34;&gt;アドベントカレンダーは続く&lt;/h2&gt;
+&lt;h2 id=&#34;アドベントカレンダーは続く:5bd5d958c898e5fc422c2ded0e0588fa&#34;&gt;アドベントカレンダーは続く&lt;/h2&gt;
 
 &lt;p&gt;次は&lt;a href=&#34;http://h2ham.seesaa.net/&#34;&gt;ハムの人&lt;/a&gt;ですね、よろしくおねがいします。&lt;/p&gt;
 </description>

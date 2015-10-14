@@ -11,10 +11,10 @@
     
     <item>
       <title>Web ComponentsとPolymerを軽く触ってみる</title>
-      <link>http://localhost:1313/notes/try-web-components-and-polymer.html/</link>
+      <link>http://localhost:1313/notes/try-web-components-and-polymer/</link>
       <pubDate>Thu, 05 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/try-web-components-and-polymer.html/</guid>
+      <guid>http://localhost:1313/notes/try-web-components-and-polymer/</guid>
       <description>
 
 &lt;p&gt;Web ComponentsはWebのUIのコンポーネント化を実現するための各種仕様の総称だ。&lt;/p&gt;
@@ -63,7 +63,7 @@ $ yo polymer
 
 &lt;p&gt;そしてShadow DOMによるカプセル化で、本当に独立したコンポーネントをつくられることが楽しい。&lt;/p&gt;
 
-&lt;h2 id=&#34;カプセル化:c82d707dcde5f5bbb9ec9cdd2618231f&#34;&gt;カプセル化&lt;/h2&gt;
+&lt;h2 id=&#34;カプセル化:fe1d80cca7ad5100b644bbb56172f1de&#34;&gt;カプセル化&lt;/h2&gt;
 
 &lt;p&gt;もうひとつのサンプル、&lt;a href=&#34;http://hiloki.github.io/demo/frontrend_chrome/app/switch.html&#34;&gt;iOS7のスイッチUI&lt;/a&gt;を模したもの。&lt;/p&gt;
 
@@ -133,7 +133,7 @@ input[type=&amp;quot;checkbox&amp;quot;]:checked:after {
 
 &lt;p&gt;と、ネガティブに考える以上に、Web Componentsには面白みがあるとおもっている。今回紹介したリソースを参照して、是非試してみてほしい。&lt;/p&gt;
 
-&lt;h2 id=&#34;というわけで:c82d707dcde5f5bbb9ec9cdd2618231f&#34;&gt;というわけで&lt;/h2&gt;
+&lt;h2 id=&#34;というわけで:fe1d80cca7ad5100b644bbb56172f1de&#34;&gt;というわけで&lt;/h2&gt;
 
 &lt;p&gt;本記事は&lt;a href=&#34;http://www.adventar.org/calendars/62&#34;&gt;Frontrend Advent Calendar 2013&lt;/a&gt;の5日目の記事として書いた。&lt;br /&gt;
 次は&lt;a href=&#34;http://ginpen.com/&#34;&gt;Ginpeiさん&lt;/a&gt;です。&lt;/p&gt;

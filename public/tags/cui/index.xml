@@ -11,10 +11,10 @@
     
     <item>
       <title>bashmarksでディレクトリをブックマークする</title>
-      <link>http://localhost:1313/notes/bashmarks.html/</link>
+      <link>http://localhost:1313/notes/bashmarks/</link>
       <pubDate>Thu, 29 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/bashmarks.html/</guid>
+      <guid>http://localhost:1313/notes/bashmarks/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://www.huyng.com/projects/bashmarks/&#34;&gt;bashmarks&lt;/a&gt;&lt;/p&gt;
@@ -31,7 +31,7 @@
 
 &lt;p&gt;&lt;code&gt;cd&lt;/code&gt;と打って、移動先のパスはFinderからディレクトリをドラッグ&amp;amp;ドロップすることでもダイレクトに移動できるが、それをいちいちやるのは面倒くさい。&lt;/p&gt;
 
-&lt;h2 id=&#34;bashmarksの使い方について:0f95fc60470db38cfab85b3509774bb4&#34;&gt;bashmarksの使い方について&lt;/h2&gt;
+&lt;h2 id=&#34;bashmarksの使い方について:e5b4cbf04ef0e9fd61905871bf0de895&#34;&gt;bashmarksの使い方について&lt;/h2&gt;
 
 &lt;p&gt;bashmarksを使えば、次のようにディレクトリを移動することができる。&lt;/p&gt;
 
@@ -61,7 +61,7 @@
 
 &lt;p&gt;またブックマーク名は保存した名前をきっちりタイプする必要はなく、途中までタイプして&lt;kbd&gt;Tab&lt;/kbd&gt;キーを叩けば補完される。便利ですな。&lt;/p&gt;
 
-&lt;h2 id=&#34;bashmarksのインストール:0f95fc60470db38cfab85b3509774bb4&#34;&gt;bashmarksのインストール&lt;/h2&gt;
+&lt;h2 id=&#34;bashmarksのインストール:e5b4cbf04ef0e9fd61905871bf0de895&#34;&gt;bashmarksのインストール&lt;/h2&gt;
 
 &lt;p&gt;インストールも特別難しいことはない。下記はそのままbashmarksのサイトから引用したもの。&lt;/p&gt;
 
@@ -73,12 +73,12 @@
 &lt;/ol&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;z-shなんてのもある:0f95fc60470db38cfab85b3509774bb4&#34;&gt;z.shなんてのもある&lt;/h2&gt;
+&lt;h2 id=&#34;z-shなんてのもある:e5b4cbf04ef0e9fd61905871bf0de895&#34;&gt;z.shなんてのもある&lt;/h2&gt;
 
 &lt;p&gt;bashmarksは自分でブックマークしていくものだが、&lt;a href=&#34;https://github.com/rupa/z&#34;&gt;z&lt;/a&gt;であればブックマークではなく、履歴残して、それらにアクセスすることができる。
-今回はbashmarksについてのお話ということで、z.shについては &lt;a href=&#34;http://d.hatena.ne.jp/bose999/20120806/1344185966&#34;&gt;cd移動 を easyに z.sh de GO！ - bose999の試験管の中の話&lt;/a&gt; などを参加すると良い。&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:0f95fc60470db38cfab85b3509774bb4:zsh&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:0f95fc60470db38cfab85b3509774bb4:zsh&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;こちらもインストールは難しくない。&lt;/p&gt;
+今回はbashmarksについてのお話ということで、z.shについては &lt;a href=&#34;http://d.hatena.ne.jp/bose999/20120806/1344185966&#34;&gt;cd移動 を easyに z.sh de GO！ - bose999の試験管の中の話&lt;/a&gt; などを参加すると良い。&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:e5b4cbf04ef0e9fd61905871bf0de895:zsh&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:e5b4cbf04ef0e9fd61905871bf0de895:zsh&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;こちらもインストールは難しくない。&lt;/p&gt;
 
-&lt;h2 id=&#34;セットアップして損はなし:0f95fc60470db38cfab85b3509774bb4&#34;&gt;セットアップして損はなし&lt;/h2&gt;
+&lt;h2 id=&#34;セットアップして損はなし:e5b4cbf04ef0e9fd61905871bf0de895&#34;&gt;セットアップして損はなし&lt;/h2&gt;
 
 &lt;p&gt;コマンドラインで色々はじめたばかりの人はぜひ。&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
@@ -86,8 +86,8 @@
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:0f95fc60470db38cfab85b3509774bb4:zsh&#34;&gt;この記事ではzshを前提にしているが、bashでもzは使える。
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:0f95fc60470db38cfab85b3509774bb4:zsh&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:e5b4cbf04ef0e9fd61905871bf0de895:zsh&#34;&gt;この記事ではzshを前提にしているが、bashでもzは使える。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:e5b4cbf04ef0e9fd61905871bf0de895:zsh&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>

@@ -11,10 +11,10 @@
     
     <item>
       <title>CSSが速くかけるようになるSublime Text2 パッケージ Hayakuで、世界が変わるらしい</title>
-      <link>http://localhost:1313/notes/Hayaku-changed-my-world.html/</link>
+      <link>http://localhost:1313/notes/Hayaku-changed-my-world/</link>
       <pubDate>Tue, 27 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/Hayaku-changed-my-world.html/</guid>
+      <guid>http://localhost:1313/notes/Hayaku-changed-my-world/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://localhost:1313/notes/2012/11/27/zencoding-to-emmet.html&#34;&gt;Zen CodingもといEmmet&lt;/a&gt;を使いこなすとまでいかなくとも、それなりに使ってはいるが、実はCSSではあんまり活用していなかった。&lt;/p&gt;
@@ -26,13 +26,13 @@
 &lt;p&gt;&lt;ins datetime=&#34;2012-11-30&#34;&gt;&lt;strong&gt;追記（2012-11-30）:&lt;/strong&gt; Emmetでも若干&lt;a href=&#34;http://docs.emmet.io/css-abbreviations/fuzzy-search/&#34;&gt;ファジーに書ける&lt;/a&gt;様子。
 &lt;/ins&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;そこでhayaku-らしい:b3b9b7229dc24e1af3309af19d449a2c&#34;&gt;そこでHayaku、らしい&lt;/h2&gt;
+&lt;h2 id=&#34;そこでhayaku-らしい:3afcd282169df6f3f5c9a4d910cd8975&#34;&gt;そこでHayaku、らしい&lt;/h2&gt;
 
 &lt;p&gt;二度見しそうな名前だが、これは&lt;a href=&#34;http://hayakubundle.com/&#34;&gt;Hayaku&lt;/a&gt;というSublime Text2のパッケージ。Emmetと違い、対象になるのはCSS（とCSSプリプロセッサ）であり、前述の通りCSSの記述に関してはこれといったツールを使っていない自分でも感動した。&lt;/p&gt;
 
 &lt;p&gt;ちなみにHayakuについてはもうすでに&lt;a href=&#34;https://gist.github.com/4135513&#34;&gt;Sublime Text2を布教しているエライ人&lt;/a&gt;によって簡潔にまとめられているが、とりあえずひと通りやってみた、ってことで書いていく。&lt;/p&gt;
 
-&lt;h2 id=&#34;とりあえずhayakuで何ができるのか:b3b9b7229dc24e1af3309af19d449a2c&#34;&gt;とりあえずHayakuで何ができるのか&lt;/h2&gt;
+&lt;h2 id=&#34;とりあえずhayakuで何ができるのか:3afcd282169df6f3f5c9a4d910cd8975&#34;&gt;とりあえずHayakuで何ができるのか&lt;/h2&gt;
 
 &lt;p&gt;CSSで&lt;code&gt;overflow:hidden&lt;/code&gt;と書きたいとき、どうタイプするか？&lt;/p&gt;
 
@@ -74,11 +74,11 @@
 &lt;p&gt;なんかもうノリでタイプすれば、それが出る。
 これでもうHayakuが気になった人は、次へ進んでください。&lt;/p&gt;
 
-&lt;h2 id=&#34;hayakuのインストール:b3b9b7229dc24e1af3309af19d449a2c&#34;&gt;Hayakuのインストール&lt;/h2&gt;
+&lt;h2 id=&#34;hayakuのインストール:3afcd282169df6f3f5c9a4d910cd8975&#34;&gt;Hayakuのインストール&lt;/h2&gt;
 
 &lt;p&gt;多くは語るまい。Sublime Text2な人なおなじみの、&lt;strong&gt;Install Package&lt;/strong&gt;から&lt;strong&gt;&amp;ldquo;Hayaku&amp;rdquo;&lt;/strong&gt;と叩けばOK。&lt;/p&gt;
 
-&lt;h2 id=&#34;emmetとの共用:b3b9b7229dc24e1af3309af19d449a2c&#34;&gt;Emmetとの共用&lt;/h2&gt;
+&lt;h2 id=&#34;emmetとの共用:3afcd282169df6f3f5c9a4d910cd8975&#34;&gt;Emmetとの共用&lt;/h2&gt;
 
 &lt;p&gt;この手のパッケージはキーバインドがぶつかりやすいので気をつけること。&lt;kbd&gt;Tab&lt;/kbd&gt;キーでの展開がHayakuでもEmmetでもデフォルトとなっているので、あらかじめそれを回避しておく。これはEmmetの方のパッケージ設定でおこなう。&lt;/p&gt;
 
@@ -96,7 +96,7 @@
 
 &lt;p&gt;ここで少しSublime Text2の設定についての補足をしておくと、前述の設定までのパスを追っていくと、&lt;strong&gt;Users&lt;/strong&gt;ではなく、&lt;strong&gt;Default&lt;/strong&gt;というのも参照できるが、設定を変える場合には&lt;strong&gt;Default&lt;/strong&gt;を書き換えるのではなく、&lt;strong&gt;Users&lt;/strong&gt;の方に書くようにする。そうすることで&lt;strong&gt;Default&lt;/strong&gt;の設定を上書きすることができる。&lt;/p&gt;
 
-&lt;h2 id=&#34;hayakuの機能をいくつか紹介:b3b9b7229dc24e1af3309af19d449a2c&#34;&gt;Hayakuの機能をいくつか紹介&lt;/h2&gt;
+&lt;h2 id=&#34;hayakuの機能をいくつか紹介:3afcd282169df6f3f5c9a4d910cd8975&#34;&gt;Hayakuの機能をいくつか紹介&lt;/h2&gt;
 
 &lt;p&gt;ではHayakuでの書き方をいくつか紹介する。&lt;/p&gt;
 
@@ -158,7 +158,7 @@
 
 &lt;p&gt;&lt;code&gt;!&lt;/code&gt;をつければ、&lt;code&gt;!important&lt;/code&gt;を追加。たまーに使う。&lt;/p&gt;
 
-&lt;h2 id=&#34;とりあえず入れてて損はない:b3b9b7229dc24e1af3309af19d449a2c&#34;&gt;とりあえず入れてて損はない&lt;/h2&gt;
+&lt;h2 id=&#34;とりあえず入れてて損はない:3afcd282169df6f3f5c9a4d910cd8975&#34;&gt;とりあえず入れてて損はない&lt;/h2&gt;
 
 &lt;p&gt;設定を変えないとEmmetなどとぶつかるというのはあるとして、基本的には邪魔をするものでもないし、ミスタイプをしたときも勢いでカバーできるっていうイメージで導入してみるとどうでしょうか。&lt;/p&gt;
 </description>

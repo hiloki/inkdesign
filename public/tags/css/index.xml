@@ -11,17 +11,17 @@
     
     <item>
       <title>CSSカスタムプロパティとMythの話</title>
-      <link>http://localhost:1313/notes/css-custom-property.html/</link>
+      <link>http://localhost:1313/notes/css-custom-property/</link>
       <pubDate>Mon, 23 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/css-custom-property.html/</guid>
+      <guid>http://localhost:1313/notes/css-custom-property/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://dev.w3.org/csswg/css-variables/&#34;&gt;CSS Custom Properties for Cascading Variables Module&lt;/a&gt;はCSSで変数を使うために、その変数を定義するためのプロパティについての仕様だ。&lt;/p&gt;
 
 &lt;p&gt;これが先日&lt;a href=&#34;http://nightly.mozilla.org/&#34;&gt;Firefox Nightly 29&lt;/a&gt;で実装されたらしく、ちょっとお触りしてみた。これについては同じようにお触りされた記事、&lt;a href=&#34;http://thatemil.com/blog/2013/12/15/playing-around-with-css-variables-custom-properties/&#34;&gt;Playing around with CSS variables - &amp;ldquo;custom properties&amp;rdquo;&lt;/a&gt;が良かったのでこっちも参照するのをおすすめする。&lt;/p&gt;
 
-&lt;h2 id=&#34;基本的な使い方:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;基本的な使い方&lt;/h2&gt;
+&lt;h2 id=&#34;基本的な使い方:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;基本的な使い方&lt;/h2&gt;
 
 &lt;p&gt;CSSで変数というと、&lt;a href=&#34;http://sass-lang.com/&#34;&gt;Sass&lt;/a&gt;や&lt;a href=&#34;http://lesscss.org/&#34;&gt;LESS&lt;/a&gt;などのプリプロセッサとして使うことができ、そのあたりで使ったことがあるのであれば、CSSerの人でもなんとなく馴染みやすい仕様かもしれない。とはいえ定義とその参照方法はSassやLESSのそれとは全然異なる。&lt;/p&gt;
 
@@ -59,7 +59,7 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;変数をどう使うか:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;変数をどう使うか&lt;/h2&gt;
+&lt;h2 id=&#34;変数をどう使うか:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;変数をどう使うか&lt;/h2&gt;
 
 &lt;p&gt;Sassの時でもあんまり自分は変数をそれほど有用性のある使い方をしているとは思わない。が、その中でも使えると思うのは、そのプロジェクトのキーカラーの定義を&lt;code&gt;$keyColor: red&lt;/code&gt;とするような使い方がまず一つ。カスタムプロパティでは&lt;code&gt;var-key-color: red&lt;/code&gt;というように。&lt;/p&gt;
 
@@ -91,11 +91,11 @@
 
 &lt;p&gt;あとおまけで、次のページにアクセスすると、&lt;a href=&#34;http://cdpn.io/Dfbng&#34;&gt;対象ブラウザがカスタムプロパティに対応しているかどうか分かる&lt;/a&gt;ようにしてみた。すごく馬鹿げたような方法でやってみたので、FirefoxのNightly 29をもしインストールしたならば覗いてみてほしい。&lt;/p&gt;
 
-&lt;h2 id=&#34;スコープとポストプロセッサーmyth:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;スコープとポストプロセッサーMyth&lt;/h2&gt;
+&lt;h2 id=&#34;スコープとポストプロセッサーmyth:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;スコープとポストプロセッサーMyth&lt;/h2&gt;
 
 &lt;p&gt;先に紹介した記事ではあまり触れられていなかったスコープについて検証してみる。Sassなどではネストの中で変数に違う値が入れば、そちらが優先される。&lt;/p&gt;
 
-&lt;h3 id=&#34;html:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;HTML&lt;/h3&gt;
+&lt;h3 id=&#34;html:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;HTML&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;h1&amp;gt;Default&amp;lt;/h1&amp;gt;
 &amp;lt;div class=&amp;quot;first&amp;quot;&amp;gt;
@@ -104,7 +104,7 @@
 &amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;sass:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;Sass&lt;/h3&gt;
+&lt;h3 id=&#34;sass:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;Sass&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-scss&#34;&gt;$color: blue;
 
@@ -122,7 +122,7 @@ h1 {
 
 &lt;p&gt;次のようになる。&lt;/p&gt;
 
-&lt;h3 id=&#34;css:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;CSS&lt;/h3&gt;
+&lt;h3 id=&#34;css:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;CSS&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;h1 {
   color: blue;
@@ -135,7 +135,7 @@ h1 {
 
 &lt;p&gt;ではカスタムプロパティでの変数のスコープはどうなっているのか。同じようなコードを用意する。今度はSassではなくCSSだ。&lt;/p&gt;
 
-&lt;h3 id=&#34;css-1:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;CSS&lt;/h3&gt;
+&lt;h3 id=&#34;css-1:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;CSS&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;:root {
   var-color: blue;
@@ -191,11 +191,11 @@ h1 {
 &lt;p&gt;あくまでこの機能で提供されるのはグローバルの変数のみだということだ。（少なくとも現状は。）
 とはいえ、Mythには期待をしてるので、引き続き様子をみて触ってみたい。&lt;/p&gt;
 
-&lt;h2 id=&#34;なかなか奥が深いカスタムプロパティ:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;なかなか奥が深いカスタムプロパティ&lt;/h2&gt;
+&lt;h2 id=&#34;なかなか奥が深いカスタムプロパティ:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;なかなか奥が深いカスタムプロパティ&lt;/h2&gt;
 
 &lt;p&gt;色々と試してみたものの、まだあまり上手く使える気はしないものの、これが他のブラウザでも実装されるようになれば色々とアイデアを考えてみたいものだ。&lt;/p&gt;
 
-&lt;h2 id=&#34;というわけで:c657cce52b0d805f58ccdeae31540bc6&#34;&gt;というわけで&lt;/h2&gt;
+&lt;h2 id=&#34;というわけで:06c79ab8e5382aeb1c59f67c41152186&#34;&gt;というわけで&lt;/h2&gt;
 
 &lt;p&gt;本記事は&lt;a href=&#34;http://www.adventar.org/calendars/57&#34;&gt;CSS Property Advent Calendar 2013&lt;/a&gt;の23日目の記事として書いた。&lt;br /&gt;
 次は&lt;a href=&#34;http://www.adventar.org/users/2499&#34;&gt;noha_koさん&lt;/a&gt;です。&lt;/p&gt;
@@ -204,17 +204,17 @@ h1 {
     
     <item>
       <title>CSS Preprocessor Shootout（個人的な）</title>
-      <link>http://localhost:1313/notes/css-preprocessor-shootout.html/</link>
+      <link>http://localhost:1313/notes/css-preprocessor-shootout/</link>
       <pubDate>Sun, 13 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/css-preprocessor-shootout.html/</guid>
+      <guid>http://localhost:1313/notes/css-preprocessor-shootout/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://lp26.cssnite.jp/&#34;&gt;CSS Nite LP, Disk 26「CSS Preprocessor Shootout」&lt;/a&gt;でLESSについてのお話をしてきた。&lt;/p&gt;
 
 &lt;p&gt;当日の雰囲気や実況については&lt;a href=&#34;https://twitter.com/search?q=%23cssnite_lp26&#34;&gt;ハッシュタグを追っていただく&lt;/a&gt;として、ちょっとだけプリプロセッサ選びについてのフォローアップをば。&lt;/p&gt;
 
-&lt;h2 id=&#34;cssプリプロセッサはどれがいいの:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;CSSプリプロセッサはどれがいいの？&lt;/h2&gt;
+&lt;h2 id=&#34;cssプリプロセッサはどれがいいの:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;CSSプリプロセッサはどれがいいの？&lt;/h2&gt;
 
 &lt;p&gt;イベントのサブタイトルにもなっている&lt;strong&gt;CSS Preprocessor Shootout&lt;/strong&gt;の元ネタは、イベントページの冒頭でも紹介されている通り、&lt;a href=&#34;http://net.tutsplus.com/tutorials/html-css-techniques/sass-vs-less-vs-stylus-a-preprocessor-shootout/&#34;&gt;Sass vs. LESS vs. Stylus: Preprocessor Shootout&lt;/a&gt;という記事です。（英語ではありますが、この記事で基本的な文法は総ナメできます。）&lt;/p&gt;
 
@@ -222,7 +222,7 @@ h1 {
 
 &lt;p&gt;時間が限られていたことも含め、講演ではカバーしきれなかったツールの特長のようなところに触れつつ、&lt;strong&gt;Shootout(撃ち合い)&lt;/strong&gt;ということもあり、僕個人としてひとつの結論を出してしまいましょう。&lt;/p&gt;
 
-&lt;h3 id=&#34;less-http-lesscss-org:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;&lt;a href=&#34;http://lesscss.org/&#34;&gt;LESS&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;less-http-lesscss-org:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;&lt;a href=&#34;http://lesscss.org/&#34;&gt;LESS&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;これからプリプロセッサはじめる人に勧めるなら&lt;strong&gt;LESS&lt;/strong&gt;。&lt;/p&gt;
 
@@ -245,7 +245,7 @@ h1 {
 &lt;p&gt;こういった思いがあるゆえ、僕の講演でも、選択肢のひとつとしての可能性で締めさせていただいた。
 しかし一方では、&lt;strong&gt;とりあえずCSSプリプロセッサを試したい&lt;/strong&gt;という人には強くおすすめできる。それから他のツールにはいっていくのでも全然構わない。&lt;/p&gt;
 
-&lt;h3 id=&#34;stylus-http-learnboost-github-com-stylus:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;&lt;a href=&#34;http://learnboost.github.com/stylus/&#34;&gt;Stylus&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;stylus-http-learnboost-github-com-stylus:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;&lt;a href=&#34;http://learnboost.github.com/stylus/&#34;&gt;Stylus&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;僕個人として使うならば&lt;strong&gt;Stylus&lt;/strong&gt;。&lt;/p&gt;
 
@@ -262,7 +262,7 @@ h1 {
 
 &lt;p&gt;Stylusはこのようにやや玄人好みであるといっても、他のプリプロセッサ同様のレベルで使う分には、Stylusからはじめても構わない。それが Ruby+gemではじめるのか、Node.js+npmではじめるのかの違いくらい。無論GUIのツールを使ったって構わない。が、Stylusに対応しているものはやや少ないので、GUIの選択肢は少し減るだろう。&lt;/p&gt;
 
-&lt;h3 id=&#34;sass-http-sass-lang-com:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;&lt;a href=&#34;http://sass-lang.com&#34;&gt;Sass&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;sass-http-sass-lang-com:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;&lt;a href=&#34;http://sass-lang.com&#34;&gt;Sass&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;総合的にみて、人に勧めるならば、&lt;strong&gt;Sass&lt;/strong&gt;。&lt;/p&gt;
 
@@ -277,11 +277,11 @@ h1 {
 
 &lt;p&gt;とはいえ仕事では基本的にSassを使う。なぜなら使える（使ったことがある）人が今の身の回りには多くて、引き継ぎや共通のライブラリをつくれるからだ。&lt;/p&gt;
 
-&lt;h2 id=&#34;まとめ:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;まとめ&lt;/h2&gt;
+&lt;h2 id=&#34;まとめ:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;まとめ&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;僕個人&lt;/strong&gt;（というのは強調しておきたい）としては、&lt;/p&gt;
 
-&lt;h3 id=&#34;人に勧めるなら:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;人に勧めるなら&lt;/h3&gt;
+&lt;h3 id=&#34;人に勧めるなら:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;人に勧めるなら&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Sass&lt;/li&gt;
@@ -289,7 +289,7 @@ h1 {
 &lt;li&gt;LESS&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;これからプリプロセッサはじめる人に勧めるなら:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;これからプリプロセッサはじめる人に勧めるなら&lt;/h3&gt;
+&lt;h3 id=&#34;これからプリプロセッサはじめる人に勧めるなら:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;これからプリプロセッサはじめる人に勧めるなら&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;LESS&lt;/li&gt;
@@ -297,7 +297,7 @@ h1 {
 &lt;li&gt;Stylus&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;僕が使うなら:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;僕が使うなら&lt;/h3&gt;
+&lt;h3 id=&#34;僕が使うなら:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;僕が使うなら&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Stylus&lt;/li&gt;
@@ -307,7 +307,7 @@ h1 {
 
 &lt;p&gt;LESSの今後次第では、StylusじゃなくLESSになるかもしれないし、仕事でもLESSを推し進めていくかもしれない。（でもたぶんreworkに手を出す気もする）&lt;/p&gt;
 
-&lt;h2 id=&#34;でも結局cssはcss:b32bcd3ba91d76f20cbda8e37068ef12&#34;&gt;でも結局CSSはCSS&lt;/h2&gt;
+&lt;h2 id=&#34;でも結局cssはcss:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;でも結局CSSはCSS&lt;/h2&gt;
 
 &lt;p&gt;イベントで数度繰り返していたが、CSSとしてちゃんと書けることがすべての前提。&lt;/p&gt;
 
@@ -329,17 +329,17 @@ h1 {
     
     <item>
       <title>最近のLESSの小話と新機能紹介（一部）</title>
-      <link>http://localhost:1313/notes/less-new-colors.html/</link>
+      <link>http://localhost:1313/notes/less-new-colors/</link>
       <pubDate>Sat, 08 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/less-new-colors.html/</guid>
+      <guid>http://localhost:1313/notes/less-new-colors/</guid>
       <description>
 
 &lt;p&gt;※この記事は、&lt;a href=&#34;http://www.adventar.org/calendars/1&#34;&gt;CSS Preprocessor Advent Calendar 2012&lt;/a&gt;の7日目の記事の&lt;strong&gt;おまけ&lt;/strong&gt;です。&lt;/p&gt;
 
 &lt;p&gt;CSSプリプロセッサ（CSSメタ言語）は、&lt;a href=&#34;http://sass-lang.com/&#34;&gt;Sass&lt;/a&gt;が人気かつ、アップデートも頻繁、新機能増えてる！みたいな空気を感じたりするんですが、&lt;a href=&#34;http://lesscss.org/&#34;&gt;LESS&lt;/a&gt;もがんばってます。&lt;/p&gt;
 
-&lt;h2 id=&#34;開発の停滞:81353c15bcf702332af50716dbf1c4b9&#34;&gt;開発の停滞&lt;/h2&gt;
+&lt;h2 id=&#34;開発の停滞:f05c5b2d7e345ff5f4b1bef7c5cccdcb&#34;&gt;開発の停滞&lt;/h2&gt;
 
 &lt;p&gt;5ヶ月ほど前に&lt;a href=&#34;http://crunchapp.net/&#34;&gt;Crunch&lt;/a&gt;というLESS対応エディタを開発しているMatthew Dean氏が、&lt;/p&gt;
 
@@ -361,7 +361,7 @@ h1 {
 
 &lt;p&gt;なんていうこともあったものの、&lt;a href=&#34;https://github.com/agatronic&#34;&gt;agatronic&lt;/a&gt;氏を中心に、LESSを愛する有志たちによって、現在ぼちぼちとメンテされている様子。&lt;/p&gt;
 
-&lt;h2 id=&#34;最近のless:81353c15bcf702332af50716dbf1c4b9&#34;&gt;最近のLESS&lt;/h2&gt;
+&lt;h2 id=&#34;最近のless:f05c5b2d7e345ff5f4b1bef7c5cccdcb&#34;&gt;最近のLESS&lt;/h2&gt;
 
 &lt;p&gt;最近のLESSの話題の目玉としては、&lt;a href=&#34;http://webtech-walker.com/archive/2012/12/less_extend.html&#34;&gt;アドベントカレンダー初日に@hokacchaが書いてくれた&lt;/a&gt;、LESSにおける@extendの機能でしょうか。&lt;/p&gt;
 
@@ -372,7 +372,7 @@ h1 {
 &lt;p&gt;&lt;a href=&#34;https://github.com/cloudhead/less.js/blob/master/CHANGELOG.md&#34;&gt;CHANGELOG&lt;/a&gt;の1.3.1（2012-10-18 アップデート）から色々と追加された色関係のfunctionをピックアップ。
 （強化するのはそこの機能じゃないんじゃ、という気もしないでもないですが）&lt;/p&gt;
 
-&lt;h2 id=&#34;色関係の関数が盛りだくさん:81353c15bcf702332af50716dbf1c4b9&#34;&gt;色関係の関数が盛りだくさん。&lt;/h2&gt;
+&lt;h2 id=&#34;色関係の関数が盛りだくさん:f05c5b2d7e345ff5f4b1bef7c5cccdcb&#34;&gt;色関係の関数が盛りだくさん。&lt;/h2&gt;
 
 &lt;p&gt;追加されたのは下記。&lt;/p&gt;
 
@@ -398,7 +398,7 @@ h1 {
 
 &lt;p&gt;これらのFunctionは、第一引数と第二引数の色を掛け合わせるなどしてブレンドする。&lt;/p&gt;
 
-&lt;h3 id=&#34;multiply:81353c15bcf702332af50716dbf1c4b9&#34;&gt;multiply&lt;/h3&gt;
+&lt;h3 id=&#34;multiply:f05c5b2d7e345ff5f4b1bef7c5cccdcb&#34;&gt;multiply&lt;/h3&gt;
 
 &lt;p&gt;Photoshopでいうところの&lt;strong&gt;乗算&lt;/strong&gt;。&lt;/p&gt;
 
@@ -407,7 +407,7 @@ h1 {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;screen:81353c15bcf702332af50716dbf1c4b9&#34;&gt;screen&lt;/h3&gt;
+&lt;h3 id=&#34;screen:f05c5b2d7e345ff5f4b1bef7c5cccdcb&#34;&gt;screen&lt;/h3&gt;
 
 &lt;p&gt;Photoshopでいうところの&lt;strong&gt;スクリーン&lt;/strong&gt;。&lt;/p&gt;
 
@@ -416,7 +416,7 @@ h1 {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;overlay:81353c15bcf702332af50716dbf1c4b9&#34;&gt;overlay&lt;/h3&gt;
+&lt;h3 id=&#34;overlay:f05c5b2d7e345ff5f4b1bef7c5cccdcb&#34;&gt;overlay&lt;/h3&gt;
 
 &lt;p&gt;Photoshopでいうところの&lt;strong&gt;オーバーレイ&lt;/strong&gt;。&lt;/p&gt;
 
@@ -425,7 +425,7 @@ h1 {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;hardlight:81353c15bcf702332af50716dbf1c4b9&#34;&gt;hardlight&lt;/h3&gt;
+&lt;h3 id=&#34;hardlight:f05c5b2d7e345ff5f4b1bef7c5cccdcb&#34;&gt;hardlight&lt;/h3&gt;
 
 &lt;p&gt;Photoshopでいうところの&lt;strong&gt;ハードライト&lt;/strong&gt;。&lt;/p&gt;
 
@@ -434,7 +434,7 @@ h1 {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;difference:81353c15bcf702332af50716dbf1c4b9&#34;&gt;difference&lt;/h3&gt;
+&lt;h3 id=&#34;difference:f05c5b2d7e345ff5f4b1bef7c5cccdcb&#34;&gt;difference&lt;/h3&gt;
 
 &lt;p&gt;Photoshopでいうところの&lt;strong&gt;差の絶対値&lt;/strong&gt;。&lt;/p&gt;
 
@@ -443,7 +443,7 @@ h1 {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;average:81353c15bcf702332af50716dbf1c4b9&#34;&gt;average&lt;/h3&gt;
+&lt;h3 id=&#34;average:f05c5b2d7e345ff5f4b1bef7c5cccdcb&#34;&gt;average&lt;/h3&gt;
 
 &lt;p&gt;Photoshopでは存在しないかもしれないが、Fireworksでいうところの&lt;strong&gt;平均&lt;/strong&gt;。&lt;/p&gt;
 
@@ -452,11 +452,11 @@ h1 {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;一応サンプル:81353c15bcf702332af50716dbf1c4b9&#34;&gt;一応サンプル&lt;/h3&gt;
+&lt;h3 id=&#34;一応サンプル:f05c5b2d7e345ff5f4b1bef7c5cccdcb&#34;&gt;一応サンプル&lt;/h3&gt;
 
-&lt;p&gt;StyleDoccoでつくった&lt;a href=&#34;http://localhost:1313/demo/less-new-colors/less.html&#34;&gt;サンプルページ&lt;/a&gt;も用意しておく。&lt;a href=&#34;http://localhost:1313/notes/2012/12/07/css-preprocessor-styleguide.html&#34;&gt;StyleDoccoについてはこちら&lt;/a&gt;を参照してほしい。&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:81353c15bcf702332af50716dbf1c4b9:styledocco-less&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:81353c15bcf702332af50716dbf1c4b9:styledocco-less&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;StyleDoccoでつくった&lt;a href=&#34;http://localhost:1313/demo/less-new-colors/less.html&#34;&gt;サンプルページ&lt;/a&gt;も用意しておく。&lt;a href=&#34;http://localhost:1313/notes/2012/12/07/css-preprocessor-styleguide.html&#34;&gt;StyleDoccoについてはこちら&lt;/a&gt;を参照してほしい。&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:f05c5b2d7e345ff5f4b1bef7c5cccdcb:styledocco-less&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:f05c5b2d7e345ff5f4b1bef7c5cccdcb:styledocco-less&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;続きはcss-nite-lp26で-たぶん:81353c15bcf702332af50716dbf1c4b9&#34;&gt;続きはCSS Nite LP26で！（たぶん）&lt;/h2&gt;
+&lt;h2 id=&#34;続きはcss-nite-lp26で-たぶん:f05c5b2d7e345ff5f4b1bef7c5cccdcb&#34;&gt;続きはCSS Nite LP26で！（たぶん）&lt;/h2&gt;
 
 &lt;p&gt;2013年1月12日（土）に開催される、&lt;a href=&#34;http://lp26.cssnite.jp/&#34;&gt;CSS Nite LP, Disk 26「CSS Preprocessor Shootout」&lt;/a&gt;では&lt;strong&gt;LESS&lt;/strong&gt;についての話をする予定なので、本記事で紹介しなかった関数も紹介するかもしれません。しないかもしれません。&lt;/p&gt;
 
@@ -466,8 +466,8 @@ h1 {
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:81353c15bcf702332af50716dbf1c4b9:styledocco-less&#34;&gt;このように、LESSもそのままStyleDoccoに放り込める。
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:81353c15bcf702332af50716dbf1c4b9:styledocco-less&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:f05c5b2d7e345ff5f4b1bef7c5cccdcb:styledocco-less&#34;&gt;このように、LESSもそのままStyleDoccoに放り込める。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:f05c5b2d7e345ff5f4b1bef7c5cccdcb:styledocco-less&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -475,10 +475,10 @@ h1 {
     
     <item>
       <title>CSSプリプロセッサでスタイルガイド</title>
-      <link>http://localhost:1313/notes/css-preprocessor-styleguide.html/</link>
+      <link>http://localhost:1313/notes/css-preprocessor-styleguide/</link>
       <pubDate>Fri, 07 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/css-preprocessor-styleguide.html/</guid>
+      <guid>http://localhost:1313/notes/css-preprocessor-styleguide/</guid>
       <description>
 
 &lt;p&gt;※この記事は、&lt;a href=&#34;http://www.adventar.org/calendars/1&#34;&gt;CSS Preprocessor Advent Calendar 2012&lt;/a&gt;の7日目の記事です。&lt;/p&gt;
@@ -491,7 +491,7 @@ h1 {
 
 &lt;p&gt;という点を拾わせていただき、&lt;strong&gt;スタイルガイド&lt;/strong&gt;のツールを紹介しようとおもう。&lt;/p&gt;
 
-&lt;h2 id=&#34;スタイルガイドとはなにか:dcba552d45ca0a300e6f418779e3ff8b&#34;&gt;スタイルガイドとはなにか&lt;/h2&gt;
+&lt;h2 id=&#34;スタイルガイドとはなにか:4b9308a50e91660e4b35f1bedc4c5750&#34;&gt;スタイルガイドとはなにか&lt;/h2&gt;
 
 &lt;p&gt;スタイルガイドは簡単にいうと、&lt;a href=&#34;http://ameblo.jp/ca-1pixel/entry-11413319214.html&#34;&gt;モバイル時代におけるCSSの設計と実装&lt;/a&gt;から引用させてもらうと、ページ上の部品（コンポーネント）をあつめたリスト、ページのこと。デザインパターンと呼ばれることもあるかもしれない。&lt;/p&gt;
 
@@ -504,7 +504,7 @@ h1 {
 &lt;li&gt;&lt;a href=&#34;https://gimmebar.com/collection/4ecd439c2f0aaad734000022/front-end-styleguides&#34;&gt;Gimme Bar : Front end styleguides&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;スタイルガイドをどうやって作るか:dcba552d45ca0a300e6f418779e3ff8b&#34;&gt;スタイルガイドをどうやって作るか&lt;/h2&gt;
+&lt;h2 id=&#34;スタイルガイドをどうやって作るか:4b9308a50e91660e4b35f1bedc4c5750&#34;&gt;スタイルガイドをどうやって作るか&lt;/h2&gt;
 
 &lt;p&gt;あらかじめコンポーネント設計ができているという前提で、ソレを元にこうしたスタイルガイドをつくるにはどうすれば良いか。&lt;/p&gt;
 
@@ -514,7 +514,7 @@ h1 {
 
 &lt;p&gt;開発上の仕様変更もあれば、運用をはじめてから発生する変更もある。それにともないデザインもコードも書き換わるわけなので、仮にスタイルガイドにあたるドキュメントをつくっていたとしても、そちらが更新されていないと意味がなく、より混乱をさせてしまうものになるかもしれない。&lt;/p&gt;
 
-&lt;h2 id=&#34;スタイルガイドは-生きている-ドキュメントでなければいけない:dcba552d45ca0a300e6f418779e3ff8b&#34;&gt;スタイルガイドは&amp;rdquo;生きている&amp;rdquo;ドキュメントでなければいけない&lt;/h2&gt;
+&lt;h2 id=&#34;スタイルガイドは-生きている-ドキュメントでなければいけない:4b9308a50e91660e4b35f1bedc4c5750&#34;&gt;スタイルガイドは&amp;rdquo;生きている&amp;rdquo;ドキュメントでなければいけない&lt;/h2&gt;
 
 &lt;p&gt;スタイルガイドそのものはCSSにおけるスタイルということではなく、他の言語でもあるものだが、ここではCSSスタイルガイドということで話を進める。&lt;/p&gt;
 
@@ -555,11 +555,11 @@ h1 {
 
 &lt;p&gt;&lt;a href=&#34;https://speakerdeck.com/kneath/a-better-future-with-kss&#34;&gt;A better future with KSS // Speaker Deck&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;styledocco:dcba552d45ca0a300e6f418779e3ff8b&#34;&gt;StyleDocco&lt;/h2&gt;
+&lt;h2 id=&#34;styledocco:4b9308a50e91660e4b35f1bedc4c5750&#34;&gt;StyleDocco&lt;/h2&gt;
 
 &lt;p&gt;とりあえず試してみるのなら、おそらくStyleDoccoの方が容易なので、StyleDoccoを使った例で紹介する。今回はStyledoccoのインストールの詳細などは省くので、&lt;a href=&#34;http://jacobrask.github.com/styledocco/&#34;&gt;StyleDocco&lt;/a&gt;の&lt;strong&gt;Installation&lt;/strong&gt;の節を参照してほしい。省くといっても、&lt;strong&gt;node.js&lt;/strong&gt;および&lt;strong&gt;npm&lt;/strong&gt;がインストールされている前提であれば、&lt;code&gt;npm install -fg styledocco&lt;/code&gt;と、ターミナルなどの黒い画面で叩くだけだが。&lt;/p&gt;
 
-&lt;h3 id=&#34;成果物:dcba552d45ca0a300e6f418779e3ff8b&#34;&gt;成果物&lt;/h3&gt;
+&lt;h3 id=&#34;成果物:4b9308a50e91660e4b35f1bedc4c5750&#34;&gt;成果物&lt;/h3&gt;
 
 &lt;p&gt;結論的に、&lt;strong&gt;何をすればどうなるのか&lt;/strong&gt;、というのを先に出すと、次のようなコードを書いたCSSファイルに対して、StyleDoccoのコマンドを実行すれば&lt;a href=&#34;http://localhost:1313/images/posts/styledocco-sample.png&#34;&gt;こういう形&lt;/a&gt;のものができる。&lt;/p&gt;
 
@@ -607,7 +607,7 @@ h1 {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;cssファイルのコメントをhtml化する:dcba552d45ca0a300e6f418779e3ff8b&#34;&gt;CSSファイルのコメントをHTML化する&lt;/h3&gt;
+&lt;h3 id=&#34;cssファイルのコメントをhtml化する:4b9308a50e91660e4b35f1bedc4c5750&#34;&gt;CSSファイルのコメントをHTML化する&lt;/h3&gt;
 
 &lt;p&gt;StyleDoccoはCSSファイルに書かれたコメントを&lt;strong&gt;Markdown&lt;/strong&gt;という形式で書くことにより、対応したHTMLへと変換する。&lt;/p&gt;
 
@@ -634,7 +634,7 @@ h1 {
 
 &lt;p&gt;`（バックティック）は &amp;lsquo;（シングルコーテーション）とは異なるので注意してほしい。またここに各コードはエスケープする必要はない。&lt;/p&gt;
 
-&lt;h2 id=&#34;styledoccoを実行する:dcba552d45ca0a300e6f418779e3ff8b&#34;&gt;StyleDoccoを実行する&lt;/h2&gt;
+&lt;h2 id=&#34;styledoccoを実行する:4b9308a50e91660e4b35f1bedc4c5750&#34;&gt;StyleDoccoを実行する&lt;/h2&gt;
 
 &lt;p&gt;このような形式のコメントを書いたCSSファイル（仮に&lt;code&gt;style.css&lt;/code&gt;とする）に対し、StyleDoccoを実行する。&lt;/p&gt;
 
@@ -653,7 +653,7 @@ h1 {
 
 &lt;p&gt;実行すると、&lt;strong&gt;docs&lt;/strong&gt;というディレクトリと、その中にスタイルガイドのHTMLが生成されるので、それをブラウザで見れば、先のサンプルのようなページを確認することができる。&lt;/p&gt;
 
-&lt;h2 id=&#34;cssファイルだけでなく-cssプリプロセッサのファイルでも可能:dcba552d45ca0a300e6f418779e3ff8b&#34;&gt;CSSファイルだけでなく、CSSプリプロセッサのファイルでも可能&lt;/h2&gt;
+&lt;h2 id=&#34;cssファイルだけでなく-cssプリプロセッサのファイルでも可能:4b9308a50e91660e4b35f1bedc4c5750&#34;&gt;CSSファイルだけでなく、CSSプリプロセッサのファイルでも可能&lt;/h2&gt;
 
 &lt;p&gt;ここでようやくCSSプリプロセッサの登場。&lt;/p&gt;
 
@@ -712,7 +712,7 @@ Image Replacementは、`_utility.scss`にある`.ir`で拡張する。
 
 &lt;p&gt;ここで、冒頭にあげた、&lt;a href=&#34;http://www.hitoyam.com/web/2012/12/04_1752.html&#34;&gt;CSS PreprocessorとIAの親和性&lt;/a&gt;の記事の話に戻るが、これを使えばSassなりLESSなり、またはStylusといったCSSプリプロセッサをそのまま活用して、コンポーネントリスト = スタイルガイドをつくることができる。&lt;/p&gt;
 
-&lt;h2 id=&#34;css-cssプリプロセッサをもっと楽しく:dcba552d45ca0a300e6f418779e3ff8b&#34;&gt;CSS/CSSプリプロセッサをもっと楽しく&lt;/h2&gt;
+&lt;h2 id=&#34;css-cssプリプロセッサをもっと楽しく:4b9308a50e91660e4b35f1bedc4c5750&#34;&gt;CSS/CSSプリプロセッサをもっと楽しく&lt;/h2&gt;
 
 &lt;p&gt;簡易的かつ短い解説であったので、これでもいまいちぱっとしないかもしれないが、StyleDoccoのようなツールを使うことで、CSSとそのコメントを書くのが楽しくなる。&lt;/p&gt;
 
@@ -720,7 +720,7 @@ Image Replacementは、`_utility.scss`にある`.ir`で拡張する。
 
 &lt;p&gt;また別の機会に、本ブログのスタイルガイドを公開できればとおもう。&lt;/p&gt;
 
-&lt;h2 id=&#34;アドベントカレンダーは続く:dcba552d45ca0a300e6f418779e3ff8b&#34;&gt;アドベントカレンダーは続く&lt;/h2&gt;
+&lt;h2 id=&#34;アドベントカレンダーは続く:4b9308a50e91660e4b35f1bedc4c5750&#34;&gt;アドベントカレンダーは続く&lt;/h2&gt;
 
 &lt;p&gt;次は&lt;a href=&#34;http://havelog.ayumusato.com/&#34;&gt;ahomuの人&lt;/a&gt;です。&lt;/p&gt;
 </description>
@@ -728,10 +728,10 @@ Image Replacementは、`_utility.scss`にある`.ir`で拡張する。
     
     <item>
       <title>擬似要素のCSSアニメーションはinheritを使えば有効になる</title>
-      <link>http://localhost:1313/notes/pseudo-animation.html/</link>
+      <link>http://localhost:1313/notes/pseudo-animation/</link>
       <pubDate>Sat, 01 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/pseudo-animation.html/</guid>
+      <guid>http://localhost:1313/notes/pseudo-animation/</guid>
       <description>
 
 &lt;p&gt;Joshua Hibbert氏の記事、&lt;a href=&#34;http://joshnh.com/2012/10/25/dont-forget-the-css-value-inherit/&#34;&gt;Don&amp;rsquo;t Forget the CSS Value &amp;lsquo;inherit&amp;rsquo; - Joshua Hibbert&lt;/a&gt;では忘れられがちな&lt;code&gt;inherit&lt;/code&gt;による値の継承について説明している。&lt;/p&gt;
@@ -740,7 +740,7 @@ Image Replacementは、`_utility.scss`にある`.ir`で拡張する。
 
 &lt;p&gt;で、この記事における本題としては、Bonus transition trickとして紹介されている、&lt;q&gt;inheritを使えば、擬似要素でもCSSアニメーションが有効になる&lt;/q&gt;という話のこと。&lt;/p&gt;
 
-&lt;h2 id=&#34;擬似要素では-基本的に-アニメーションが無効となる:2a027ad34a565c8ad5951e2ba6bbe24f&#34;&gt;擬似要素では&amp;rdquo;基本的に&amp;rdquo;アニメーションが無効となる&lt;/h2&gt;
+&lt;h2 id=&#34;擬似要素では-基本的に-アニメーションが無効となる:6d0445a544e9e551d3b3bcd680f1d6d7&#34;&gt;擬似要素では&amp;rdquo;基本的に&amp;rdquo;アニメーションが無効となる&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://jsfiddle.net/joshnh/Fa9PH/&#34;&gt;Hibbert氏の記事にあるbasic sample&lt;/a&gt;を見てもらうとわかるのだが、右側（赤い方）では擬似要素に大しては継承を使っておらず、そのためアニメーションになっていない。大して一方では擬似要素もアニメーションをしており、該当のスタイルをみると&lt;code&gt;inherit&lt;/code&gt;を使っているのが確認できる。&lt;/p&gt;
 
@@ -763,7 +763,7 @@ div:hover {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;覚えておいて損はないかも:2a027ad34a565c8ad5951e2ba6bbe24f&#34;&gt;覚えておいて損はないかも&lt;/h2&gt;
+&lt;h2 id=&#34;覚えておいて損はないかも:6d0445a544e9e551d3b3bcd680f1d6d7&#34;&gt;覚えておいて損はないかも&lt;/h2&gt;
 
 &lt;p&gt;実務上ではあまりこれにハマることは少ないかもしれないが、同記事の&lt;a href=&#34;http://jsfiddle.net/joshnh/ELDet/&#34;&gt;別のサンプル&lt;/a&gt;のようなギミックを仕込むときなどには使そう。&lt;/p&gt;
 </description>
@@ -771,10 +771,10 @@ div:hover {
     
     <item>
       <title>画像からCSS Gradientのスタイルを抽出する</title>
-      <link>http://localhost:1313/notes/gradient-imports-from-image.html/</link>
+      <link>http://localhost:1313/notes/gradient-imports-from-image/</link>
       <pubDate>Fri, 30 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/gradient-imports-from-image.html/</guid>
+      <guid>http://localhost:1313/notes/gradient-imports-from-image/</guid>
       <description>
 
 &lt;p&gt;デザインカンプとして作られた画像のグラデーションをCSS化するために、PhotoshopやらFireworksで色を抽出してつくるは面倒くさい。単純にfromからtoまでの色を指定するだけであればそうでもないかもしれないが、すこし複雑な形状をしたグラデーションだと、正確に再現するのはむずかしい。&lt;/p&gt;
@@ -783,7 +783,7 @@ div:hover {
 
 &lt;p&gt;しかしこれらのような元のデザインデータが無いとか、基本的なフィルタのみで作られていないオブジェクトであればうまく抽出することができないこともあるので、画像（画像ファイル）そのものから抽出するツールを紹介する。&lt;/p&gt;
 
-&lt;h2 id=&#34;画像ファイルをアップロードして抽出する:b97fbeb2ce0154e0053fa1dafd0b9516&#34;&gt;画像ファイルをアップロードして抽出する&lt;/h2&gt;
+&lt;h2 id=&#34;画像ファイルをアップロードして抽出する:1455a558a9c55022301c9bcd10311df7&#34;&gt;画像ファイルをアップロードして抽出する&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.colorzilla.com/gradient-editor/&#34;&gt;Ultimate CSS Gradient Generator - ColorZilla.com&lt;/a&gt;&lt;/p&gt;
 
@@ -795,7 +795,7 @@ div:hover {
 
 &lt;p&gt;今回はこのツールの使い方の説明は省き、表題の画像をアップロードして抽出する方法を紹介する。そもそも難しいツールでもないので、触れば今回紹介する機能含め、簡単に使えるので試してほしい。&lt;/p&gt;
 
-&lt;h2 id=&#34;import-from-image-からアップロードするだけ:b97fbeb2ce0154e0053fa1dafd0b9516&#34;&gt;import from image からアップロードするだけ&lt;/h2&gt;
+&lt;h2 id=&#34;import-from-image-からアップロードするだけ:1455a558a9c55022301c9bcd10311df7&#34;&gt;import from image からアップロードするだけ&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/posts/gradient-imports-from-image-import.png&#34; alt=&#34;import from imageのキャプチャ&#34; /&gt;&lt;/p&gt;
 
@@ -803,7 +803,7 @@ div:hover {
 
 &lt;p&gt;実際にアップロードしてみたものをいくつか挙げる。&lt;/p&gt;
 
-&lt;h3 id=&#34;単純なグラデーション:b97fbeb2ce0154e0053fa1dafd0b9516&#34;&gt;単純なグラデーション&lt;/h3&gt;
+&lt;h3 id=&#34;単純なグラデーション:1455a558a9c55022301c9bcd10311df7&#34;&gt;単純なグラデーション&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/posts/gradient-imports-from-image-gradient.png&#34; alt=&#34;単純なグラデーションのサンプル&#34; /&gt;&lt;/p&gt;
 
@@ -840,7 +840,7 @@ div:hover {
 
 &lt;p&gt;どうでしょうか、だいたい一緒に見えますかね。&lt;/p&gt;
 
-&lt;h3 id=&#34;少し複雑なグラデーション:b97fbeb2ce0154e0053fa1dafd0b9516&#34;&gt;少し複雑なグラデーション&lt;/h3&gt;
+&lt;h3 id=&#34;少し複雑なグラデーション:1455a558a9c55022301c9bcd10311df7&#34;&gt;少し複雑なグラデーション&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/posts/gradient-imports-from-image-complex.png&#34; alt=&#34;少し複雑なグラデーションのサンプル&#34; /&gt;&lt;/p&gt;
 
@@ -879,7 +879,7 @@ div:hover {
 
 &lt;p&gt;ちょっとずれた位置まで丁寧に再現されているものの、画像の方の中央のボケが無くなっている。&lt;/p&gt;
 
-&lt;h3 id=&#34;円形グラデーション:b97fbeb2ce0154e0053fa1dafd0b9516&#34;&gt;円形グラデーション&lt;/h3&gt;
+&lt;h3 id=&#34;円形グラデーション:1455a558a9c55022301c9bcd10311df7&#34;&gt;円形グラデーション&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.colorzilla.com/gradient-editor/#whats-new&#34;&gt;円形グラデーションもサポートしている&lt;/a&gt;ようだが、画像アップロードの方はどうだろうか。&lt;/p&gt;
 
@@ -920,11 +920,11 @@ div:hover {
 
 &lt;p&gt;個人的には、線形のグラデーションと比べると、実用的にもあまり円形のCSSグラデーションを使う機会は少ないので、再現できなくてもとりあえずは気にしないでおく。&lt;/p&gt;
 
-&lt;h2 id=&#34;100-の再現とはいえない:b97fbeb2ce0154e0053fa1dafd0b9516&#34;&gt;100%の再現とはいえない&lt;/h2&gt;
+&lt;h2 id=&#34;100-の再現とはいえない:1455a558a9c55022301c9bcd10311df7&#34;&gt;100%の再現とはいえない&lt;/h2&gt;
 
 &lt;p&gt;円形はともかく、複雑なグラデーションのサンプルのように、完全に再現するためのコードは線形のものでも100%なものは生成されない。見た目の再現を重要視するなら、そのまま画像を使う方が良いかもしれない。それでもかなり簡単なものなのでおすすめする。&lt;/p&gt;
 
-&lt;h2 id=&#34;探せば他にもあるかも:b97fbeb2ce0154e0053fa1dafd0b9516&#34;&gt;探せば他にもあるかも&lt;/h2&gt;
+&lt;h2 id=&#34;探せば他にもあるかも:1455a558a9c55022301c9bcd10311df7&#34;&gt;探せば他にもあるかも&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.stubbornella.org/content/2011/04/25/css-3-gradients/&#34;&gt;Nicole Sullivan&lt;/a&gt;氏の記事で紹介されたもの中には&lt;a href=&#34;https://github.com/bluesmoon/pngtocss&#34;&gt;コマンドラインツール&lt;/a&gt;もある様子。おそらく同じようにコマンドラインで実行するのはあると思われるので、また見つけて試せたら記事にしたい。&lt;/p&gt;
 </description>
@@ -932,10 +932,10 @@ div:hover {
     
     <item>
       <title>Sass,LESS,StylusのColor functionsのコンパイル結果を比べてみた</title>
-      <link>http://localhost:1313/notes/Preprocessor-color-functions.html/</link>
+      <link>http://localhost:1313/notes/Preprocessor-color-functions/</link>
       <pubDate>Wed, 28 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/Preprocessor-color-functions.html/</guid>
+      <guid>http://localhost:1313/notes/Preprocessor-color-functions/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://sass-lang.com/&#34;&gt;Sass&lt;/a&gt;、&lt;a href=&#34;http://lesscss.org/&#34;&gt;LESS&lt;/a&gt;、&lt;a href=&#34;http://learnboost.github.com/stylus/&#34;&gt;Stylus&lt;/a&gt;といったCSSプリプロセッサには、色を扱うビルトインファンクションがある。&lt;/p&gt;
@@ -944,7 +944,7 @@ div:hover {
 
 &lt;p&gt;明るく/暗く、といっても単純に明度を操作するのか、色々とごにょごにょしているのかは分からないが、とりあえず同じ書き方をするなら同じ値を返すだろう、という期待をしたくなるが、実際のところどうだろうか。&lt;/p&gt;
 
-&lt;h2 id=&#34;ところでこれらの使い所はある:ca63964531dcb9f28a8da8a49e1169d0&#34;&gt;ところでこれらの使い所はある？&lt;/h2&gt;
+&lt;h2 id=&#34;ところでこれらの使い所はある:06131d33b5aa04bc4dd420c47b662c61&#34;&gt;ところでこれらの使い所はある？&lt;/h2&gt;
 
 &lt;p&gt;結論からいうと、実務では色系のファンクションなかなかお世話になることはない。というのも現状Photoshopのデザインカンプを元に、そのカンプ上の色を抽出して、文字色や背景色とする。&lt;/p&gt;
 
@@ -964,13 +964,13 @@ div:hover {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;darkenのコンパイル後の結果を比べる:ca63964531dcb9f28a8da8a49e1169d0&#34;&gt;darkenのコンパイル後の結果を比べる&lt;/h2&gt;
+&lt;h2 id=&#34;darkenのコンパイル後の結果を比べる:06131d33b5aa04bc4dd420c47b662c61&#34;&gt;darkenのコンパイル後の結果を比べる&lt;/h2&gt;
 
 &lt;p&gt;では本題ということで、例にもつかった&lt;code&gt;darken&lt;/code&gt;をSass,LESS,Stylusそれぞれで使ってみる。ドキュメントを簡単に見る限りでは同じ効果を出すものに見えるが、結果はどうだろうか。&lt;/p&gt;
 
 &lt;p&gt;基本色、&lt;code&gt;darken&lt;/code&gt;のパーセンテージをまったく一緒にして比べてみる。&lt;/p&gt;
 
-&lt;h3 id=&#34;sass:ca63964531dcb9f28a8da8a49e1169d0&#34;&gt;Sass&lt;/h3&gt;
+&lt;h3 id=&#34;sass:06131d33b5aa04bc4dd420c47b662c61&#34;&gt;Sass&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-scss&#34;&gt;p {
   $textColor: #FF9933;
@@ -985,7 +985,7 @@ div:hover {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;less:ca63964531dcb9f28a8da8a49e1169d0&#34;&gt;LESS&lt;/h3&gt;
+&lt;h3 id=&#34;less:06131d33b5aa04bc4dd420c47b662c61&#34;&gt;LESS&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;p {
   textColor: #FF9933;
@@ -1000,7 +1000,7 @@ div:hover {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;stylus:ca63964531dcb9f28a8da8a49e1169d0&#34;&gt;Stylus&lt;/h3&gt;
+&lt;h3 id=&#34;stylus:06131d33b5aa04bc4dd420c47b662c61&#34;&gt;Stylus&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;p {
   textColor = #FF9933;
@@ -1015,7 +1015,7 @@ div:hover {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;ということでまとめると:ca63964531dcb9f28a8da8a49e1169d0&#34;&gt;ということでまとめると、&lt;/h3&gt;
+&lt;h3 id=&#34;ということでまとめると:06131d33b5aa04bc4dd420c47b662c61&#34;&gt;ということでまとめると、&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;元の色 : &lt;span style=&#34;color:#FF9933&#34;&gt;#FF9933&lt;/span&gt;&lt;/li&gt;
@@ -1024,7 +1024,7 @@ div:hover {
 &lt;li&gt;&lt;strong&gt;Stylus&lt;/strong&gt; : &lt;span style=&#34;color:#d66b00&#34;&gt;#d66b00&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;stylusでは値の違いが顕著:ca63964531dcb9f28a8da8a49e1169d0&#34;&gt;Stylusでは値の違いが顕著&lt;/h2&gt;
+&lt;h2 id=&#34;stylusでは値の違いが顕著:06131d33b5aa04bc4dd420c47b662c61&#34;&gt;Stylusでは値の違いが顕著&lt;/h2&gt;
 
 &lt;p&gt;特に理由なく、&lt;strong&gt;&lt;span style=&#34;color:#FF9933&#34;&gt;#FF9933&lt;/span&gt;&lt;/strong&gt;という色を選んでみた結果では、Stylusだけ大幅に異なる。
 ちなみに元の色を&lt;strong&gt;&lt;span style=&#34;color:#DDDDDD&#34;&gt;#DDDDDD&lt;/span&gt;&lt;/strong&gt;としてみると、その違いの幅は小さい。&lt;/p&gt;

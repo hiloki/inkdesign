@@ -11,10 +11,10 @@
     
     <item>
       <title>Gitの.gitignoreでサブディレクトリのファイルを除外するところでハマった</title>
-      <link>http://localhost:1313/notes/gitignore.html/</link>
+      <link>http://localhost:1313/notes/gitignore/</link>
       <pubDate>Fri, 14 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/gitignore.html/</guid>
+      <guid>http://localhost:1313/notes/gitignore/</guid>
       <description>
 
 &lt;p&gt;Gitでバージョン管理したくないファイルを指定する場合には、&lt;a href=&#34;http://git-scm.com/book/ch2-2.html#Ignoring-Files&#34;&gt;.gitignore&lt;/a&gt;ファイルを作成し、その中に除外パターンを書く。&lt;/p&gt;
@@ -37,7 +37,7 @@ build/    # build/ ディレクトリのすべてのファイルを無視しま�
 doc/*.txt # doc/notes.txt は無視しますが、doc/server/arch.txt は無視しません
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;で-ハマったところ:52aaeb36336fb2150e624bb242bf9da5&#34;&gt;で、ハマったところ&lt;/h2&gt;
+&lt;h2 id=&#34;で-ハマったところ:bfb8846b5554036b9efab49a7686de70&#34;&gt;で、ハマったところ&lt;/h2&gt;
 
 &lt;p&gt;今回はプロジェクトにおいて除外したい特定ファイルがある。対処のディレクトリは下記のような構成になっており、&lt;/p&gt;
 

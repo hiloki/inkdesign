@@ -11,10 +11,10 @@
     
     <item>
       <title>jQuery Color Pluginを触ってみる</title>
-      <link>http://localhost:1313/notes/jquery-color.html/</link>
+      <link>http://localhost:1313/notes/jquery-color/</link>
       <pubDate>Thu, 13 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/jquery-color.html/</guid>
+      <guid>http://localhost:1313/notes/jquery-color/</guid>
       <description>
 
 &lt;p&gt;※この記事は、&lt;a href=&#34;http://www.adventar.org/calendars/29&#34;&gt;軽めのjQuery Advent Calendar 2012&lt;/a&gt;の13日目の記事です。&lt;/p&gt;
@@ -25,7 +25,7 @@
 
 &lt;p&gt;今となってはCSS3のTransitions/Animationsで色を扱ったアニメーションなんかはできちゃうわけですが、地味にアップデート、バグフィックスされているということでニーズはきっとあるのでしょう。&lt;/p&gt;
 
-&lt;h2 id=&#34;触ってみる:d815c6d4a6b2d95678e15e7dde16b8c1&#34;&gt;触ってみる&lt;/h2&gt;
+&lt;h2 id=&#34;触ってみる:fde2dc22366ec887838e890bb20093d9&#34;&gt;触ってみる&lt;/h2&gt;
 
 &lt;p&gt;手っ取り早く、CDNからjQuery本体と、プラグインファイルを取ってきましょう。&lt;/p&gt;
 
@@ -48,7 +48,7 @@ console.log(hue);
 // 74 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;もうちょっと面白そうなサンプル:d815c6d4a6b2d95678e15e7dde16b8c1&#34;&gt;もうちょっと面白そうなサンプル&lt;/h2&gt;
+&lt;h2 id=&#34;もうちょっと面白そうなサンプル:fde2dc22366ec887838e890bb20093d9&#34;&gt;もうちょっと面白そうなサンプル&lt;/h2&gt;
 
 &lt;p&gt;こちらもサンプルが拝借します。。&lt;/p&gt;
 
@@ -69,7 +69,7 @@ console.log(hue);
 
 &lt;p&gt;単純にランダムでRGB値を回しているというだけですが、こういうもできるよ、ってことで。&lt;/p&gt;
 
-&lt;h2 id=&#34;アドベントカレンダーは続く:d815c6d4a6b2d95678e15e7dde16b8c1&#34;&gt;アドベントカレンダーは続く&lt;/h2&gt;
+&lt;h2 id=&#34;アドベントカレンダーは続く:fde2dc22366ec887838e890bb20093d9&#34;&gt;アドベントカレンダーは続く&lt;/h2&gt;
 
 &lt;p&gt;次は&lt;a href=&#34;http://www.adventar.org/users/546&#34;&gt;toshimaru&lt;/a&gt;さんですね、よろしくおねがいします。&lt;/p&gt;
 </description>

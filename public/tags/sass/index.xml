@@ -11,10 +11,10 @@
     
     <item>
       <title>Sass3.3の@at-rootで親のルールを指定する</title>
-      <link>http://localhost:1313/notes/sass-at-root.html/</link>
+      <link>http://localhost:1313/notes/sass-at-root/</link>
       <pubDate>Sun, 16 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/sass-at-root.html/</guid>
+      <guid>http://localhost:1313/notes/sass-at-root/</guid>
       <description>&lt;p&gt;先日登壇した&lt;a href=&#34;http://cssnite.jp/lp/lp32/&#34;&gt;CSS Nite LP, Disk 32&lt;/a&gt;のセッションで紹介されていた&lt;a href=&#34;https://github.com/geckotang/cssnite-lp32/blob/master/scss/_trbl.scss&#34;&gt;SassのMixin&lt;/a&gt;をSass3.3の@at-rootで少し手を加えてみる、という話。&lt;/p&gt;
 
 &lt;p&gt;紹介されていたのは、&lt;a href=&#34;http://codepen.io/shshaw/full/gEiDt&#34;&gt;天地左右中央に絶対配置するテクニック&lt;/a&gt;のMixin。&lt;/p&gt;
