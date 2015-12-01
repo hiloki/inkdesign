@@ -2,6 +2,7 @@ box: wercker/default
 build:
     steps:
         - script:
+            code: sudo rm -rf /var/lib/apt/lists/*
             code: sudo apt-get update
         - arjen/hugo-build@1.8.0:
             theme: inkdesign
