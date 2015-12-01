@@ -1,20 +1,20 @@
 box: wercker/default
 build:
-  steps:
-    - arjen/hugo-build@1.8.0:
-        theme: inkdesign
-        flags: --buildDrafts=true
-    - script:
-        name: Copy RSSfeed to feed.xml
-        code: cp public/index.xml public/feed.xml
+    steps:
+        - arjen/hugo-build@1.8.0:
+            theme: inkdesign
+            flags: --buildDrafts=true
+        - script:
+            name: Copy RSSfeed to feed.xml
+            code: cp public/index.xml public/feed.xml
 deploy:
-  steps:
-    - script:
-      name: install git
-      code: |
-        sudo apt-get update
-        sudo apt-get install git -y
-    - lukevivier/gh-pages@0.2.1:
-        token: $GITHUB_TOKEN
-        domain: inkdesign.jp
-        basedir: public
+    steps:
+        - script:
+            name: install git
+            code: |
+                sudo apt-get update
+                sudo apt-get install git -y
+        - lukevivier/gh-pages@0.2.1:
+            token: $GITHUB_TOKEN
+            domain: inkdesign.jp
+            basedir: public
