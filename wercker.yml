@@ -10,10 +10,10 @@ build:
 deploy:
   steps:
     - script:
-            name: install git
-            code: |
-                sudo apt-get update
-                sudo apt-get install git -y
+      name: install git
+      code: |
+        sudo apt-get update
+        sudo apt-get install git -y
     - lukevivier/gh-pages@0.2.1:
         token: $GITHUB_TOKEN
         domain: inkdesign.jp
