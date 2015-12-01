@@ -6,8 +6,107 @@
     <description>Recent content in Notes on inkdesign</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp-ja</language>
-    <lastBuildDate>Tue, 13 Oct 2015 03:11:17 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Dec 2015 00:15:25 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Universal IE6 CSS</title>
+      <link>http://localhost:1313/notes/universal-ie6/</link>
+      <pubDate>Wed, 02 Dec 2015 00:15:25 +0900</pubDate>
+      
+      <guid>http://localhost:1313/notes/universal-ie6/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;昔々あるところに、&lt;br /&gt;
+&lt;strong&gt;Universal Internet Explorer 6 CSS&lt;/strong&gt;というのがおったそうな。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&amp;hellip;Universal IE6 CSSについては知らないひとも多いかもしれない。&lt;/p&gt;
+
+&lt;p&gt;CSSを学び、少しテクニカルなことをしはじめたころに憧れていた人物にAndy Clarkeという人がいる。
+彼は&lt;a href=&#34;https://stuffandnonsense.co.uk/&#34;&gt;Stuff and Nonsense&lt;/a&gt;というデザインコンサルティング会社に勤めており、イギリス人らしくモッズなスタイルのWebデザイナーだ。実務では政府の仕事をやっていたり、それ以外の活動としては、Web標準、HTML5、CSS3の黎明期にモダンなCSSデザインアプローチの書籍を出版・講演活動と広げてきた人物だ。&lt;/p&gt;
+
+&lt;p&gt;2008年くらいに「クロスブラウザ対応」という言葉が流行り、あわせてProgressive Enhancement/Graceful Degradationというようなアプローチが浸透し始めたその少し前に、ひとつのパフォーマンスとしてAndyのStuff and Nonsenseではある仕掛けをもっていた。それはIE6とそれ以降のブラウザでの見せ方を変えるというものだ。
+以下は&lt;a href=&#34;https://stuffandnonsense.co.uk/blog/about/hello&#34;&gt;Spotted the difference?&lt;/a&gt;より引用。&lt;/p&gt;
+
+&lt;div class=&#34;u-flex-around&#34;&gt;
+  &lt;div&gt;
+    
+&lt;figure &gt;
+  
+    &lt;img src=&#34;http://localhost:1313/images/notes/universal-ie6/01.jpg&#34; alt=&#34;for IE6&#34; /&gt;
+  
+  
+  &lt;figcaption&gt;
+    &lt;p&gt;
+    IE6の場合
+    
+      
+    
+    &lt;/p&gt; 
+  &lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+
+  &lt;/div&gt;
+  &lt;div&gt;
+    
+&lt;figure &gt;
+  
+    &lt;img src=&#34;http://localhost:1313/images/notes/universal-ie6/02.jpg&#34; alt=&#34;for modern browser&#34; /&gt;
+  
+  
+  &lt;figcaption&gt;
+    &lt;p&gt;
+    それ以降のブラウザの場合
+    
+      
+    
+    &lt;/p&gt; 
+  &lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;このカラクリはシンプルなもので、コンディショナルコメントでCSSを分けているだけ。今思えば単純なことだが、IE6ブラウザおよびそのユーザーに、モノクロトーンに変わったイメージと&amp;rdquo;Hey Old Timer!&amp;ldquo;というメッセージを送るそのロックさみたいなものに憧れたものだ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dowebsitesneedtolookexactlythesameineverybrowser.com/&#34;&gt;すべてのブラウザで全く同じ見た目であるべきか&lt;/a&gt;ということに疑問を投げかけ続け、あるときに彼が考えたアイデアこそが表題の&lt;a href=&#34;https://stuffandnonsense.co.uk/blog/about/universal_internet_explorer_6_CSS/&#34;&gt;Universal Internet Explorer 6 CSS&lt;/a&gt;だ。&lt;/p&gt;
+
+&lt;p&gt;コンテンツが重要であり、見た目がブラウザごで全く同じである必要はない。またIE6で同じ見た目にするためにJSのライブラリを使うこと、時間とお金をかけることはエンドユーザー、クライアント双方にとっても好ましいことでもなく、それを削れるならより良いことだ、という考え。&lt;/p&gt;
+
+&lt;p&gt;&lt;button onclick=&#34;ie6css()&#34;&gt;ここクリックすれば、IE6 CSSに衣替えする。&lt;/button&gt;&lt;/p&gt;
+
+&lt;p&gt;衣替えしたなら、これがUniversal IE6 CSSが適用されている状態。
+IE6には、きれいにデザインされた凝った表現ではなく、最低限のタイポグラフィを考えた程度のスタイルにする。&lt;br /&gt;
+どのサイトだろうと、IE6にはこのスタイルを適用するというだけ、というもの。&lt;a href=&#34;http://localhost:1313/styles/ie6.1.1.css&#34;&gt;コードはこちらか確認できる&lt;/a&gt;。
+前述に書いたように、IE6をつかっているような環境に対して、より負荷をかけてしまっては意味がないので、このアプローチは大胆ではあるが、理にかなったものともいえる。&lt;/p&gt;
+
+&lt;p&gt;まぁ実際にはこれが流行ることも、定着することもなかった、と思う。Andy自身も実際にどのくらいのクライアントに提案し、実施したのか気になるところ。もしかしたらIE6で世の中のWebサイトを回れば、しれっとUniversal IE6 CSSを使ったサイトがあるかもしれない。
+今なら、Normalize CSSに少し手を加えたようなものになるだろうか。ちょっとつくろうかとおもったけどやめた。&lt;/p&gt;
+
+&lt;p&gt;今もレガシーブラウザなブラウザに引きづられる環境、そして同じ見た目を再現しなければいけない環境はゼロではないが、
+当時よりは気を使う必要はなくなっているはずだ。しかし一方では見た目どうこうというより、近年のブラウザやデバイスであっても、妙なバグに踊らされる日々だ。そう、もしかしたらuniversal Android CSS&amp;hellip;という話はない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://code.google.com/p/universal-ie6-css/&#34;&gt;Universal Internet Explorer 6 CSS - Google Code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;この記事は、&lt;a href=&#34;http://www.adventar.org/calendars/723&#34;&gt;CSS昔話 Advent Calendar 2015&lt;/a&gt;の2日目の記事です。&lt;/p&gt;
+
+&lt;script&gt;
+var cssfile = document.querySelector(&#34;link[href*=&#39;/styles/style.css&#39;]&#34;);
+var defaultCss = cssfile.href;
+function ie6css() {
+  if(cssfile.href == defaultCss) {
+    cssfile.href = &#34;/styles/ie6.1.1.css&#34;;
+  } else {
+    cssfile.href = defaultCss;
+  }
+}
+&lt;/script&gt;
+</description>
+    </item>
     
     <item>
       <title>株式会社ツクルバに転職します</title>
@@ -1195,67 +1294,6 @@ input[type=&amp;quot;checkbox&amp;quot;]:checked:after {
 &lt;p&gt;&lt;strong&gt;ちゃんとCSSを書け&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;それに尽きる。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>2012年のinkdesign人気エントリー</title>
-      <link>http://localhost:1313/notes/2012-topentry/</link>
-      <pubDate>Sat, 29 Dec 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/notes/2012-topentry/</guid>
-      <description>
-
-&lt;p&gt;2012年11月末から再開したので、全然記事も少ないけどそれらしいまとめエントリーを2012年の最後に。10本。&lt;/p&gt;
-
-&lt;h3 id=&#34;cssが速くかけるようになるsublime-text2-パッケージ-hayakuで-世界が変わるらしい-http-inkdesign-jp-notes-2012-11-27-hayaku-changed-my-world-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/27/Hayaku-changed-my-world.html&#34;&gt;CSSが速くかけるようになるSublime Text2 パッケージ Hayakuで、世界が変わるらしい&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;タイトルがやや釣り的なこともあってか、CSSerな方々が気になった様子。この記事を書くために触り始めたが、やっぱり面白く早い。&lt;/p&gt;
-
-&lt;h3 id=&#34;cssプリプロセッサでスタイルガイド-http-inkdesign-jp-notes-2012-12-07-css-preprocessor-styleguide-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/07/css-preprocessor-styleguide.html&#34;&gt;CSSプリプロセッサでスタイルガイド&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;来年はこのスタイルガイドのようなテーマの記事を書く予定。このStyleDocco自体の使い方ももうちょっと詳細に。&lt;/p&gt;
-
-&lt;h3 id=&#34;sublime-text2のプラグイン-zen-codingをemmetに変える-http-inkdesign-jp-notes-2012-11-27-zencoding-to-emmet-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/27/zencoding-to-emmet.html&#34;&gt;Sublime Text2のプラグイン、Zen codingをEmmetに変える&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;Hayakuに近いエントリー。Zen Codingの現バージョンのEmmetの紹介。Hayakuとも併用できる。&lt;/p&gt;
-
-&lt;h3 id=&#34;スマートフォン端末向けにtel-を仕込む小技-http-inkdesign-jp-notes-2012-12-05-jquery-applies-tel-number-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/05/jquery-applies-tel-number.html&#34;&gt;スマートフォン端末向けにtel:を仕込む小技&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.adventar.org/calendars/29&#34;&gt;軽めのjQuery Advent Calendar 2012&lt;/a&gt;の５日目の記事。内容はそんなに役にはたたないけれど。&lt;/p&gt;
-
-&lt;h3 id=&#34;mac-os-xのターミナルからsublime-text2を立ち上げられるようにすると地味に便利-http-inkdesign-jp-notes-2012-11-29-open-file-by-subl-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/29/open-file-by-subl.html&#34;&gt;Mac OS XのターミナルからSublime Text2を立ち上げられるようにすると地味に便利&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;地味に便利がゆえに、地味な記事。でもやっておくと必ず使う、これ。&lt;/p&gt;
-
-&lt;h3 id=&#34;wordpressからjekyll-github-pageへ-http-inkdesign-jp-notes-2012-11-14-inkdesign-on-ghpage-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/14/inkdesign-on-ghpage.html&#34;&gt;WordPressからJekyll + Github pageへ&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;今のところ乗り換えてからの不満などもまったくなし。安定。&lt;/p&gt;
-
-&lt;h3 id=&#34;sass-less-stylusのcolor-functionsのコンパイル結果を比べてみた-http-inkdesign-jp-notes-2012-11-28-preprocessor-color-functions-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/28/Preprocessor-color-functions.html&#34;&gt;Sass,LESS,StylusのColor functionsのコンパイル結果を比べてみた&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;これはちゃんと元のコードの解説をしなさいと各所で怒られたので、2013年に書ければ。&lt;/p&gt;
-
-&lt;h3 id=&#34;擬似要素のcssアニメーションはinheritを使えば有効になる-http-inkdesign-jp-notes-2012-12-01-pseudo-animation-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/01/pseudo-animation.html&#34;&gt;擬似要素のCSSアニメーションはinheritを使えば有効になる&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;たまにハマりそうなネタ。アニメーション系の検証・記事を書きたい。&lt;/p&gt;
-
-&lt;h3 id=&#34;最近のlessの小話と新機能紹介-一部-http-inkdesign-jp-notes-2012-12-08-less-new-colors-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/08/less-new-colors.html&#34;&gt;最近のLESSの小話と新機能紹介（一部）&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;個人的に観て欲しい記事ではあったものの、そんなに飛ばず。地味だからね。&lt;/p&gt;
-
-&lt;h3 id=&#34;jquery-color-pluginを触ってみる-http-inkdesign-jp-notes-2012-12-13-jquery-color-html:b4907684127d492256d441300c23a94a&#34;&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/12/13/jquery-color.html&#34;&gt;jQuery Color Pluginを触ってみる&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;アドベントカレンダーでノリで書いた2本目。これも用途はそんなにない。&lt;/p&gt;
-
-&lt;h2 id=&#34;2012年の振り返りと-2013年のこと:b4907684127d492256d441300c23a94a&#34;&gt;2012年の振り返りと、2013年のこと&lt;/h2&gt;
-
-&lt;p&gt;前半は&lt;a href=&#34;http://goodpatch.co&#34;&gt;Goodpatch&lt;/a&gt;として受託制作やいろんなウェブサービスのお手伝いをさせてもらい、
-今年の5月に転職し、デベロッパーとして心機一転、より現場的なところに力を注いだ2012年。&lt;/p&gt;
-
-&lt;p&gt;2013年も引き続きデベロッパーとして技術力を見につけていくことと、また講演活動などもできればとおもう。あとはOSSへの参加とか、翻訳とかもやっていきたい。&lt;/p&gt;
-
-&lt;p&gt;それではみなさん2013年もよろしくおねがいします。&lt;/p&gt;
 </description>
     </item>
     

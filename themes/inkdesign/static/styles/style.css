@@ -73,6 +73,19 @@ body {
   margin-bottom: 2.827rem;
 }
 
+.entrylist {
+  list-style: none;
+}
+.entrylist li:first-child {
+  margin-bottom: 3.998rem;
+}
+.entrylist li:first-child .entry-title {
+  font-size: 1.999em;
+}
+.entrylist li .entry-title {
+  font-size: 1.414rem;
+}
+
 .entry {
   max-width: 42rem;
   padding: 0 1em;
@@ -102,6 +115,19 @@ body {
 }
 .entry-body > * {
   margin-bottom: 1.414em;
+}
+
+.entry-body button {
+  border: 0;
+  border-radius: 4px;
+  padding: 0.8em 1em;
+  background-color: #345;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.entry-body button:hover {
+  background-color: #567;
 }
 
 .entry-body blockquote {
@@ -173,4 +199,13 @@ body {
   padding: 0.5rem;
   background-color: #E9E8E7;
   font-size: 0.707em;
+}
+
+/* Utility */
+
+.u-flex-around {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  text-align: center;
 }

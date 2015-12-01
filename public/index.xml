@@ -6,8 +6,107 @@
     <description>Recent content on inkdesign</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp-ja</language>
-    <lastBuildDate>Tue, 13 Oct 2015 03:11:17 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Dec 2015 00:15:25 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Universal IE6 CSS</title>
+      <link>http://localhost:1313/notes/universal-ie6/</link>
+      <pubDate>Wed, 02 Dec 2015 00:15:25 +0900</pubDate>
+      
+      <guid>http://localhost:1313/notes/universal-ie6/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;昔々あるところに、&lt;br /&gt;
+&lt;strong&gt;Universal Internet Explorer 6 CSS&lt;/strong&gt;というのがおったそうな。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&amp;hellip;Universal IE6 CSSについては知らないひとも多いかもしれない。&lt;/p&gt;
+
+&lt;p&gt;CSSを学び、少しテクニカルなことをしはじめたころに憧れていた人物にAndy Clarkeという人がいる。
+彼は&lt;a href=&#34;https://stuffandnonsense.co.uk/&#34;&gt;Stuff and Nonsense&lt;/a&gt;というデザインコンサルティング会社に勤めており、イギリス人らしくモッズなスタイルのWebデザイナーだ。実務では政府の仕事をやっていたり、それ以外の活動としては、Web標準、HTML5、CSS3の黎明期にモダンなCSSデザインアプローチの書籍を出版・講演活動と広げてきた人物だ。&lt;/p&gt;
+
+&lt;p&gt;2008年くらいに「クロスブラウザ対応」という言葉が流行り、あわせてProgressive Enhancement/Graceful Degradationというようなアプローチが浸透し始めたその少し前に、ひとつのパフォーマンスとしてAndyのStuff and Nonsenseではある仕掛けをもっていた。それはIE6とそれ以降のブラウザでの見せ方を変えるというものだ。
+以下は&lt;a href=&#34;https://stuffandnonsense.co.uk/blog/about/hello&#34;&gt;Spotted the difference?&lt;/a&gt;より引用。&lt;/p&gt;
+
+&lt;div class=&#34;u-flex-around&#34;&gt;
+  &lt;div&gt;
+    
+&lt;figure &gt;
+  
+    &lt;img src=&#34;http://localhost:1313/images/notes/universal-ie6/01.jpg&#34; alt=&#34;for IE6&#34; /&gt;
+  
+  
+  &lt;figcaption&gt;
+    &lt;p&gt;
+    IE6の場合
+    
+      
+    
+    &lt;/p&gt; 
+  &lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+
+  &lt;/div&gt;
+  &lt;div&gt;
+    
+&lt;figure &gt;
+  
+    &lt;img src=&#34;http://localhost:1313/images/notes/universal-ie6/02.jpg&#34; alt=&#34;for modern browser&#34; /&gt;
+  
+  
+  &lt;figcaption&gt;
+    &lt;p&gt;
+    それ以降のブラウザの場合
+    
+      
+    
+    &lt;/p&gt; 
+  &lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;このカラクリはシンプルなもので、コンディショナルコメントでCSSを分けているだけ。今思えば単純なことだが、IE6ブラウザおよびそのユーザーに、モノクロトーンに変わったイメージと&amp;rdquo;Hey Old Timer!&amp;ldquo;というメッセージを送るそのロックさみたいなものに憧れたものだ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dowebsitesneedtolookexactlythesameineverybrowser.com/&#34;&gt;すべてのブラウザで全く同じ見た目であるべきか&lt;/a&gt;ということに疑問を投げかけ続け、あるときに彼が考えたアイデアこそが表題の&lt;a href=&#34;https://stuffandnonsense.co.uk/blog/about/universal_internet_explorer_6_CSS/&#34;&gt;Universal Internet Explorer 6 CSS&lt;/a&gt;だ。&lt;/p&gt;
+
+&lt;p&gt;コンテンツが重要であり、見た目がブラウザごで全く同じである必要はない。またIE6で同じ見た目にするためにJSのライブラリを使うこと、時間とお金をかけることはエンドユーザー、クライアント双方にとっても好ましいことでもなく、それを削れるならより良いことだ、という考え。&lt;/p&gt;
+
+&lt;p&gt;&lt;button onclick=&#34;ie6css()&#34;&gt;ここクリックすれば、IE6 CSSに衣替えする。&lt;/button&gt;&lt;/p&gt;
+
+&lt;p&gt;衣替えしたなら、これがUniversal IE6 CSSが適用されている状態。
+IE6には、きれいにデザインされた凝った表現ではなく、最低限のタイポグラフィを考えた程度のスタイルにする。&lt;br /&gt;
+どのサイトだろうと、IE6にはこのスタイルを適用するというだけ、というもの。&lt;a href=&#34;http://localhost:1313/styles/ie6.1.1.css&#34;&gt;コードはこちらか確認できる&lt;/a&gt;。
+前述に書いたように、IE6をつかっているような環境に対して、より負荷をかけてしまっては意味がないので、このアプローチは大胆ではあるが、理にかなったものともいえる。&lt;/p&gt;
+
+&lt;p&gt;まぁ実際にはこれが流行ることも、定着することもなかった、と思う。Andy自身も実際にどのくらいのクライアントに提案し、実施したのか気になるところ。もしかしたらIE6で世の中のWebサイトを回れば、しれっとUniversal IE6 CSSを使ったサイトがあるかもしれない。
+今なら、Normalize CSSに少し手を加えたようなものになるだろうか。ちょっとつくろうかとおもったけどやめた。&lt;/p&gt;
+
+&lt;p&gt;今もレガシーブラウザなブラウザに引きづられる環境、そして同じ見た目を再現しなければいけない環境はゼロではないが、
+当時よりは気を使う必要はなくなっているはずだ。しかし一方では見た目どうこうというより、近年のブラウザやデバイスであっても、妙なバグに踊らされる日々だ。そう、もしかしたらuniversal Android CSS&amp;hellip;という話はない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://code.google.com/p/universal-ie6-css/&#34;&gt;Universal Internet Explorer 6 CSS - Google Code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;この記事は、&lt;a href=&#34;http://www.adventar.org/calendars/723&#34;&gt;CSS昔話 Advent Calendar 2015&lt;/a&gt;の2日目の記事です。&lt;/p&gt;
+
+&lt;script&gt;
+var cssfile = document.querySelector(&#34;link[href*=&#39;/styles/style.css&#39;]&#34;);
+var defaultCss = cssfile.href;
+function ie6css() {
+  if(cssfile.href == defaultCss) {
+    cssfile.href = &#34;/styles/ie6.1.1.css&#34;;
+  } else {
+    cssfile.href = defaultCss;
+  }
+}
+&lt;/script&gt;
+</description>
+    </item>
     
     <item>
       <title>株式会社ツクルバに転職します</title>
@@ -1125,131 +1224,6 @@ input[type=&amp;quot;checkbox&amp;quot;]:checked:after {
 
 &lt;p&gt;本記事は&lt;a href=&#34;http://www.adventar.org/calendars/62&#34;&gt;Frontrend Advent Calendar 2013&lt;/a&gt;の5日目の記事として書いた。&lt;br /&gt;
 次は&lt;a href=&#34;http://ginpen.com/&#34;&gt;Ginpeiさん&lt;/a&gt;です。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>CSS Preprocessor Shootout（個人的な）</title>
-      <link>http://localhost:1313/notes/css-preprocessor-shootout/</link>
-      <pubDate>Sun, 13 Jan 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/notes/css-preprocessor-shootout/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://lp26.cssnite.jp/&#34;&gt;CSS Nite LP, Disk 26「CSS Preprocessor Shootout」&lt;/a&gt;でLESSについてのお話をしてきた。&lt;/p&gt;
-
-&lt;p&gt;当日の雰囲気や実況については&lt;a href=&#34;https://twitter.com/search?q=%23cssnite_lp26&#34;&gt;ハッシュタグを追っていただく&lt;/a&gt;として、ちょっとだけプリプロセッサ選びについてのフォローアップをば。&lt;/p&gt;
-
-&lt;h2 id=&#34;cssプリプロセッサはどれがいいの:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;CSSプリプロセッサはどれがいいの？&lt;/h2&gt;
-
-&lt;p&gt;イベントのサブタイトルにもなっている&lt;strong&gt;CSS Preprocessor Shootout&lt;/strong&gt;の元ネタは、イベントページの冒頭でも紹介されている通り、&lt;a href=&#34;http://net.tutsplus.com/tutorials/html-css-techniques/sass-vs-less-vs-stylus-a-preprocessor-shootout/&#34;&gt;Sass vs. LESS vs. Stylus: Preprocessor Shootout&lt;/a&gt;という記事です。（英語ではありますが、この記事で基本的な文法は総ナメできます。）&lt;/p&gt;
-
-&lt;p&gt;CSSプリプロセッサの基本的な機能はどれも一緒で、それに+αの違いがある。それゆえに「どれがいいの？」というのを知りたい、というのがある反面、しゃべる側も、どれがベストという結論を強く押し出すのは難しかった。講演ではそれぞれの特長のお話なり、実際つかったときの経験談なり、注意点なり、またより深いところなど&amp;hellip;という内容になった。&lt;/p&gt;
-
-&lt;p&gt;時間が限られていたことも含め、講演ではカバーしきれなかったツールの特長のようなところに触れつつ、&lt;strong&gt;Shootout(撃ち合い)&lt;/strong&gt;ということもあり、僕個人としてひとつの結論を出してしまいましょう。&lt;/p&gt;
-
-&lt;h3 id=&#34;less-http-lesscss-org:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;&lt;a href=&#34;http://lesscss.org/&#34;&gt;LESS&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;これからプリプロセッサはじめる人に勧めるなら&lt;strong&gt;LESS&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;なぜなら一番簡単だから。
-そう宣言しつつも、以下必読。&lt;/p&gt;
-
-&lt;p&gt;まずは僕が講演で取り上げたわけだが、実もフタもないことをいってしまえば、&lt;strong&gt;Stylus&lt;/strong&gt;の登場によって、LESSがSassと差をつけていたところがほぼ無くなっている、現状。
-それはJavaScriptによる実装という点や、よりCSSに近い構文の簡潔さ、といったもの。&lt;/p&gt;
-
-&lt;p&gt;ただ唯一の特徴としてはクライアントサイドで実行できること。これは本当に手軽。しかし本番環境で使うのは基本的にはNG。ただちょいと補足すると、講演でもLESSファイルのコンパイルのコストがかかるため、と話はしたものの、実際には最初のコンパイル以後は&lt;strong&gt;CSSをlocalStorageに保存してキャッシュ&lt;/strong&gt;する。&lt;/p&gt;
-
-&lt;p&gt;とはいえど、初期の読み込みに時間もかかるわけですし、この機能が安定しているかどうかというのはわからない。（経験上、本番で基本的に使うことはないので）&lt;/p&gt;
-
-&lt;p&gt;なのでこのようにLESSについては深く語れば語るほど、機能として秀でた特長というのはなく、ただただ&lt;strong&gt;シンプルである&lt;/strong&gt;ということが特長となる。&lt;/p&gt;
-
-&lt;p&gt;今後はSassやStylusと大きな差をつけているExtendが実装されることで、世間的にはようやく横並びになるかもしれないが、それによってシンプルさというのも少し削られてしまうかもしれない。&lt;/p&gt;
-
-&lt;p&gt;なのでLESSが凌いで、LESSが圧倒的に支持をうけることは無いでしょう。これはLESSを徹底してマスターしていくべきかどうかの理由として、重要なことです。（のちほどのSassにおけるメリットとして詳細は書く）&lt;/p&gt;
-
-&lt;p&gt;こういった思いがあるゆえ、僕の講演でも、選択肢のひとつとしての可能性で締めさせていただいた。
-しかし一方では、&lt;strong&gt;とりあえずCSSプリプロセッサを試したい&lt;/strong&gt;という人には強くおすすめできる。それから他のツールにはいっていくのでも全然構わない。&lt;/p&gt;
-
-&lt;h3 id=&#34;stylus-http-learnboost-github-com-stylus:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;&lt;a href=&#34;http://learnboost.github.com/stylus/&#34;&gt;Stylus&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;僕個人として使うならば&lt;strong&gt;Stylus&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;なぜならSassとLESSのいいとこ取りをしているから。&lt;/p&gt;
-
-&lt;p&gt;CSS（.styl）はLESSのように書けるし、SassのようなExtendもできる。透過的なMixinsも好み。&lt;/p&gt;
-
-&lt;p&gt;ただStylusを強くおすすめするかというと、難しい。その理由はStylusを使っている事例が、少なくとも日本（日本語）では少ないから。いくつかStylusを解説している記事もあるが、Sassと比べれば全然少ない。&lt;/p&gt;
-
-&lt;p&gt;それゆえに何かStylusのエラーなどにハマってしまった場合に、その解決策が見つかりにくい。なのでLESS/Sassをひと通り経験し、なおかつできればNode.jsに関連したツールを使っている経験があるような人の方が、問題なく使えそうなイメージはある。&lt;/p&gt;
-
-&lt;p&gt;またStylusセッションの終盤にあった通り、現在&lt;a href=&#34;https://github.com/visionmedia/rework&#34;&gt;rework&lt;/a&gt;というプロジェクトも走っているので、今後Stylusの立ち位置がどうなるかはわからない。
-※それでいうと、SassやLESSだってどうなるかはわからない。&lt;/p&gt;
-
-&lt;p&gt;Stylusはこのようにやや玄人好みであるといっても、他のプリプロセッサ同様のレベルで使う分には、Stylusからはじめても構わない。それが Ruby+gemではじめるのか、Node.js+npmではじめるのかの違いくらい。無論GUIのツールを使ったって構わない。が、Stylusに対応しているものはやや少ないので、GUIの選択肢は少し減るだろう。&lt;/p&gt;
-
-&lt;h3 id=&#34;sass-http-sass-lang-com:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;&lt;a href=&#34;http://sass-lang.com&#34;&gt;Sass&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;総合的にみて、人に勧めるならば、&lt;strong&gt;Sass&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;なぜなら、Sassについては機能的な言及はおいといて、単純に&lt;strong&gt;事例が多い&lt;/strong&gt;から。&lt;/p&gt;
-
-&lt;p&gt;今回のイベントでもGREEさんやCookpadさんなどの大規模な事例もあれば、個人や中小レベルでの事例もある。そしてそれらのレベルではブログでもオープンに紹介されていることも多いし、&lt;a href=&#34;https://gihyo.jp/dp/ebook/2012/978-4-7741-5123-6&#34;&gt;日本語で解説された電子書籍&lt;/a&gt;だってある。&lt;/p&gt;
-
-&lt;p&gt;検索すればトラブルシューティングもできるし、Sassに関連する便利なツールなども多くある。その代表するのが先に紹介したCompass。サポートするGUIツールも多いから、とりあえず使いたいっていう人はそれらを使えばいい。&lt;/p&gt;
-
-&lt;p&gt;あくまでも勧めるならば、であり僕個人としては3つの中で一番&lt;strong&gt;好みではない&lt;/strong&gt;。それはもう本当に好みのレベルの話で、メジャーじゃないものに手を出したい感もあるし、コンパイルが遅いと思っているからだ。
-コンパイルの遅さの体感は人によって違うし、それぞれを比べるのは、iPhoneのキャリアを変えたときのSoftbank vs auの回線速度みたいなレベルだとも思う。&lt;/p&gt;
-
-&lt;p&gt;とはいえ仕事では基本的にSassを使う。なぜなら使える（使ったことがある）人が今の身の回りには多くて、引き継ぎや共通のライブラリをつくれるからだ。&lt;/p&gt;
-
-&lt;h2 id=&#34;まとめ:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;まとめ&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;僕個人&lt;/strong&gt;（というのは強調しておきたい）としては、&lt;/p&gt;
-
-&lt;h3 id=&#34;人に勧めるなら:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;人に勧めるなら&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Sass&lt;/li&gt;
-&lt;li&gt;Stylus&lt;/li&gt;
-&lt;li&gt;LESS&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;これからプリプロセッサはじめる人に勧めるなら:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;これからプリプロセッサはじめる人に勧めるなら&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;LESS&lt;/li&gt;
-&lt;li&gt;Sass&lt;/li&gt;
-&lt;li&gt;Stylus&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;僕が使うなら:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;僕が使うなら&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Stylus&lt;/li&gt;
-&lt;li&gt;LESS&lt;/li&gt;
-&lt;li&gt;Sass&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;LESSの今後次第では、StylusじゃなくLESSになるかもしれないし、仕事でもLESSを推し進めていくかもしれない。（でもたぶんreworkに手を出す気もする）&lt;/p&gt;
-
-&lt;h2 id=&#34;でも結局cssはcss:4a83ac6057e4f9b46e04e7b6f2740a9d&#34;&gt;でも結局CSSはCSS&lt;/h2&gt;
-
-&lt;p&gt;イベントで数度繰り返していたが、CSSとしてちゃんと書けることがすべての前提。&lt;/p&gt;
-
-&lt;p&gt;料理だって、基本的な調理方法や下ごしらえ、またそのコツなどがそれなりに見についていれば美味しい料理ができる。&lt;/p&gt;
-
-&lt;p&gt;そこにすごく高機能な鍋なり、電子レンジなりの道具があれば、より美味しくつくれるかもしれないし、調理時間を短縮できてなおかつ美味しいものができるかもしれない。&lt;/p&gt;
-
-&lt;p&gt;逆に基礎がなくて便利な調理道具だけがあっても、それを使っても料理は上手くならないし、調理道具で事故を起こす可能性だってある。&lt;/p&gt;
-
-&lt;p&gt;（一方では、温めるだけで美味しい料理ができる、なんてものもあるが）&lt;/p&gt;
-
-&lt;p&gt;結局イベントと同じような結論で恐縮だが、&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ちゃんとCSSを書け&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;それに尽きる。&lt;/p&gt;
 </description>
     </item>
     
