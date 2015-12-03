@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sass on inkdesign</title>
+    <link>http://inkdesign.jp/tags/sass/</link>
+    <description>Recent content in Sass on inkdesign</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp-ja</language>
+    <lastBuildDate>Sun, 16 Feb 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://inkdesign.jp/tags/sass/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Sass3.3の@at-rootで親のルールを指定する</title>
+      <link>http://inkdesign.jp/notes/sass-at-root/</link>
+      <pubDate>Sun, 16 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://inkdesign.jp/notes/sass-at-root/</guid>
+      <description>&lt;p&gt;先日登壇した&lt;a href=&#34;http://cssnite.jp/lp/lp32/&#34;&gt;CSS Nite LP, Disk 32&lt;/a&gt;のセッションで紹介されていた&lt;a href=&#34;https://github.com/geckotang/cssnite-lp32/blob/master/scss/_trbl.scss&#34;&gt;SassのMixin&lt;/a&gt;をSass3.3の@at-rootで少し手を加えてみる、という話。&lt;/p&gt;
+
+&lt;p&gt;紹介されていたのは、&lt;a href=&#34;http://codepen.io/shshaw/full/gEiDt&#34;&gt;天地左右中央に絶対配置するテクニック&lt;/a&gt;のMixin。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;@mixin trbl($width: null, $height: null) {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: $width;
+	height: $height;
+	margin: auto;
+}
+
+.tbrl {
+  @include trbl(100px,50px);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.tbrl {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100px;
+  height: 50px;
+  margin: auto;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この仕組については先の記事をみてもらうとして、このMixinの内容は、これらのコードを提供し、任意で&lt;code&gt;width&lt;/code&gt;、&lt;code&gt;height&lt;/code&gt;の値を渡せるようになっている。&lt;/p&gt;
+
+&lt;p&gt;このテクニックを使う条件として必要になるのは、&lt;code&gt;position:absolute&lt;/code&gt;の基点、つまり&lt;code&gt;position:relative&lt;/code&gt;が必要となる。&lt;br /&gt;
+（無論、&lt;code&gt;body&lt;/code&gt;を基点とするならその限りではないが）&lt;/p&gt;
+
+&lt;p&gt;それを解決というか、それなりに利便性を考えるとすれば次のような方法が浮かぶ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.ref {
+  position: relative
+}
+
+.tbrl {
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div class=&amp;quot;ref&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;tbrl&amp;quot;&amp;gt;foo&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;例えば&lt;code&gt;.ref&lt;/code&gt;のような&lt;code&gt;position:relative&lt;/code&gt;の汎用クラスを容易し、この&lt;code&gt;.tbrl&lt;/code&gt;を使うときに基点を指定する場合には、&lt;code&gt;.ref&lt;/code&gt;を使いましょう、とするような方法。&lt;/p&gt;
+
+&lt;p&gt;次に本題であるSass3.3の&lt;code&gt;@at-root&lt;/code&gt;を使う方法。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;// ----
+// Sass (v3.3.0.rc.3)
+// Compass (v1.0.0.alpha.18)
+// ----
+ 
+@mixin trbl($width: null, $height: null, $parent: null) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: $width;
+  height: $height;
+  margin: auto;
+  @at-root #{$parent} {
+    position: relative;
+  }
+}
+ 
+.tbrl {
+  @include trbl(100px, 50px, &amp;quot;.tbrl-wrapper&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.tbrl {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100px;
+  height: 50px;
+  margin: auto;
+}
+.tbrl-wrapper {
+  position: relative;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;tbrl-wrapper&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;tbrl&amp;quot;&amp;gt;foo&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;@mixin trbl()&lt;/code&gt;に加えたのは&lt;code&gt;@at-root&lt;/code&gt;の記述と、基点となる親のセレクタをつくるための引数。&lt;code&gt;@at-root&lt;/code&gt;ディレクティブは記述上ネストされているが、コンパイルされたときにそれはネストされずに出力される。それを利用して、このような書き方ができる。&lt;/p&gt;
+
+&lt;p&gt;この例だと結局&lt;code&gt;position:relative&lt;/code&gt;を持たせているだけなので、先に紹介した&lt;code&gt;.ref&lt;/code&gt;みたいな汎用クラスを使うのと対して変わらないといえば変わらないが、tbrlというコンポーネントとしてルールをまとめるという設計で考えると、後者のような形の方が良いのではと考えた。&lt;br /&gt;
+（実際便利なのかどうか置いといて）&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;@at-root&lt;/code&gt;はよく&lt;a href=&#34;http://blog.ruedap.com/2013/10/29/block-element-modifier&#34;&gt;BEMなルールを書くときに役立ちそう&lt;/a&gt;だと紹介されているのをよく見るが、こんな使い方もできるな、という話でした。&lt;/p&gt;
+
+&lt;p&gt;あと気軽にSass3.3を試すなら&lt;a href=&#34;http://sassmeister.com/&#34;&gt;SassMeister&lt;/a&gt;が便利。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

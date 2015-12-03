@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="この記事は、CSS昔話 Advent Calendar 2015の2日目の記事です。">
+<meta property="og:title" content="Universal IE6 CSS">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://inkdesign.jp/notes/universal-ie6/">
+<meta property="og:image" content="http://inkdesign.jp/images/notes/universal-ie6/ogimage.png">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.15" />
+<title>Universal IE6 CSS - inkdesign</title>
+
+<link rel="stylesheet" href="http://inkdesign.jp/styles/style.css">
+
+<link href="http://inkdesign.jp/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">Universal IE6 CSS</h1>
+<p class="entry-pubdate">2015-12-02</p>
+</header>
+<div class="entry-body">
+<blockquote>
+<p>昔々あるところに、<br />
+<strong>Universal Internet Explorer 6 CSS</strong>というのがおったそうな。</p>
+</blockquote>
+
+<p>&hellip;Universal IE6 CSSについては知らないひとも多いかもしれない。</p>
+
+<p>CSSを学び、少しテクニカルなことをしはじめたころに憧れていた人物にAndy Clarkeという人がいる。
+彼は<a href="https://stuffandnonsense.co.uk/">Stuff and Nonsense</a>というデザインコンサルティング会社に勤めており、イギリス人らしくモッズなスタイルのWebデザイナーだ。実務では政府の仕事をやっていたり、それ以外の活動としては、Web標準、HTML5、CSS3の黎明期にモダンなCSSデザインアプローチの書籍を出版・講演活動と広げてきた人物だ。</p>
+
+<p>2008年くらいに「クロスブラウザ対応」という言葉が流行り、あわせてProgressive Enhancement/Graceful Degradationというようなアプローチが浸透し始めたその少し前に、ひとつのパフォーマンスとしてAndyのStuff and Nonsenseではある仕掛けをもっていた。それはIE6とそれ以降のブラウザでの見せ方を変えるというものだ。
+以下は<a href="https://stuffandnonsense.co.uk/blog/about/hello">Spotted the difference?</a>より引用。</p>
+
+<div class="u-flex-around">
+  <div>
+    
+<figure >
+  
+    <img src="http://inkdesign.jp/images/notes/universal-ie6/01.jpg" alt="for IE6" />
+  
+  
+  <figcaption>
+    <p>
+    IE6の場合
+    
+      
+    
+    </p> 
+  </figcaption>
+  
+</figure>
+
+
+  </div>
+  <div>
+    
+<figure >
+  
+    <img src="http://inkdesign.jp/images/notes/universal-ie6/02.jpg" alt="for modern browser" />
+  
+  
+  <figcaption>
+    <p>
+    それ以降のブラウザの場合
+    
+      
+    
+    </p> 
+  </figcaption>
+  
+</figure>
+
+
+  </div>
+</div>
+
+<p>このカラクリはシンプルなもので、コンディショナルコメントでCSSを分けているだけ。今思えば単純なことだが、IE6ブラウザおよびそのユーザーに、モノクロトーンに変わったイメージと&rdquo;Hey Old Timer!&ldquo;というメッセージを送るそのロックさみたいなものに憧れたものだ。</p>
+
+<p><a href="http://dowebsitesneedtolookexactlythesameineverybrowser.com/">すべてのブラウザで全く同じ見た目であるべきか</a>ということに疑問を投げかけ続け、あるときに彼が考えたアイデアこそが表題の<a href="https://stuffandnonsense.co.uk/blog/about/universal_internet_explorer_6_CSS/">Universal Internet Explorer 6 CSS</a>だ。</p>
+
+<p>コンテンツが重要であり、見た目がブラウザごとで全く同じである必要はない。またIE6で同じ見た目にするためにJSのライブラリを使うこと、時間とお金をかけることはエンドユーザー、クライアント双方にとっても好ましいことでもなく、それを削れるならより良いことだ、という考え。</p>
+
+<p><button onclick="ie6css()">ここクリックすれば、IE6 CSSに衣替えする。</button></p>
+
+<p>衣替えしたなら、これがUniversal IE6 CSSが適用されている状態。
+IE6には、きれいにデザインされた凝った表現ではなく、最低限のタイポグラフィを考えた程度のスタイルにする。<br />
+どのサイトだろうと、IE6にはこのスタイルを適用するというだけ、というもの。<a href="http://inkdesign.jp/styles/ie6.1.1.css">コードはこちらか確認できる</a>。
+前述に書いたように、IE6をつかっているような環境に対して、より負荷をかけてしまっては意味がないので、このアプローチは大胆ではあるが、理にかなったものともいえる。</p>
+
+<p>まぁ実際にはこれが流行ることも、定着することもなかった、と思う。Andy自身も実際にどのくらいのクライアントに提案し、実施したのか気になるところ。もしかしたらIE6で世の中のWebサイトを回れば、しれっとUniversal IE6 CSSを使ったサイトがあるかもしれない。
+今なら、Normalize CSSに少し手を加えたようなものになるだろうか。ちょっとつくろうかとおもったけどやめた。</p>
+
+<p>今もレガシーブラウザなブラウザに引きづられる環境、そして同じ見た目を再現しなければいけない環境はゼロではないが、
+当時よりは気を使う必要はなくなっているはずだ。しかし一方では見た目どうこうというより、近年のブラウザやデバイスであっても、妙なバグに踊らされる日々だ。そう、もしかしたらuniversal Android CSS&hellip;という話はない。</p>
+
+<p><a href="https://code.google.com/p/universal-ie6-css/">Universal Internet Explorer 6 CSS - Google Code</a></p>
+
+<p>この記事は、<a href="http://www.adventar.org/calendars/723">CSS昔話 Advent Calendar 2015</a>の2日目の記事です。</p>
+
+<script>
+var cssfile = document.querySelector("link[href*='/styles/style.css']");
+var defaultCss = cssfile.href;
+function ie6css() {
+  if(cssfile.href == defaultCss) {
+    cssfile.href = "/styles/ie6.1.1.css";
+  } else {
+    cssfile.href = defaultCss;
+  }
+}
+</script>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://inkdesign.jp/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="elsewhere"><a href="http://twitter.com/hiloki">Twitter</a> |  <a href="http://github.com/hiloki">GitHub</a></p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+</body>
+</html>

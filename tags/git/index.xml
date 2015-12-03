@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on inkdesign</title>
+    <link>http://inkdesign.jp/tags/git/</link>
+    <description>Recent content in Git on inkdesign</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp-ja</language>
+    <lastBuildDate>Fri, 14 Dec 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://inkdesign.jp/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Gitの.gitignoreでサブディレクトリのファイルを除外するところでハマった</title>
+      <link>http://inkdesign.jp/notes/gitignore/</link>
+      <pubDate>Fri, 14 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://inkdesign.jp/notes/gitignore/</guid>
+      <description>
+
+&lt;p&gt;Gitでバージョン管理したくないファイルを指定する場合には、&lt;a href=&#34;http://git-scm.com/book/ch2-2.html#Ignoring-Files&#34;&gt;.gitignore&lt;/a&gt;ファイルを作成し、その中に除外パターンを書く。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;*.swp
+._*
+.DS_Store
+node_modules
+release
+.sass-cache
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こういう感じ。その&lt;strong&gt;.gitignore&lt;/strong&gt;ファイルからみた除外したいパターンのパスを書く。Gitのドキュメントから引用すると、下記のようなパターンで除外ファイルを指定できる。&lt;a href=&#34;http://git-scm.com/book/ja/Git-の基本-変更内容のリポジトリへの記録#ファイルの無視&#34;&gt;こちらから&lt;/a&gt;日本語訳として引用。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# コメント。これは無視されます
+*.a       # .a ファイルは無視
+!lib.a    # しかし、lib.a ファイルだけは .a であっても追跡対象とします
+/TODO     # ルートディレクトリの TODO ファイルだけを無視し、サブディレクトリの TODO は無視しません
+build/    # build/ ディレクトリのすべてのファイルを無視します
+doc/*.txt # doc/notes.txt は無視しますが、doc/server/arch.txt は無視しません
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;で-ハマったところ:bfb8846b5554036b9efab49a7686de70&#34;&gt;で、ハマったところ&lt;/h2&gt;
+
+&lt;p&gt;今回はプロジェクトにおいて除外したい特定ファイルがある。対処のディレクトリは下記のような構成になっており、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;projects/templates/
+projects/templates/pages/foo.html
+projects/templates/pages/foo.js
+projects/templates/pages/mypage/bar.js
+projects/.gitignore
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;templates/&lt;/strong&gt;以下の.jsを無視したい、というのをやりたかった。このとおり、templates/以下に展開するサブディレクトリのパターンは様々。そしてルートには、そのプロジェクトディレクトリとしての.gitignoreがあり、その中には&lt;strong&gt;.DS_Store&lt;/strong&gt;などの定番の除外パターンを書いてある。&lt;/p&gt;
+
+&lt;p&gt;で、このルートにある.gitignoreに対し、下記のようなパターンを書いた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;templates/**/*.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これによって、&lt;strong&gt;各階層が異なるサブディレクトリも対象とて、その中のjsファイルを除外する&lt;/strong&gt;というができると思ったが、だめだった。これによって除外されるのは、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;templates/pages/foo.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;だけ、となる。&lt;/p&gt;
+
+&lt;p&gt;じゃあ、階層ごとに、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;templates/*.js
+templates/**/*.js
+templates/**/**/*.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;みたいに書く、というのは全然よろしくない。&lt;/p&gt;
+
+&lt;p&gt;と思ったところで、&lt;a href=&#34;http://havelog.ayumusato.com/food/e330-tori_hamu.html&#34;&gt;鶏ハムの人&lt;/a&gt;に助言をもらい、&lt;strong&gt;templates/に.gitignoreを追加&lt;/strong&gt;した。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;## projects/templates/.gitignore に下記を記述
+*.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;するとどうでしょう、理想通り、&lt;strong&gt;templates/以下のjsファイルが除外&lt;/strong&gt;されましたとさ。&lt;/p&gt;
+
+&lt;p&gt;ちなみに、この書き方だとtemplates/直下にあるjsしか除外されない気がしたのだけど、よく考えればそれは、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;## projects/templates/.gitignore に下記を記述
+/*.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ということになりますかね。&lt;/p&gt;
+
+&lt;p&gt;めでたしめでたし。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

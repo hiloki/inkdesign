@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="擬似要素に対するアニメーションは一部のブラウザを除いて無効となるが、該当のプロパティを親から継承させると有効となるらしい。">
+<meta property="og:title" content="擬似要素のCSSアニメーションはinheritを使えば有効になる">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/notes/pseudo-animation.html/">
+<meta property="og:image" content="http://localhost:1313/">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.14" />
+<title>擬似要素のCSSアニメーションはinheritを使えば有効になる - inkdesign</title>
+
+<link rel="stylesheet" href="http://localhost:1313/styles/style.css">
+
+<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">擬似要素のCSSアニメーションはinheritを使えば有効になる</h1>
+<p class="entry-pubdate">2012-12-01</p>
+</header>
+<div class="entry-body">
+
+
+<p>Joshua Hibbert氏の記事、<a href="http://joshnh.com/2012/10/25/dont-forget-the-css-value-inherit/">Don&rsquo;t Forget the CSS Value &lsquo;inherit&rsquo; - Joshua Hibbert</a>では忘れられがちな<code>inherit</code>による値の継承について説明している。</p>
+
+<p><code>inherit</code>を使えば親要素のスタイルの継承ができるが、これは要素とその擬似要素の関係においても、擬似要素が継承させることができる。</p>
+
+<p>で、この記事における本題としては、Bonus transition trickとして紹介されている、<q>inheritを使えば、擬似要素でもCSSアニメーションが有効になる</q>という話のこと。</p>
+
+<h2 id="擬似要素では-基本的に-アニメーションが無効となる:2a027ad34a565c8ad5951e2ba6bbe24f">擬似要素では&rdquo;基本的に&rdquo;アニメーションが無効となる</h2>
+
+<p><a href="http://jsfiddle.net/joshnh/Fa9PH/">Hibbert氏の記事にあるbasic sample</a>を見てもらうとわかるのだが、右側（赤い方）では擬似要素に大しては継承を使っておらず、そのためアニメーションになっていない。大して一方では擬似要素もアニメーションをしており、該当のスタイルをみると<code>inherit</code>を使っているのが確認できる。</p>
+
+<pre><code class="language-css">div {
+  border: 2px solid black;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+div:hover {
+  /* マウスオーバー時に背景色とボーダーの線の色を変える */
+  background: blue;
+  border-color: white;
+}
+.yay {
+  background-color: green;
+}
+.yay:after {
+  background-color: inherit; /* 継承 */
+  border: inherit; /* 継承 */
+}
+</code></pre>
+
+<h2 id="覚えておいて損はないかも:2a027ad34a565c8ad5951e2ba6bbe24f">覚えておいて損はないかも</h2>
+
+<p>実務上ではあまりこれにハマることは少ないかもしれないが、同記事の<a href="http://jsfiddle.net/joshnh/ELDet/">別のサンプル</a>のようなギミックを仕込むときなどには使そう。</p>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://localhost:1313/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<p class="tempnote">
+  本ブログの過去記事は、近日整理して再公開します。
+</p>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

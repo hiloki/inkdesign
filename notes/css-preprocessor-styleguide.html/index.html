@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="サイトおよびページを構成するコンポーネントをスタイルガイド化するツールを紹介。">
+<meta property="og:title" content="CSSプリプロセッサでスタイルガイド">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/notes/css-preprocessor-styleguide.html/">
+<meta property="og:image" content="http://localhost:1313/">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.14" />
+<title>CSSプリプロセッサでスタイルガイド - inkdesign</title>
+
+<link rel="stylesheet" href="http://localhost:1313/styles/style.css">
+
+<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">CSSプリプロセッサでスタイルガイド</h1>
+<p class="entry-pubdate">2012-12-07</p>
+</header>
+<div class="entry-body">
+
+
+<p>※この記事は、<a href="http://www.adventar.org/calendars/1">CSS Preprocessor Advent Calendar 2012</a>の7日目の記事です。</p>
+
+<p><a href="http://www.hitoyam.com/web/2012/12/04_1752.html">CSS PreprocessorとIAの親和性</a>、という記事の影響を受けまして、こちらの記事で書かれていた、</p>
+
+<blockquote>
+<p>CSS Preprocessor そのものを共通ドキュメントにしてしまうとか</p>
+</blockquote>
+
+<p>という点を拾わせていただき、<strong>スタイルガイド</strong>のツールを紹介しようとおもう。</p>
+
+<h2 id="スタイルガイドとはなにか:dcba552d45ca0a300e6f418779e3ff8b">スタイルガイドとはなにか</h2>
+
+<p>スタイルガイドは簡単にいうと、<a href="http://ameblo.jp/ca-1pixel/entry-11413319214.html">モバイル時代におけるCSSの設計と実装</a>から引用させてもらうと、ページ上の部品（コンポーネント）をあつめたリスト、ページのこと。デザインパターンと呼ばれることもあるかもしれない。</p>
+
+<p>具体的な成果物としてどういったものを指すのかというのは実際のページをみてもらう方が早いとおもうので、一度下記のページも参照してほしい。</p>
+
+<ul>
+<li><a href="http://www.flickr.com/photos/aarronwalter/5579386649/sizes/o/in/photostream/">MailChimp Design Patterns</a></li>
+<li><a href="http://www.starbucks.com/static/reference/styleguide/">Starbucs Style Guide</a></li>
+<li><a href="https://github.com/styleguide/css">Github Styleguide</a></li>
+<li><a href="https://gimmebar.com/collection/4ecd439c2f0aaad734000022/front-end-styleguides">Gimme Bar : Front end styleguides</a></li>
+</ul>
+
+<h2 id="スタイルガイドをどうやって作るか:dcba552d45ca0a300e6f418779e3ff8b">スタイルガイドをどうやって作るか</h2>
+
+<p>あらかじめコンポーネント設計ができているという前提で、ソレを元にこうしたスタイルガイドをつくるにはどうすれば良いか。</p>
+
+<p>ガイドラインやドキュメントというと、別途そうしたものをパワーポイントなり他のツールでそれらしいものをつくる、という方向に走ってしまうかもしれない。</p>
+
+<p>それ自体は問題はないが、問題は<strong>メンテナンスされるかどうか</strong>だ。</p>
+
+<p>開発上の仕様変更もあれば、運用をはじめてから発生する変更もある。それにともないデザインもコードも書き換わるわけなので、仮にスタイルガイドにあたるドキュメントをつくっていたとしても、そちらが更新されていないと意味がなく、より混乱をさせてしまうものになるかもしれない。</p>
+
+<h2 id="スタイルガイドは-生きている-ドキュメントでなければいけない:dcba552d45ca0a300e6f418779e3ff8b">スタイルガイドは&rdquo;生きている&rdquo;ドキュメントでなければいけない</h2>
+
+<p>スタイルガイドそのものはCSSにおけるスタイルということではなく、他の言語でもあるものだが、ここではCSSスタイルガイドということで話を進める。</p>
+
+<p>CSSに記述されたルールセットが何を意味するのか、何をするものなのか、というのは<strong>コメント</strong>という形で書くことができる。</p>
+
+<pre><code class="language-scss">/*
+基本的なボタンのスタイル。
+
+&lt;button class=&quot;btn&quot;&gt;次へ&lt;/button&gt;
+ */
+.btn {
+	display: inline-block;
+	background-color: #CCC;
+	...
+}
+/*
+&quot;保存&quot;や&quot;完了&quot;など主要なボタンのスタイル。
+.btnをベースとし、拡張する。
+
+&lt;button class=&quot;btn btn-primary&quot;&gt;次へ&lt;/button&gt;
+*/
+.btn-primary {
+	display: inline-block;
+	background-color: #33FF00;
+	...
+}
+</code></pre>
+
+<p>CSSの設計としてのわかりやすさを保つことはもちろん、このように第三者がみてもわかるようなコメントを残しておくのはスタイルガイドうんぬんとは別で残しておく方が好ましい。</p>
+
+<p>しかしコードだけではこれがどのような見た目・表現となるのかはわからない。ではそれをカバーするために、サンプルのHTMLファイルを用意して…となると、これはまた先程のドキュメントが分割されることデメリットを招くことになる。</p>
+
+<p>このような、スタイルガイドをつくる上で課題となる要素をカバーしてくれるのが、<a href="http://jacobrask.github.com/styledocco/">StyleDocco</a>、<a href="http://warpspire.com/kss/">KSS</a>や、といった、スタイルガイドジェネレータだ。これらを使うことで、先に紹介した実例ようなコンポーネントスタイルをデザインとして見せることも、コードサンプルを明示することもできる。</p>
+
+<p>StyleDoccoはNode.jsで実装されており、KSSはRubyで実装されている。</p>
+
+<p>KSSは、先程のスタイルガイドの実例であげたGithubの<a href="http://warpspire.com/posts/kss/">Kyle Neath</a>氏が開発したものだ。KSSに関連した、彼のプレゼンテーションスライドも是非一度見てほしい。</p>
+
+<p><a href="https://speakerdeck.com/kneath/a-better-future-with-kss">A better future with KSS // Speaker Deck</a></p>
+
+<h2 id="styledocco:dcba552d45ca0a300e6f418779e3ff8b">StyleDocco</h2>
+
+<p>とりあえず試してみるのなら、おそらくStyleDoccoの方が容易なので、StyleDoccoを使った例で紹介する。今回はStyledoccoのインストールの詳細などは省くので、<a href="http://jacobrask.github.com/styledocco/">StyleDocco</a>の<strong>Installation</strong>の節を参照してほしい。省くといっても、<strong>node.js</strong>および<strong>npm</strong>がインストールされている前提であれば、<code>npm install -fg styledocco</code>と、ターミナルなどの黒い画面で叩くだけだが。</p>
+
+<h3 id="成果物:dcba552d45ca0a300e6f418779e3ff8b">成果物</h3>
+
+<p>結論的に、<strong>何をすればどうなるのか</strong>、というのを先に出すと、次のようなコードを書いたCSSファイルに対して、StyleDoccoのコマンドを実行すれば<a href="http://localhost:1313/images/posts/styledocco-sample.png">こういう形</a>のものができる。</p>
+
+<p>もちろんこのCSSというのは、ドキュメント用のCSSファイルといったものではなく、実際のページを構成するCSSファイルを指す。</p>
+
+<pre><code class="language-css">/*
+# アイコン
+アイコン用モジュール。
+
+`ico`をベースとし、サイズ用のclass、アイコン画像のclassで拡張する。
+
+\`\`\`
+&lt;div class=&quot;the-footer&quot;&gt;
+  &lt;div class=&quot;center&quot;&gt;
+    &lt;i class=&quot;ico ico-24 ico-twitter&quot;&gt;&lt;/i&gt;
+    &lt;i class=&quot;ico ico-36 ico-twitter&quot;&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;center&quot;&gt;
+    &lt;i class=&quot;ico ico-24 ico-github&quot;&gt;&lt;/i&gt;
+    &lt;i class=&quot;ico ico-36 ico-github&quot;&gt;&lt;/i&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+\`\`\`
+*/
+.ico {
+	display: inline-block;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+
+.ico-24 {
+	width: 24px;
+	height: 24px;
+}
+
+.ico-36 {
+	width: 36px;
+	height: 36px;
+}
+.ico-twitter {
+	background: url(../images/ico-twitter.png);
+}
+.ico-github {
+	background: url(../images/ico-github.png);
+}
+</code></pre>
+
+<h3 id="cssファイルのコメントをhtml化する:dcba552d45ca0a300e6f418779e3ff8b">CSSファイルのコメントをHTML化する</h3>
+
+<p>StyleDoccoはCSSファイルに書かれたコメントを<strong>Markdown</strong>という形式で書くことにより、対応したHTMLへと変換する。</p>
+
+<p><a href="http://blog.2310.net/archives/6">Markdownの文法</a>はたくさんあるが、ここではよく使われるものをピックアップする。例を次にあげる。</p>
+
+<pre><code class="language-css">/*
+# 頭に`#`をつけると見出しになる
+
+ここに説明文を書く。
+
+\`\`\`
+&lt;!-- コードブロックは、バックティックを3つつけて囲むと、&lt;pre/&gt;でマークアップされる --&gt;
+&lt;div&gt;
+  ...
+&lt;/div&gt;
+\`\`\`
+*/
+</code></pre>
+
+<p>ポイントをいくつか挙げる。</p>
+
+<p><code>#</code>であれば<code>&lt;h1&gt;</code>、
+<code>##</code>であれば<code>&lt;h2&gt;</code>、となる。</p>
+
+<p>`（バックティック）は &lsquo;（シングルコーテーション）とは異なるので注意してほしい。またここに各コードはエスケープする必要はない。</p>
+
+<h2 id="styledoccoを実行する:dcba552d45ca0a300e6f418779e3ff8b">StyleDoccoを実行する</h2>
+
+<p>このような形式のコメントを書いたCSSファイル（仮に<code>style.css</code>とする）に対し、StyleDoccoを実行する。</p>
+
+<p>一応どのように実行するのかというのを少し補足しておく。例えばコマンドラインツール上（シェル上）で、次のようなディレクトリにいるとする・</p>
+
+<pre><code class="language-bash">$ cd /Users/myname/projects/mywebsite/
+</code></pre>
+
+<p>そしてこの<strong>mywebsite</strong>ディレクトリの下に、先ほどの<strong>/css/style.css</strong>が展開されているとする。</p>
+
+<p>この状態で、下記のようなコマンドを実行する。
+（コマンドのオプションにある<code>-n</code>は、プロジェクト名を書く。）</p>
+
+<pre><code class="language-bash">$ styledocco -n &quot;My Website&quot; css/style.css
+</code></pre>
+
+<p>実行すると、<strong>docs</strong>というディレクトリと、その中にスタイルガイドのHTMLが生成されるので、それをブラウザで見れば、先のサンプルのようなページを確認することができる。</p>
+
+<h2 id="cssファイルだけでなく-cssプリプロセッサのファイルでも可能:dcba552d45ca0a300e6f418779e3ff8b">CSSファイルだけでなく、CSSプリプロセッサのファイルでも可能</h2>
+
+<p>ここでようやくCSSプリプロセッサの登場。</p>
+
+<p>CSSファイルをパースして、それらをHTML化するわけだが、CSSプリプロセッサのファイルを対象にしたときは、コンパイル前の内容でパースしてくれる。</p>
+
+<p>つまり、</p>
+
+<pre><code class="language-css">/*
+# アイコン
+アイコン用モジュール。
+
+`ico`をベースとし、サイズ用のclass、アイコン画像のclassで拡張する。
+
+アイコン画像は`_icon.scss`に格納し、`@import`で読み込む。
+
+`.ico`を適用した要素内のコンテンツは、Image Replacementで隠す。
+Image Replacementは、`_utility.scss`にある`.ir`で拡張する。
+
+\`\`\`
+&lt;div class=&quot;the-footer&quot;&gt;
+	&lt;div class=&quot;center&quot;&gt;
+		&lt;i class=&quot;ico ico-24 ico-twitter&quot;&gt;&lt;/i&gt;
+		&lt;i class=&quot;ico ico-36 ico-twitter&quot;&gt;&lt;/i&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;center&quot;&gt;
+		&lt;i class=&quot;ico ico-24 ico-github&quot;&gt;&lt;/i&gt;
+		&lt;i class=&quot;ico ico-36 ico-github&quot;&gt;&lt;/i&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+\`\`\`
+*/
+@import &quot;icons&quot;;
+
+.ico {
+	display: inline-block;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	@extend .ir;
+}
+
+.ico-24 {
+	width: 24px;
+	height: 24px;
+}
+
+.ico-36 {
+	width: 36px;
+	height: 36px;
+}
+
+</code></pre>
+
+<p>例えばこのように、SCSSな構文を交えることはもちろんのこと、Sassにおける<code>@import</code>を前提とした場合でも、コード上部のデザインサンプルでは、<strong>コンパイル後のスタイル</strong>が適用されたサンプルにしてくれる。</p>
+
+<p>こちらも参考までにスクリーンショットでお見せすると、<a href="http://localhost:1313/images/posts/styledocco-sample-scss.png">こういう形</a>。</p>
+
+<p>ここで、冒頭にあげた、<a href="http://www.hitoyam.com/web/2012/12/04_1752.html">CSS PreprocessorとIAの親和性</a>の記事の話に戻るが、これを使えばSassなりLESSなり、またはStylusといったCSSプリプロセッサをそのまま活用して、コンポーネントリスト = スタイルガイドをつくることができる。</p>
+
+<h2 id="css-cssプリプロセッサをもっと楽しく:dcba552d45ca0a300e6f418779e3ff8b">CSS/CSSプリプロセッサをもっと楽しく</h2>
+
+<p>簡易的かつ短い解説であったので、これでもいまいちぱっとしないかもしれないが、StyleDoccoのようなツールを使うことで、CSSとそのコメントを書くのが楽しくなる。</p>
+
+<p>ちょっと難しいとおもわれるかもしれないが、是非一度試してほしい。</p>
+
+<p>また別の機会に、本ブログのスタイルガイドを公開できればとおもう。</p>
+
+<h2 id="アドベントカレンダーは続く:dcba552d45ca0a300e6f418779e3ff8b">アドベントカレンダーは続く</h2>
+
+<p>次は<a href="http://havelog.ayumusato.com/">ahomuの人</a>です。</p>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://localhost:1313/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<p class="tempnote">
+  本ブログの過去記事は、近日整理して再公開します。
+</p>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

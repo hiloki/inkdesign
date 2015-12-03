@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mobile on inkdesign</title>
+    <link>http://inkdesign.jp/tags/mobile/</link>
+    <description>Recent content in Mobile on inkdesign</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp-ja</language>
+    <lastBuildDate>Wed, 05 Dec 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://inkdesign.jp/tags/mobile/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>スマートフォン端末向けにtel:を仕込む小技</title>
+      <link>http://inkdesign.jp/notes/jquery-applies-tel-number/</link>
+      <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://inkdesign.jp/notes/jquery-applies-tel-number/</guid>
+      <description>
+
+&lt;p&gt;※この記事は、&lt;a href=&#34;http://www.adventar.org/calendars/29&#34;&gt;軽めのjQuery Advent Calendar 2012&lt;/a&gt;の５日目の記事です。&lt;/p&gt;
+
+&lt;p&gt;スマートフォン端末のブラウザでは、&lt;code&gt;tel:&lt;/code&gt;スキーマを&lt;code&gt;&amp;lt;a href=&amp;quot;tel:0120-0000-0000&amp;quot;&amp;gt;お問い合わせはこちら&amp;lt;/a&amp;gt;&lt;/code&gt;というように利用することで、ブラウザ上でタップして電話をかけることができるようになる。&lt;/p&gt;
+
+&lt;p&gt;しかし、これをデスクトップブラウザで実装してしまうと、クリックした時に不明なプロトコルとしてエラーとなってしまう。&lt;/p&gt;
+
+&lt;p&gt;これが問題となる可能性があるのは、いわゆるレスポンシブ・ウェブデザイン的なアプローチで、モバイルブラウザとデスクトップブラウザでHTMLを一本化してしまうような場合だ。&lt;/p&gt;
+
+&lt;p&gt;※問題とはいってもデスクトップユーザーが電話番号を見て、クリックして電話をかける、というアクションをするかどうかというのは置いといて。&lt;/p&gt;
+
+&lt;h2 id=&#34;カスタムデータ属性を使ったアプローチ:5bd5d958c898e5fc422c2ded0e0588fa&#34;&gt;カスタムデータ属性を使ったアプローチ&lt;/h2&gt;
+
+&lt;p&gt;前提として下記のようなマークアップをおこなう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;お問い合わせは&amp;lt;span data-tel=&amp;quot;0120-9999-9999&amp;quot;&amp;gt;お電話&amp;lt;/span&amp;gt;で！
+
+&amp;lt;img src=&amp;quot;btn-contact.png&amp;quot; alt=&amp;quot;お問い合わせはお電話で！&amp;quot; data-tel=&amp;quot;0120-8888-8888&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ポイントは&lt;code&gt;data-tel&lt;/code&gt;属性。この中にコール先の番号をセットしておく。あとはこの要素に対し、&lt;code&gt;data-tel&lt;/code&gt;の値を&lt;code&gt;href&lt;/code&gt;にセットした&lt;code&gt;&amp;lt;a /&amp;gt;&lt;/code&gt;で包括する。で、これをjQueryっぽく書いてみる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// とりあえず簡易的な方法でdetection（iPhoneの場合）
+var ua =navigator.userAgent;
+if(ua.indexOf(&#39;iPhone&#39;) &amp;gt; -1) {
+  
+  $(function() {
+    // data-tel属性を持つ要素に対し、
+    $(&amp;quot;[data-tel]&amp;quot;).each(function(){
+      // data-tel属性の値を取得
+      var tel = $(this).attr(&amp;quot;data-tel&amp;quot;);
+      // a要素でwrapする
+      $(this).wrap(&amp;quot;&amp;lt;a href=&amp;quot; + &#39;tel:&#39; + tel + &amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&amp;quot;);
+    });
+  });
+
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じ。&lt;/p&gt;
+
+&lt;h2 id=&#34;data-メソッドは:5bd5d958c898e5fc422c2ded0e0588fa&#34;&gt;data()メソッドは？&lt;/h2&gt;
+
+&lt;p&gt;せっかくカスタムデータ属性をつかっているので、よりjQueryっぽくという意味では&lt;code&gt;data()&lt;/code&gt;メソッドを使う方法もある。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;$(function() {
+  $(&amp;quot;[data-tel]&amp;quot;).each(function(){
+    // data()メソッドでtel属性の値を取得
+    var tel = $(this).data(&amp;quot;tel&amp;quot;);
+
+    $(this).wrap(&amp;quot;&amp;lt;a href=&amp;quot; + &#39;tel:&#39; + tel + &amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&amp;quot;);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;が、これには&lt;a href=&#34;http://havelog.ayumusato.com/develop/javascript/e291-jquery_data_method.html&#34;&gt;罠がある&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;つまり&lt;code&gt;data()&lt;/code&gt;メソッドを使うと、&lt;strong&gt;0からはじまる文字列が数字として扱われる&lt;/strong&gt;ので、今回のような例だと危うい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;// stringで、そのまま 0120-9999-9999 になる
+&amp;lt;span data-tel=&amp;quot;0120-9999-9999&amp;quot;&amp;gt;お電話&amp;lt;/span&amp;gt;
+
+// numberになるので、12099999999 になる
+&amp;lt;span data-tel=&amp;quot;012099999999&amp;quot;&amp;gt;お電話&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ただこれが起きるのはjQuery1.8以前で、&lt;a href=&#34;http://bugs.jquery.com/ticket/7579&#34;&gt;1.8からはdata()メソッドをつかっても型は変換されない。&lt;/a&gt;
+実際に&lt;a href=&#34;http://jsfiddle.net/dmethvin/8SsWK/&#34;&gt;こちらのデモ&lt;/a&gt;上で、左のパネルからjQueryのバージョンを変えてRunしてみるとわかる。&lt;/p&gt;
+
+&lt;p&gt;その他、&lt;a href=&#34;http://1000ch.net/2012/12/02/ImportantPointForJavaScriptDevelopment/&#34;&gt;カスタムデータ属性の参照の仕方&lt;/a&gt;などについては、こちらも参照するといいかも。&lt;/p&gt;
+
+&lt;h2 id=&#34;もうちょい考えてみると:5bd5d958c898e5fc422c2ded0e0588fa&#34;&gt;もうちょい考えてみると&lt;/h2&gt;
+
+&lt;p&gt;Detectionが正直微妙で、本来ならば&lt;strong&gt;tel:が有効な端末で&lt;/strong&gt;っていうのが正しいので、単純にUAとかでみるのは微妙。例として挙げておいてなんだが、これだとたぶん&lt;strong&gt;iPod touch&lt;/strong&gt;も含まれる。&lt;/p&gt;
+
+&lt;p&gt;またこのコードではスマートフォンブラウザのときに実行される前提になってるが、非力なスマートフォンブラウザ環境よりも、むしろデスクトップブラウザで実行されるようなスクリプトの方がいいだろう。&lt;/p&gt;
+
+&lt;p&gt;それならば例えば、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;a href=&amp;quot;tel:0120-9999-9999&amp;quot;&amp;gt;お電話&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これを標準とし、デスクトップブラウザのときに下記のようなコードを実行する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;$(function() {
+  // href属性がtelから始まる要素の
+  $(&amp;quot;a[href^=tel]&amp;quot;).each(function(){
+    // 中身を抜いてspanに差し替える
+    $(this).replaceWith(&amp;quot;&amp;lt;span&amp;gt;&amp;quot; + $(this).text() + &amp;quot;&amp;lt;/span&amp;gt;&amp;quot;);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これも雑な感じではあるが、このようにすれば&lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;を&lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt;に変えることで、リンクを無効化できる。&lt;/p&gt;
+
+&lt;p&gt;ちなみに一応知らない人がいたら、ということで補足すると、&lt;code&gt;$(&amp;quot;a[href^=tel]&amp;quot;)&lt;/code&gt;は属性セレクタで、&lt;strong&gt;href属性がtelからはじまるa要素&lt;/strong&gt;、というセレクタ。この例では&lt;code&gt;tel:&lt;/code&gt;から始まるものというはブレないので、このようにしてみた。&lt;/p&gt;
+
+&lt;p&gt;※この属性セレクタの話は、同アドベントカレンダーの別記事として後日書く予定。&lt;/p&gt;
+
+&lt;p&gt;タグは差し替えず、&lt;code&gt;event.preventDefault&lt;/code&gt;でリンクを無効化しても良いかもしれないが、この場合にはCSSもマウスポインタがリンク時のポインタにならないようにしておきたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;アドベントカレンダーは続く:5bd5d958c898e5fc422c2ded0e0588fa&#34;&gt;アドベントカレンダーは続く&lt;/h2&gt;
+
+&lt;p&gt;次は&lt;a href=&#34;http://h2ham.seesaa.net/&#34;&gt;ハムの人&lt;/a&gt;ですね、よろしくおねがいします。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

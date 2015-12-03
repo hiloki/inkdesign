@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Css Software on inkdesign</title>
+    <link>http://inkdesign.jp/tags/css-software/</link>
+    <description>Recent content in Css Software on inkdesign</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp-ja</language>
+    <lastBuildDate>Tue, 27 Nov 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://inkdesign.jp/tags/css-software/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CSSが速くかけるようになるSublime Text2 パッケージ Hayakuで、世界が変わるらしい</title>
+      <link>http://inkdesign.jp/notes/Hayaku-changed-my-world/</link>
+      <pubDate>Tue, 27 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://inkdesign.jp/notes/Hayaku-changed-my-world/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://inkdesign.jp/notes/2012/11/27/zencoding-to-emmet.html&#34;&gt;Zen CodingもといEmmet&lt;/a&gt;を使いこなすとまでいかなくとも、それなりに使ってはいるが、実はCSSではあんまり活用していなかった。&lt;/p&gt;
+
+&lt;p&gt;というもCSSに関しては、多少Emmetや他のコード補完プラグイン（パッケージ）の支援はあるものの、HTMLよりも手グセというか、自然とプロパティなり値なりをさっさと書いてしまうし、それほどありがたい、と思えるほどでもない。&lt;/p&gt;
+
+&lt;p&gt;またZen Codingにせよ、Emmetにせよ、短縮形のルールが決まっているし、それらを覚えないといけないので少し大変だ。&lt;/p&gt;
+
+&lt;p&gt;&lt;ins datetime=&#34;2012-11-30&#34;&gt;&lt;strong&gt;追記（2012-11-30）:&lt;/strong&gt; Emmetでも若干&lt;a href=&#34;http://docs.emmet.io/css-abbreviations/fuzzy-search/&#34;&gt;ファジーに書ける&lt;/a&gt;様子。
+&lt;/ins&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;そこでhayaku-らしい:3afcd282169df6f3f5c9a4d910cd8975&#34;&gt;そこでHayaku、らしい&lt;/h2&gt;
+
+&lt;p&gt;二度見しそうな名前だが、これは&lt;a href=&#34;http://hayakubundle.com/&#34;&gt;Hayaku&lt;/a&gt;というSublime Text2のパッケージ。Emmetと違い、対象になるのはCSS（とCSSプリプロセッサ）であり、前述の通りCSSの記述に関してはこれといったツールを使っていない自分でも感動した。&lt;/p&gt;
+
+&lt;p&gt;ちなみにHayakuについてはもうすでに&lt;a href=&#34;https://gist.github.com/4135513&#34;&gt;Sublime Text2を布教しているエライ人&lt;/a&gt;によって簡潔にまとめられているが、とりあえずひと通りやってみた、ってことで書いていく。&lt;/p&gt;
+
+&lt;h2 id=&#34;とりあえずhayakuで何ができるのか:3afcd282169df6f3f5c9a4d910cd8975&#34;&gt;とりあえずHayakuで何ができるのか&lt;/h2&gt;
+
+&lt;p&gt;CSSで&lt;code&gt;overflow:hidden&lt;/code&gt;と書きたいとき、どうタイプするか？&lt;/p&gt;
+
+&lt;p&gt;もちろんCSSとして書くならもちろんそのまま書くでしょうが、
+これをEmmetで書く場合はこう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;div {
+	/* ov:h とタイプして、Tabキーとか */
+	overflow: hidden;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;ov:h&lt;/code&gt;とタイプするのはEmmetパッケージにある、&lt;strong&gt;snippet.json&lt;/strong&gt;というファイルで定義されていて、この書き方じゃないと展開しない（はず）。&lt;/p&gt;
+
+&lt;p&gt;で、Hayakuです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;div {
+	/* oh とタイプして、Tabキーとか */
+	overflow: hidden;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これはHayai。&lt;/p&gt;
+
+&lt;p&gt;Hayakuがすごいのは実はこれじゃない。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;div {
+	/* oh とタイプして、Tabキーとか */
+	/* o:h とタイプして、Tabキーとか */
+	/* o:h とタイプして、Tabキーとか */
+	/* ov:h とタイプして、Tabキーとか */
+	/* overfl:hidn とタイプして、Tabキーとか */
+	overflow: hidden;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これはHidoi。いやSugoi。&lt;/p&gt;
+
+&lt;p&gt;なんかもうノリでタイプすれば、それが出る。
+これでもうHayakuが気になった人は、次へ進んでください。&lt;/p&gt;
+
+&lt;h2 id=&#34;hayakuのインストール:3afcd282169df6f3f5c9a4d910cd8975&#34;&gt;Hayakuのインストール&lt;/h2&gt;
+
+&lt;p&gt;多くは語るまい。Sublime Text2な人なおなじみの、&lt;strong&gt;Install Package&lt;/strong&gt;から&lt;strong&gt;&amp;ldquo;Hayaku&amp;rdquo;&lt;/strong&gt;と叩けばOK。&lt;/p&gt;
+
+&lt;h2 id=&#34;emmetとの共用:3afcd282169df6f3f5c9a4d910cd8975&#34;&gt;Emmetとの共用&lt;/h2&gt;
+
+&lt;p&gt;この手のパッケージはキーバインドがぶつかりやすいので気をつけること。&lt;kbd&gt;Tab&lt;/kbd&gt;キーでの展開がHayakuでもEmmetでもデフォルトとなっているので、あらかじめそれを回避しておく。これはEmmetの方のパッケージ設定でおこなう。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Preference&lt;/strong&gt; &amp;gt; &lt;strong&gt;Package Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Emmet&lt;/strong&gt; &amp;gt; &lt;strong&gt;Setting - User&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;何も手を入れてなければ、おそらくこの中は空っぽであるはずなので、ここに下記のような設定をいれておく。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;{
+	// TABキーによる展開を対象の言語（ファイル）のときに無効化する
+	&amp;quot;disable_tab_abbreviations_for_scopes&amp;quot;: &amp;quot;css,less,sass,scss,stylus&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ちなみにこれを見て、もしかして、思ったかもしれないが、CSSを書くときだけでなく、SassやLESSなどのCSSプリプロセッサで書く場合にもHayakuは使える。&lt;/p&gt;
+
+&lt;p&gt;ここで少しSublime Text2の設定についての補足をしておくと、前述の設定までのパスを追っていくと、&lt;strong&gt;Users&lt;/strong&gt;ではなく、&lt;strong&gt;Default&lt;/strong&gt;というのも参照できるが、設定を変える場合には&lt;strong&gt;Default&lt;/strong&gt;を書き換えるのではなく、&lt;strong&gt;Users&lt;/strong&gt;の方に書くようにする。そうすることで&lt;strong&gt;Default&lt;/strong&gt;の設定を上書きすることができる。&lt;/p&gt;
+
+&lt;h2 id=&#34;hayakuの機能をいくつか紹介:3afcd282169df6f3f5c9a4d910cd8975&#34;&gt;Hayakuの機能をいくつか紹介&lt;/h2&gt;
+
+&lt;p&gt;ではHayakuでの書き方をいくつか紹介する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;div {
+	/* wd */
+	wd → width: 100%;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;それっぽい二文字くらいで大体展開。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;div {
+	/* wd */
+	wd → width: 100%;
+	/* m10 */
+	margin: 10px;
+	/* pt-10 */
+	padding-top: -10px;
+	/* fs1.5 小数点をつけるとem */
+	font-size: 1.5em;
+	/* cF */
+	color: #FFF;
+	/* bx0.5 */
+	-webkit-box-shadow: rgba(0,0,0,.5);
+	        box-shadow: rgba(0,0,0,.5);
+	/* di! */
+	display: inline !important;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;div {
+	/* m10 */
+	margin: 10px;
+	/* pt-10 */
+	padding-top: -10px;
+	/* fs1.5 小数点をつけるとem */
+	font-size: 1.5em;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;数字をいれるとこんな感じ。Emmetに近いけど、少しだけ違う。Emmetだとショートハンドで書きたいときに、&lt;code&gt;w10-8&lt;/code&gt;みたいな書き方で展開できる。Hayakuでは今のところそれができないのでちょっと不便。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;div {
+	/* cF */
+	color: #FFF;
+	/* bx0.5 */
+	-webkit-box-shadow: rgba(0,0,0,.5);
+	        box-shadow: rgba(0,0,0,.5);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;色の指定を加えるならこんな感じ。&lt;code&gt;rgba&lt;/code&gt;の書き方はちょっと感動。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;div {
+	/* di! */
+	display: inline !important;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;!&lt;/code&gt;をつければ、&lt;code&gt;!important&lt;/code&gt;を追加。たまーに使う。&lt;/p&gt;
+
+&lt;h2 id=&#34;とりあえず入れてて損はない:3afcd282169df6f3f5c9a4d910cd8975&#34;&gt;とりあえず入れてて損はない&lt;/h2&gt;
+
+&lt;p&gt;設定を変えないとEmmetなどとぶつかるというのはあるとして、基本的には邪魔をするものでもないし、ミスタイプをしたときも勢いでカバーできるっていうイメージで導入してみるとどうでしょうか。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

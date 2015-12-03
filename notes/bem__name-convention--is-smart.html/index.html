@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="気持ちが悪いと言われるBEMの__などの命名はよく出来ていると思う。">
+<meta property="og:title" content="BEMの命名規則は賢い">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/notes/bem__name-convention--is-smart.html/">
+<meta property="og:image" content="http://localhost:1313/">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.14" />
+<title>BEMの命名規則は賢い - inkdesign</title>
+
+<link rel="stylesheet" href="http://localhost:1313/styles/style.css">
+
+<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">BEMの命名規則は賢い</h1>
+<p class="entry-pubdate">2014-01-23</p>
+</header>
+<div class="entry-body">
+<p><a href="http://bem.info/">BEM</a>およびその命名派生としての<a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">MindBEMding</a>で使われる<code>foo__bar</code>や<code>foo--bar</code>というようなハイフン、アンダースコアを重ねた命名はキモいし冗長だと嫌われがちだ。僕自身も初見ではそのように思っていた。しかしこれは本当に良いアイデアだと思うし、実務でも僕は採用している。</p>
+
+<p>CSSの設計、その命名のときに考えるのは、それがいかに明白であるかということと、汚染されるリスクを抑えられるか、ということだ。ワードを明確に区切ることによって、その機能・カテゴリを区別するという点においては、別に単一記号であろうが、キャメルケース、スネークケースであろうがなんでもいいかもしれない。しかしスタイルが汚染されるリスク、という点でこの珍妙な命名は優秀だ。</p>
+
+<p>プロジェクトに関わる開発者が多いほど、その書き方にブレは生じる。もちろんコーディング規約なり、スタイルガイドなりであらかじめルールを共有しておけば、というのは前提にあるとしても、それが100%守られる保証はない。少なくとも自分の経験上残念ながら無い。</p>
+
+<p>ここで仮にBEMのようなElement,Modifierといった概念を継承しつつも、<code>foo__bar</code>や<code>foo--bar</code>といったのが冗長でキモいという理由で、&rsquo;foo_bar&rsquo;や&rsquo;foo-bar&rsquo;のような命名を採用したとしよう。</p>
+
+<pre><code>.widget { ... }
+.widget_title { ... }
+.widget-sidebar { ... }
+</code></pre>
+
+<p>なんてことはないと思えるが、ハイフンやアンダースコアといった記号はBEM的な前提ルールを無視して使われてしまう可能性が高い。それは単純に単語を区切りたいというような理由でだ。</p>
+
+<pre><code>.widget { ... }
+.widget_title { ... }
+.widget-sidebar { ... }
+
+.contact-form { ... }
+.price-table { ... }
+</code></pre>
+
+<p>単語を区切りたい場合には<code>priceTable</code>のようなキャメルケースで！というルールを用意すれば、というのもあるかもしれないが、やはり守られる保証はない。ところが、単語を区切りたいだけという理由で<code>foo__bar</code>や<code>foo--bar</code>のように書こうとする開発者はまずいない。少なくとも単一で使われるよりは少数だろう。つまりは設計上のルールとして定義する<code>foo__bar</code>や<code>foo--bar</code>といったルールは、そうでない記法よりもそのルールが破壊されるリスクが少ないと考えている。</p>
+
+<p>そしてこの冗長な命名から少しでもタイプ数を減らすためアイデアもある。それは<a href="http://viget.com/extend/bem-sass-modifiers">Vigetの記事</a>や<a href="http://operatino.github.io/MCSS/ja/">MCSS</a>のModifierの記法にある。</p>
+
+<pre><code>// in Sass
+.widget { 
+  &amp;.-sidebar { ... } // Viget
+  &amp;.__sidebar { ... } // MCSS
+}
+</code></pre>
+
+<pre><code>/* in CSS */
+.widget.-sidebar { ... } // Viget
+.widget.__sidebar { ... } // MCSS
+</code></pre>
+
+<pre><code>&lt;!-- in Markup --&gt;
+&lt;div class=&quot;widget -sidebar&quot;&gt;Viget&lt;/div&gt;
+&lt;div class=&quot;widget __sidebar&quot;&gt;MCSS&lt;/div&gt;
+</code></pre>
+
+<p>これらがより良いアプローチであるということではないが、ひとつのアイデアだ。
+ちなみにいずれも今回フォーカスする箇所が本題ではないので、設計のアプローチのアイデアとしてそれぞれ一読をおすすめする。なおVigetの記事で参照されているが、<a href="http://www.w3.org/TR/CSS2/syndata.html#characters">ハイフン2つからはじまるセレクタはダメ</a>なようだ。これについては詳しく追ってない。</p>
+
+<p>BEMのこうした命名に関しては、結論好きなように書けばいい、という話ではあるものの、そこにどういった利点があるかというのを一考してみるも良いのではないかと思う。</p>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://localhost:1313/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<p class="tempnote">
+  本ブログの過去記事は、近日整理して再公開します。
+</p>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="スマートフォン端末ではtel:スキーマを利用することで電話をかけることができるが、その実装を少し工夫してみる">
+<meta property="og:title" content="スマートフォン端末向けにtel:を仕込む小技">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/notes/jquery-applies-tel-number.html/">
+<meta property="og:image" content="http://localhost:1313/">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.14" />
+<title>スマートフォン端末向けにtel:を仕込む小技 - inkdesign</title>
+
+<link rel="stylesheet" href="http://localhost:1313/styles/style.css">
+
+<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">スマートフォン端末向けにtel:を仕込む小技</h1>
+<p class="entry-pubdate">2012-12-05</p>
+</header>
+<div class="entry-body">
+
+
+<p>※この記事は、<a href="http://www.adventar.org/calendars/29">軽めのjQuery Advent Calendar 2012</a>の５日目の記事です。</p>
+
+<p>スマートフォン端末のブラウザでは、<code>tel:</code>スキーマを<code>&lt;a href=&quot;tel:0120-0000-0000&quot;&gt;お問い合わせはこちら&lt;/a&gt;</code>というように利用することで、ブラウザ上でタップして電話をかけることができるようになる。</p>
+
+<p>しかし、これをデスクトップブラウザで実装してしまうと、クリックした時に不明なプロトコルとしてエラーとなってしまう。</p>
+
+<p>これが問題となる可能性があるのは、いわゆるレスポンシブ・ウェブデザイン的なアプローチで、モバイルブラウザとデスクトップブラウザでHTMLを一本化してしまうような場合だ。</p>
+
+<p>※問題とはいってもデスクトップユーザーが電話番号を見て、クリックして電話をかける、というアクションをするかどうかというのは置いといて。</p>
+
+<h2 id="カスタムデータ属性を使ったアプローチ:28c15dfd9cdc0441d9b64e8000d75cf2">カスタムデータ属性を使ったアプローチ</h2>
+
+<p>前提として下記のようなマークアップをおこなう。</p>
+
+<pre><code class="language-xml">お問い合わせは&lt;span data-tel=&quot;0120-9999-9999&quot;&gt;お電話&lt;/span&gt;で！
+
+&lt;img src=&quot;btn-contact.png&quot; alt=&quot;お問い合わせはお電話で！&quot; data-tel=&quot;0120-8888-8888&quot;&gt;
+</code></pre>
+
+<p>ポイントは<code>data-tel</code>属性。この中にコール先の番号をセットしておく。あとはこの要素に対し、<code>data-tel</code>の値を<code>href</code>にセットした<code>&lt;a /&gt;</code>で包括する。で、これをjQueryっぽく書いてみる。</p>
+
+<pre><code class="language-javascript">// とりあえず簡易的な方法でdetection（iPhoneの場合）
+var ua =navigator.userAgent;
+if(ua.indexOf('iPhone') &gt; -1) {
+  
+  $(function() {
+    // data-tel属性を持つ要素に対し、
+    $(&quot;[data-tel]&quot;).each(function(){
+      // data-tel属性の値を取得
+      var tel = $(this).attr(&quot;data-tel&quot;);
+      // a要素でwrapする
+      $(this).wrap(&quot;&lt;a href=&quot; + 'tel:' + tel + &quot;&gt;&lt;/a&gt;&quot;);
+    });
+  });
+
+};
+</code></pre>
+
+<p>こんな感じ。</p>
+
+<h2 id="data-メソッドは:28c15dfd9cdc0441d9b64e8000d75cf2">data()メソッドは？</h2>
+
+<p>せっかくカスタムデータ属性をつかっているので、よりjQueryっぽくという意味では<code>data()</code>メソッドを使う方法もある。</p>
+
+<pre><code class="language-javascript">$(function() {
+  $(&quot;[data-tel]&quot;).each(function(){
+    // data()メソッドでtel属性の値を取得
+    var tel = $(this).data(&quot;tel&quot;);
+
+    $(this).wrap(&quot;&lt;a href=&quot; + 'tel:' + tel + &quot;&gt;&lt;/a&gt;&quot;);
+  });
+});
+</code></pre>
+
+<p>が、これには<a href="http://havelog.ayumusato.com/develop/javascript/e291-jquery_data_method.html">罠がある</a>。</p>
+
+<p>つまり<code>data()</code>メソッドを使うと、<strong>0からはじまる文字列が数字として扱われる</strong>ので、今回のような例だと危うい。</p>
+
+<pre><code class="language-xml">// stringで、そのまま 0120-9999-9999 になる
+&lt;span data-tel=&quot;0120-9999-9999&quot;&gt;お電話&lt;/span&gt;
+
+// numberになるので、12099999999 になる
+&lt;span data-tel=&quot;012099999999&quot;&gt;お電話&lt;/span&gt;
+</code></pre>
+
+<p>ただこれが起きるのはjQuery1.8以前で、<a href="http://bugs.jquery.com/ticket/7579">1.8からはdata()メソッドをつかっても型は変換されない。</a>
+実際に<a href="http://jsfiddle.net/dmethvin/8SsWK/">こちらのデモ</a>上で、左のパネルからjQueryのバージョンを変えてRunしてみるとわかる。</p>
+
+<p>その他、<a href="http://1000ch.net/2012/12/02/ImportantPointForJavaScriptDevelopment/">カスタムデータ属性の参照の仕方</a>などについては、こちらも参照するといいかも。</p>
+
+<h2 id="もうちょい考えてみると:28c15dfd9cdc0441d9b64e8000d75cf2">もうちょい考えてみると</h2>
+
+<p>Detectionが正直微妙で、本来ならば<strong>tel:が有効な端末で</strong>っていうのが正しいので、単純にUAとかでみるのは微妙。例として挙げておいてなんだが、これだとたぶん<strong>iPod touch</strong>も含まれる。</p>
+
+<p>またこのコードではスマートフォンブラウザのときに実行される前提になってるが、非力なスマートフォンブラウザ環境よりも、むしろデスクトップブラウザで実行されるようなスクリプトの方がいいだろう。</p>
+
+<p>それならば例えば、</p>
+
+<pre><code class="language-xml">&lt;a href=&quot;tel:0120-9999-9999&quot;&gt;お電話&lt;/a&gt;
+</code></pre>
+
+<p>これを標準とし、デスクトップブラウザのときに下記のようなコードを実行する。</p>
+
+<pre><code class="language-javascript">$(function() {
+  // href属性がtelから始まる要素の
+  $(&quot;a[href^=tel]&quot;).each(function(){
+    // 中身を抜いてspanに差し替える
+    $(this).replaceWith(&quot;&lt;span&gt;&quot; + $(this).text() + &quot;&lt;/span&gt;&quot;);
+  });
+});
+</code></pre>
+
+<p>これも雑な感じではあるが、このようにすれば<code>&lt;a&gt;</code>を<code>&lt;span&gt;</code>に変えることで、リンクを無効化できる。</p>
+
+<p>ちなみに一応知らない人がいたら、ということで補足すると、<code>$(&quot;a[href^=tel]&quot;)</code>は属性セレクタで、<strong>href属性がtelからはじまるa要素</strong>、というセレクタ。この例では<code>tel:</code>から始まるものというはブレないので、このようにしてみた。</p>
+
+<p>※この属性セレクタの話は、同アドベントカレンダーの別記事として後日書く予定。</p>
+
+<p>タグは差し替えず、<code>event.preventDefault</code>でリンクを無効化しても良いかもしれないが、この場合にはCSSもマウスポインタがリンク時のポインタにならないようにしておきたい。</p>
+
+<h2 id="アドベントカレンダーは続く:28c15dfd9cdc0441d9b64e8000d75cf2">アドベントカレンダーは続く</h2>
+
+<p>次は<a href="http://h2ham.seesaa.net/">ハムの人</a>ですね、よろしくおねがいします。</p>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://localhost:1313/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<p class="tempnote">
+  本ブログの過去記事は、近日整理して再公開します。
+</p>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

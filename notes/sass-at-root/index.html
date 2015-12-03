@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sass3.3の@at-rootを使ってちょっとしたことを試した。">
+<meta property="og:title" content="Sass3.3の@at-rootで親のルールを指定する">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://inkdesign.jp/notes/sass-at-root/">
+<meta property="og:image" content="http://inkdesign.jp/">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.15" />
+<title>Sass3.3の@at-rootで親のルールを指定する - inkdesign</title>
+
+<link rel="stylesheet" href="http://inkdesign.jp/styles/style.css">
+
+<link href="http://inkdesign.jp/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">Sass3.3の@at-rootで親のルールを指定する</h1>
+<p class="entry-pubdate">2014-02-16</p>
+</header>
+<div class="entry-body">
+<p>先日登壇した<a href="http://cssnite.jp/lp/lp32/">CSS Nite LP, Disk 32</a>のセッションで紹介されていた<a href="https://github.com/geckotang/cssnite-lp32/blob/master/scss/_trbl.scss">SassのMixin</a>をSass3.3の@at-rootで少し手を加えてみる、という話。</p>
+
+<p>紹介されていたのは、<a href="http://codepen.io/shshaw/full/gEiDt">天地左右中央に絶対配置するテクニック</a>のMixin。</p>
+
+<pre><code class="language-css">@mixin trbl($width: null, $height: null) {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: $width;
+	height: $height;
+	margin: auto;
+}
+
+.tbrl {
+  @include trbl(100px,50px);
+}
+</code></pre>
+
+<pre><code class="language-css">.tbrl {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100px;
+  height: 50px;
+  margin: auto;
+}
+</code></pre>
+
+<p>この仕組については先の記事をみてもらうとして、このMixinの内容は、これらのコードを提供し、任意で<code>width</code>、<code>height</code>の値を渡せるようになっている。</p>
+
+<p>このテクニックを使う条件として必要になるのは、<code>position:absolute</code>の基点、つまり<code>position:relative</code>が必要となる。<br />
+（無論、<code>body</code>を基点とするならその限りではないが）</p>
+
+<p>それを解決というか、それなりに利便性を考えるとすれば次のような方法が浮かぶ。</p>
+
+<pre><code class="language-css">.ref {
+  position: relative
+}
+
+.tbrl {
+  ...
+}
+</code></pre>
+
+<pre><code class="language-html">&lt;div class=&quot;ref&quot;&gt;
+  &lt;div class=&quot;tbrl&quot;&gt;foo&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>例えば<code>.ref</code>のような<code>position:relative</code>の汎用クラスを容易し、この<code>.tbrl</code>を使うときに基点を指定する場合には、<code>.ref</code>を使いましょう、とするような方法。</p>
+
+<p>次に本題であるSass3.3の<code>@at-root</code>を使う方法。</p>
+
+<pre><code class="language-css">// ----
+// Sass (v3.3.0.rc.3)
+// Compass (v1.0.0.alpha.18)
+// ----
+ 
+@mixin trbl($width: null, $height: null, $parent: null) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: $width;
+  height: $height;
+  margin: auto;
+  @at-root #{$parent} {
+    position: relative;
+  }
+}
+ 
+.tbrl {
+  @include trbl(100px, 50px, &quot;.tbrl-wrapper&quot;);
+}
+</code></pre>
+
+<pre><code class="language-css">.tbrl {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100px;
+  height: 50px;
+  margin: auto;
+}
+.tbrl-wrapper {
+  position: relative;
+}
+</code></pre>
+
+<pre><code>&lt;div class=&quot;tbrl-wrapper&quot;&gt;
+  &lt;div class=&quot;tbrl&quot;&gt;foo&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><code>@mixin trbl()</code>に加えたのは<code>@at-root</code>の記述と、基点となる親のセレクタをつくるための引数。<code>@at-root</code>ディレクティブは記述上ネストされているが、コンパイルされたときにそれはネストされずに出力される。それを利用して、このような書き方ができる。</p>
+
+<p>この例だと結局<code>position:relative</code>を持たせているだけなので、先に紹介した<code>.ref</code>みたいな汎用クラスを使うのと対して変わらないといえば変わらないが、tbrlというコンポーネントとしてルールをまとめるという設計で考えると、後者のような形の方が良いのではと考えた。<br />
+（実際便利なのかどうか置いといて）</p>
+
+<p><code>@at-root</code>はよく<a href="http://blog.ruedap.com/2013/10/29/block-element-modifier">BEMなルールを書くときに役立ちそう</a>だと紹介されているのをよく見るが、こんな使い方もできるな、という話でした。</p>
+
+<p>あと気軽にSass3.3を試すなら<a href="http://sassmeister.com/">SassMeister</a>が便利。</p>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://inkdesign.jp/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="elsewhere"><a href="http://twitter.com/hiloki">Twitter</a> |  <a href="http://github.com/hiloki">GitHub</a></p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+</body>
+</html>

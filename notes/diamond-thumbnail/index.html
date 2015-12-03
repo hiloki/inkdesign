@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="24ways(2013)で使われているひし形のサムネイルをどう作っているのか調べてみた。">
+<meta property="og:title" content="ひし型のサムネイルをCSSでつくる">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://inkdesign.jp/notes/diamond-thumbnail/">
+<meta property="og:image" content="http://inkdesign.jp/">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.15" />
+<title>ひし型のサムネイルをCSSでつくる - inkdesign</title>
+
+<link rel="stylesheet" href="http://inkdesign.jp/styles/style.css">
+
+<link href="http://inkdesign.jp/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">ひし型のサムネイルをCSSでつくる</h1>
+<p class="entry-pubdate">2014-01-05</p>
+</header>
+<div class="entry-body">
+<p>毎年12月に著名なWeb（+α）界隈の方々で綴られるアドベントカレンダーメディア、<a href="http://24ways.org/">24 ways</a>が2013年版でデザインが変わっていた。</p>
+
+<p>その<a href="http://24ways.org/authors/andyclarke/">記事ページ</a>になどに使われている著者のサムネイルがひし形になっているが、それはひし形に加工されている画像を使っているわけではないようだ。</p>
+
+<p>調べてみればなんてことない方法だが、なるほど、ってことで解説してみる。結論を先にいえば、<code>transform</code>プロパティを使う、ということだ。</p>
+
+<div class="entry__media">
+    ![](/images/diamond-thumbnail/01.png)
+</div>
+
+<pre><code class="language-html">&lt;div class=&quot;diamond&quot;&gt;
+  &lt;img src=&quot;http://placecage.com/450/450&quot; alt=&quot;Cage&quot; /&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>HTMLの方はシンプル。<code>&lt;img&gt;</code>とそれを包括する要素を<code>transform</code>で変形させていく。<br />
+とりあえずサンプルはみんな大好き<a href="http://placecage.com/">ニコラス・ケイジ</a>で。</p>
+
+<p>そしてCSSは下記のようにする。</p>
+
+<pre><code class="language-css">.diamond {
+  overflow: hidden; /* 4. 内包するimgのはみ出る部分を隠す */
+  margin: auto;
+  width: 180px;
+  height: 180px;
+  transform: rotate(45deg); /* 1. 要素を傾ける */
+}
+.diamond img {
+  margin: -25%; /* 5. 隙間を埋める */
+  width: 150%; /* 3. 包括要素より大きくする */
+  height: auto;
+  transform: rotate(-45deg); /* 2. 要素を傾け直す */
+}
+</code></pre>
+
+<p>ポイントは<code>margin: -25%;</code>だろうか。実際にやってみると形をつくること自体は簡単だが、上手くひし形に画像をはめるのは少し調整が必要。</p>
+
+<p><a href="http://cdpn.io/DkrIl">これを反映せたデモ</a>もあるので、こちらで色々と値をいじってみるといいだろう。<br />
+ひし形以外にも、八角形やダイアモンドのような形にしたりというのも可能だ。</p>
+
+<p><code>transform</code>を使っているので、実際に使うときには要素が他の要素とかぶらないように位置を微妙に調整するといったことは必要になるとはおもう。</p>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://inkdesign.jp/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="elsewhere"><a href="http://twitter.com/hiloki">Twitter</a> |  <a href="http://github.com/hiloki">GitHub</a></p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+</body>
+</html>

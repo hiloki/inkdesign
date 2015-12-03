@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="jp-ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="inkdesign.jpはLESSを応援しています。">
+<meta property="og:title" content="最近のLESSの小話と新機能紹介（一部）">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://inkdesign.jp/notes/less-new-colors/">
+<meta property="og:image" content="http://inkdesign.jp/">
+<meta property="og:site_name" content="inkdesign">
+<meta property="og:locale" content="ja_JP">
+<meta prefix="fb:http://ogp.me/ns/fb#" property="fb:admins" content="1252308549">
+<meta name="generator" content="Hugo 0.15" />
+<title>最近のLESSの小話と新機能紹介（一部） - inkdesign</title>
+
+<link rel="stylesheet" href="http://inkdesign.jp/styles/style.css">
+
+<link href="http://inkdesign.jp/index.xml" rel="alternate" type="application/rss+xml" title="inkdesign">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46114692-1', 'inkdesign.jp');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1 class="slogan" id="slogan">
+    <span id="iam">I<span class="breath"> </span>th</span><a href="http://inkdesign.jp">ink<span class="breath"> </span>design</a><span class="breath"> </span><span id="everywhere">everywhere</span>.
+  </h1>
+</header>
+
+<main id="main">
+<article class="entry">
+<header class="entry-header">
+<h1 class="entry-title">最近のLESSの小話と新機能紹介（一部）</h1>
+<p class="entry-pubdate">2012-12-08</p>
+</header>
+<div class="entry-body">
+
+
+<p>※この記事は、<a href="http://www.adventar.org/calendars/1">CSS Preprocessor Advent Calendar 2012</a>の7日目の記事の<strong>おまけ</strong>です。</p>
+
+<p>CSSプリプロセッサ（CSSメタ言語）は、<a href="http://sass-lang.com/">Sass</a>が人気かつ、アップデートも頻繁、新機能増えてる！みたいな空気を感じたりするんですが、<a href="http://lesscss.org/">LESS</a>もがんばってます。</p>
+
+<h2 id="開発の停滞:f05c5b2d7e345ff5f4b1bef7c5cccdcb">開発の停滞</h2>
+
+<p>5ヶ月ほど前に<a href="http://crunchapp.net/">Crunch</a>というLESS対応エディタを開発しているMatthew Dean氏が、</p>
+
+<blockquote>
+<p>LESSの開発止まってますやん。それに比べてSassはめっちゃ更新してんで。</p>
+
+<p><a href="https://github.com/cloudhead/less.js/issues/867">Is LESS in need of support?</a></p>
+</blockquote>
+
+<p>というissueをあげた。</p>
+
+<p>それに対し、開発者のAlexis Sellier氏（<a href="http://cloudhead.io/）が同issueにて、[このように](https://github.com/cloudhead/less.js/issues/867">cloudhead</a>コメントをあげた。</p>
+
+<blockquote>
+<p>他にやることあるから、今LESSに割く時間ありませんわー（略）</p>
+
+<p><a href="https://github.com/cloudhead/less.js/issues/867#issuecomment-7036574">https://github.com/cloudhead/less.js/issues/867#issuecomment-7036574</a></p>
+</blockquote>
+
+<p>なんていうこともあったものの、<a href="https://github.com/agatronic">agatronic</a>氏を中心に、LESSを愛する有志たちによって、現在ぼちぼちとメンテされている様子。</p>
+
+<h2 id="最近のless:f05c5b2d7e345ff5f4b1bef7c5cccdcb">最近のLESS</h2>
+
+<p>最近のLESSの話題の目玉としては、<a href="http://webtech-walker.com/archive/2012/12/less_extend.html">アドベントカレンダー初日に@hokacchaが書いてくれた</a>、LESSにおける@extendの機能でしょうか。</p>
+
+<p>SassがLESSに大きく差をつけた機能のひとつではあるのですが、これをなんと我らが@hokacchaが書いてくれたわけです。そこにシビれる、あこがれる。</p>
+
+<p>その進捗などは先の記事を見ていただくとして、他にアップデートされているものを少し紹介していく。</p>
+
+<p><a href="https://github.com/cloudhead/less.js/blob/master/CHANGELOG.md">CHANGELOG</a>の1.3.1（2012-10-18 アップデート）から色々と追加された色関係のfunctionをピックアップ。
+（強化するのはそこの機能じゃないんじゃ、という気もしないでもないですが）</p>
+
+<h2 id="色関係の関数が盛りだくさん:f05c5b2d7e345ff5f4b1bef7c5cccdcb">色関係の関数が盛りだくさん。</h2>
+
+<p>追加されたのは下記。</p>
+
+<ul>
+<li>red</li>
+<li>green</li>
+<li>blue</li>
+<li>tint</li>
+<li>shade</li>
+<li>multiply</li>
+<li>screen</li>
+<li>overlay</li>
+<li>softlight</li>
+<li>hardlight</li>
+<li>difference</li>
+<li>exclusion</li>
+<li>average</li>
+<li>negation</li>
+<li>contrast</li>
+</ul>
+
+<p>この中から後半部分の<strong>Blending modes</strong>と呼ばれるFunctionをいくつかピックアップする。Blending modesは、Photoshopでいうところの<strong>レイヤーの描画モード</strong>みたいなものだ。おそらくPhotoshopのUIの言語設定を変えれば、これらの単語が表示されるはず。今回紹介するものがそれらツールとまったく同じアルゴリズムかはわからないが、おそらくはこれらを元にしてつくられたFunctionではないかとおもう。</p>
+
+<p>これらのFunctionは、第一引数と第二引数の色を掛け合わせるなどしてブレンドする。</p>
+
+<h3 id="multiply:f05c5b2d7e345ff5f4b1bef7c5cccdcb">multiply</h3>
+
+<p>Photoshopでいうところの<strong>乗算</strong>。</p>
+
+<pre><code class="language-css">div {
+  background-color: multiply(@colorA,@colorB);
+}
+</code></pre>
+
+<h3 id="screen:f05c5b2d7e345ff5f4b1bef7c5cccdcb">screen</h3>
+
+<p>Photoshopでいうところの<strong>スクリーン</strong>。</p>
+
+<pre><code class="language-css">div {
+  background-color: screen(@colorA,@colorB);
+}
+</code></pre>
+
+<h3 id="overlay:f05c5b2d7e345ff5f4b1bef7c5cccdcb">overlay</h3>
+
+<p>Photoshopでいうところの<strong>オーバーレイ</strong>。</p>
+
+<pre><code class="language-css">div {
+  background-color: overlay(@colorA,@colorB);
+}
+</code></pre>
+
+<h3 id="hardlight:f05c5b2d7e345ff5f4b1bef7c5cccdcb">hardlight</h3>
+
+<p>Photoshopでいうところの<strong>ハードライト</strong>。</p>
+
+<pre><code class="language-css">div {
+  background-color: hardlight(@colorA,@colorB);
+}
+</code></pre>
+
+<h3 id="difference:f05c5b2d7e345ff5f4b1bef7c5cccdcb">difference</h3>
+
+<p>Photoshopでいうところの<strong>差の絶対値</strong>。</p>
+
+<pre><code class="language-css">div {
+  background-color: difference(@colorA,@colorB);
+}
+</code></pre>
+
+<h3 id="average:f05c5b2d7e345ff5f4b1bef7c5cccdcb">average</h3>
+
+<p>Photoshopでは存在しないかもしれないが、Fireworksでいうところの<strong>平均</strong>。</p>
+
+<pre><code class="language-css">div {
+  background-color: average(@colorA,@colorB);
+}
+</code></pre>
+
+<h3 id="一応サンプル:f05c5b2d7e345ff5f4b1bef7c5cccdcb">一応サンプル</h3>
+
+<p>StyleDoccoでつくった<a href="http://inkdesign.jp/demo/less-new-colors/less.html">サンプルページ</a>も用意しておく。<a href="http://inkdesign.jp/notes/2012/12/07/css-preprocessor-styleguide.html">StyleDoccoについてはこちら</a>を参照してほしい。<sup class="footnote-ref" id="fnref:f05c5b2d7e345ff5f4b1bef7c5cccdcb:styledocco-less"><a rel="footnote" href="#fn:f05c5b2d7e345ff5f4b1bef7c5cccdcb:styledocco-less">1</a></sup></p>
+
+<h2 id="続きはcss-nite-lp26で-たぶん:f05c5b2d7e345ff5f4b1bef7c5cccdcb">続きはCSS Nite LP26で！（たぶん）</h2>
+
+<p>2013年1月12日（土）に開催される、<a href="http://lp26.cssnite.jp/">CSS Nite LP, Disk 26「CSS Preprocessor Shootout」</a>では<strong>LESS</strong>についての話をする予定なので、本記事で紹介しなかった関数も紹介するかもしれません。しないかもしれません。</p>
+
+<p>残席残りわずかなようですが、興味がある方はぜひ。</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:f05c5b2d7e345ff5f4b1bef7c5cccdcb:styledocco-less">このように、LESSもそのままStyleDoccoに放り込める。
+ <a class="footnote-return" href="#fnref:f05c5b2d7e345ff5f4b1bef7c5cccdcb:styledocco-less"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+</article>
+</main>
+
+<div id="author" class="author">
+<img src="http://inkdesign.jp/images/hirokitani.jpg" width="32" height="32" class="avatar">
+<p class="name">Hiroki Tani</p>
+<p class="elsewhere"><a href="http://twitter.com/hiloki">Twitter</a> |  <a href="http://github.com/hiloki">GitHub</a></p>
+<p class="title">Front-end Engineer, Writer &amp; Speaker</p>
+</div>
+
+<footer id="footer">
+<ul class="footlinks">
+  
+  <li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">BY-NC-SA</a></li>
+</ul>
+</footer>
+</body>
+</html>
