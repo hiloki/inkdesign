@@ -28,83 +28,8 @@
 &lt;p&gt;2008年くらいに「クロスブラウザ対応」という言葉が流行り、あわせてProgressive Enhancement/Graceful Degradationというようなアプローチが浸透し始めたその少し前に、ひとつのパフォーマンスとしてAndyのStuff and Nonsenseではある仕掛けをもっていた。それはIE6とそれ以降のブラウザでの見せ方を変えるというものだ。
 以下は&lt;a href=&#34;https://stuffandnonsense.co.uk/blog/about/hello&#34;&gt;Spotted the difference?&lt;/a&gt;より引用。&lt;/p&gt;
 
-&lt;div class=&#34;u-flex-around&#34;&gt;
-  &lt;div&gt;
-    
-&lt;figure &gt;
-  
-    &lt;img src=&#34;http://localhost:1313/images/notes/universal-ie6/01.jpg&#34; alt=&#34;for IE6&#34; /&gt;
-  
-  
-  &lt;figcaption&gt;
-    &lt;p&gt;
-    IE6の場合
-    
-      
-    
-    &lt;/p&gt; 
-  &lt;/figcaption&gt;
-  
-&lt;/figure&gt;
-
-
-  &lt;/div&gt;
-  &lt;div&gt;
-    
-&lt;figure &gt;
-  
-    &lt;img src=&#34;http://localhost:1313/images/notes/universal-ie6/02.jpg&#34; alt=&#34;for modern browser&#34; /&gt;
-  
-  
-  &lt;figcaption&gt;
-    &lt;p&gt;
-    それ以降のブラウザの場合
-    
-      
-    
-    &lt;/p&gt; 
-  &lt;/figcaption&gt;
-  
-&lt;/figure&gt;
-
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;このカラクリはシンプルなもので、コンディショナルコメントでCSSを分けているだけ。今思えば単純なことだが、IE6ブラウザおよびそのユーザーに、モノクロトーンに変わったイメージと&amp;rdquo;Hey Old Timer!&amp;ldquo;というメッセージを送るそのロックさみたいなものに憧れたものだ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://dowebsitesneedtolookexactlythesameineverybrowser.com/&#34;&gt;すべてのブラウザで全く同じ見た目であるべきか&lt;/a&gt;ということに疑問を投げかけ続け、あるときに彼が考えたアイデアこそが表題の&lt;a href=&#34;https://stuffandnonsense.co.uk/blog/about/universal_internet_explorer_6_CSS/&#34;&gt;Universal Internet Explorer 6 CSS&lt;/a&gt;だ。&lt;/p&gt;
-
-&lt;p&gt;コンテンツが重要であり、見た目がブラウザごで全く同じである必要はない。またIE6で同じ見た目にするためにJSのライブラリを使うこと、時間とお金をかけることはエンドユーザー、クライアント双方にとっても好ましいことでもなく、それを削れるならより良いことだ、という考え。&lt;/p&gt;
-
-&lt;p&gt;&lt;button onclick=&#34;ie6css()&#34;&gt;ここクリックすれば、IE6 CSSに衣替えする。&lt;/button&gt;&lt;/p&gt;
-
-&lt;p&gt;衣替えしたなら、これがUniversal IE6 CSSが適用されている状態。
-IE6には、きれいにデザインされた凝った表現ではなく、最低限のタイポグラフィを考えた程度のスタイルにする。&lt;br /&gt;
-どのサイトだろうと、IE6にはこのスタイルを適用するというだけ、というもの。&lt;a href=&#34;http://localhost:1313/styles/ie6.1.1.css&#34;&gt;コードはこちらか確認できる&lt;/a&gt;。
-前述に書いたように、IE6をつかっているような環境に対して、より負荷をかけてしまっては意味がないので、このアプローチは大胆ではあるが、理にかなったものともいえる。&lt;/p&gt;
-
-&lt;p&gt;まぁ実際にはこれが流行ることも、定着することもなかった、と思う。Andy自身も実際にどのくらいのクライアントに提案し、実施したのか気になるところ。もしかしたらIE6で世の中のWebサイトを回れば、しれっとUniversal IE6 CSSを使ったサイトがあるかもしれない。
-今なら、Normalize CSSに少し手を加えたようなものになるだろうか。ちょっとつくろうかとおもったけどやめた。&lt;/p&gt;
-
-&lt;p&gt;今もレガシーブラウザなブラウザに引きづられる環境、そして同じ見た目を再現しなければいけない環境はゼロではないが、
-当時よりは気を使う必要はなくなっているはずだ。しかし一方では見た目どうこうというより、近年のブラウザやデバイスであっても、妙なバグに踊らされる日々だ。そう、もしかしたらuniversal Android CSS&amp;hellip;という話はない。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://code.google.com/p/universal-ie6-css/&#34;&gt;Universal Internet Explorer 6 CSS - Google Code&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;この記事は、&lt;a href=&#34;http://www.adventar.org/calendars/723&#34;&gt;CSS昔話 Advent Calendar 2015&lt;/a&gt;の2日目の記事です。&lt;/p&gt;
-
-&lt;script&gt;
-var cssfile = document.querySelector(&#34;link[href*=&#39;/styles/style.css&#39;]&#34;);
-var defaultCss = cssfile.href;
-function ie6css() {
-  if(cssfile.href == defaultCss) {
-    cssfile.href = &#34;/styles/ie6.1.1.css&#34;;
-  } else {
-    cssfile.href = defaultCss;
-  }
-}
-&lt;/script&gt;
+&lt;p&gt;&lt;div class=&#34;u-flex-around&#34;&gt;
+  &lt;div&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -128,56 +53,6 @@ function ie6css() {
 &lt;p&gt;さて、その次のステップどうするか、というところで、辞める前から何人かの人に相談をさせてもらいました。フリーランス、起業など考えたりもしましたが、結論として表題の通りです。&lt;/p&gt;
 
 &lt;h2 id=&#34;株式会社ツクルバについて:bb34acf6073928cb467b3f659a96b9ad&#34;&gt;株式会社ツクルバについて&lt;/h2&gt;
-
-&lt;p&gt;
-&lt;figure &gt;
-  
-    &lt;img src=&#34;http://localhost:1313/images/notes/tsukuruba/01.jpg&#34; alt=&#34;ツクルバのクレド&#34; /&gt;
-  
-  
-&lt;/figure&gt;
-
-&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://tsukuruba.com/&#34;&gt;株式会社ツクルバ&lt;/a&gt;は、オフィス・飲食・住環境などの空間デザイン・プロデュース事業からはじまり、日本全国に展開する会員制シェアードワークプレイス &lt;a href=&#34;http://tsukuruba.com/co-ba/&#34;&gt;co-ba（コーバ）&lt;/a&gt;、人が集まる機会と場所を提供するパーティクリエーションサービス &lt;a href=&#34;http://hacocoro.com/&#34;&gt;hacocoro（ハココロ）&lt;/a&gt;、中古住宅のオンラインマーケット &lt;a href=&#34;https://cowcamo.jp/&#34;&gt;cowcamo（カウカモ）&lt;/a&gt; といった事業を展開している会社です。&lt;/p&gt;
-
-&lt;p&gt;ツクルバとの縁は&lt;a href=&#34;http://goodpatch.com/jp&#34;&gt;Goodpatch&lt;/a&gt;創業の頃です。Goodpatchは今でこそデザインエージェンシーとして有名な会社となりましたが、当初はコワーキングスペース事業を柱にすることを夢みていた会社でした。その頃、当時はまだ今ほどコワーキング、シェアスペースがあまり無く、存在していても貸会議室のようなスペースである中で、クリエイターのためのスペースとしてそれらとは違う空間をつくっていたのがco-baでした。その時に代表の村上さん、中村さんとも出会い、そこからは特に交流があるということもありませんでした。&lt;/p&gt;
-
-&lt;p&gt;それから数年後、たまたまFacebookでオシャレなリノベーション物件を見かけ、それがcowcamoというサイトで、そしてそれを運営しているのがツクルバでした。
-そのときにWantedlyなどなんとなく見てみると、cowcamoをはじめとした事業の強化ということで、エンジニアの募集をしていたと。そのあたりから、色々とチェックをしはじめ、サイバーエージェントを一段落したら、何かしら手伝わせてもらおう、とおもったところからはじまりました。&lt;/p&gt;
-
-&lt;p&gt;それから色々を話を伺っていく中で、今回ツクルバの中に入ることとなりました。&lt;/p&gt;
-
-&lt;h2 id=&#34;自分の中のキーワード-場をつくる:bb34acf6073928cb467b3f659a96b9ad&#34;&gt;自分の中のキーワード「場をつくる」&lt;/h2&gt;
-
-&lt;p&gt;大阪に住んでいるとき、東京には行ってみたい勉強会やセミナーがあり、大阪には全然無いよね、というので共感し、&lt;a href=&#34;http://www.swirl.co.jp/&#34;&gt;スワールコミュニケーションズ&lt;/a&gt;の代表・小山さんらと&lt;a href=&#34;http://www.re-creators.jp/&#34;&gt;リクリ&lt;/a&gt;というコミュニティをつくり、大阪でも新しいことを学べる「場」をつくりました。（現在も小山さんを中心に、僕も大阪にいって聞きたくなるようなイベントをまわしています）&lt;/p&gt;
-
-&lt;p&gt;東京にきてからは、盟友 &lt;a href=&#34;http://t32k.me/mol/&#34;&gt;@t32k&lt;/a&gt;を中心に、冒頭でも挙げたFrontrendやその他活動などを通じ、自分たち含めて参加する人たちが学べる「場」、交流できる「場」を提供してきました。他にも色々な「場」に出向いては、自分の持てるものをつかって、何かを生み出すことに心を向けてきています。ここでは語りませんが、つくりたい「場」というのは自分の中に常になります。&lt;/p&gt;
-
-&lt;p&gt;そうした自分の中で作りたい「場」のヒント、もしかしたら答えがツクルバの中にあるかもしれないですし、逆にこうした思いがツクルバが目指しているものの一つに繋がるかもしれないと考えています。&lt;/p&gt;
-
-&lt;p&gt;ふたたびスタートアップ、そしてこれまで経験していない事業会社に関わるのは、どう貢献できるだろうかという不安とともに、また新しい試みができる期待にあふれています。&lt;/p&gt;
-
-&lt;p&gt;ということで、新しいステージでの活動にご期待ください。&lt;/p&gt;
-
-&lt;h2 id=&#34;あ-そういえば:bb34acf6073928cb467b3f659a96b9ad&#34;&gt;あ、そういえば&lt;/h2&gt;
-
-&lt;p&gt;ツクルバでは、引き続きエンジニア、営業、ライターの方募集してます。&lt;br /&gt;
-&lt;a href=&#34;https://www.wantedly.com/companies/tsukuruba/projects&#34;&gt;募集職種一覧（Wantedly）&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;エンジニア向けには、10/21に渋谷のツクルバオフィスで、Craft Beer Meetup#1っていうのをやります。抽選で数十名ほどのご招待です。
-クラフトビール好きで、ツクルバちょっと覗いてみたいな、っていうエンジニアな方はぜひ。&lt;br /&gt;
-&lt;a href=&#34;https://www.wantedly.com/projects/30401&#34;&gt;Craft Beer Meetup#1（Wantedly）&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;そうだ:bb34acf6073928cb467b3f659a96b9ad&#34;&gt;そうだ！&lt;/h2&gt;
-
-&lt;p&gt;すごくいい感じのリノベーション物件に興味があるひとはcowcamoの覗くとわくわくしますよ&lt;br /&gt;
-&lt;a href=&#34;https://cowcamo.jp/&#34;&gt;https://cowcamo.jp/&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;そして定番:bb34acf6073928cb467b3f659a96b9ad&#34;&gt;そして定番&lt;/h2&gt;
-
-&lt;p&gt;一応僕の欲しいもの、おいておきます、一応。&lt;br /&gt;
-&lt;a href=&#34;http://www.amazon.co.jp/gp/registry/wishlist/L0RCASGUCUPF/&#34;&gt;ほしいもリスト&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -284,41 +159,9 @@ CSSにおける設計を考えるというのはどういうことか、とい�
       <pubDate>Fri, 21 Feb 2014 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/notes/the-secret-of-sass-glasses/</guid>
-      <description>
-
-&lt;p&gt;セミナーのためにSassのことを色々調べていて気づいた。&lt;/p&gt;
+      <description>&lt;p&gt;セミナーのためにSassのことを色々調べていて気づいた。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://sass-lang.com/&#34;&gt;Sass&lt;/a&gt;のトップにある大きなメガネをよく見てほしい。&lt;/p&gt;
-
-&lt;p&gt;
-&lt;figure &gt;
-  
-    &lt;img src=&#34;http://localhost:1313/images/posts/the-secret-of-sass-glasses/01.png&#34; alt=&#34;Sassのメガネ&#34; /&gt;
-  
-  
-&lt;/figure&gt;
-
-&lt;/p&gt;
-
-&lt;p&gt;メガネの両端の光っているところをよくみると、&lt;/p&gt;
-
-&lt;div class=&#34;entry__media&#34;&gt;
-
-![](/images/posts/the-secret-of-sass-glasses/02.png)
-
-&lt;/div&gt;
-
-&lt;p&gt;コロン(:)とセミコロン(;)になってる！&lt;/p&gt;
-
-&lt;h2 id=&#34;ところでなぜメガネ:9d080439260e511fb238798c69d251cf&#34;&gt;ところでなぜメガネ？&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/File:Sass_Logo.gif&#34;&gt;もともとはお姉さん&lt;/a&gt;が印象的だったSassがなぜメガネなのかは謎。&lt;/p&gt;
-
-&lt;p&gt;想像する限りだと、少し釣り上がったメガネがSassy（生意気/偉そう）な感じがあるからとか、&lt;/p&gt;
-
-&lt;p&gt;あとはSassエヴァンジェリストであり、現在のSassのデザイン、ブランディングを手がける&lt;a href=&#34;http://vimeo.com/45897176&#34;&gt;Jina Bolton&lt;/a&gt;自身がメガネが印象的な女性であるからかもしれない。&lt;/p&gt;
-
-&lt;p&gt;軽く調べる限りではこのあたりの真実はわからなかったので、気になる人は調べると良いです。&lt;/p&gt;
 </description>
     </item>
     
